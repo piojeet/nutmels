@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/main.css">
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    .nutritionValue {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .text-effect {
+      -webkit-text-stroke: 1px #faa61a;
+      text-stroke: 1px #faa61a;
+      margin: auto;
+      font-size: 4.5rem;
+      line-height: 1;
+      font-weight: 700;
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity));
+    }
+
+    .btn-slide {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 100%;
+      padding: 0;
+      border-radius: 8px;
+      background-color: #faa61a;
+      overflow: hidden;
+    }
+
+    .btn-slide span.circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      background-color: #fff;
+      color: #000;
+      position: absolute;
+
+      margin: 5px;
+      height: 30px;
+      width: 30px;
+      top: 40%;
+      transform: translateY(-50%);
+
+      border-radius: 50%;
+      transition: all 2s ease;
+    }
+
+    .btn-slide span.title {
+      transition: all 1.5s linear;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      --tw-text-opacity: 1;
+      color: rgb(0 0 0 / var(--tw-text-opacity));
+    }
+
+
+    @keyframes backgroundChange {
+
+      0%,
+      100% {
+
+        background-color: orange;
+        color: white;
+      }
+
+      50% {
+        background-color: transparent;
+        color: #000;
+      }
+    }
+
+    .bg-animate {
+      animation: backgroundChange 1.5s infinite;
+    }
+
+    .btn-slide {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      padding-right: 40px;
+      /* Adjust this value to make room for the sliding circle */
+      overflow: hidden;
+    }
+
+    .circle {
+      position: absolute;
+      left: 0;
+      transition: left 0.5s ease;
+    }
+
+    .btn-slide:hover .circle {
+      left: calc(100% - 60px);
+      /* Adjust this value to align with the padding-right */
+    }
+
+    .btn-slide:hover .fa-arrow-right {
+      color: green;
+      /* Adjust this value to align with the padding-right */
+    }
+
+
+    .custom-shadow {
+      --tw-shadow: 0 1px 10px 6px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.1), 0 -4px 6px -4px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--tw-shadow);
+    }
+
+
+
+    .peanuts {}
+
+
+
+    /* Add necessary CSS for slides */
+    .slide-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .dot {
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color: #333;
+    }
+
+    .productLinkActive {
+
+      background-color: #FAA61A;
+      color: white;
+
+    }
+
+    @media only screen and (max-width: 767px) {
+      .btn-slide span.circle {
+        display: none;
+      }
+      
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 
+        - NAVBAR
+      -->
+
+  <header
+    class="z-[111] top-0 fixed w-full md:flex px-4 md:p-0 bg-white md:bg-transparent drop-shadow md:drop-shadow-none justify-center">
+    <div class="navBar flex justify-between items-center bg-white h-[3.5rem] w-full md:w-[81%]">
+      <div class="w-48">
+        <div class="navLogo w-36">
+          <a href="/index.html">
+            <img src="../assets/icons/Nutmeals Logo ver2.svg" alt="Nutmeals Logo" />
+          </a>
+        </div>
+      </div>
+      <div class="navMain hidden w-64 items-center justify-between md:flex uppercase">
+        <div>
+          <a href="/pages/about.html"
+            class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">About</a>
+        </div>
+        <div>
+          <a href="/pages/shop.html"
+            class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Shop</a>
+        </div>
+        <div>
+          <a href="/pages/blog.html"
+            class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Blog</a>
+        </div>
+      </div>
+      <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
+        <a class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
+          href="../pages/cart1.html">
+          <img src="../assets/icons/NavBar/white_add_to_cart.svg" alt="Add to Cart" width="17" height="17"
+            class="duration-300" />
+        </a>
+        <a class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
+          href="/pages/login.html">
+          <img src="../assets/icons/NavBar/white_account_profile.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300" />
+        </a>
+        <a class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
+          href="/pages/search.html">
+          <img src="../assets/icons/NavBar/white_search.svg" alt="Search" width="18" height="18" class="duration-300" />
+        </a>
+        <a class="rounded-md hover-fill-white contactIcon md:hover:bg-primaryButton py-2 px-2.5"
+          href="/pages/contact.html">
+          <img src="../assets/icons/NavBar/white_contact_support.svg" alt="Contact Support" width="18" height="18"
+            class="scale-[1.1]" />
+        </a>
+      </div>
+    </div>
+  </header>
+  <!-- Mobile Navigation Section -->
+  <div
+    class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-full glassNav z-10 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4">
+    <!-- Menu Button (visible on mobile) -->
+    <div class="navMenuBtn w-5 h-5 flex justify-center items-center navMenu">
+      <i class="fa-solid fa-bars text-[18px]"></i>
+      <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer" style="display: none" />
+    </div>
+    <!-- Mobile Cart Icon -->
+    <a class="navMenuBtn" href="../pages/cart1.html">
+      <img src="/assets/icons/generic_web_icons/add to cart.svg" alt="Add to Cart" class="w-[18px]" />
+    </a>
+    <!-- Mobile Search Icon -->
+    <div class="navMenuBtn navSearchBtn">
+      <img src="/assets/icons/NavBar/white_search.svg" alt="Search" class="w-5" />
+    </div>
+    <!-- Mobile Account Profile Icon -->
+    <a class="navMenuBtn" href="../pages/bestsellers.html">
+      <img src="../assets/a.svg" alt="Account Profile" />
+    </a>
+    <!-- Mobile Login Icon -->
+    <a class="navMenuBtn" href="../pages/login.html">
+      <img src="../assets/icons/generic_web_icons/account_profile.svg" alt="Account Profile" class="w-5 mr-[7px]" />
+    </a>
+    <!-- Mobile Navigation Links (hidden by default) -->
+    <div
+      class="fixed mobNavLinks navLinksHidden bottom-[67px] left-0 right-0 glassNav text-white m-[12px] transition-transform transform translate-y-0">
+      <ul class="text-left">
+        <li class="p-2"><a href="../pages/about.html">About</a></li>
+        <li class="p-2"><a href="../pages/shop.html">Shop</a></li>
+        <li class="p-2"><a href="../pages/blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <!-- Mobile Search Section -->
+    <div
+      class="fixed mobSearch searchHidden bottom-[80px] rounded-2xl mx-[.75rem] left-0 right-0 bg-primaryColor p-4 transition-transform transform translate-y-0">
+      <!-- Search Suggestions (hidden by default) -->
+      <div
+        class="suggestions absolute rounded-2xl -top-[220%] left-0 right-0 z-10 hidden p-2 mt-2 bg-primaryColor shadow-lg rounded">
+        <div class="text-white flex justify-between p-2">
+          <div>
+            <div class="p-[.3rem]">Suggestion 1</div>
+            <div class="p-[.3rem]">Suggestion 2</div>
+            <div class="p-[.3rem]">Suggestion 3</div>
+          </div>
+          <div>
+            <div class="p-[.3rem]">Suggestion 1</div>
+            <div class="p-[.3rem]">Suggestion 2</div>
+            <div class="p-[.3rem]">Suggestion 3</div>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Search Input and Icons -->
+      <ul class="flex items-center justify-between gap-5 w-full">
+        <input
+          class="custom-input p-1 px-3 bg-primaryColor focus:outline-none text-white border-white border !w-full searchInput"
+          placeholder="Search" type="text" />
+        <a href="/">
+          <img src="../assets/icons/generic_web_icons/search.svg" alt="Search" class="w-7 navMenuBtn" />
+        </a>
+        <a href="/scan">
+          <img src="../assets/icons/scan.svg" alt="Scan" class="w-7 navMenuBtn" />
+        </a>
+      </ul>
+    </div>
+  </div>
+
+  <div
+    class="w-full fixed z-[111] bg-white -top-[22px] pt-[14px] md:pt-0 md:static  md:mt-10 mt-[4.5rem] justify-center flex">
+    <div class="flex justify-between mt-[2%] md:px-[30px] rounded-lg custom-shadow bg-[#F2F2F2] md:w-[85%] w-[92%]">
+      <div class="flex mx-2 w-[100%] justify-between bg-[#F2F2F2] gap-10">
+
+        <div class=" flex md:w-[50%] w-full items-center justify-between">
+
+          <div class="flex justify-between items-center w-full">
+            <div id="shop" class="flex items-center justify-between gap-[.5rem]">
+              <p class="text-[25px]">+</p>
+              <p class="text-[15px] md:text-[16px] xl:text-[18px]">Shop</p>
+            </div>
+            <div id="category" class="flex items-center gap-[.5rem]">
+              <p class="text-[25px]">+</p>
+              <p class="text-[15px] md:text-[16px] xl:text-[18px]">Category</p>
+            </div>
+
+            <div id="product" class="flex items-center gap-[.5rem]">
+              <p class="text-[25px]">+</p>
+              <p class="text-[15px] md:text-[16px] xl:text-[18px]">Product</p>
+            </div>
+
+            <div class="flex p-3  hover:text-white rounded-md hover:bg-primaryButton items-center "><svg
+                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                width="17.75" height="17.75" viewBox="0 0 256 256" xml:space="preserve">
+
+                <defs>
+                </defs>
+                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+                  transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+                  <path
+                    d="M 15.205 90 c -1.104 0 -2 -0.896 -2 -2 V 55.115 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 V 88 C 17.205 89.104 16.31 90 15.205 90 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <path
+                    d="M 74.795 59.357 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 55.357 C 76.795 58.462 75.899 59.357 74.795 59.357 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <path
+                    d="M 45 90 c -1.104 0 -2 -0.896 -2 -2 V 27.922 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 V 88 C 47 89.104 46.104 90 45 90 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <path
+                    d="M 45 29.922 c -5.464 0 -9.91 -4.445 -9.91 -9.91 s 4.445 -9.91 9.91 -9.91 c 5.465 0 9.91 4.445 9.91 9.91 S 50.465 29.922 45 29.922 z M 45 14.103 c -3.259 0 -5.91 2.651 -5.91 5.91 s 2.651 5.91 5.91 5.91 s 5.91 -2.651 5.91 -5.91 S 48.259 14.103 45 14.103 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <path
+                    d="M 15.205 57.115 c -5.464 0 -9.91 -4.445 -9.91 -9.91 c 0 -5.464 4.445 -9.91 9.91 -9.91 s 9.91 4.445 9.91 9.91 C 25.115 52.67 20.669 57.115 15.205 57.115 z M 15.205 41.295 c -3.259 0 -5.91 2.651 -5.91 5.91 s 2.651 5.91 5.91 5.91 s 5.91 -2.651 5.91 -5.91 S 18.464 41.295 15.205 41.295 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <path
+                    d="M 74.795 75.177 c -5.464 0 -9.909 -4.445 -9.909 -9.91 c 0 -5.464 4.445 -9.909 9.909 -9.909 c 5.465 0 9.91 4.445 9.91 9.909 C 84.705 70.731 80.26 75.177 74.795 75.177 z M 74.795 59.357 c -3.259 0 -5.909 2.65 -5.909 5.909 s 2.65 5.91 5.909 5.91 s 5.91 -2.651 5.91 -5.91 S 78.054 59.357 74.795 59.357 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <path
+                    d="M 15.205 41.295 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 37.295 C 17.205 40.4 16.31 41.295 15.205 41.295 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <path
+                    d="M 45 14.103 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 10.103 C 47 13.207 46.104 14.103 45 14.103 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                  <path
+                    d="M 74.795 90 c -1.104 0 -2 -0.896 -2 -2 V 73.177 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 V 88 C 76.795 89.104 75.899 90 74.795 90 z"
+                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                </g>
+              </svg></div>
+          </div>
+
+        </div>
+
+
+        <!-- dropdown -->
+
+        <div id="shop-dropdown"
+          class="  flex p-2 gap-[1.75rem] opacity-[.95] dropdown-content absolute hidden bg-[#f5f5f5] shadow-lg rounded-lg mt-[2.9rem] z-[111] md:w-[80%]">
+          <div>
+            <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category</p>
+            <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Best Seller</p>
+            <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Combo Deals</p>
+          </div>
+
+          <div class="hidden md:flex items-center border-l gap-10 border-gray-400 p-4 px-[2.25rem]">
+            <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+              <p class="text-[13px]">Peanuts</p>
+            </a>
+            <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+              <p class="text-[13px]">Peanuts</p>
+            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+              <p class="text-[13px]">Peanuts</p>
+            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+              <p class="text-[13px]">Peanuts</p>
+            </a>
+            <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+              <p class="text-[13px]">Peanuts</p>
+            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+              <p class="text-[13px]">Peanuts</p>
+            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+              <p class="text-[13px]">Peanuts</p>
+            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+              <p class="text-[13px]">Peanuts</p>
+            </a>
+          </div>
+        </div>
+
+        <div id="category-dropdown"
+          class="flex ml-[22%]  md:ml-0 lg:pl-[164px] opacity-[.95] dropdown-content absolute hidden  mt-[2.9rem] z-[111] w-[80%]">
+          <div class="flex p-2 px-3 md:px-2 gap-[1.75rem] shadow-lg rounded-lg opacity-[.95]  bg-[#f5f5f5] ">
+            <div class="whitespace-nowrap md:pl-[17px] ">
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Best Seller</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Combo Deals</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Best Seller</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Combo Deals</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Best Seller</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Best Seller</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Combo Deals</p>
+            </div>
+
+            <div class="hidden md:flex items-start border-l gap-10 border-gray-400 p-4 px-[2.25rem]">
+              <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a>
+              <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a>
+              <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div id="product-dropdown"
+          class="flex   lg:pl-[351px] opacity-[.95] dropdown-content absolute hidden  mt-[2.9rem] z-[111] w-[80%] ml-[47%] md:ml-0">
+          <div class="flex p-2 px-3 md:px-2 gap-[1.75rem] shadow-lg rounded-lg opacity-[.95]  bg-[#f5f5f5] ">
+            <div class="whitespace-nowrap md:pl-[17px] ">
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Best Seller</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Combo Deals</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Best Seller</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Combo Deals</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Best Seller</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Best Seller</p>
+              <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Combo Deals</p>
+            </div>
+
+            <div class="hidden md:flex items-start flex-wrap border-l gap-10 border-gray-400 p-4 px-[2.25rem]">
+              <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a>
+              <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a>
+              <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div
+          class="hidden md:flex  justify-between text-[16px] sm:text-lg w-[50%] items-center                          sm:mt-0">
+          <a id="buyLink"
+            class="text-[16px] buyLink xl:text-[18px]  hover:bg-primaryButton bg-animate  hover:text-white duration-300 rounded-md sm:px-4 px-3 cursor-pointer"
+            href="/product?q=buy">Buy</a>
+          <a id="descriptionLink"
+            class="xs:px-3 descriptionLink text-[16px] xl:text-[18px] hover:bg-primaryButton hover:text-white  duration-300 rounded-md sm:px-3 px-2  cursor-pointer"
+            href="/product?q=description&amp;menu=brief">Description</a>
+          <a id="benefitsLink" class="xs:px-3 benefitsLink px-2 text-[16px] xl:text-[18px] rounded-[4px]"
+            href="/product?q=benefits&amp;menu=benefits">Benefits</a>
+          <a id="nutriLink" class="xs:px-3 px-2 nutriLink text-[16px] xl:text-[18px] rounded-[4px]"
+            href="/product?q=nutritions">Nutri. Label</a>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Dropdown menus -->
+
+  <div id="shop-dropdown"
+    class="z-10  dropdown-content absolute hidden bg-[#f5f5f5] shadow-lg rounded-lg mt-2 md:w-[80%]">
+    <p class="p-2 hover:bg-gray-200 cursor-pointer">Shop Item 1</p>
+    md:text-[16px] xl:text-[18px] text-[14px] <p class="p-2 hover:bg-gray-200 cursor-pointer">Shop Item 2</p>
+    md:text-[16px] xl:text-[18px] text-[14px] <p class="p-2 hover:bg-gray-200 cursor-pointer">Shop Item 3</p>
+    md:text-[16px] xl:text-[18px] text-[14px]
+  </div>
+
+  <div id="category-dropdown"
+    class="z-10 dropdown-content ml-[18.5%] md:ml-[16%] absolute hidden bg-white shadow-lg rounded-md mt-2 w-[200px] ">
+    <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category Item 1</p>
+    <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category Item 2</p>
+    <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category Item 3</p>
+  </div>
+
+
+
+  <div class="w-full flex justify-center mt-7">
+    <div class="w-[50%] md:w-[80%] gap-9 flex">
+
+
+    </div>
+  </div>
+
+
+  <div class="w-full  flex justify-center">
+    <div class="flex-col flex lg:flex-row md:gap-8 gap-3 w-[90%] md:w-[80%] justify-center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="md:w-[50%] mx-auto w-full mt-[6rem] md:mt-0">
+
+
+        <div
+          class="lg:w-[38vw] slides lg:h-[74vh] md:w-product-image flex justify-center flex-col md:pt-14 relative border bg-[#f5f5f5] border-gray-300 p-4 md:p-8 rounded-lg">
+          <div class="md:block hidden">
+            <h1
+              class="stroke-2 peanuts text-primaryButton opacity-[.5] stroke-gray-400 font-[800] mt-[1.1rem] !text-9xl xs:!text-7xl 2xl:!text-8xl absolute top-0 left-1/2 transform -translate-x-1/2 z-0">
+              Peanuts</h1>
+          </div>
+
+          <div class="group">
+
+
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="">
+                    <img src="../assets/images/chana.png" alt="Random Image 1"
+                      class="z-10 w-[140px] md:w-[370px] 2xl:w-[500px] 5xl-lg:w-[600px]  m-auto">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="">
+                    <img src="../assets/images/chana.png" alt="Random Image 1"
+                      class="z-10 w-[140px] md:w-[370px] 2xl:w-[500px] 5xl-lg:w-[600px]  m-auto">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="">
+                    <img src="../assets/images/chana.png" alt="Random Image 1"
+                      class="z-10 w-[140px] md:w-[370px] 2xl:w-[500px] 5xl-lg:w-[600px]  m-auto">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="">
+                    <img src="../assets/images/chana.png" alt="Random Image 1"
+                      class="z-10 w-[140px] md:w-[370px] 2xl:w-[500px] 5xl-lg:w-[600px]  m-auto">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="">
+                    <img src="../assets/images/chana.png" alt="Random Image 1"
+                      class="z-10 w-[140px] md:w-[370px] 2xl:w-[500px] 5xl-lg:w-[600px]  m-auto">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="">
+                    <img src="../assets/images/chana.png" alt="Random Image 1"
+                      class="z-10 w-[140px] md:w-[370px] 2xl:w-[500px] 5xl-lg:w-[600px]  m-auto">
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="swiper-pagination mt-8"></div>
+
+              <div
+                class="absolute md:top-1/2 top-[60%] md:scale-[1]  scale-[.8] left-0 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition duration-300 z-50">
+                <button
+                  class="productimage-button-prev bannerbtn1 rounded-full border-5 prev transform -translate-y-1/2 border-[2px] bg-primaryColor text-white px-4 py-2">❮</button>
+              </div>
+              <div
+                class="absolute md:top-1/2 top-[60%] md:scale-[1] scale-[.8]  right-0 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition duration-300 z-50">
+                <button
+                  class="productimage-button-next bannerbtn2 rounded-full border-5 prev transform -translate-y-1/2 border-[2px] bg-primaryColor text-white px-4 py-2">❯</button>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <div class="w-full md:hidden   justify-center flex">
+        <div class="flex w-[100%] justify-between  md:px-[30px] rounded-lg shadow-xl bg-[#F2F2F2] ">
+          <div class="flex mx-2 w-[100%] justify-between bg-[#F2F2F2] gap-10">
+
+
+
+
+
+
+
+
+            <div
+              class=" flex  w-[100%] justify-between text-[15px] sm:text-lg  py-1 items-center                          sm:mt-0">
+              <a id="buyLink"
+                class="text-[15px] buyLink  hover:bg-primaryButton bg-animate  hover:text-white duration-300 rounded-md sm:px-4 px-3 cursor-pointer">Buy</a>
+              <a id="descriptionLink"
+                class="xs:px-3  descriptionLink text-[15px] hover:bg-primaryButton hover:text-white  duration-300 rounded-md sm:px-3 px-2  cursor-pointer">Descrip.</a>
+              <a id="benefitsLink" class="xs:px-3 benefitsLink px-2 text-[15px] rounded-[4px]">Benefits</a>
+              <a id="nutriLink" class="xs:px-3 px-2 nutriLink text-[15px] rounded-[4px]">Nutrition</a>
+            </div>
+
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      <div class=" lg:w-[50%] ">
+
+        <div
+          class="border  services-section block  lg:h-[74vh]  overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 ">
+          <div class="flex md:px-10 lg:px-1 xl:px-[1.2rem] py-[.6rem]  h-full flex-col justify-between">
+            <div
+              class="title font-[700] text-[15px] xs:text-[18px] sm:text-[24px] md:text-[20px] lg:text-[25px] 2xl:text-[32px] flex">
+              Peanuts - <span>&nbsp;roasted &amp; salted</span><span class="ml-auto"> 200 g</span></div>
+            <div class="price-set flex justify-between items-center md:mt-2">
+              <div class="incdec flex m-2">
+                <button class="text-3xl 2xl:!text-[50px]" id="decrease">-</button>
+                <input id="quantity"
+                  class="w-14 border border-black text-center rounded-lg scale-[.8] md:scale-[1] md:mx-3 bg-[#f5f5f5]"
+                  type="text" value="1" readonly>
+                <button class="text-3xl 2xl:text-[40px]" id="increase">+</button>
+              </div>
+              <div
+                class="price text-[17px] xs:text-[18px] sm:text-[24px] md:text-[20px] lg:text-[25px] 2xl:text-[32px] ">
+                &#8377; 100</div>
+            </div>
+            <div class="detail-1 my-2 2xl:my-10">
+              <div class="text-[14px]  sm:text-[19px] 2xl:text-[26px] font-[600] text-green-500">consumption preference
+              </div>
+              <div class="v1-button">
+                <div
+                  class="grid md:grid-cols-5 grid-cols-4 md:gap-x-4 gap-x-[.9rem] gap-y-1 mt-1 2xl:mt-2 text-[12px] sm:text-[17px] 2xl:text-[24px]">
+                  <div class="place-items-start">
+                    <button class="text-[#faa61a]">raw</button>
+                  </div>
+                  <div class="place-items-start">
+                    <button>flour</button>
+                  </div>
+                  <div class="place-items-start">
+                    <button>milk</button>
+                  </div>
+                  <div class="place-items-start">
+                    <button>sprouted</button>
+                  </div>
+                  <div class="place-items-start">
+                    <button>energy bar</button>
+                  </div>
+                  <div class="place-items-start">
+                    <button>oil</button>
+                  </div>
+                  <div class="place-items-start">
+                    <button>spread</button>
+                  </div>
+                  <div class="place-items-start">
+                    <button>energy bar</button>
+                  </div>
+
+                  <div class="place-items-start">
+                    <button>spread</button>
+                  </div>
+                  <div class="place-items-start">
+                    <button>energy bar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="detail-2 my-3 2xl:my-8">
+              <div class="text-[14px] sm:text-[19px] 2xl:text-[26px] font-[600] text-green-500">variants</div>
+              <div class="v1-button">
+                <div class="grid grid-cols-3 gap-x-1 gap-y-1 mt-1 2xl:mt-2 text-[12px] sm:text-[17px] 2xl:text-[24px]">
+                  <div class=" place-items-start">
+                    <button class="text-[#faa61a] text-left">plain roasted</button>
+                  </div>
+                  <div class=" place-items-start">
+                    <button> roasted & salted</button>
+                  </div>
+                  <div class="place-items-start">
+                    <button>roasted & peppered</button>
+                  </div>
+                  <div class=" place-items-start">
+                    <button class="text-[#faa61a] text-left">plain roasted</button>
+                  </div>
+                  <div class=" place-items-start">
+                    <button> roasted & salted</button>
+                  </div>
+                  <div class="place-items-start">
+                    <button>roasted & peppered</button>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            <div class="detail-3 my-3 2xl:my-8">
+              <div class="text-[14px] sm:text-[19px] 2xl:text-[26px] font-[600] text-green-500">package</div>
+              <div class="flex text-[12px] sm:text-[17px] 2xl:text-[24px] justify-between flex-wrap mt-1 2xl:mt-2">
+                <button>100 g</button>
+                <button class="text-[#faa61a]">200 g</button>
+                <button>400 g</button>
+                <button>1 kg</button>
+              </div>
+            </div>
+            <div class="fixed md:static">
+              <div class="flex justify-evenly gap-2 mb-3">
+                <a class="w-fit h-[50px] border border-gray-400 hover:border-[#faa61a] text-lg rounded-md py-3 px-4 hover:bg-[#faa61a] duration-300"
+                  href="/cart">
+                  <img src="../assets/icons/generic_web_icons/add to cart.svg" class="w-5">
+                </a>
+                <a class="btn-slide hover:bg-green-500" href="/cart/address">
+                  <span class="circle custom-shadow p-4">
+                    <i class="fa-solid fa-arrow-right"></i></span>
+                  <span class="title">Buy Now</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="descriptionSection"
+          class="border hidden services-section  lg:h-[74vh]  overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 ">
+          <div class="  w-full ">
+            <div class="w-full ">
+              <div class="flex justify-evenly border-b"><a class="w-full border-r text-center py-2"><button
+                    class="text-[#faa61a] briefBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">brief</button></a><a
+                  class="w-full border-r text-center py-2"><button
+                    class="ingrBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">ingredients</button></a>
+              </div>
+              <div class="px-4 flex flex-col h-[67vh] justify-between py-2 xs:px-8 xs:py-4">
+                <div class="flex items-start justify-center my-3">
+                  <div class="flex items-center justify-center flex-col">
+                    <div class="h-[3rem] w-[3rem] md:h-16 md:w-16 2xl:h-20 2xl:w-20 rounded-full border border-black">
+                    </div>
+                    <p class="mt-2 text-[12px] md:text-[14px] xl:text-[16px] text-center">PRIMARY</p>
+                  </div>
+                  <div class="ml-8 text-[12px] md:text-[14px] xl:text-[18px]">
+                    <p>lorem ipsum dolor sit amet, consectetur adip lorem nisl, sed diam nonumy eirmod tempor incididunt
+                      ut labore et dolore mag at vero e obet. Ut enim ad minim veniam,</p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-center my-3">
+                  <div class="flex items-center justify-center flex-col">
+                    <div class="h-[3rem] w-[3rem] md:h-16 md:w-16 2xl:h-20 2xl:w-20 rounded-full border border-black">
+                    </div>
+                    <p class="mt-2 text-[12px] md:text-[14px] xl:text-[16px] text-center">PRIMARY</p>
+                  </div>
+                  <div class="ml-8 text-[12px] md:text-[14px] xl:text-[18px]">
+                    <p>lorem ipsum dolor sit amet, consectetur adip lorem nisl, sed diam nonumy eirmod tempor incididunt
+                      ut labore et dolore mag at vero e obet. Ut enim ad minim veniam,</p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-center my-3">
+                  <div class="flex items-center justify-center flex-col">
+                    <div class="h-[3rem] w-[3rem] md:h-16 md:w-16 2xl:h-20 2xl:w-20 rounded-full border border-black">
+                    </div>
+                    <p class="mt-2 text-[12px] md:text-[14px] xl:text-[16px] text-center">PRIMARY</p>
+                  </div>
+                  <div class="ml-8 text-[12px] md:text-[14px] xl:text-[18px]">
+                    <p>lorem ipsum dolor sit amet, consectetur adip lorem nisl, sed diam nonumy eirmod tempor incididunt
+                      ut labore et dolore mag at vero e obet. Ut enim ad minim veniam,</p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-center my-3">
+                  <div class="flex items-center justify-center flex-col">
+                    <div class="h-[3rem] w-[3rem] md:h-16 md:w-16 2xl:h-20 2xl:w-20 rounded-full border border-black">
+                    </div>
+                    <p class="mt-2 text-[12px] md:text-[14px] xl:text-[16px] text-center">PRIMARY</p>
+                  </div>
+                  <div class="ml-8 text-[12px] md:text-[14px] xl:text-[18px]">
+                    <p>lorem ipsum dolor sit amet, consectetur adip lorem nisl, sed diam nonumy eirmod tempor incididunt
+                      ut labore et dolore mag at vero e obet. Ut enim ad minim veniam,</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="benefitsSection"
+          class="border hidden services-section  lg:h-[74vh]  overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 ">
+          <div class=" w-full">
+            <div class="w-full ">
+              <div class="flex justify-evenly border-b"><a class="w-full border-r border-col text-center py-2"><button
+                    class=" benBtn text-[#faa61a] font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">benefits</button></a><a
+                  class="w-full border-r text-center py-2"><button
+                    class="rdiBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">rdi</button></a>
+              </div>
+              <div
+                class="descBen block xl:flex xl:flex-col xl:h-[67vh] h-auto justify-between  px-4 py-2 xs:px-8 xs:py-4">
+                <div class="flex items-start justify-center my-3">
+                  <div class="flex items-center justify-center flex-col">
+                    <div class="h-[3rem] w-[3rem] md:h-16 md:w-16 2xl:h-20 2xl:w-20 rounded-full border border-black">
+                    </div>
+                    <p class="mt-2 text-[12px] md:text-[14px] xl:text-[16px] text-center">PRIMARY</p>
+                  </div>
+                  <div class="ml-8 text-[12px] md:text-[14px] xl:text-[18px]">
+                    <p>lorem ipsum dolor sit amet, consectetur adip lorem nisl, sed diam nonumy eirmod tempor incididunt
+                      ut labore et dolore mag at vero e obet. Ut enim ad minim veniam,</p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-center my-3">
+                  <div class="flex items-center justify-center flex-col">
+                    <div class="h-[3rem] w-[3rem] md:h-16 md:w-16 2xl:h-20 2xl:w-20 rounded-full border border-black">
+                    </div>
+                    <p class="mt-2 text-[12px] md:text-[14px] xl:text-[16px] text-center">PRIMARY</p>
+                  </div>
+                  <div class="ml-8 text-[12px] md:text-[14px] xl:text-[18px]">
+                    <p>lorem ipsum dolor sit amet, consectetur adip lorem nisl, sed diam nonumy eirmod tempor incididunt
+                      ut labore et dolore mag at vero e obet. Ut enim ad minim veniam,</p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-center my-3">
+                  <div class="flex items-center justify-center flex-col">
+                    <div class="h-[3rem] w-[3rem] md:h-16 md:w-16 2xl:h-20 2xl:w-20 rounded-full border border-black">
+                    </div>
+                    <p class="mt-2 text-[12px] md:text-[14px] xl:text-[16px] text-center">PRIMARY</p>
+                  </div>
+                  <div class="ml-8 text-[12px] md:text-[14px] xl:text-[18px]">
+                    <p>lorem ipsum dolor sit amet, consectetur adip lorem nisl, sed diam nonumy eirmod tempor incididunt
+                      ut labore et dolore mag at vero e obet. Ut enim ad minim veniam,</p>
+                  </div>
+                </div>
+                <div class="flex items-start justify-center my-3">
+                  <div class="flex items-center justify-center flex-col">
+                    <div class="h-[3rem] w-[3rem] md:h-16 md:w-16 2xl:h-20 2xl:w-20 rounded-full border border-black">
+                    </div>
+                    <p class="mt-2 text-[12px] md:text-[14px] xl:text-[16px] text-center">PRIMARY</p>
+                  </div>
+                  <div class="ml-8 text-[12px] md:text-[14px] xl:text-[18px]">
+                    <p>lorem ipsum dolor sit amet, consectetur adip lorem nisl, sed diam nonumy eirmod tempor incididunt
+                      ut labore et dolore mag at vero e obet. Ut enim ad minim veniam,</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div id="nutriSection" class="hidden">
+          <div class="nutrition w-full flex justify-center items-center -mt-2.5">
+            <fieldset
+              class="lg:w-[42vw]  xl:w-[38vw] product-image product-scrollbar lg:h-[75.5vh] overflow-auto w-full p-3 border border-gray-300 bg-[#f5f5f5] rounded-2xl px-4 py-2 xs:px-8 xs:py-4">
+              <legend class="w-fit m-auto text-[16px] md:text-[18px]  md:px-4 text-lg xl:text-xl uppercase">Nutritional
+                Facts</legend>
+              <div class="w-full flex justify-center">
+                <div class="scale-[.9] xl:scale-[1.2] xl:mt-[5.5rem]  md:w-[70%]">
+                  <div class="flex  justify-between items-center pb-1 -mt-2 border-b-[2.5px] border-b-[#F8A531]">
+                    <span class="text-lg 2xl:text-xl">Serving Size :</span>
+                    <div class="font-medium text-xl 2xl:text-2xl">100 g</div>
+                  </div>
+                  <div>
+                    <p class="font-medium pt-1.5 list-none">Amount per Serving</p>
+                    <div class="flex justify-between items-center border-b-[2.5px] border-b-[#F8A531]">
+                      <span class="text-[22px] 2xl:text-[24px]">Calories :</span>
+                      <div class="pt-[2px] font-medium text-2xl">570.7</div>
+                    </div>
+                    <div class="border-b border-black font-normal">
+                      <p class="ml-2 flex text-sm justify-end py-1">Daily Value (%)</p>
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <div class="flex  flex-col">
+                        <p>Total Fat</p>
+                        <p class="text-right">Saturated Fat</p>
+                        <p class="text-right">Trans Fat</p>
+                        <p>Cholestrol</p>
+                        <p>Sodium</p>
+                        <p>Total Carbohydrates</p>
+                        <p class="text-right">Dietry Fiber</p>
+                        <p class="text-right">Total Sugars</p>
+                        <p class="italic text-right  text-red-600">Added Sugars</p>
+                        <p>Protein</p>
+                      </div>
+                      <div class=" flex mr-[42px] flex-col">
+                        <p class="flex justify-end gap-2"><span
+                            class="value nutritionValue inline-block w-16 text-right"> 49.9</span> <span
+                            class="text-left">mg</span></p>
+                        <p class="flex justify- gap-2"><span class="value nutritionValue inline-block w-16 text-right">
+                            7.1</span> <span class="text-left">g</span></p>
+                        <p class="flex justify- gap-2"><span class="value nutritionValue inline-block w-16 text-right">
+                            0.0</span> <span>g</span></p>
+                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right">
+                            0.0</span> <span>mg</span></p>
+                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right">
+                            39.3</span> <span>mg</span></p>
+                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right">
+                            21.4</span> <span>g</span></p>
+                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right">
+                            7.1</span> <span>g</span></p>
+                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right">
+                            0.0</span> <span>g</span></p>
+                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right">
+                            3.6</span> <span>g</span></p>
+                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right">
+                            25.0</span> <span>g</span></p>
+                      </div>
+                      <div class="text-end flex flex-col   ">
+                        <p>77%</p>
+                        <p>36%</p>
+                        <p>-</p>
+                        <p>-</p>
+                        <p>16%</p>
+                        <p>7%</p>
+                        <p>29%</p>
+                        <p>-</p>
+                        <p>-</p>
+                        <p>-</p>
+                      </div>
+                    </div>
+                    <div class="border-b-[2.5px] border-b-[#F8A531] my-1"></div>
+                    <div class="flex items-center justify-between">
+                      <div class="flex flex-col">
+                        <p>Vitamin D</p>
+                        <p>Calcium</p>
+                        <p>Iron</p>
+                        <p>Potassium</p>
+                      </div>
+                      <div class="text-end ml-[51px]  md:ml-[79px] flex flex-col">
+                        <p class="flex gap-[.6rem]"> <span class="nutritionValue ">0.0 </span><span class="">mg</span>
+                        </p>
+                        <p class="flex gap-[.6rem]"><span class="nutritionValue">0.0 </span> <span class="">mg</span>
+                        </p>
+                        <p class="flex gap-[.6rem]"><span class="nutritionValue">0.0 </span> <span class="">mg</span>
+                        </p>
+                        <p class="flex gap-[.6rem]"><span class="nutritionValue">0.0 </span> <span class="">mg</span>
+                        </p>
+                      </div>
+                      <div class="text-end flex flex-col">
+                        <p class="flex">
+                          <sp%>00 %</span>
+                        </p>
+                        <p class="flex ">
+                          <sp%>00 %</span>
+                        </p>
+                        <p class="flex ">
+                          <sp%>00 %</span>
+                        </p>
+                        <p class="flex ">
+                          <sp%>00 %</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  </div>
+  <script>
+    document.querySelectorAll('.buyLink').forEach(element => {
+      element.addEventListener('click', function (event) {
+        event.preventDefault();
+        console.log("buy clicked");
+
+        // Show the services section and hide others
+        document.querySelector('.services-section').style.display = "block";
+        document.getElementById('descriptionSection').style.display = "none";
+        document.getElementById('benefitsSection').style.display = "none";
+        document.getElementById('nutriSection').style.display = "none";
+
+        // Manage link active states
+        document.querySelectorAll('.buyLink').forEach(link => link.classList.add('productLinkActive'));
+        document.querySelectorAll('.descriptionLink').forEach(link => link.classList.remove('productLinkActive'));
+        document.querySelectorAll('.benefitsLink').forEach(link => link.classList.remove('productLinkActive'));
+        document.querySelectorAll('.nutriLink').forEach(link => link.classList.remove('productLinkActive'));
+      });
+    });
+
+    document.querySelectorAll('.descriptionLink').forEach(element => {
+      element.addEventListener('click', function (event) {
+        event.preventDefault();
+        console.log("description clicked");
+
+        // Show the description section and hide others
+        document.querySelector('.services-section').style.display = "none";
+        document.getElementById('descriptionSection').style.display = "block";
+        document.getElementById('benefitsSection').style.display = "none";
+        document.getElementById('nutriSection').style.display = "none";
+
+        // Manage link active states
+        document.querySelectorAll('.descriptionLink').forEach(link => link.classList.add('productLinkActive'));
+        document.querySelectorAll('.buyLink').forEach(link => link.classList.remove('productLinkActive'));
+        document.querySelectorAll('.benefitsLink').forEach(link => link.classList.remove('productLinkActive'));
+        document.querySelectorAll('.nutriLink').forEach(link => link.classList.remove('productLinkActive'));
+      });
+    });
+
+    document.querySelectorAll('.benefitsLink').forEach(element => {
+      element.addEventListener('click', function (event) {
+        event.preventDefault();
+        console.log("benefits clicked");
+
+        // Show the benefits section and hide others
+        document.querySelector('.services-section').style.display = "none";
+        document.getElementById('descriptionSection').style.display = "none";
+        document.getElementById('benefitsSection').style.display = "block";
+        document.getElementById('nutriSection').style.display = "none";
+
+        // Manage link active states
+        document.querySelectorAll('.benefitsLink').forEach(link => link.classList.add('productLinkActive'));
+        document.querySelectorAll('.buyLink').forEach(link => link.classList.remove('productLinkActive'));
+        document.querySelectorAll('.descriptionLink').forEach(link => link.classList.remove('productLinkActive'));
+        document.querySelectorAll('.nutriLink').forEach(link => link.classList.remove('productLinkActive'));
+      });
+    });
+
+    document.querySelectorAll('.nutriLink').forEach(element => {
+      element.addEventListener('click', function (event) {
+        event.preventDefault();
+        console.log("nutri clicked");
+
+        // Show the nutrition section and hide others
+        document.querySelector('.services-section').style.display = "none";
+        document.getElementById('descriptionSection').style.display = "none";
+        document.getElementById('benefitsSection').style.display = "none";
+        document.getElementById('nutriSection').style.display = "block";
+
+        // Manage link active states
+        document.querySelectorAll('.nutriLink').forEach(link => link.classList.add('productLinkActive'));
+        document.querySelectorAll('.buyLink').forEach(link => link.classList.remove('productLinkActive'));
+        document.querySelectorAll('.descriptionLink').forEach(link => link.classList.remove('productLinkActive'));
+        document.querySelectorAll('.benefitsLink').forEach(link => link.classList.remove('productLinkActive'));
+      });
+    });
+
+    document.querySelector('.benBtn').addEventListener('click', function (event) {
+      event.preventDefault();
+      document.querySelector('.descBen').style.display = "block";
+      document.querySelector('.benBtn').style.color = "#faa61a";
+      document.querySelector('.rdiBtn').style.color = "#000";
+
+
+
+    });
+
+    document.querySelector('.rdiBtn').addEventListener('click', function (event) {
+      event.preventDefault();
+      document.querySelector('.descBen').style.display = "block";
+      document.querySelector('.benBtn').style.color = "#000";
+      document.querySelector('.rdiBtn').style.color = "#faa61a";
+
+    });
+
+
+    document.querySelector('.briefBtn').addEventListener('click', function (event) {
+      event.preventDefault();
+      document.querySelector('.descBen').style.display = "block";
+      document.querySelector('.briefBtn').style.color = "#faa61a";
+      document.querySelector('.ingrBtn').style.color = "#000";
+
+
+
+    });
+
+    document.querySelector('.ingrBtn').addEventListener('click', function (event) {
+      event.preventDefault();
+      document.querySelector('.descBen').style.display = "block";
+      document.querySelector('.briefBtn').style.color = "#000";
+      document.querySelector('.ingrBtn').style.color = "#faa61a";
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    let imageSlideIndex = 0;
+    showImageSlides(imageSlideIndex);
+
+    function showImageSlides(n) {
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+
+      if (n >= slides.length) {
+        imageSlideIndex = 0;
+      } else if (n < 0) {
+        imageSlideIndex = slides.length - 1;
+      } else {
+        imageSlideIndex = n;
+      }
+
+      slides.forEach((slide, index) => {
+        slide.style.display = "none";
+        slide.classList.remove("active");
+        dots[index].classList.remove("active");
+      });
+
+      slides[imageSlideIndex].style.display = "block";
+      slides[imageSlideIndex].classList.add("active");
+      dots[imageSlideIndex].classList.add("active");
+    }
+
+    function nextImageSlide() {
+      showImageSlides(imageSlideIndex + 1);
+    }
+
+    function prevImageSlide() {
+      showImageSlides(imageSlideIndex - 1);
+    }
+
+    function currentImageSlide(n) {
+      showImageSlides(n);
+    }
+
+  </script>
+
+  <script>
+    const navButtons = document.querySelectorAll(".productimage-button");
+    const slides = document.querySelectorAll(".slides");
+
+    // Set initial display for nav buttons based on screen width
+    function setInitialNavButtonDisplay() {
+      if (window.innerWidth <= 768) {
+        navButtons.forEach((button) => {
+          button.style.display = "block";
+        });
+      }
+    }
+
+    // Adjust nav button display on resize
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 768) {
+        navButtons.forEach((button) => {
+          button.style.display = "block";
+        });
+      } else {
+        navButtons.forEach((button) => {
+          button.style.display = "none";
+        });
+      }
+    });
+
+    // Set initial display state
+    setInitialNavButtonDisplay();
+
+    slides.forEach((slide) => {
+      slide.addEventListener("mouseenter", () => {
+        if (window.innerWidth > 768) {
+          navButtons.forEach((button) => {
+            button.style.display = "block";
+          });
+        }
+      });
+
+      slide.addEventListener("mouseleave", () => {
+        if (window.innerWidth > 768) {
+          navButtons.forEach((button) => {
+            button.style.display = "none";
+          });
+        }
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const shopButton = document.getElementById("shop");
+      const categoryButton = document.getElementById("category");
+      const productButton = document.getElementById("product");
+      const shopDropdown = document.getElementById("shop-dropdown");
+      const categoryDropdown = document.getElementById("category-dropdown");
+      const productDropdown = document.getElementById("product-dropdown");
+
+      shopButton.addEventListener("click", () => {
+        shopDropdown.classList.toggle("hidden");
+        categoryDropdown.classList.add("hidden"); // Hide category dropdown if visible
+      });
+
+      productButton.addEventListener("click", () => {
+        productDropdown.classList.toggle("hidden");
+        categoryDropdown.classList.add("hidden");
+        shopDropdown.classList.add("hidden"); // Hide category dropdown if visible
+      });
+
+      categoryButton.addEventListener("click", () => {
+        categoryDropdown.classList.toggle("hidden");
+        shopDropdown.classList.add("hidden"); // Hide shop dropdown if visible
+      });
+
+      // Close dropdowns when clicking outside
+      window.addEventListener("click", (event) => {
+        if (
+          !shopButton.contains(event.target) &&
+          !shopDropdown.contains(event.target)
+        ) {
+          shopDropdown.classList.add("hidden");
+        }
+        if (
+          !categoryButton.contains(event.target) &&
+          !categoryDropdown.contains(event.target)
+        ) {
+          categoryDropdown.classList.add("hidden");
+        }
+        if (
+          !productButton.contains(event.target) &&
+          !productDropdown.contains(event.target)
+        ) {
+          productDropdown.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+
+
+  <script>
+    const decreaseBtn = document.getElementById('decrease');
+    const increaseBtn = document.getElementById('increase');
+    const quantityInput = document.getElementById('quantity');
+
+    decreaseBtn.addEventListener('click', () => {
+      let value = parseInt(quantityInput.value);
+      if (value > 1) {
+        quantityInput.value = value - 1;
+      }
+    });
+
+    increaseBtn.addEventListener('click', () => {
+      let value = parseInt(quantityInput.value);
+      quantityInput.value = value + 1;
+    });
+  </script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      // cssMode: true,
+      navigation: {
+        nextEl: ".productimage-button-next",
+        prevEl: ".productimage-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      // mousewheel: true,
+      keyboard: true,
+      loop: true,
+    });
+  </script>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Set character encoding to UTF-8 -->
+      <meta charset="UTF-8" />
+      <!-- Set viewport for responsive design -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- Link to external CSS stylesheet for main styling -->
+      <link rel="stylesheet" href="../css/main.css" />
+      <!-- Link to Font Awesome stylesheet for icons -->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+         />
+      <!-- Link to Font Awesome stylesheet for additional icons -->
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+         />
+      <!-- Preconnect to Google Fonts for faster font loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   </head>
+   <body>
+      <!-- Header Section -->
+      <header
+         class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 bg-white md:bg-transparent drop-shadow md:drop-shadow-none justify-center"
+         >
+         <!-- Main Navigation Bar -->
+         <div
+            class="navBar flex justify-between items-center bg-white h-[3.5rem] w-full md:w-[81%]"
+            >
+            <!-- Logo -->
+            <div class="w-48">
+               <div class="navLogo w-36">
+                  <a href="/index.html">
+                  <img
+                     src="../assets/icons/Nutmeals Logo ver2.svg"
+                     alt="Nutmeals Logo"
+                     />
+                  </a>
+               </div>
+            </div>
+            <!-- Main Navigation Links (visible on larger screens) -->
+            <div
+               class="navMain hidden w-64 items-center justify-between md:flex uppercase"
+               >
+               <div>
+                  <a
+                     href="/pages/about.html"
+                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
+                     >About</a
+                     >
+               </div>
+               <div>
+                  <a
+                     href="/pages/shop.html"
+                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
+                     >Shop</a
+                     >
+               </div>
+               <div>
+                  <a
+                     href="/pages/blog.html"
+                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
+                     >Blog</a
+                     >
+               </div>
+            </div>
+            <!-- Right Side Menu (icons) -->
+            <div
+               class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between"
+               >
+               <!-- Add to Cart Icon (hidden on mobile) -->
+               <a
+                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
+                  href="../pages/cart1.html"
+                  >
+               <img
+                  src="../assets/icons/NavBar/white_add_to_cart.svg"
+                  alt="Add to Cart"
+                  width="17"
+                  height="17"
+                  class="duration-300"
+                  />
+               </a>
+               <!-- Account Profile Icon (hidden on mobile) -->
+               <a
+                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
+                  href="/pages/login.html"
+                  >
+               <img
+                  src="../assets/icons/NavBar/white_account_profile.svg"
+                  alt="Account Profile"
+                  width="18"
+                  height="18"
+                  class="duration-300"
+                  />
+               </a>
+               <!-- Search Icon (hidden on mobile) -->
+               <a
+                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
+                  href="/pages/search.html"
+                  >
+               <img
+                  src="../assets/icons/NavBar/white_search.svg"
+                  alt="Search"
+                  width="18"
+                  height="18"
+                  class="duration-300"
+                  />
+               </a>
+               <!-- Contact Support Icon -->
+               <a
+                  class="rounded-md hover-fill-white contactIcon md:hover:bg-primaryButton py-2 px-2.5"
+                  href="/pages/contact.html"
+                  >
+               <img
+                  src="../assets/icons/NavBar/white_contact_support.svg"
+                  alt="Contact Support"
+                  width="18"
+                  height="18"
+                  class="scale-[1.1]"
+                  />
+               </a>
+            </div>
+         </div>
+      </header>
+      <!-- Mobile Navigation Section -->
+      <div
+         class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-full glassNav z-10 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4"
+         >
+         <!-- Menu Button (visible on mobile) -->
+         <div class="navMenuBtn w-5 h-5 flex justify-center items-center navMenu">
+            <i class="fa-solid fa-bars text-[18px]"></i>
+            <img
+               src="/assets/icons/menu.svg"
+               alt="Menu"
+               class="w-5 menuWhenOpen cursor-pointer"
+               style="display: none"
+               />
+         </div>
+         <!-- Mobile Cart Icon -->
+         <a class="navMenuBtn" href="../pages/cart1.html">
+         <img
+            src="/assets/icons/generic_web_icons/add to cart.svg"
+            alt="Add to Cart"
+            class="w-[18px]"
+            />
+         </a>
+         <!-- Mobile Search Icon -->
+         <div class="navMenuBtn navSearchBtn">
+            <img
+               src="/assets/icons/NavBar/white_search.svg"
+               alt="Search"
+               class="w-5"
+               />
+         </div>
+         <!-- Mobile Account Profile Icon -->
+         <a class="navMenuBtn" href="../pages/bestsellers.html">
+         <img src="../assets/a.svg" alt="Account Profile" />
+         </a>
+         <!-- Mobile Login Icon -->
+         <a class="navMenuBtn" href="../pages/login.html">
+         <img
+            src="../assets/icons/generic_web_icons/account_profile.svg"
+            alt="Account Profile"
+            class="w-5 mr-[7px]"
+            />
+         </a>
+         <!-- Mobile Navigation Links (hidden by default) -->
+         <div
+            class="fixed mobNavLinks navLinksHidden bottom-[67px] left-0 right-0 glassNav text-white m-[12px] transition-transform transform translate-y-0"
+            >
+            <ul class="text-left">
+               <li class="p-2"><a href="../pages/about.html">About</a></li>
+               <li class="p-2"><a href="../pages/shop.html">Shop</a></li>
+               <li class="p-2"><a href="../pages/blog.html">Blog</a></li>
+            </ul>
+         </div>
+         <!-- Mobile Search Section -->
+         <div
+            class="fixed mobSearch searchHidden bottom-[80px] rounded-2xl mx-[.75rem] left-0 right-0 bg-primaryColor p-4 transition-transform transform translate-y-0"
+            >
+            <!-- Search Suggestions (hidden by default) -->
+            <div
+               class="suggestions absolute rounded-2xl -top-[220%] left-0 right-0 z-10 hidden p-2 mt-2 bg-primaryColor shadow-lg rounded"
+               >
+               <div class="text-white flex justify-between p-2">
+                  <div>
+                     <div class="p-[.3rem]">Suggestion 1</div>
+                     <div class="p-[.3rem]">Suggestion 2</div>
+                     <div class="p-[.3rem]">Suggestion 3</div>
+                  </div>
+                  <div>
+                     <div class="p-[.3rem]">Suggestion 1</div>
+                     <div class="p-[.3rem]">Suggestion 2</div>
+                     <div class="p-[.3rem]">Suggestion 3</div>
+                  </div>
+               </div>
+            </div>
+            <!-- Mobile Search Input and Icons -->
+            <ul class="flex items-center justify-between gap-5 w-full">
+               <input
+                  class="custom-input p-1 px-3 bg-primaryColor focus:outline-none text-white border-white border !w-full searchInput"
+                  placeholder="Search"
+                  type="text"
+                  />
+               <a href="/">
+               <img
+                  src="../assets/icons/generic_web_icons/search.svg"
+                  alt="Search"
+                  class="w-7 navMenuBtn"
+                  />
+               </a>
+               <a href="/scan">
+               <img
+                  src="../assets/icons/scan.svg"
+                  alt="Scan"
+                  class="w-7 navMenuBtn"
+                  />
+               </a>
+            </ul>
+         </div>
+      </div>
+
+
+
+    <div
+      class="flex md:mt-10 mt-[4.5rem] items-center justify-center w-full h-[85vh]"
+    >
+      <div
+        class="rounded-lg border p-[1rem] m-[1rem] md:m-0 border-gray-300 bg-[#f5f5f5] rounded-2xl shadow-md md:p-20 md:min-w-[500px] max-w-[700px] flex flex-col items-center justify-center text-[#707070] bg-[#f5f5f5]"
+      >
+        <div class="glass p-10">
+          <p class="text-[16px] text-center font-semibold">
+            Thanks for placing your order with us. Your package is being
+            processed and will be on its way soon. You can track your order at
+            <span class="underline">http://bit.ly/p1we1</span>
+          </p>
+          <a class="w-full flex justify-center mt-8" href="../pages/shop.html"
+            ><button
+              class="w-fit text-sm rounded-md py-1.5 px-5 hover:bg-[#faa61a] hover:text-white duration-300"
+            >
+              Back to Shop
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
