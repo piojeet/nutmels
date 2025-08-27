@@ -22,13 +22,25 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
    </head>
    <body>
+    <svg style="display:none;">
+        <filter id="displacementFilter">
+            <feTurbulence type="turbulence" 
+                baseFrequency="0.0" 
+                numOctaves="1" 
+                result="turbulence" />
+    
+            <feDisplacementMap in="SourceGraphic"
+                in2="turbulence"    
+                            scale="50" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
       <!-- Header Section -->
       <header
-         class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 bg-white md:bg-transparent drop-shadow md:drop-shadow-none justify-center"
+         class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 card md:bg-transparent drop-shadow md:drop-shadow-none justify-center"
          >
          <!-- Main Navigation Bar -->
          <div
-            class="navBar flex justify-between items-center bg-white h-[3.5rem] w-full md:w-[81%]"
+            class="navBar flex justify-between items-center h-[3.5rem] w-full md:w-[81%]"
             >
             <!-- Logo -->
             <div class="w-48">
@@ -67,63 +79,36 @@
                      >
                </div>
             </div>
-            <!-- Right Side Menu (icons) -->
-            <div
-               class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between"
-               >
-               <!-- Add to Cart Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="../pages/cart1.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_add_to_cart.svg"
-                  alt="Add to Cart"
-                  width="17"
-                  height="17"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Account Profile Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="/pages/login.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_account_profile.svg"
-                  alt="Account Profile"
-                  width="18"
-                  height="18"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Search Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="/pages/search.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_search.svg"
-                  alt="Search"
-                  width="18"
-                  height="18"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Contact Support Icon -->
-               <a
-                  class="rounded-md hover-fill-white contactIcon md:hover:bg-primaryButton py-2 px-2.5"
-                  href="/pages/contact.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_contact_support.svg"
-                  alt="Contact Support"
-                  width="18"
-                  height="18"
-                  class="scale-[1.1]"
-                  />
-               </a>
-            </div>
+             <!-- Right-side menu items (Cart, Profile, Search, Contact) -->
+         <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
+            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+               href="/pages/cart1.html">
+               <img src="../assets/icons/NavBar/white_add_to_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/white_add_to_cart-yellow.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+               href="/pages/login.html">
+               <img src="../assets/icons/NavBar/account_profile_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/account_profile_yellow.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+               href="/pages/search.html">
+               <img src="../assets/icons/NavBar/search-zoom-in-black.svg" alt="Account Profile" width="20" height="20"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Account Profile" width="20" height="20"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <a class="rounded-md hover-fill-white contactIcon py-2 px-2.5 relative group" href="/pages/contact.html">
+               <img src="../assets/icons/NavBar/contact_support_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/contact_support_yellow.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+         </div>
          </div>
       </header>
       <!-- Mobile Navigation Section -->

@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobSearchContainers = document.querySelectorAll(".mobSearch");
   const searchInputs = document.querySelectorAll(".searchInput");
   const suggestions = document.querySelectorAll(".suggestions");
+  const buyNowBtn = document.querySelector(".buy-now");
 
   mobNavBars.forEach((mobNavBar, index) => {
     const navMenu = navMenus[index];
@@ -34,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
         mobNavBar.classList.remove("mobNavBarClose");
         menuIcon.style.display = "none";
         menuWhenOpenIcon.style.display = "block";
+        buyNowBtn.classList.add("bottom-[80px]");
+        buyNowBtn.classList.remove("pl-20");
         menuOpen = true;
       } else {
         mobNavBar.classList.add("mobNavBarClose");
@@ -42,6 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
         menuWhenOpenIcon.style.display = "none";
         mobNavLinks.classList.add("navLinksHidden");
         mobNavLinks.classList.remove("navLinksVisible");
+        buyNowBtn.classList.remove("bottom-[80px]");
+        buyNowBtn.classList.add("pl-20");
         menuOpen = false;
         linksVisible = false;
       }
@@ -50,16 +55,34 @@ document.addEventListener("DOMContentLoaded", function () {
     // Toggle links visibility when clicking on menuWhenOpenIcon
     menuWhenOpenIcon.addEventListener("click", function (event) {
       event.stopPropagation();
+
+      // ⬅️ Agar search visible hai, to pehle hide karo
+      if (searchVisible) {
+        mobSearchContainer.classList.add("searchHidden");
+        mobSearchContainer.classList.remove("searchVisible");
+        suggestionBox.classList.add("hidden");
+        suggestionBox.classList.remove("visible");
+        buyNowBtn.classList.remove("-translate-y-16");
+        buyNowBtn.classList.remove("-translate-y-52");
+        searchVisible = false;
+        searchInput.value = ""; // optional: input clear
+      }
+
       if (!linksVisible) {
         mobNavLinks.classList.remove("navLinksHidden");
         mobNavLinks.classList.add("navLinksVisible");
+        mobSearchContainer.classList.add("searchHidden");
+        mobSearchContainer.classList.remove("searchVisible");
+        buyNowBtn.classList.add("-translate-y-32");
         linksVisible = true;
       } else {
         mobNavLinks.classList.add("navLinksHidden");
         mobNavLinks.classList.remove("navLinksVisible");
+        buyNowBtn.classList.remove("-translate-y-32");
         linksVisible = false;
       }
     });
+
 
     // Toggle search visibility
     navSearchBtn.addEventListener("click", function (event) {
@@ -69,6 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (linksVisible) {
         mobNavLinks.classList.add("navLinksHidden");
         mobNavLinks.classList.remove("navLinksVisible");
+        buyNowBtn.classList.add("-translate-y-16");
+        buyNowBtn.classList.remove("-translate-y-32");
         linksVisible = false;
       }
 
@@ -76,13 +101,23 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!searchVisible) {
         mobSearchContainer.classList.remove("searchHidden");
         mobSearchContainer.classList.add("searchVisible");
+        mobNavLinks.classList.add("navLinksHidden");
+        mobNavLinks.classList.remove("navLinksVisible");
+        buyNowBtn.classList.add("-translate-y-16");
         searchVisible = true;
       } else {
         mobSearchContainer.classList.add("searchHidden");
         mobSearchContainer.classList.remove("searchVisible");
         suggestionBox.classList.add("hidden");
         suggestionBox.classList.remove("visible");
+
+        // Reset buyNowBtn position
+        buyNowBtn.classList.remove("-translate-y-16");
+        buyNowBtn.classList.remove("-translate-y-52"); // ⬅️ reset large translate
         searchVisible = false;
+
+        // Optional: clear input so state is fresh
+        searchInput.value = ""; // ⬅️ ensures next open is fresh
       }
     });
 
@@ -91,11 +126,23 @@ document.addEventListener("DOMContentLoaded", function () {
       if (searchInput.value.trim() !== "") {
         suggestionBox.classList.remove("hidden");
         suggestionBox.classList.add("visible");
+        buyNowBtn.classList.add("-translate-y-52");
+        buyNowBtn.classList.remove("-translate-y-16"); // avoid conflict
       } else {
         suggestionBox.classList.add("hidden");
         suggestionBox.classList.remove("visible");
+        buyNowBtn.classList.remove("-translate-y-52");
+
+        // Agar search box visible hai to wapas -translate-y-16 lagao
+        if (searchVisible) {
+          buyNowBtn.classList.add("-translate-y-16");
+        } else {
+          buyNowBtn.classList.remove("-translate-y-16");
+        }
       }
     });
+
+
 
     // Close everything when clicking outside
     document.addEventListener("click", function (event) {
@@ -111,6 +158,11 @@ document.addEventListener("DOMContentLoaded", function () {
           mobSearchContainer.classList.remove("searchVisible");
           suggestionBox.classList.add("hidden");
           suggestionBox.classList.remove("visible");
+          buyNowBtn.classList.remove("-translate-y-32");
+          buyNowBtn.classList.remove("-translate-y-52");
+          buyNowBtn.classList.remove("-translate-y-16");
+          buyNowBtn.classList.remove("bottom-[80px]");
+          buyNowBtn.classList.add("pl-20");
           menuOpen = false;
           linksVisible = false;
           searchVisible = false;

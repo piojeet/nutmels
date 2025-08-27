@@ -1,851 +1,822 @@
 <!DOCTYPE html>
 <html>
-   <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="../css/main.css" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <style>
-         * {
-      
-         }
-         .custom-shadow {
-         --tw-shadow: 0 1px 10px 6px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.1), 0 -4px 6px -4px rgba(0, 0, 0, 0.1);
-         box-shadow: var(--tw-shadow);
-         }
 
-         input[type="checkbox"] {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #E5E7EB;
-  border-radius: 4px;
-  position: relative;
-  cursor: pointer;
-}
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    * {}
 
+    .custom-shadow {
+      --tw-shadow: 0 1px 10px 6px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.1), 0 -4px 6px -4px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--tw-shadow);
+    }
 
+    input[type="checkbox"] {
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #E5E7EB;
+      border-radius: 4px;
+      position: relative;
+      cursor: pointer;
+    }
+  </style>
 
-</style>
-
-<style>
-
+  <style>
     .nutritionValue {
-       font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
-  
-    .text-effect {
-    -webkit-text-stroke: 1px #faa61a;
-    text-stroke: 1px #faa61a;
-    margin: auto;
-    font-size: 4.5rem;
-    line-height: 1;
-    font-weight: 700;
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-    }
-    
-    .btn-slide {
-    position: relative;
-   
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    width: 100%;
-    padding: 0;
-    border-radius: 8px;
-    background-color: #faa61a;
-    overflow: hidden;
-    }
-    .btn-slide span.circle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
-    background-color: #fff;
-    color: #000;
-    position: absolute;
 
-    margin: 5px;
-    height: 30px;
-    width: 30px;
-    top: 40%;
-    transform: translateY(-50%);
-   
-    border-radius: 50%;
-    transition: all 2s ease;
+    .text-effect {
+      -webkit-text-stroke: 1px #faa61a;
+      text-stroke: 1px #faa61a;
+      margin: auto;
+      font-size: 4.5rem;
+      line-height: 1;
+      font-weight: 700;
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity));
     }
+
+    .btn-slide {
+      position: relative;
+
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 100%;
+      padding: 0;
+      border-radius: 8px;
+      background-color: #faa61a;
+      overflow: hidden;
+    }
+
+    .btn-slide span.circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      background-color: #fff;
+      color: #000;
+      position: absolute;
+
+      margin: 5px;
+      height: 30px;
+      width: 30px;
+      top: 40%;
+      transform: translateY(-50%);
+
+      border-radius: 50%;
+      transition: all 2s ease;
+    }
+
     .btn-slide span.title {
-    transition: all 1.5s linear;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    --tw-text-opacity: 1;
-    color: rgb(0 0 0 / var(--tw-text-opacity));
+      transition: all 1.5s linear;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      --tw-text-opacity: 1;
+      color: rgb(0 0 0 / var(--tw-text-opacity));
     }
-    
+
 
     @keyframes backgroundChange {
-       0%, 100% {
-          
-           background-color: orange;
-           color: white;
-       }
-       50% {
-          background-color: transparent;
-          color:#000;
-       }
-   }
-   
-   .bg-animate {
-       animation: backgroundChange 1.5s  infinite;
-   }
 
-   .btn-slide {
-       position: relative;
-       
-       align-items: center;
-       padding-right: 40px; /* Adjust this value to make room for the sliding circle */
-       overflow: hidden;
-   }
+      0%,
+      100% {
 
-   .circle {
-       position: absolute;
-       left: 0;
-       transition: left 0.5s ease;
-   }
+        background-color: orange;
+        color: white;
+      }
 
-   .btn-slide:hover .circle {
-       left: calc(100% - 60px); /* Adjust this value to align with the padding-right */
-   }
-   .btn-slide:hover .fa-arrow-right {
-       color: green; /* Adjust this value to align with the padding-right */
-   }
+      50% {
+        background-color: transparent;
+        color: #000;
+      }
+    }
 
-   
- .custom-shadow {
- --tw-shadow: 0 1px 10px 6px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.1), 0 -4px 6px -4px rgba(0, 0, 0, 0.1);
- box-shadow: var(--tw-shadow);
-}
+    .bg-animate {
+      animation: backgroundChange 1.5s infinite;
+    }
 
-.custom-checkbox {
-    width: 18px;
-    height: 18px;
-    border: 1px solid red;
-    accent-color: red;
-  }
+    .btn-slide {
+      position: relative;
+
+      align-items: center;
+      padding-right: 40px;
+      /* Adjust this value to make room for the sliding circle */
+      overflow: hidden;
+    }
+
+    .circle {
+      position: absolute;
+      left: 0;
+      transition: left 0.5s ease;
+    }
+
+    .btn-slide:hover .circle {
+      left: calc(100% - 60px);
+      /* Adjust this value to align with the padding-right */
+    }
+
+    .btn-slide:hover .fa-arrow-right {
+      color: green;
+      /* Adjust this value to align with the padding-right */
+    }
 
 
+    .custom-shadow {
+      --tw-shadow: 0 1px 10px 6px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.1), 0 -4px 6px -4px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--tw-shadow);
+    }
 
-.peanuts {}
+    .custom-checkbox {
+      width: 18px;
+      height: 18px;
+      border: 1px solid red;
+      accent-color: red;
+    }
 
 
 
-   /* Add necessary CSS for slides */
-.slide-container {
-position: relative;
-width: 100%;
-overflow: hidden;
-}
+    .peanuts {}
 
-.slide {
-display: none;
-}
 
-.slide.active {
-display: block;
-}
 
-.dot {
-cursor: pointer;
-}
+    /* Add necessary CSS for slides */
+    .slide-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
 
-.dot.active {
-background-color: #333;
-}
+    .slide {
+      display: none;
+    }
 
-.productLinkActive {
+    .slide.active {
+      display: block;
+    }
 
-background-color: #FAA61A;
-color: white;
+    .dot {
+      cursor: pointer;
+    }
 
-}
-.custom-checkbox:checked {
-    background-color: #FAA61A;
-    border-color: transparent;
-    color: white;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.667 6.583l-11.91 12-5.333-5.334L6.41 10.56l3.748 3.75L18.69 4.5l1.976 2.083z'/%3E%3C/svg%3E");
-  }
- </style>
-   </head>
-   <body>
-      <!-- 
+    .dot.active {
+      background-color: #333;
+    }
+
+    .productLinkActive {
+
+      background-color: #FAA61A;
+      color: white;
+
+    }
+
+    .custom-checkbox:checked {
+      background-color: #FAA61A;
+      border-color: transparent;
+      color: white;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.667 6.583l-11.91 12-5.333-5.334L6.41 10.56l3.748 3.75L18.69 4.5l1.976 2.083z'/%3E%3C/svg%3E");
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
          - NAVBAR
          -->
-         <div class="sticky top-0 bg-white   z-[11] pb-[1.3rem]">
-            <div class=" sticky w-full flex justify-center">
-               <div
-               class="navBar flex justify-between items-center bg-white h-[3.5rem] w-full md:w-[81%]"
-             >
-               <div class="w-48">
-                 <div class="navLogo ml-4 w-36">
-                   <a href="/index.html">
-                     <img
-                       src="../assets/icons/Nutmeals Logo ver2.svg"
-                       alt="Nutmeals Logo"
-                     />
-                   </a>
-                 </div>
-               </div>
-               <div
-                 class="navMain hidden w-64 items-center justify-between md:flex uppercase"
-               >
-                 <div>
-                   <a
-                     href="/pages/about.html"
-                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-                     >About</a
-                   >
-                 </div>
-                 <div>
-                   <a
-                     href="/pages/shop.html"
-                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-                     >Shop</a
-                   >
-                 </div>
-                 <div>
-                   <a
-                     href="/pages/blog.html"
-                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-                     >Blog</a
-                   >
-                 </div>
-               </div>
-               <div
-                 class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between"
-               >
-                 <a
-                   class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                   href="../pages/cart1.html"
-                 >
-                   <img
-                     src="../assets/icons/NavBar/white_add_to_cart.svg"
-                     alt="Add to Cart"
-                     width="17"
-                     height="17"
-                     class="duration-300"
-                   />
-                 </a>
-                 <a
-                   class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                   href="/pages/login.html"
-                 >
-                   <img
-                     src="../assets/icons/NavBar/white_account_profile.svg"
-                     alt="Account Profile"
-                     width="18"
-                     height="18"
-                     class="duration-300"
-                   />
-                 </a>
-                 <a
-                   class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                   href="/pages/search.html"
-                 >
-                   <img
-                     src="../assets/icons/NavBar/white_search.svg"
-                     alt="Search"
-                     width="18"
-                     height="18"
-                     class="duration-300"
-                   />
-                 </a>
-                 <a
-                   class="rounded-md hover-fill-white contactIcon md:hover:bg-primaryButton py-2 px-2.5"
-                   href="/pages/contact.html"
-                 >
-                   <img
-                     src="../assets/icons/NavBar/white_contact_support.svg"
-                     alt="Contact Support"
-                     width="18"
-                     height="18"
-                     class="scale-[1.1]"
-                   />
-                 </a>
-               </div>
-             </div>
-             </div>
-
-             <div class="w-full justify-center flex">
-                <div class="flex justify-between mt-[2%] px-[30px] rounded-lg custom-shadow bg-[#F2F2F2] w-[93%] md:w-[85%]">
-                   <div class="flex mx-2 gap-16">
-                      <div class="flex items-center gap-[.5rem]">
-                         <p class="text-[25px]">+</p>
-                         <p class="text-14px md:text-[16px]">Shop</p>
-                      </div>
-                     
-                   </div>
-                   <div class="flex px-3  hover:text-white rounded-md hover:bg-primaryButton items-center ">
-                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="17.75" height="17.75" viewBox="0 0 256 256" xml:space="preserve">
-                         <defs>
-                         </defs>
-                         <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
-                            <path d="M 15.205 90 c -1.104 0 -2 -0.896 -2 -2 V 55.115 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 V 88 C 17.205 89.104 16.31 90 15.205 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                            <path d="M 74.795 59.357 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 55.357 C 76.795 58.462 75.899 59.357 74.795 59.357 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                            <path d="M 45 90 c -1.104 0 -2 -0.896 -2 -2 V 27.922 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 V 88 C 47 89.104 46.104 90 45 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                            <path d="M 45 29.922 c -5.464 0 -9.91 -4.445 -9.91 -9.91 s 4.445 -9.91 9.91 -9.91 c 5.465 0 9.91 4.445 9.91 9.91 S 50.465 29.922 45 29.922 z M 45 14.103 c -3.259 0 -5.91 2.651 -5.91 5.91 s 2.651 5.91 5.91 5.91 s 5.91 -2.651 5.91 -5.91 S 48.259 14.103 45 14.103 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                            <path d="M 15.205 57.115 c -5.464 0 -9.91 -4.445 -9.91 -9.91 c 0 -5.464 4.445 -9.91 9.91 -9.91 s 9.91 4.445 9.91 9.91 C 25.115 52.67 20.669 57.115 15.205 57.115 z M 15.205 41.295 c -3.259 0 -5.91 2.651 -5.91 5.91 s 2.651 5.91 5.91 5.91 s 5.91 -2.651 5.91 -5.91 S 18.464 41.295 15.205 41.295 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                            <path d="M 74.795 75.177 c -5.464 0 -9.909 -4.445 -9.909 -9.91 c 0 -5.464 4.445 -9.909 9.909 -9.909 c 5.465 0 9.91 4.445 9.91 9.909 C 84.705 70.731 80.26 75.177 74.795 75.177 z M 74.795 59.357 c -3.259 0 -5.909 2.65 -5.909 5.909 s 2.65 5.91 5.909 5.91 s 5.91 -2.651 5.91 -5.91 S 78.054 59.357 74.795 59.357 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                            <path d="M 15.205 41.295 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 37.295 C 17.205 40.4 16.31 41.295 15.205 41.295 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                            <path d="M 45 14.103 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 10.103 C 47 13.207 46.104 14.103 45 14.103 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                            <path d="M 74.795 90 c -1.104 0 -2 -0.896 -2 -2 V 73.177 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 V 88 C 76.795 89.104 75.899 90 74.795 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                         </g>
-                      </svg>
-                   </div>
-                </div>
-             </div>
-         </div>
-     
-         <div
-         class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-full glassNav z-10 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4"
-         >
-         <!-- Menu Button (visible on mobile) -->
-         <div class="navMenuBtn w-5 h-5 flex justify-center items-center navMenu">
-            <i class="fa-solid fa-bars text-[18px]"></i>
-            <img
-               src="/assets/icons/menu.svg"
-               alt="Menu"
-               class="w-5 menuWhenOpen cursor-pointer"
-               style="display: none"
-               />
-         </div>
-         <!-- Mobile Cart Icon -->
-         <a class="navMenuBtn" href="../pages/cart1.html">
-         <img
-            src="/assets/icons/generic_web_icons/add to cart.svg"
-            alt="Add to Cart"
-            class="w-[18px]"
-            />
-         </a>
-         <!-- Mobile Search Icon -->
-         <div class="navMenuBtn navSearchBtn">
-            <img
-               src="/assets/icons/NavBar/white_search.svg"
-               alt="Search"
-               class="w-5"
-               />
-         </div>
-         <!-- Mobile Account Profile Icon -->
-         <a class="navMenuBtn" href="../pages/bestsellers.html">
-         <img src="../assets/a.svg" alt="Account Profile" />
-         </a>
-         <!-- Mobile Login Icon -->
-         <a class="navMenuBtn" href="../pages/login.html">
-         <img
-            src="../assets/icons/generic_web_icons/account_profile.svg"
-            alt="Account Profile"
-            class="w-5 mr-[7px]"
-            />
-         </a>
-         <!-- Mobile Navigation Links (hidden by default) -->
-         <div
-            class="fixed mobNavLinks navLinksHidden bottom-[67px] left-0 right-0 glassNav text-white m-[12px] transition-transform transform translate-y-0"
-            >
-            <ul class="text-left">
-               <li class="p-2"><a href="../pages/about.html">About</a></li>
-               <li class="p-2"><a href="../pages/shop.html">Shop</a></li>
-               <li class="p-2"><a href="../pages/blog.html">Blog</a></li>
-            </ul>
-         </div>
-         <!-- Mobile Search Section -->
-         <div
-            class="fixed mobSearch searchHidden bottom-[80px] rounded-2xl mx-[.75rem] left-0 right-0 bg-primaryColor p-4 transition-transform transform translate-y-0"
-            >
-            <!-- Search Suggestions (hidden by default) -->
-            <div
-               class="suggestions absolute rounded-2xl -top-[220%] left-0 right-0 z-10 hidden p-2 mt-2 bg-primaryColor shadow-lg rounded"
-               >
-               <div class="text-white flex justify-between p-2">
-                  <div>
-                     <div class="p-[.3rem]">Suggestion 1</div>
-                     <div class="p-[.3rem]">Suggestion 2</div>
-                     <div class="p-[.3rem]">Suggestion 3</div>
-                  </div>
-                  <div>
-                     <div class="p-[.3rem]">Suggestion 1</div>
-                     <div class="p-[.3rem]">Suggestion 2</div>
-                     <div class="p-[.3rem]">Suggestion 3</div>
-                  </div>
-               </div>
-            </div>
-            <!-- Mobile Search Input and Icons -->
-            <ul class="flex items-center justify-between gap-5 w-full">
-               <input
-                  class="custom-input p-1 px-3 bg-primaryColor focus:outline-none text-white border-white border !w-full searchInput"
-                  placeholder="Search"
-                  type="text"
-                  />
-               <a href="/">
-               <img
-                  src="../assets/icons/generic_web_icons/search.svg"
-                  alt="Search"
-                  class="w-7 navMenuBtn"
-                  />
-               </a>
-               <a href="/scan">
-               <img
-                  src="../assets/icons/scan.svg"
-                  alt="Scan"
-                  class="w-7 navMenuBtn"
-                  />
-               </a>
-            </ul>
-         </div>
+  <div class="sticky top-0 bg-white   z-[11] pb-[1.3rem]">
+    <div class=" sticky w-full flex justify-center">
+      <div class="navBar flex justify-between items-center bg-white h-[3.5rem] w-full max-w-[1440px] md:px-8 px-4">
+        <div class="">
+          <div class="navLogo w-36">
+            <a href="../index.html">
+              <img src="../assets/icons/nutmeals registered logo.png" alt="Nutmeals Logo" width="144" height="auto">
+            </a>
+          </div>
+        </div>
+        <div class="navMain hidden w-64 items-center justify-between md:flex uppercase">
+          <div>
+            <a href="/pages/about.html"
+              class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">About</a>
+          </div>
+          <div>
+            <a href="/pages/shop.html"
+              class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Shop</a>
+          </div>
+          <div>
+            <a href="/pages/blog.html"
+              class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Blog</a>
+          </div>
+        </div>
+        <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
+          <a class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
+            href="../pages/cart1.html">
+            <img src="../assets/icons/NavBar/white_add_to_cart.svg" alt="Add to Cart" width="17" height="17"
+              class="duration-300" />
+          </a>
+          <a class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
+            href="/pages/login.html">
+            <img src="../assets/icons/NavBar/white_account_profile.svg" alt="Account Profile" width="18" height="18"
+              class="duration-300" />
+          </a>
+          <a class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
+            href="/pages/search.html">
+            <img src="../assets/icons/NavBar/white_search.svg" alt="Search" width="18" height="18"
+              class="duration-300" />
+          </a>
+          <a class="rounded-md hover-fill-white contactIcon md:hover:bg-primaryButton py-2 px-2.5"
+            href="/pages/contact.html">
+            <img src="../assets/icons/NavBar/white_contact_support.svg" alt="Contact Support" width="18" height="18"
+              class="scale-[1.1]" />
+          </a>
+        </div>
       </div>
-     
-      <!-- 
+    </div>
+
+    <div class="justify-center flex w-full max-w-[1440px] md:px-8 px-4 mx-auto">
+      <div class="flex justify-between mt-[2%] rounded-lg custom-shadow bg-[#F2F2F2] w-full px-[30px]">
+        <div class="flex gap-16">
+          <div class="flex items-center gap-[.5rem]">
+            <p class="text-[25px]">+</p>
+            <p class="text-14px md:text-[16px]">Shop</p>
+          </div>
+
+        </div>
+        <div class="flex px-3  hover:text-white rounded-md hover:bg-primaryButton items-center ">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="17.75"
+            height="17.75" viewBox="0 0 256 256" xml:space="preserve">
+            <defs>
+            </defs>
+            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
+              transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
+              <path
+                d="M 15.205 90 c -1.104 0 -2 -0.896 -2 -2 V 55.115 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 V 88 C 17.205 89.104 16.31 90 15.205 90 z"
+                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+              <path
+                d="M 74.795 59.357 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 55.357 C 76.795 58.462 75.899 59.357 74.795 59.357 z"
+                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+              <path
+                d="M 45 90 c -1.104 0 -2 -0.896 -2 -2 V 27.922 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 V 88 C 47 89.104 46.104 90 45 90 z"
+                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+              <path
+                d="M 45 29.922 c -5.464 0 -9.91 -4.445 -9.91 -9.91 s 4.445 -9.91 9.91 -9.91 c 5.465 0 9.91 4.445 9.91 9.91 S 50.465 29.922 45 29.922 z M 45 14.103 c -3.259 0 -5.91 2.651 -5.91 5.91 s 2.651 5.91 5.91 5.91 s 5.91 -2.651 5.91 -5.91 S 48.259 14.103 45 14.103 z"
+                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+              <path
+                d="M 15.205 57.115 c -5.464 0 -9.91 -4.445 -9.91 -9.91 c 0 -5.464 4.445 -9.91 9.91 -9.91 s 9.91 4.445 9.91 9.91 C 25.115 52.67 20.669 57.115 15.205 57.115 z M 15.205 41.295 c -3.259 0 -5.91 2.651 -5.91 5.91 s 2.651 5.91 5.91 5.91 s 5.91 -2.651 5.91 -5.91 S 18.464 41.295 15.205 41.295 z"
+                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+              <path
+                d="M 74.795 75.177 c -5.464 0 -9.909 -4.445 -9.909 -9.91 c 0 -5.464 4.445 -9.909 9.909 -9.909 c 5.465 0 9.91 4.445 9.91 9.909 C 84.705 70.731 80.26 75.177 74.795 75.177 z M 74.795 59.357 c -3.259 0 -5.909 2.65 -5.909 5.909 s 2.65 5.91 5.909 5.91 s 5.91 -2.651 5.91 -5.91 S 78.054 59.357 74.795 59.357 z"
+                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+              <path
+                d="M 15.205 41.295 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 37.295 C 17.205 40.4 16.31 41.295 15.205 41.295 z"
+                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+              <path
+                d="M 45 14.103 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 10.103 C 47 13.207 46.104 14.103 45 14.103 z"
+                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+              <path
+                d="M 74.795 90 c -1.104 0 -2 -0.896 -2 -2 V 73.177 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 V 88 C 76.795 89.104 75.899 90 74.795 90 z"
+                style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
+                transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-full glassNav z-10 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4">
+    <!-- Menu Button (visible on mobile) -->
+    <div class="navMenuBtn w-5 h-5 flex justify-center items-center navMenu">
+      <i class="fa-solid fa-bars text-[18px]"></i>
+      <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer" style="display: none" />
+    </div>
+    <!-- Mobile Cart Icon -->
+    <a class="navMenuBtn" href="../pages/cart1.html">
+      <img src="/assets/icons/generic_web_icons/add to cart.svg" alt="Add to Cart" class="w-[18px]" />
+    </a>
+    <!-- Mobile Search Icon -->
+    <div class="navMenuBtn navSearchBtn">
+      <img src="/assets/icons/NavBar/white_search.svg" alt="Search" class="w-5" />
+    </div>
+    <!-- Mobile Account Profile Icon -->
+    <a class="navMenuBtn" href="../pages/bestsellers.html">
+      <img src="../assets/a.svg" alt="Account Profile" />
+    </a>
+    <!-- Mobile Login Icon -->
+    <a class="navMenuBtn" href="../pages/login.html">
+      <img src="../assets/icons/generic_web_icons/account_profile.svg" alt="Account Profile" class="w-5 mr-[7px]" />
+    </a>
+    <!-- Mobile Navigation Links (hidden by default) -->
+    <div
+      class="fixed mobNavLinks navLinksHidden bottom-[67px] left-0 right-0 glassNav text-white m-[12px] transition-transform transform translate-y-0">
+      <ul class="text-left">
+        <li class="p-2"><a href="../pages/about.html">About</a></li>
+        <li class="p-2"><a href="../pages/shop.html">Shop</a></li>
+        <li class="p-2"><a href="../pages/blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <!-- Mobile Search Section -->
+    <div
+      class="fixed mobSearch searchHidden bottom-[80px] rounded-2xl mx-[.75rem] left-0 right-0 bg-primaryColor p-4 transition-transform transform translate-y-0">
+      <!-- Search Suggestions (hidden by default) -->
+      <div
+        class="suggestions absolute rounded-2xl -top-[220%] left-0 right-0 z-10 hidden p-2 mt-2 bg-primaryColor shadow-lg rounded">
+        <div class="text-white flex justify-between p-2">
+          <div>
+            <div class="p-[.3rem]">Suggestion 1</div>
+            <div class="p-[.3rem]">Suggestion 2</div>
+            <div class="p-[.3rem]">Suggestion 3</div>
+          </div>
+          <div>
+            <div class="p-[.3rem]">Suggestion 1</div>
+            <div class="p-[.3rem]">Suggestion 2</div>
+            <div class="p-[.3rem]">Suggestion 3</div>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Search Input and Icons -->
+      <ul class="flex items-center justify-between gap-5 w-full">
+        <input
+          class="custom-input p-1 px-3 bg-primaryColor focus:outline-none text-white border-white border !w-full searchInput"
+          placeholder="Search" type="text" />
+        <a href="/">
+          <img src="../assets/icons/generic_web_icons/search.svg" alt="Search" class="w-7 navMenuBtn" />
+        </a>
+        <a href="/scan">
+          <img src="../assets/icons/scan.svg" alt="Scan" class="w-7 navMenuBtn" />
+        </a>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 
          COMBO MEALS
          
           -->
-      <div class="lg:mx-[9.7rem] md:mx-[60px]   flex items-center justify-center">
-         <div class="w-full relative flex flex-wrap lg:flex-nowrap justify-center items-start gap-8">
-            <div class="left-div w-[90%] md:w-[50%]">
-               <div class="grid  bg-white text-[13px] md:text-[15px] sticky  top-[145px] md:z-[111] grid-cols-4 md:ml-1 md:gap-x-0 gap-x-[.3rem] gap-y-1 justify-center md:justify-start items-center">
-                  <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">nuts</p>
-                  <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">seeds</p>
-                  <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">millets</p>
-                  <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">super foods</p>
-                  <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">dried fruits</p>
-                  <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">nosh on</p>
-                  <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">energy bar</p>
-                  <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">spreads</p>
-                  <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">ethnc bvrgs</p>
-               </div>
-               <div class="hidden md:grid grid-cols-2 md:grid-cols-3 gap-0 sm:gap-4 justify-items-center py-4">
-                  <a href="#">
-                     <div class="false  relative group">
-                        <div class="absolute right-0 p-2.5"><input type="checkbox" class="w-[18px] custom-checkbox h-[18px] checked:bg-primaryButton border-red-400 accent-primaryColor checked:border-transparent" value="false" control-id="ControlID-1"></div>
-                        <div class="border p-2 rounded-2xl bg-white">
-                           <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
+  <div class="lg:mx-[9.7rem] md:mx-[60px]   flex items-center justify-center">
+    <div class="w-full relative flex flex-wrap lg:flex-nowrap justify-center items-start gap-8 max-w-[1440px] md:px-8 px-4 mx-auto">
+      <div class="left-div w-1/2">
+        <div
+          class="grid  bg-white text-[13px] md:text-[15px] sticky  top-[145px] md:z-[111] grid-cols-4 md:ml-1 md:gap-x-0 gap-x-[.3rem] gap-y-1 justify-center md:justify-start items-center">
+          <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">nuts</p>
+          <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">seeds</p>
+          <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">millets</p>
+          <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">super foods</p>
+          <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">dried fruits</p>
+          <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">nosh on</p>
+          <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">energy bar</p>
+          <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">spreads</p>
+          <p class="hover:text-primaryColor hover:font-bold active:bold cursor-pointer">ethnc bvrgs</p>
+        </div>
+        <div class="hidden md:grid grid-cols-2 md:grid-cols-3 gap-0 sm:gap-4 justify-items-center py-4">
+          <a href="#">
+            <div class="false  relative group">
+              <div class="absolute right-0 p-2.5"><input type="checkbox"
+                  class="w-[18px] custom-checkbox h-[18px] checked:bg-primaryButton border-red-400 accent-primaryColor checked:border-transparent"
+                  value="false" control-id="ControlID-1"></div>
+              <div class="border p-2 rounded-2xl bg-white">
+                <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
                               <p>Save $160</p>
                            </div> -->
-                           <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
-                           <!-- <div class="w-full flex items-center justify-between">
+                <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
+                <!-- <div class="w-full flex items-center justify-between">
                               <div class="flex items-center justify-center gap-2">
                                  <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
                                  <p class="text-[11px]">9.9K</p>
                               </div>
                               <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
                            </div> -->
-                        </div>
-                        <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                           <h2 class="!text-sm">Dry fruits</h2>
-                        </div>
-                     </div>
-                  </a>
-                  <a href="#">
-                    <div class="false  relative group">
-                       <div class="absolute right-0 p-2.5"><input type="checkbox" class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent" value="false" control-id="ControlID-1"></div>
-                       <div class="border p-2 rounded-2xl bg-white">
-                          <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
-                             <p>Save $160</p>
-                          </div> -->
-                          <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
-                          <!-- <div class="w-full flex items-center justify-between">
-                             <div class="flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
-                                <p class="text-[11px]">9.9K</p>
-                             </div>
-                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
-                          </div> -->
-                       </div>
-                       <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                          <h2 class="!text-sm">Dry fruits</h2>
-                       </div>
-                    </div>
-                 </a>
-
-                
-
-                 <a href="#">
-                    <div class="false  relative group">
-                       <div class="absolute right-0 p-2.5"><input type="checkbox" class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent" value="false" control-id="ControlID-1"></div>
-                       <div class="border p-2 rounded-2xl bg-white">
-                          <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
-                             <p>Save $160</p>
-                          </div> -->
-                          <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
-                          <!-- <div class="w-full flex items-center justify-between">
-                             <div class="flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
-                                <p class="text-[11px]">9.9K</p>
-                             </div>
-                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
-                          </div> -->
-                       </div>
-                       <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                          <h2 class="!text-sm">Dry fruits</h2>
-                       </div>
-                    </div>
-                 </a> <a href="#">
-                    <div class="false  relative group">
-                       <div class="absolute right-0 p-2.5"><input type="checkbox" class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent" value="false" control-id="ControlID-1"></div>
-                       <div class="border p-2 rounded-2xl bg-white">
-                          <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
-                             <p>Save $160</p>
-                          </div> -->
-                          <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
-                          <!-- <div class="w-full flex items-center justify-between">
-                             <div class="flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
-                                <p class="text-[11px]">9.9K</p>
-                             </div>
-                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
-                          </div> -->
-                       </div>
-                       <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                          <h2 class="!text-sm">Dry fruits</h2>
-                       </div>
-                    </div>
-                 </a> <a href="#">
-                    <div class="false  relative group">
-                       <div class="absolute right-0 p-2.5"><input type="checkbox" class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent" value="false" control-id="ControlID-1"></div>
-                       <div class="border p-2 rounded-2xl bg-white">
-                          <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
-                             <p>Save $160</p>
-                          </div> -->
-                          <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
-                          <!-- <div class="w-full flex items-center justify-between">
-                             <div class="flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
-                                <p class="text-[11px]">9.9K</p>
-                             </div>
-                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
-                          </div> -->
-                       </div>
-                       <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                          <h2 class="!text-sm">Dry fruits</h2>
-                       </div>
-                    </div>
-                 </a> <a href="#">
-                    <div class="false  relative group">
-                       <div class="absolute right-0 p-2.5"><input type="checkbox" class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent" value="false" control-id="ControlID-1"></div>
-                       <div class="border p-2 rounded-2xl bg-white">
-                          <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
-                             <p>Save $160</p>
-                          </div> -->
-                          <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
-                          <!-- <div class="w-full flex items-center justify-between">
-                             <div class="flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
-                                <p class="text-[11px]">9.9K</p>
-                             </div>
-                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
-                          </div> -->
-                       </div>
-                       <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                          <h2 class="!text-sm">Dry fruits</h2>
-                       </div>
-                    </div>
-                 </a> <a href="#">
-                    <div class="false  relative group">
-                       <div class="absolute right-0 p-2.5"><input type="checkbox" class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent" value="false" control-id="ControlID-1"></div>
-                       <div class="border p-2 rounded-2xl bg-white">
-                          <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
-                             <p>Save $160</p>
-                          </div> -->
-                          <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
-                          <!-- <div class="w-full flex items-center justify-between">
-                             <div class="flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
-                                <p class="text-[11px]">9.9K</p>
-                             </div>
-                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
-                          </div> -->
-                       </div>
-                       <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                          <h2 class="!text-sm">Dry fruits</h2>
-                       </div>
-                    </div>
-                 </a> <a href="#">
-                    <div class="false  relative group">
-                       <div class="absolute right-0 p-2.5"><input type="checkbox" class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent" value="false" control-id="ControlID-1"></div>
-                       <div class="border p-2 rounded-2xl bg-white">
-                          <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
-                             <p>Save $160</p>
-                          </div> -->
-                          <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
-                          <!-- <div class="w-full flex items-center justify-between">
-                             <div class="flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
-                                <p class="text-[11px]">9.9K</p>
-                             </div>
-                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
-                          </div> -->
-                       </div>
-                       <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                          <h2 class="!text-sm">Dry fruits</h2>
-                       </div>
-                    </div>
-                 </a> <a href="#">
-                    <div class="false  relative group">
-                       <div class="absolute right-0 p-2.5"><input type="checkbox" class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent" value="false" control-id="ControlID-1"></div>
-                       <div class="border p-2 rounded-2xl bg-white">
-                          <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
-                             <p>Save $160</p>
-                          </div> -->
-                          <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
-                          <!-- <div class="w-full flex items-center justify-between">
-                             <div class="flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
-                                <p class="text-[11px]">9.9K</p>
-                             </div>
-                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
-                          </div> -->
-                       </div>
-                       <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                          <h2 class="!text-sm">Dry fruits</h2>
-                       </div>
-                    </div>
-                 </a> <a href="#">
-                    <div class="false  relative group">
-                       <div class="absolute right-0 p-2.5"><input type="checkbox" class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent" value="false" control-id="ControlID-1"></div>
-                       <div class="border p-2 rounded-2xl bg-white">
-                          <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
-                             <p>Save $160</p>
-                          </div> -->
-                          <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
-                          <!-- <div class="w-full flex items-center justify-between">
-                             <div class="flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
-                                <p class="text-[11px]">9.9K</p>
-                             </div>
-                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
-                          </div> -->
-                       </div>
-                       <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                          <h2 class="!text-sm">Dry fruits</h2>
-                       </div>
-                    </div>
-                 </a> <a href="#">
-                    <div class="false  relative group">
-                       <div class="absolute right-0 p-2.5"><input type="checkbox" class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent" value="false" control-id="ControlID-1"></div>
-                       <div class="border p-2 rounded-2xl bg-white">
-                          <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
-                             <p>Save $160</p>
-                          </div> -->
-                          <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
-                          <!-- <div class="w-full flex items-center justify-between">
-                             <div class="flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
-                                <p class="text-[11px]">9.9K</p>
-                             </div>
-                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
-                          </div> -->
-                       </div>
-                       <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                          <h2 class="!text-sm">Dry fruits</h2>
-                       </div>
-                    </div>
-                 </a> <a href="#">
-                    <div class="false  relative group">
-                       <div class="absolute right-0 p-2.5"><input type="checkbox" class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent" value="false" control-id="ControlID-1"></div>
-                       <div class="border p-2 rounded-2xl bg-white">
-                          <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
-                             <p>Save $160</p>
-                          </div> -->
-                          <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
-                          <!-- <div class="w-full flex items-center justify-between">
-                             <div class="flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
-                                <p class="text-[11px]">9.9K</p>
-                             </div>
-                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
-                          </div> -->
-                       </div>
-                       <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                          <h2 class="!text-sm">Dry fruits</h2>
-                       </div>
-                    </div>
-                 </a> <a href="#">
-                    <div class="false  relative group">
-                       <div class="absolute right-0 p-2.5"><input type="checkbox" class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent" value="false" control-id="ControlID-1"></div>
-                       <div class="border p-2 rounded-2xl bg-white">
-                          <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
-                             <p>Save $160</p>
-                          </div> -->
-                          <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
-                          <!-- <div class="w-full flex items-center justify-between">
-                             <div class="flex items-center justify-center gap-2">
-                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
-                                <p class="text-[11px]">9.9K</p>
-                             </div>
-                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
-                          </div> -->
-                       </div>
-                       <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                          <h2 class="!text-sm">Dry fruits</h2>
-                       </div>
-                    </div>
-                 </a>
-               </div>
+              </div>
+              <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                <h2 class="!text-sm">Dry fruits</h2>
+              </div>
             </div>
-            <div class="sticky top-[145px]  ">
-               <div class="bg-white pb-[4.25rem] md:pb-5 custom-shadow p-2 pl-3 xs:pl-auto xs:p-6 rounded-2xl right-div undefined">
-                  <h2 class="xl:text-3xl hidden md:block text-lg">Combo Selection </h2>
-                  <h2 class="xl:text-3xl md:hidden block text-lg">Press To Select </h2>
-                  
+          </a>
+          <a href="#">
+            <div class="false  relative group">
+              <div class="absolute right-0 p-2.5"><input type="checkbox"
+                  class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent"
+                  value="false" control-id="ControlID-1"></div>
+              <div class="border p-2 rounded-2xl bg-white">
+                <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
+                             <p>Save $160</p>
+                          </div> -->
+                <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
+                <!-- <div class="w-full flex items-center justify-between">
+                             <div class="flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
+                                <p class="text-[11px]">9.9K</p>
+                             </div>
+                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
+                          </div> -->
+              </div>
+              <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                <h2 class="!text-sm">Dry fruits</h2>
+              </div>
+            </div>
+          </a>
 
 
 
-                  <div
-                  id="cartProduct1"
-                  class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] w-[370px] md:flex hidden items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]"
-                >
-                  <div class="flex gap-6">
-                    <div><img
-                      id="cartProductNut1"
-                      src="../assets/icons/product_category_icons/1 nuts.svg"
-                      alt="nutmeals"
-                      class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block"
-                    />
-  
-  
-                    <div
-                      id="cartProductDelete1"
-                      class="hidden p-[.6rem] xs:w-10 w-11   border rounded-full border-gray-400 4xl-md:w-16"
-                    >
-                      <svg
-                        class=" "
-                        xmlns="http://www.w3.org/2000/svg"
-                        x="0px"
-                        y="0px"
-                        width="22"
-                        height="23"
-                        viewBox="0 0 50 50"
-                      >
-                        <path
-                          fill="red"
-                          d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"
-                        ></path>
-                      </svg>
-                    </div></div>
-  
-                    <div>
-                      <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
-                      <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
-                        roasted - solted
-                      </p>
-                    </div>
-                    
-                  </div>
-                  
-                  <p class="xs:text-sm text-md min-w-10 4xl-md:!text-xl">200 g</p>
-                  <div class="flex gap-2 items-center justify-center">
-                    <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">-</button
-                    ><input
-                      min="1"
-                      class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
-                      type="text"
-                      value="1"
-                    /><button class="text-2xl increase text-md 4xl-md:!text-4xl">+</button>
-                  </div>
-                  <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">400</p>
+          <a href="#">
+            <div class="false  relative group">
+              <div class="absolute right-0 p-2.5"><input type="checkbox"
+                  class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent"
+                  value="false" control-id="ControlID-1"></div>
+              <div class="border p-2 rounded-2xl bg-white">
+                <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
+                             <p>Save $160</p>
+                          </div> -->
+                <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
+                <!-- <div class="w-full flex items-center justify-between">
+                             <div class="flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
+                                <p class="text-[11px]">9.9K</p>
+                             </div>
+                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
+                          </div> -->
+              </div>
+              <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                <h2 class="!text-sm">Dry fruits</h2>
+              </div>
+            </div>
+          </a> <a href="#">
+            <div class="false  relative group">
+              <div class="absolute right-0 p-2.5"><input type="checkbox"
+                  class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent"
+                  value="false" control-id="ControlID-1"></div>
+              <div class="border p-2 rounded-2xl bg-white">
+                <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
+                             <p>Save $160</p>
+                          </div> -->
+                <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
+                <!-- <div class="w-full flex items-center justify-between">
+                             <div class="flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
+                                <p class="text-[11px]">9.9K</p>
+                             </div>
+                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
+                          </div> -->
+              </div>
+              <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                <h2 class="!text-sm">Dry fruits</h2>
+              </div>
+            </div>
+          </a> <a href="#">
+            <div class="false  relative group">
+              <div class="absolute right-0 p-2.5"><input type="checkbox"
+                  class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent"
+                  value="false" control-id="ControlID-1"></div>
+              <div class="border p-2 rounded-2xl bg-white">
+                <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
+                             <p>Save $160</p>
+                          </div> -->
+                <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
+                <!-- <div class="w-full flex items-center justify-between">
+                             <div class="flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
+                                <p class="text-[11px]">9.9K</p>
+                             </div>
+                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
+                          </div> -->
+              </div>
+              <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                <h2 class="!text-sm">Dry fruits</h2>
+              </div>
+            </div>
+          </a> <a href="#">
+            <div class="false  relative group">
+              <div class="absolute right-0 p-2.5"><input type="checkbox"
+                  class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent"
+                  value="false" control-id="ControlID-1"></div>
+              <div class="border p-2 rounded-2xl bg-white">
+                <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
+                             <p>Save $160</p>
+                          </div> -->
+                <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
+                <!-- <div class="w-full flex items-center justify-between">
+                             <div class="flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
+                                <p class="text-[11px]">9.9K</p>
+                             </div>
+                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
+                          </div> -->
+              </div>
+              <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                <h2 class="!text-sm">Dry fruits</h2>
+              </div>
+            </div>
+          </a> <a href="#">
+            <div class="false  relative group">
+              <div class="absolute right-0 p-2.5"><input type="checkbox"
+                  class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent"
+                  value="false" control-id="ControlID-1"></div>
+              <div class="border p-2 rounded-2xl bg-white">
+                <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
+                             <p>Save $160</p>
+                          </div> -->
+                <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
+                <!-- <div class="w-full flex items-center justify-between">
+                             <div class="flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
+                                <p class="text-[11px]">9.9K</p>
+                             </div>
+                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
+                          </div> -->
+              </div>
+              <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                <h2 class="!text-sm">Dry fruits</h2>
+              </div>
+            </div>
+          </a> <a href="#">
+            <div class="false  relative group">
+              <div class="absolute right-0 p-2.5"><input type="checkbox"
+                  class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent"
+                  value="false" control-id="ControlID-1"></div>
+              <div class="border p-2 rounded-2xl bg-white">
+                <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
+                             <p>Save $160</p>
+                          </div> -->
+                <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
+                <!-- <div class="w-full flex items-center justify-between">
+                             <div class="flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
+                                <p class="text-[11px]">9.9K</p>
+                             </div>
+                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
+                          </div> -->
+              </div>
+              <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                <h2 class="!text-sm">Dry fruits</h2>
+              </div>
+            </div>
+          </a> <a href="#">
+            <div class="false  relative group">
+              <div class="absolute right-0 p-2.5"><input type="checkbox"
+                  class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent"
+                  value="false" control-id="ControlID-1"></div>
+              <div class="border p-2 rounded-2xl bg-white">
+                <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
+                             <p>Save $160</p>
+                          </div> -->
+                <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
+                <!-- <div class="w-full flex items-center justify-between">
+                             <div class="flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
+                                <p class="text-[11px]">9.9K</p>
+                             </div>
+                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
+                          </div> -->
+              </div>
+              <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                <h2 class="!text-sm">Dry fruits</h2>
+              </div>
+            </div>
+          </a> <a href="#">
+            <div class="false  relative group">
+              <div class="absolute right-0 p-2.5"><input type="checkbox"
+                  class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent"
+                  value="false" control-id="ControlID-1"></div>
+              <div class="border p-2 rounded-2xl bg-white">
+                <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
+                             <p>Save $160</p>
+                          </div> -->
+                <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
+                <!-- <div class="w-full flex items-center justify-between">
+                             <div class="flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
+                                <p class="text-[11px]">9.9K</p>
+                             </div>
+                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
+                          </div> -->
+              </div>
+              <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                <h2 class="!text-sm">Dry fruits</h2>
+              </div>
+            </div>
+          </a> <a href="#">
+            <div class="false  relative group">
+              <div class="absolute right-0 p-2.5"><input type="checkbox"
+                  class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent"
+                  value="false" control-id="ControlID-1"></div>
+              <div class="border p-2 rounded-2xl bg-white">
+                <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
+                             <p>Save $160</p>
+                          </div> -->
+                <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
+                <!-- <div class="w-full flex items-center justify-between">
+                             <div class="flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
+                                <p class="text-[11px]">9.9K</p>
+                             </div>
+                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
+                          </div> -->
+              </div>
+              <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                <h2 class="!text-sm">Dry fruits</h2>
+              </div>
+            </div>
+          </a> <a href="#">
+            <div class="false  relative group">
+              <div class="absolute right-0 p-2.5"><input type="checkbox"
+                  class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent"
+                  value="false" control-id="ControlID-1"></div>
+              <div class="border p-2 rounded-2xl bg-white">
+                <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
+                             <p>Save $160</p>
+                          </div> -->
+                <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
+                <!-- <div class="w-full flex items-center justify-between">
+                             <div class="flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
+                                <p class="text-[11px]">9.9K</p>
+                             </div>
+                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
+                          </div> -->
+              </div>
+              <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                <h2 class="!text-sm">Dry fruits</h2>
+              </div>
+            </div>
+          </a> <a href="#">
+            <div class="false  relative group">
+              <div class="absolute right-0 p-2.5"><input type="checkbox"
+                  class="w-[18px] h-[18px] checked:bg-primaryButton custom-checkbox border-red-400 accent-primaryColor checked:border-transparent"
+                  value="false" control-id="ControlID-1"></div>
+              <div class="border p-2 rounded-2xl bg-white">
+                <!-- <div class="absolute w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[12px] ">
+                             <p>Save $160</p>
+                          </div> -->
+                <img src="../assets/images/nuts/casew 210.png" class="scale-[.7]" alt="nutmeals" class="">
+                <!-- <div class="w-full flex items-center justify-between">
+                             <div class="flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-thumbs-up text-xl" aria-hidden="true"></i>
+                                <p class="text-[11px]">9.9K</p>
+                             </div>
+                             <p><i class="fa-regular fa-heart text-lg" aria-hidden="true"></i></p>
+                          </div> -->
+              </div>
+              <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                <h2 class="!text-sm">Dry fruits</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="sticky top-[145px] w-1/2">
+        <div
+          class="bg-white pb-[4.25rem] md:pb-5 custom-shadow p-2 pl-3 xs:pl-auto xs:p-6 rounded-2xl right-div undefined">
+          <h2 class="xl:text-3xl hidden md:block text-lg">Combo Selection </h2>
+          <h2 class="xl:text-3xl md:hidden block text-lg">Press To Select </h2>
+
+
+
+
+          <div id="cartProduct1"
+            class="w-full md:flex hidden items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]">
+            <div class="flex gap-6">
+              <div><img id="cartProductNut1" src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
+                  class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block" />
+
+
+                <div id="cartProductDelete1"
+                  class="hidden p-[.6rem] xs:w-10 w-11   border rounded-full border-gray-400 4xl-md:w-16">
+                  <svg class=" " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="23"
+                    viewBox="0 0 50 50">
+                    <path fill="red"
+                      d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z">
+                    </path>
+                  </svg>
                 </div>
-
-
-
-                <div
-                id="cartProduct1"
-                class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] w-[370px] md:flex hidden items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]"
-              >
-                <div class="flex gap-6">
-                  <div><img
-                    id="cartProductNut1"
-                    src="../assets/icons/product_category_icons/1 nuts.svg"
-                    alt="nutmeals"
-                    class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block"
-                  />
-
-
-                  <div
-                    id="cartProductDelete1"
-                    class="hidden p-[.6rem] xs:w-10 w-11   border rounded-full border-gray-400 4xl-md:w-16"
-                  >
-                    <svg
-                      class=" "
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      width="22"
-                      height="23"
-                      viewBox="0 0 50 50"
-                    >
-                      <path
-                        fill="red"
-                        d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"
-                      ></path>
-                    </svg>
-                  </div></div>
-
-                  <div>
-                    <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
-                    <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
-                      roasted - solted
-                    </p>
-                  </div>
-                  
-                </div>
-                
-                <p class="xs:text-sm text-md min-w-10 4xl-md:!text-xl">200 g</p>
-                <div class="flex gap-2 items-center justify-center">
-                  <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">-</button
-                  ><input
-                    min="1"
-                    class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
-                    type="text"
-                    value="1"
-                  /><button class="text-2xl increase text-md 4xl-md:!text-4xl">+</button>
-                </div>
-                <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">400</p>
               </div>
 
+              <div>
+                <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
+                <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
+                  roasted - solted
+                </p>
+              </div>
 
-              <div
-              id="cartProduct1"
-              class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] w-[370px] md:flex hidden items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]"
-            >
-              <div class="flex gap-6">
-                <div><img
-                  id="cartProductNut1"
-                  src="../assets/icons/product_category_icons/1 nuts.svg"
-                  alt="nutmeals"
-                  class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block"
-                />
+            </div>
+
+            <p class="xs:text-sm text-md min-w-10 4xl-md:!text-xl">200 g</p>
+            <div class="flex gap-2 items-center justify-center">
+              <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">-</button><input min="1"
+                class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
+                type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">+</button>
+            </div>
+            <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">400</p>
+          </div>
 
 
-                <div
-                  id="cartProductDelete1"
-                  class="hidden p-[.6rem] xs:w-10 w-11   border rounded-full border-gray-400 4xl-md:w-16"
-                >
-                  <svg
-                    class=" "
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="0px"
-                    width="22"
-                    height="23"
-                    viewBox="0 0 50 50"
-                  >
-                    <path
-                      fill="red"
-                      d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"
-                    ></path>
+
+          <div id="cartProduct1"
+            class="w-full md:flex hidden items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]">
+            <div class="flex gap-6">
+              <div><img id="cartProductNut1" src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
+                  class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block" />
+
+
+                <div id="cartProductDelete1"
+                  class="hidden p-[.6rem] xs:w-10 w-11   border rounded-full border-gray-400 4xl-md:w-16">
+                  <svg class=" " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="23"
+                    viewBox="0 0 50 50">
+                    <path fill="red"
+                      d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z">
+                    </path>
                   </svg>
-                </div></div>
+                </div>
+              </div>
+
+              <div>
+                <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
+                <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
+                  roasted - solted
+                </p>
+              </div>
+
+            </div>
+
+            <p class="xs:text-sm text-md min-w-10 4xl-md:!text-xl">200 g</p>
+            <div class="flex gap-2 items-center justify-center">
+              <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">-</button><input min="1"
+                class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
+                type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">+</button>
+            </div>
+            <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">400</p>
+          </div>
+
+
+          <div id="cartProduct1"
+            class="w-full md:flex hidden items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]">
+            <div class="flex gap-6">
+              <div><img id="cartProductNut1" src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
+                  class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block" />
+
+
+                <div id="cartProductDelete1"
+                  class="hidden p-[.6rem] xs:w-10 w-11   border rounded-full border-gray-400 4xl-md:w-16">
+                  <svg class=" " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="23"
+                    viewBox="0 0 50 50">
+                    <path fill="red"
+                      d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+
+              <div>
+                <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
+                <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
+                  roasted - solted
+                </p>
+              </div>
+
+            </div>
+
+            <p class="xs:text-sm text-md min-w-10 4xl-md:!text-xl">200 g</p>
+            <div class="flex gap-2 items-center justify-center">
+              <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">-</button><input min="1"
+                class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
+                type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">+</button>
+            </div>
+            <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">400</p>
+          </div>
+
+          <div class="rounded-2xl md:hidden">
+            <div id="cartProduct1"
+              class="w-full hover:bg-primaryColor hover:text-white flex items-center justify-between rounded-full  border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]">
+              <div class="flex gap-6">
+                <div>
+                  <img id="cartProductNut1" src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
+                    class="xs:w-10 bg-white w-11 border rounded-full border-gray-400 4xl-md:w-16 block" />
+
+                  <div id="cartProductDelete1"
+                    class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16">
+                    <svg class=" " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="23"
+                      viewBox="0 0 50 50">
+                      <path fill="red"
+                        d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
 
                 <div>
                   <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
@@ -853,374 +824,230 @@ color: white;
                     roasted - solted
                   </p>
                 </div>
-                
               </div>
-              
-              <p class="xs:text-sm text-md min-w-10 4xl-md:!text-xl">200 g</p>
-              <div class="flex gap-2 items-center justify-center">
-                <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">-</button
-                ><input
-                  min="1"
+
+              <p class="xs:text-sm hidden md:block  text-md min-w-10 4xl-md:!text-xl">
+                200 g
+              </p>
+              <div class="flex gap-2 items-center  justify-center">
+                <button class="decrease text-2xl   4xl-md:!text-5xl pb-0.5">
+                  -</button><input min="1"
                   class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
-                  type="text"
-                  value="1"
-                /><button class="text-2xl increase text-md 4xl-md:!text-4xl">+</button>
+                  type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
+                  +
+                </button>
               </div>
-              <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">400</p>
+              <p class="xs:text-sm text-md  4xl-md:!text-xl mr-[1rem]">
+                400
+              </p>
             </div>
+            <div id="cartProduct2"
+              class="large:!w-[35vw] hover:bg-primaryColor hover:text-white  lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]">
+              <div class="flex gap-6">
+                <div>
+                  <img id="cartProductNut2" src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
+                    class="xs:w-10 bg-white w-11 border rounded-full border-gray-400 4xl-md:w-16 block" />
 
-            <div class="rounded-2xl md:hidden">
-               <div
-                 id="cartProduct1"
-                 class="large:!w-[35vw] hover:bg-primaryColor hover:text-white lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full  border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]"
-               >
-                 <div class="flex gap-6">
-                   <div>
-                     <img
-                       id="cartProductNut1"
-                       src="../assets/icons/product_category_icons/1 nuts.svg"
-                       alt="nutmeals"
-                       class="xs:w-10 bg-white w-11 border rounded-full border-gray-400 4xl-md:w-16 block"
-                     />
-
-                     <div
-                       id="cartProductDelete1"
-                       class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16"
-                     >
-                       <svg
-                         class=" "
-                         xmlns="http://www.w3.org/2000/svg"
-                         x="0px"
-                         y="0px"
-                         width="22"
-                         height="23"
-                         viewBox="0 0 50 50"
-                       >
-                         <path
-                           fill="red"
-                           d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"
-                         ></path>
-                       </svg>
-                     </div>
-                   </div>
-
-                   <div>
-                     <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
-                     <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
-                       roasted - solted
-                     </p>
-                   </div>
-                 </div>
-
-                 <p class="xs:text-sm hidden md:block  text-md min-w-10 4xl-md:!text-xl">
-                   200 g
-                 </p>
-                 <div class="flex gap-2 items-center  justify-center">
-                   <button class="decrease text-2xl   4xl-md:!text-5xl pb-0.5">
-                     -</button
-                   ><input
-                     min="1"
-                     class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
-                     type="text"
-                     value="1"
-                   /><button
-                     class="text-2xl increase text-md 4xl-md:!text-4xl"
-                   >
-                     +
-                   </button>
-                 </div>
-                 <p class="xs:text-sm text-md  4xl-md:!text-xl mr-[1rem]">
-                   400
-                 </p>
-               </div>
-               <div
-                 id="cartProduct2"
-                 class="large:!w-[35vw] hover:bg-primaryColor hover:text-white  lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]"
-               >
-                 <div class="flex gap-6">
-                   <div>
-                     <img
-                       id="cartProductNut2"
-                       src="../assets/icons/product_category_icons/1 nuts.svg"
-                       alt="nutmeals"
-                       class="xs:w-10 bg-white w-11 border rounded-full border-gray-400 4xl-md:w-16 block"
-                     />
-
-                     <div
-                       id="cartProductDelete2"
-                       class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16"
-                     >
-                       <svg
-                         class=" "
-                         xmlns="http://www.w3.org/2000/svg"
-                         x="0px"
-                         y="0px"
-                         width="22"
-                         height="23"
-                         viewBox="0 0 50 50"
-                       >
-                         <path
-                           fill="red"
-                           d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"
-                         ></path>
-                       </svg>
-                     </div>
-                   </div>
-
-                   <div>
-                     <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
-                     <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
-                       roasted - solted
-                     </p>
-                   </div>
-                 </div>
-
-                 <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
-                   200 g
-                 </p>
-                 <div class="flex gap-2 items-center justify-center">
-                   <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
-                     -</button
-                   ><input
-                     min="1"
-                     class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
-                     type="text"
-                     value="1"
-                   /><button
-                     class="text-2xl increase text-md 4xl-md:!text-4xl"
-                   >
-                     +
-                   </button>
-                 </div>
-                 <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">
-                   400
-                 </p>
-               </div>
-               <div
-                 id="cartProduct3"
-                 class="large:!w-[35vw] hover:bg-primaryColor hover:text-white  lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]"
-               >
-                 <div class="flex gap-6">
-                   <div>
-                     <img
-                       id="cartProductNut3"
-                       src="../assets/icons/product_category_icons/1 nuts.svg"
-                       alt="nutmeals"
-                       class="xs:w-10 bg-white w-11 border rounded-full border-gray-400 4xl-md:w-16 block"
-                     />
-
-                     <div
-                       id="cartProductDelete3"
-                       class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16"
-                     >
-                       <svg
-                         class=" "
-                         xmlns="http://www.w3.org/2000/svg"
-                         x="0px"
-                         y="0px"
-                         width="22"
-                         height="23"
-                         viewBox="0 0 50 50"
-                       >
-                         <path
-                           fill="red"
-                           d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"
-                         ></path>
-                       </svg>
-                     </div>
-                   </div>
-
-                   <div>
-                     <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
-                     <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
-                       roasted - solted
-                     </p>
-                   </div>
-                 </div>
-
-                 <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
-                   200 g
-                 </p>
-                 <div class="flex gap-2 items-center justify-center">
-                   <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
-                     -</button
-                   ><input
-                     min="1"
-                     class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
-                     type="text"
-                     value="1"
-                   /><button
-                     class="text-2xl increase text-md 4xl-md:!text-4xl"
-                   >
-                     +
-                   </button>
-                 </div>
-                 <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">
-                   400
-                 </p>
-               </div>
-               <div
-                 id="cartProduct4"
-                 class="large:!w-[35vw] hover:bg-primaryColor hover:text-white  lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]"
-               >
-                 <div class="flex gap-6">
-                   <div>
-                     <img
-                       id="cartProductNut4"
-                       src="../assets/icons/product_category_icons/1 nuts.svg"
-                       alt="nutmeals"
-                       class="xs:w-10 bg-white w-11 border rounded-full border-gray-400 4xl-md:w-16 block"
-                     />
-
-                     <div
-                       id="cartProductDelete4"
-                       class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16"
-                     >
-                       <svg
-                         class=" "
-                         xmlns="http://www.w3.org/2000/svg"
-                         x="0px"
-                         y="0px"
-                         width="22"
-                         height="23"
-                         viewBox="0 0 50 50"
-                       >
-                         <path
-                           fill="red"
-                           d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"
-                         ></path>
-                       </svg>
-                     </div>
-                   </div>
-
-                   <div>
-                     <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
-                     <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
-                       roasted - solted
-                     </p>
-                   </div>
-                 </div>
-
-                 <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
-                   200 g
-                 </p>
-                 <div class="flex gap-2 items-center justify-center">
-                   <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
-                     -</button
-                   ><input
-                     min="1"
-                     class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
-                     type="text"
-                     value="1"
-                   /><button
-                     class="text-2xl increase text-md 4xl-md:!text-4xl"
-                   >
-                     +
-                   </button>
-                 </div>
-                 <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">
-                   400
-                 </p>
-               </div>
-               <div
-                 id="cartProduct5"
-                 class="large:!w-[35vw] hover:bg-primaryColor hover:text-white  lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]"
-               >
-                 <div class="flex gap-6">
-                   <div>
-                     <img
-                       id="cartProductNut5"
-                       src="../assets/icons/product_category_icons/1 nuts.svg"
-                       alt="nutmeals"
-                       class="xs:w-10 bg-white w-11 border rounded-full border-gray-400 4xl-md:w-16 block"
-                     />
-
-                     <div
-                       id="cartProductDelete5"
-                       class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16"
-                     >
-                       <svg
-                         class=" "
-                         xmlns="http://www.w3.org/2000/svg"
-                         x="0px"
-                         y="0px"
-                         width="22"
-                         height="23"
-                         viewBox="0 0 50 50"
-                       >
-                         <path
-                           fill="red"
-                           d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"
-                         ></path>
-                       </svg>
-                     </div>
-                   </div>
-
-                   <div>
-                     <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
-                     <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
-                       roasted - solted
-                     </p>
-                   </div>
-                 </div>
-
-                 <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
-                   200 g
-                 </p>
-                 <div class="flex gap-2 items-center justify-center">
-                   <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
-                     -</button
-                   ><input
-                     min="1"
-                     class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
-                     type="text"
-                     value="1"
-                   /><button
-                     class="text-2xl increase text-md 4xl-md:!text-4xl"
-                   >
-                     +
-                   </button>
-                 </div>
-                 <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">
-                   400
-                 </p>
-               </div>
-              
-               </div>
-             
-
-                
-                  <div class="w-full hidden md:flex justify-between items-start my-8 text-gray-700">
-                     <div class="hover:text-primaryColor hover:font-bold ml-1">Back in shop</div>
-                     <div class="flex flex-col justify-center items-center gap-x-1.5 mr-[1.5rem] 4xl-md:ml-auto 4xl-md:mr-2 text-[16px] 4xl-md:!text-xl">
-                        <div class="flex items-center justify-between w-full gap-8">
-                           <p>Subtotal:</p>
-                           <p class="font-semibold">1,600</p>
-                        </div>
-                        <div class="flex items-center justify-between w-full gap-8">
-                           <p>Discount:</p>
-                           <p class="font-semibold">100</p>
-                        </div>
-                        <div class="flex items-center justify-between w-full gap-8 pt-1">
-                           <p>Total:</p>
-                           <p class="font-semibold">1,500</p>
-                        </div>
-                     </div>
+                  <div id="cartProductDelete2"
+                    class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16">
+                    <svg class=" " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="23"
+                      viewBox="0 0 50 50">
+                      <path fill="red"
+                        d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z">
+                      </path>
+                    </svg>
                   </div>
-                  <div class="flex justify-evenly gap-2">
-                    
-                    <a href="../pages/cart1.html" class="w-fit fixed bottom-[24px] right-[12px] md:static border border-gray-400 hover:border-[#faa61a] text-lg rounded-md py-[.8rem] bg-white md:py-2 px-4 hover:bg-[#faa61a] hover:text-white duration-300" control-id="ControlID-21"><img src="../assets/icons/generic_web_icons/add to cart.svg" class="w-5"> <div class="w-[5px] h-[5px] bg-red-500 rounded-full absolute top-[11px] right-[11px] "></div></a> 
-                    
-                    <a class="btn-slide hidden md:inline-flex hover:bg-green-500" href="../pages/cart1.html">
-                    <span class="circle custom-shadow p-4">
-                       <i class="fa-solid fa-arrow-right"></i></span>
-                    <span class="title">Buy Now</span>
-                    </a></div>
-               </div>
+                </div>
+
+                <div>
+                  <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
+                  <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
+                    roasted - solted
+                  </p>
+                </div>
+              </div>
+
+              <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
+                200 g
+              </p>
+              <div class="flex gap-2 items-center justify-center">
+                <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
+                  -</button><input min="1"
+                  class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
+                  type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
+                  +
+                </button>
+              </div>
+              <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">
+                400
+              </p>
             </div>
-         </div>
+            <div id="cartProduct3"
+              class="large:!w-[35vw] hover:bg-primaryColor hover:text-white  lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]">
+              <div class="flex gap-6">
+                <div>
+                  <img id="cartProductNut3" src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
+                    class="xs:w-10 bg-white w-11 border rounded-full border-gray-400 4xl-md:w-16 block" />
+
+                  <div id="cartProductDelete3"
+                    class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16">
+                    <svg class=" " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="23"
+                      viewBox="0 0 50 50">
+                      <path fill="red"
+                        d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
+                  <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
+                    roasted - solted
+                  </p>
+                </div>
+              </div>
+
+              <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
+                200 g
+              </p>
+              <div class="flex gap-2 items-center justify-center">
+                <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
+                  -</button><input min="1"
+                  class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
+                  type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
+                  +
+                </button>
+              </div>
+              <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">
+                400
+              </p>
+            </div>
+            <div id="cartProduct4"
+              class="large:!w-[35vw] hover:bg-primaryColor hover:text-white  lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]">
+              <div class="flex gap-6">
+                <div>
+                  <img id="cartProductNut4" src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
+                    class="xs:w-10 bg-white w-11 border rounded-full border-gray-400 4xl-md:w-16 block" />
+
+                  <div id="cartProductDelete4"
+                    class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16">
+                    <svg class=" " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="23"
+                      viewBox="0 0 50 50">
+                      <path fill="red"
+                        d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
+                  <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
+                    roasted - solted
+                  </p>
+                </div>
+              </div>
+
+              <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
+                200 g
+              </p>
+              <div class="flex gap-2 items-center justify-center">
+                <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
+                  -</button><input min="1"
+                  class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
+                  type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
+                  +
+                </button>
+              </div>
+              <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">
+                400
+              </p>
+            </div>
+            <div id="cartProduct5"
+              class="large:!w-[35vw] hover:bg-primaryColor hover:text-white  lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]">
+              <div class="flex gap-6">
+                <div>
+                  <img id="cartProductNut5" src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
+                    class="xs:w-10 bg-white w-11 border rounded-full border-gray-400 4xl-md:w-16 block" />
+
+                  <div id="cartProductDelete5"
+                    class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16">
+                    <svg class=" " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="23"
+                      viewBox="0 0 50 50">
+                      <path fill="red"
+                        d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+
+                <div>
+                  <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
+                  <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
+                    roasted - solted
+                  </p>
+                </div>
+              </div>
+
+              <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
+                200 g
+              </p>
+              <div class="flex gap-2 items-center justify-center">
+                <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
+                  -</button><input min="1"
+                  class="xs:w-10 counter w-8 text-black border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
+                  type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
+                  +
+                </button>
+              </div>
+              <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">
+                400
+              </p>
+            </div>
+
+          </div>
+
+
+
+          <div class="w-full hidden md:flex justify-between items-start my-8 text-gray-700">
+            <div class="hover:text-primaryColor hover:font-bold ml-1">Back in shop</div>
+            <div
+              class="flex flex-col justify-center items-center gap-x-1.5 mr-[1.5rem] 4xl-md:ml-auto 4xl-md:mr-2 text-[16px] 4xl-md:!text-xl">
+              <div class="flex items-center justify-between w-full gap-8">
+                <p>Subtotal:</p>
+                <p class="font-semibold">1,600</p>
+              </div>
+              <div class="flex items-center justify-between w-full gap-8">
+                <p>Discount:</p>
+                <p class="font-semibold">100</p>
+              </div>
+              <div class="flex items-center justify-between w-full gap-8 pt-1">
+                <p>Total:</p>
+                <p class="font-semibold">1,500</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-evenly gap-2">
+
+            <a href="../pages/cart1.html"
+              class="w-fit fixed bottom-[24px] right-[12px] md:static border border-gray-400 hover:border-[#faa61a] text-lg rounded-md py-[.8rem] bg-white md:py-2 px-4 hover:bg-[#faa61a] hover:text-white duration-300"
+              control-id="ControlID-21"><img src="../assets/icons/generic_web_icons/add to cart.svg" class="w-5">
+              <div class="w-[5px] h-[5px] bg-red-500 rounded-full absolute top-[11px] right-[11px] "></div>
+            </a>
+
+            <a class="btn-slide hidden md:inline-flex hover:bg-green-500" href="../pages/cart1.html">
+              <span class="circle custom-shadow p-4">
+                <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="title">Buy Now</span>
+            </a>
+          </div>
+        </div>
       </div>
-     
-      <script src="../script.js"></script>
-   </body>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+
 </html>

@@ -1,521 +1,500 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <!-- Set character encoding to UTF-8 -->
-      <meta charset="UTF-8" />
-      <!-- Set viewport for responsive design -->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <!-- Link to external CSS stylesheet for main styling -->
-      <link rel="stylesheet" href="../css/main.css" />
-      <!-- Link to Font Awesome stylesheet for icons -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-      <!-- Link to Font Awesome stylesheet for additional icons -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-      <!-- Preconnect to Google Fonts for faster font loading -->
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-   </head>
-   <body>
-      <!-- Header Section -->
-      <header class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 bg-white md:bg-transparent drop-shadow md:drop-shadow-none justify-center">
-         <!-- Main Navigation Bar -->
-         <div class="navBar flex justify-between items-center bg-white h-[3.5rem] w-full md:w-[81%]">
-            <!-- Logo -->
-            <div class="w-48">
-               <div class="navLogo w-36">
-                  <a href="/index.html">
-                  <img
-                     src="../assets/icons/Nutmeals Logo ver2.svg"
-                     alt="Nutmeals Logo"
-                     />
-                  </a>
-               </div>
-            </div>
-            <!-- Main Navigation Links (visible on larger screens) -->
-            <div class="navMain hidden w-64 items-center justify-between md:flex uppercase">
-               <div>
-                  <a
-                     href="/pages/about.html"
-                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-                     >About</a>
-               </div>
-               <div>
-                  <a
-                     href="/pages/shop.html"
-                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-                     >Shop</a>
-               </div>
-               <div>
-                  <a
-                     href="/pages/blog.html"
-                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-                     >Blog</a>
-               </div>
-            </div>
-            <!-- Right Side Menu (icons) -->
-            <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
-               <!-- Add to Cart Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="../pages/cart1.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_add_to_cart.svg"
-                  alt="Add to Cart"
-                  width="17"
-                  height="17"
-                  class="duration-300"
-                  />
+
+<head>
+   <!-- Set character encoding to UTF-8 -->
+   <meta charset="UTF-8" />
+   <!-- Set viewport for responsive design -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <!-- Link to external CSS stylesheet for main styling -->
+   <link rel="stylesheet" href="../css/main.css" />
+   <!-- Link to Font Awesome stylesheet for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+   <!-- Link to Font Awesome stylesheet for additional icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+   <!-- Preconnect to Google Fonts for faster font loading -->
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+
+<body>
+   <svg style="display:none;">
+      <filter id="displacementFilter">
+         <feTurbulence type="turbulence" baseFrequency="0.0" numOctaves="1" result="turbulence" />
+
+         <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="50" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+   </svg>
+   <!-- Header Section -->
+   <header
+      class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 md:bg-transparent drop-shadow md:drop-shadow-none justify-center card">
+      <!-- Main Navigation Bar -->
+      <div class="navBar flex justify-between items-center h-[3.5rem] w-full max-w-[1440px] md:px-8 px-4">
+         <!-- Logo -->
+         <div class="w-48">
+            <div class="navLogo w-36">
+               <a href="/index.html">
+                  <img src="../assets/icons/nutmeals registered logo.png" alt="Nutmeals Logo" />
                </a>
-               <!-- Account Profile Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="/pages/login.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_account_profile.svg"
-                  alt="Account Profile"
-                  width="18"
+            </div>
+         </div>
+         <!-- Main Navigation Links (visible on larger screens) -->
+         <div class="navMain hidden w-64 items-center justify-between md:flex uppercase">
+            <div>
+               <a href="/pages/about.html"
+                  class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">About</a>
+            </div>
+            <div>
+               <a href="/pages/shop.html"
+                  class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Shop</a>
+            </div>
+            <div>
+               <a href="/pages/blog.html"
+                  class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Blog</a>
+            </div>
+         </div>
+         <!-- Right-side menu items (Cart, Profile, Search, Contact) -->
+         <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
+            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+               href="/pages/cart1.html">
+               <img src="../assets/icons/NavBar/white_add_to_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/white_add_to_cart-yellow.svg" alt="Account Profile" width="18"
                   height="18"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Search Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="/pages/search.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_search.svg"
-                  alt="Search"
-                  width="18"
-                  height="18"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Contact Support Icon -->
-               <a
-                  class="rounded-md hover-fill-white contactIcon md:hover:bg-primaryButton py-2 px-2.5"
-                  href="/pages/contact.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_contact_support.svg"
-                  alt="Contact Support"
-                  width="18"
-                  height="18"
-                  class="scale-[1.1]"
-                  />
-               </a>
-            </div>
-         </div>
-      </header>
-      <!-- Mobile Navigation Section -->
-      <div
-         class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-full glassNav z-10 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4"
-         >
-         <!-- Menu Button (visible on mobile) -->
-         <div class="navMenuBtn w-5 h-5 flex justify-center items-center navMenu">
-            <i class="fa-solid fa-bars text-[18px]"></i>
-            <img
-               src="/assets/icons/menu.svg"
-               alt="Menu"
-               class="w-5 menuWhenOpen cursor-pointer"
-               style="display: none"
-               />
-         </div>
-         <!-- Mobile Cart Icon -->
-         <a class="navMenuBtn" href="../pages/cart1.html">
-         <img
-            src="/assets/icons/generic_web_icons/add to cart.svg"
-            alt="Add to Cart"
-            class="w-[18px]"
-            />
-         </a>
-         <!-- Mobile Search Icon -->
-         <div class="navMenuBtn navSearchBtn">
-            <img
-               src="/assets/icons/NavBar/white_search.svg"
-               alt="Search"
-               class="w-5"
-               />
-         </div>
-         <!-- Mobile Account Profile Icon -->
-         <a class="navMenuBtn" href="../pages/bestsellers.html">
-         <img src="../assets/a.svg" alt="Account Profile" />
-         </a>
-         <!-- Mobile Login Icon -->
-         <a class="navMenuBtn" href="../pages/login.html">
-         <img
-            src="../assets/icons/generic_web_icons/account_profile.svg"
-            alt="Account Profile"
-            class="w-5 mr-[7px]"
-            />
-         </a>
-         <!-- Mobile Navigation Links (hidden by default) -->
-         <div
-            class="fixed mobNavLinks navLinksHidden bottom-[67px] left-0 right-0 glassNav text-white m-[12px] transition-transform transform translate-y-0"
-            >
-            <ul class="text-left">
-               <li class="p-2"><a href="../pages/about.html">About</a></li>
-               <li class="p-2"><a href="../pages/shop.html">Shop</a></li>
-               <li class="p-2"><a href="../pages/blog.html">Blog</a></li>
-            </ul>
-         </div>
-         <!-- Mobile Search Section -->
-         <div
-            class="fixed mobSearch searchHidden bottom-[80px] rounded-2xl mx-[.75rem] left-0 right-0 bg-primaryColor p-4 transition-transform transform translate-y-0"
-            >
-            <!-- Search Suggestions (hidden by default) -->
-            <div
-               class="suggestions absolute rounded-2xl -top-[220%] left-0 right-0 z-10 hidden p-2 mt-2 bg-primaryColor shadow-lg rounded"
-               >
-               <div class="text-white flex justify-between p-2">
-                  <div>
-                     <div class="p-[.3rem]">Suggestion 1</div>
-                     <div class="p-[.3rem]">Suggestion 2</div>
-                     <div class="p-[.3rem]">Suggestion 3</div>
-                  </div>
-                  <div>
-                     <div class="p-[.3rem]">Suggestion 1</div>
-                     <div class="p-[.3rem]">Suggestion 2</div>
-                     <div class="p-[.3rem]">Suggestion 3</div>
-                  </div>
-               </div>
-            </div>
-            <!-- Mobile Search Input and Icons -->
-            <ul class="flex items-center justify-between gap-5 w-full">
-               <input
-                  class="custom-input p-1 px-3 bg-primaryColor focus:outline-none text-white border-white border !w-full searchInput"
-                  placeholder="Search"
-                  type="text"
-                  />
-               <a href="/">
-               <img
-                  src="../assets/icons/generic_web_icons/search.svg"
-                  alt="Search"
-                  class="w-7 navMenuBtn"
-                  />
-               </a>
-               <a href="/scan">
-               <img
-                  src="../assets/icons/scan.svg"
-                  alt="Scan"
-                  class="w-7 navMenuBtn"
-                  />
-               </a>
-            </ul>
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+               href="/pages/login.html">
+               <img src="../assets/icons/NavBar/account_profile_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/account_profile_yellow.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+               href="/pages/search.html">
+               <img src="../assets/icons/NavBar/search-zoom-in-black.svg" alt="Account Profile" width="20" height="20"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Account Profile" width="20" height="20"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <a class="rounded-md hover-fill-white contactIcon py-2 px-2.5 relative group" href="/pages/contact.html">
+               <img src="../assets/icons/NavBar/contact_support_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/contact_support_yellow.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
          </div>
       </div>
-      <!--     
+   </header>
+   <!-- Mobile Navigation Section -->
+   <div
+      class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-full glassNav z-10 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4">
+      <!-- Menu Button (visible on mobile) -->
+      <div class="navMenuBtn w-5 h-5 flex justify-center items-center navMenu">
+         <i class="fa-solid fa-bars text-[18px]"></i>
+         <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer" style="display: none" />
+      </div>
+      <!-- Mobile Cart Icon -->
+      <a class="navMenuBtn" href="../pages/cart1.html">
+         <img src="/assets/icons/generic_web_icons/add to cart.svg" alt="Add to Cart" class="w-[18px]" />
+      </a>
+      <!-- Mobile Search Icon -->
+      <div class="navMenuBtn navSearchBtn">
+         <img src="/assets/icons/NavBar/white_search.svg" alt="Search" class="w-5" />
+      </div>
+      <!-- Mobile Account Profile Icon -->
+      <a class="navMenuBtn" href="../pages/bestsellers.html">
+         <img src="../assets/a.svg" alt="Account Profile" />
+      </a>
+      <!-- Mobile Login Icon -->
+      <a class="navMenuBtn" href="../pages/login.html">
+         <img src="../assets/icons/generic_web_icons/account_profile.svg" alt="Account Profile" class="w-5 mr-[7px]" />
+      </a>
+      <!-- Mobile Navigation Links (hidden by default) -->
+      <div
+         class="fixed mobNavLinks navLinksHidden bottom-[67px] left-0 right-0 glassNav text-white m-[12px] transition-transform transform translate-y-0">
+         <ul class="text-left">
+            <li class="p-2"><a href="../pages/about.html">About</a></li>
+            <li class="p-2"><a href="../pages/shop.html">Shop</a></li>
+            <li class="p-2"><a href="../pages/blog.html">Blog</a></li>
+         </ul>
+      </div>
+      <!-- Mobile Search Section -->
+      <div
+         class="fixed mobSearch searchHidden bottom-[80px] rounded-2xl mx-[.75rem] left-0 right-0 bg-primaryColor p-4 transition-transform transform translate-y-0">
+         <!-- Search Suggestions (hidden by default) -->
+         <div
+            class="suggestions absolute rounded-2xl -top-[220%] left-0 right-0 z-10 hidden p-2 mt-2 bg-primaryColor shadow-lg rounded">
+            <div class="text-white flex justify-between p-2">
+               <div>
+                  <div class="p-[.3rem]">Suggestion 1</div>
+                  <div class="p-[.3rem]">Suggestion 2</div>
+                  <div class="p-[.3rem]">Suggestion 3</div>
+               </div>
+               <div>
+                  <div class="p-[.3rem]">Suggestion 1</div>
+                  <div class="p-[.3rem]">Suggestion 2</div>
+                  <div class="p-[.3rem]">Suggestion 3</div>
+               </div>
+            </div>
+         </div>
+         <!-- Mobile Search Input and Icons -->
+         <ul class="flex items-center justify-between gap-5 w-full">
+            <input
+               class="custom-input p-1 px-3 bg-primaryColor focus:outline-none text-white border-white border !w-full searchInput"
+               placeholder="Search" type="text" />
+            <a href="/">
+               <img src="../assets/icons/generic_web_icons/search.svg" alt="Search" class="w-7 navMenuBtn" />
+            </a>
+            <a href="/scan">
+               <img src="../assets/icons/scan.svg" alt="Scan" class="w-7 navMenuBtn" />
+            </a>
+         </ul>
+      </div>
+   </div>
+   <!--     
          ABOUT
          
          
               -->
-      <div class="m-2 sm:m-6 md:my-10 flex items-center justify-center">
+   <div class="m-2 sm:m-6 md:my-10 flex items-center justify-center">
+      <div class="text-[#707070] w-full flex flex-col justify-center items-center">
          <div
-            class="text-[#707070] w-full flex flex-col justify-center items-center"
-            >
+            class="w-full max-w-[1440px] md:px-8 px-4 font-normal flex  lg:justify-around justify-center items-start h-full lg:gap-[65px]  flex-col-reverse lg:flex-row gap-6 pt-8">
             <div
-               class="w-[90%] mt-8 md:w-[85%] font-normal flex  lg:justify-around justify-center items-start h-full lg:gap-[65px]  flex-col-reverse lg:flex-row gap-6"
-               >
-               <div
-                  class="content scale-[.95]  xl:text-[18px] right-div flex flex-col gap-3 w-full md:text-[16px] leading-[1.6] text-[14px] tracking-wider"
-                  >
-                  <p>
-                     nutmeals (nutrition meals) is guided by philosophy: "food as a
-                     preventive pharmacy"
-                  </p>
-                  <p>
-                     Our intention is to educate consumers about FUNCTIONAL, HEALTHY
-                     &amp; DIVERSE food options available based on their lifestyle and
-                     medical profile.
-                  </p>
-                  <p>
-                     We have outlined and introduced the TREE OF NUTRITIONAL WELL BEING
-                     for the community that highlights PROBLEM, SOLUTION and SOURCES of
-                     healthy and nutritious food.
-                  </p>
-                  <p>
-                     The portfolio for Investment in nutrition (aka category of
-                     products) includes nuts, seeds, dried fruits, millets, energy
-                     bars, nosh on, spreads, ethnic beverages and gifts.
-                  </p>
-                  <p>
-                     The functional properties of foods are further enhanced by
-                     processing techniques. we invite you to experience - an
-                     environment friendly and state of the art small scale processing
-                     technology of nuts, seeds and other products at our facility.
-                  </p>
-                  <p>
-                     Our entire value chain cares for HEALTH and HYGIENE, Consistency
-                     in SELECTION (sorted &amp; graded) and SOURCING of materials based
-                     on products source (location), nutrition (value) and ENVIRONMENT
-                     FRIENDLY (non-polluting) process.
-                  </p>
-               </div>
-               <div class="image scale-[.92] w-full left-div">
-                  <div class="border p-4 border-gray-300 bg-[#f5f5f5] rounded-2xl shadow-md ">
-                     <div class="p-[24px]">
-                        <video
-                           controls=""
-                           autoplay=""
-                           class="h-[500px] glass  w-[800px] rounded-2xl "
-                           >
-                           <source
-                              src="../assets/videos/nutmeals 2.mp4"
-                              type="video/mp4"
-                              />
-                           Your browser does not support the video tag.
-                        </video>
-                     </div>
+               class="content xl:text-[18px] right-div flex flex-col gap-3 w-full md:text-[16px] leading-[1.6] text-[14px] tracking-wider">
+               <p>
+                  nutmeals (nutrition meals) is guided by philosophy: "food as a
+                  preventive pharmacy"
+               </p>
+               <p>
+                  Our intention is to educate consumers about FUNCTIONAL, HEALTHY
+                  &amp; DIVERSE food options available based on their lifestyle and
+                  medical profile.
+               </p>
+               <p>
+                  We have outlined and introduced the TREE OF NUTRITIONAL WELL BEING
+                  for the community that highlights PROBLEM, SOLUTION and SOURCES of
+                  healthy and nutritious food.
+               </p>
+               <p>
+                  The portfolio for Investment in nutrition (aka category of
+                  products) includes nuts, seeds, dried fruits, millets, energy
+                  bars, nosh on, spreads, ethnic beverages and gifts.
+               </p>
+               <p>
+                  The functional properties of foods are further enhanced by
+                  processing techniques. we invite you to experience - an
+                  environment friendly and state of the art small scale processing
+                  technology of nuts, seeds and other products at our facility.
+               </p>
+               <p>
+                  Our entire value chain cares for HEALTH and HYGIENE, Consistency
+                  in SELECTION (sorted &amp; graded) and SOURCING of materials based
+                  on products source (location), nutrition (value) and ENVIRONMENT
+                  FRIENDLY (non-polluting) process.
+               </p>
+            </div>
+            <div class="image w-full left-div">
+               <div class="border p-4 border-gray-300 bg-[#f5f5f5] rounded-2xl shadow-md ">
+                  <div class="p-[24px]">
+                     <video controls="" autoplay="" class="h-[500px] glass  w-[800px] rounded-2xl ">
+                        <source src="../assets/videos/nutmeals 2.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                     </video>
                   </div>
                </div>
             </div>
-            <div class="flex justify-center w-full">
-               <div
-                  class="left-div w-[83%] right-div bg-[#f5f5f5] shadow-md border border-solid border-gray-100 rounded-2xl md:p-7 sm:p-5 p-5 mt-12"
-                  >
-                  <div class="flex justify-between">
-                     <div class="top-section text-black mb-7">
-                        <h2 class="md:text-4xl text-2xl pb-2 pl-4">Why us?!</h2>
-                        <p class="font-notmal pl-4">Your next door storefront</p>
-                     </div>
+         </div>
+         <div class="flex justify-center w-full max-w-[1440px] md:px-8 px-4">
+            <div
+               class="left-div right-div bg-[#f5f5f5] shadow-md border border-solid border-gray-100 rounded-2xl md:p-7 sm:p-5 p-5 mt-12">
+               <div class="flex justify-between">
+                  <div class="top-section text-black mb-7">
+                     <h2 class="md:text-4xl text-2xl pb-2 pl-4">Why us?!</h2>
+                     <p class="font-notmal pl-4">Your next door storefront</p>
                   </div>
-                  <div
-                     class="w-full gap-[.7rem] md:gap-4 2xl:gap-20 grid grid-flow-col grid-rows-2 md:grid-rows-1 justify-between items-start md:pl-3"
-                     >
-                     <div
-                        class="flex  flex-col justify-center items-center text-center min-w-20 1xl:max-w-fit"
-                        >
-                        <img
-                           src="../assets/icons/services_category_icons/1 dry roasting.svg"
-                           alt="Convenient Store"
-                           class="w-[100px] scale-[.8] lg:w-full h-auto bg-white rounded-full   p-2.5"
-                           />
-                        <p
-                           class=" 2xl:text-[22px] text-[14px] md:text-[14px] 2xl:min-w-40 min-w-20 2xl:max-w-full max-w-20"
-                           >
-                           Convenient Store
-                        </p>
-                     </div>
-                     <div
-                        class="flex  flex-col justify-center items-center text-center min-w-20 1xl:max-w-fit"
-                        >
-                        <img
-                           src="../assets/icons/services_category_icons/2 vacum pack.svg"
-                           class="w-[100px] scale-[.8] lg:w-full h-auto bg-white rounded-full   p-2.5"
-                           />
-                        <p
-                           class=" 2xl:text-[22px] text-[14px] md:text-[14px] 2xl:min-w-40 min-w-20 2xl:max-w-full max-w-20"
-                           >
-                           Advance Technology
-                        </p>
-                     </div>
-                     <div
-                        class="flex  flex-col justify-center items-center text-center min-w-20 1xl:max-w-fit"
-                        >
-                        <img
-                           src="../assets/icons/services_category_icons/3 gift curation.svg"
-                           alt="Convenient Store"
-                           class="w-[100px] scale-[.8] lg:w-full h-auto bg-white rounded-full   p-2.5"
-                           />
-                        <p
-                           class=" 2xl:text-[22px] text-[14px] md:text-[14px] 2xl:min-w-40 min-w-20 2xl:max-w-full max-w-20"
-                           >
-                           Quality Products
-                        </p>
-                     </div>
-                     <div
-                        class="flex  flex-col justify-center items-center text-center min-w-20 1xl:max-w-fit"
-                        >
-                        <img
-                           src="../assets/icons/services_category_icons/1 dry roasting.svg"
-                           alt="Convenient Store"
-                           class="w-[100px] scale-[.8] lg:w-full h-auto bg-white rounded-full   p-2.5"
-                           />
-                        <p
-                           class=" 2xl:text-[22px] text-[14px] md:text-[14px] 2xl:min-w-40 min-w-20 2xl:max-w-full max-w-20"
-                           >
-                           Convenient Store
-                        </p>
-                     </div>
-                     <div
-                        class="flex  flex-col justify-center items-center text-center min-w-20 1xl:max-w-fit"
-                        >
-                        <img
-                           src="../assets/icons/services_category_icons/2 vacum pack.svg"
-                           alt="Convenient Store"
-                           class="w-[100px] scale-[.8] lg:w-full h-auto bg-white rounded-full   p-2.5"
-                           />
-                        <p
-                           class=" 2xl:text-[22px] text-[14px] md:text-[14px] 2xl:min-w-40 min-w-20 2xl:max-w-full max-w-20"
-                           >
-                           Advance Technology
-                        </p>
-                     </div>
-                     <div
-                        class="flex  flex-col justify-center items-center text-center min-w-20 1xl:max-w-fit"
-                        >
-                        <img
-                           src="../assets/icons/services_category_icons/3 gift curation.svg"
-                           alt="Convenient Store"
-                           class="w-[100px] scale-[.8] lg:w-full h-auto bg-white rounded-full   p-2.5"
-                           />
-                        <p
-                           class=" 2xl:text-[22px] text-[14px] md:text-[14px] 2xl:min-w-40 min-w-20 2xl:max-w-full max-w-20"
-                           >
-                           Quality Products
-                        </p>
-                     </div>
+               </div>
+               <div
+                  class="w-full gap-[.7rem] md:gap-4 2xl:gap-20 grid grid-flow-col grid-rows-2 md:grid-rows-1 justify-between items-start md:pl-3">
+                  <div class="flex  flex-col justify-center items-center text-center min-w-20 1xl:max-w-fit">
+                     <img src="../assets/icons/services_category_icons/1 dry roasting.svg" alt="Convenient Store"
+                        class="w-[100px] scale-[.8] lg:w-full h-auto bg-white rounded-full   p-2.5" />
+                     <p
+                        class=" 2xl:text-[22px] text-[14px] md:text-[14px] 2xl:min-w-40 min-w-20 2xl:max-w-full max-w-20">
+                        Convenient Store
+                     </p>
+                  </div>
+                  <div class="flex  flex-col justify-center items-center text-center min-w-20 1xl:max-w-fit">
+                     <img src="../assets/icons/services_category_icons/2 vacum pack.svg"
+                        class="w-[100px] scale-[.8] lg:w-full h-auto bg-white rounded-full   p-2.5" />
+                     <p
+                        class=" 2xl:text-[22px] text-[14px] md:text-[14px] 2xl:min-w-40 min-w-20 2xl:max-w-full max-w-20">
+                        Advance Technology
+                     </p>
+                  </div>
+                  <div class="flex  flex-col justify-center items-center text-center min-w-20 1xl:max-w-fit">
+                     <img src="../assets/icons/services_category_icons/3 gift curation.svg" alt="Convenient Store"
+                        class="w-[100px] scale-[.8] lg:w-full h-auto bg-white rounded-full   p-2.5" />
+                     <p
+                        class=" 2xl:text-[22px] text-[14px] md:text-[14px] 2xl:min-w-40 min-w-20 2xl:max-w-full max-w-20">
+                        Quality Products
+                     </p>
+                  </div>
+                  <div class="flex  flex-col justify-center items-center text-center min-w-20 1xl:max-w-fit">
+                     <img src="../assets/icons/services_category_icons/1 dry roasting.svg" alt="Convenient Store"
+                        class="w-[100px] scale-[.8] lg:w-full h-auto bg-white rounded-full   p-2.5" />
+                     <p
+                        class=" 2xl:text-[22px] text-[14px] md:text-[14px] 2xl:min-w-40 min-w-20 2xl:max-w-full max-w-20">
+                        Convenient Store
+                     </p>
+                  </div>
+                  <div class="flex  flex-col justify-center items-center text-center min-w-20 1xl:max-w-fit">
+                     <img src="../assets/icons/services_category_icons/2 vacum pack.svg" alt="Convenient Store"
+                        class="w-[100px] scale-[.8] lg:w-full h-auto bg-white rounded-full   p-2.5" />
+                     <p
+                        class=" 2xl:text-[22px] text-[14px] md:text-[14px] 2xl:min-w-40 min-w-20 2xl:max-w-full max-w-20">
+                        Advance Technology
+                     </p>
+                  </div>
+                  <div class="flex  flex-col justify-center items-center text-center min-w-20 1xl:max-w-fit">
+                     <img src="../assets/icons/services_category_icons/3 gift curation.svg" alt="Convenient Store"
+                        class="w-[100px] scale-[.8] lg:w-full h-auto bg-white rounded-full   p-2.5" />
+                     <p
+                        class=" 2xl:text-[22px] text-[14px] md:text-[14px] 2xl:min-w-40 min-w-20 2xl:max-w-full max-w-20">
+                        Quality Products
+                     </p>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- 
+   </div>
+   <!-- 
          - FOOTER
          -->
-      <footer
-         class="w-full justify-center mt-[75px] md:mt-0  bg-[#203354] flex"
-         >
-         <div class="w-[80%]  gap-10 grid grid-cols-1 md:justify-items-center md:grid-cols-3 sm:grid-cols-2 justify-items-start lg:grid-cols-4 text-white lg:40 md:24 8 py-14 text-[13px] tracking-wider font-extralight"" >
-            <div class="social-section text-justify leading-5">
-               <p>
-                  Our desire to change the world is derived from our impulse to
-                  introduce FOOD DIVERSITY to every person based on CULTURE, EARNING and
-                  CELEBRATION!
-               </p>
-               <div
-                  class="mt-[2rem] flex m justify-between items-center text-center gap-2  max-w-80 my-2"
-                  >
-                  <a class="hover:bg-[#F8A531] p-1 rounded-md  link-hover" href="/"
-                     >
-                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" width="25"
-                        height="25" viewBox="0 0 448 512">
-                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path fill="white" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-                     </svg>
-                  </a
-                     >
-                  <a class="hover:bg-[#F8A531] p-1 rounded-md  link-hover" href="/"
-                     >
-                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 448 512">
-                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
-                     </svg>
-                  </a
-                     >
-                  <a class="hover:bg-[#F8A531] p-1 rounded-md  link-hover" href="/"
-                     >
-                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 320 512">
-                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path fill="currentColor" d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/>
-                     </svg>
-                  </a
-                     >
-                  <a class="hover:bg-[#F8A531] p-1 rounded-md  link-hover" href="/"
-                     >
-                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512 512">
-                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
-                     </svg>
-                  </a
-                     >
-                  <a class="hover:bg-[#F8A531] p-1 rounded-md  link-hover" href="/"
-                     >
-                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"  viewBox="0 0 24 24">
-                        <path fill="currentColor" fill-rule="evenodd" d="M5 1.25a2.75 2.75 0 1 0 0 5.5a2.75 2.75 0 0 0 0-5.5M3.75 4a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0m-1.5 4A.75.75 0 0 1 3 7.25h4a.75.75 0 0 1 .75.75v13a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75zm1.5.75v11.5h2.5V8.75zM9.25 8a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 .75.75v.434l.435-.187a7.792 7.792 0 0 1 2.358-.595C20.318 7.4 22.75 9.58 22.75 12.38V21a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75v-7a1.25 1.25 0 0 0-2.5 0v7a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75zm1.5.75v11.5h2.5V14a2.75 2.75 0 1 1 5.5 0v6.25h2.5v-7.87c0-1.904-1.661-3.408-3.57-3.234a6.31 6.31 0 0 0-1.904.48l-1.48.635a.75.75 0 0 1-1.046-.69V8.75z" clip-rule="evenodd"/>
-                     </svg>
-                  </a
-                     >
-                  <a class="hover:bg-[#F8A531] p-1 rounded-md  link-hover" href="/"
-                     >
-                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"  viewBox="0 0 1024 1024">
-                        <path fill="currentColor" d="M960 509.2c0-2.2 0-4.7-.1-7.6c-.1-8.1-.3-17.2-.5-26.9c-.8-27.9-2.2-55.7-4.4-81.9c-3-36.1-7.4-66.2-13.4-88.8a139.52 139.52 0 0 0-98.3-98.5c-28.3-7.6-83.7-12.3-161.7-15.2c-37.1-1.4-76.8-2.3-116.5-2.8c-13.9-.2-26.8-.3-38.4-.4h-29.4c-11.6.1-24.5.2-38.4.4c-39.7.5-79.4 1.4-116.5 2.8c-78 3-133.5 7.7-161.7 15.2A139.35 139.35 0 0 0 82.4 304C76.3 326.6 72 356.7 69 392.8c-2.2 26.2-3.6 54-4.4 81.9c-.3 9.7-.4 18.8-.5 26.9c0 2.9-.1 5.4-.1 7.6v5.6c0 2.2 0 4.7.1 7.6c.1 8.1.3 17.2.5 26.9c.8 27.9 2.2 55.7 4.4 81.9c3 36.1 7.4 66.2 13.4 88.8c12.8 47.9 50.4 85.7 98.3 98.5c28.2 7.6 83.7 12.3 161.7 15.2c37.1 1.4 76.8 2.3 116.5 2.8c13.9.2 26.8.3 38.4.4h29.4c11.6-.1 24.5-.2 38.4-.4c39.7-.5 79.4-1.4 116.5-2.8c78-3 133.5-7.7 161.7-15.2c47.9-12.8 85.5-50.5 98.3-98.5c6.1-22.6 10.4-52.7 13.4-88.8c2.2-26.2 3.6-54 4.4-81.9c.3-9.7.4-18.8.5-26.9c0-2.9.1-5.4.1-7.6zm-72 5.2c0 2.1 0 4.4-.1 7.1c-.1 7.8-.3 16.4-.5 25.7c-.7 26.6-2.1 53.2-4.2 77.9c-2.7 32.2-6.5 58.6-11.2 76.3c-6.2 23.1-24.4 41.4-47.4 47.5c-21 5.6-73.9 10.1-145.8 12.8c-36.4 1.4-75.6 2.3-114.7 2.8c-13.7.2-26.4.3-37.8.3h-28.6l-37.8-.3c-39.1-.5-78.2-1.4-114.7-2.8c-71.9-2.8-124.9-7.2-145.8-12.8c-23-6.2-41.2-24.4-47.4-47.5c-4.7-17.7-8.5-44.1-11.2-76.3c-2.1-24.7-3.4-51.3-4.2-77.9c-.3-9.3-.4-18-.5-25.7c0-2.7-.1-5.1-.1-7.1v-4.8c0-2.1 0-4.4.1-7.1c.1-7.8.3-16.4.5-25.7c.7-26.6 2.1-53.2 4.2-77.9c2.7-32.2 6.5-58.6 11.2-76.3c6.2-23.1 24.4-41.4 47.4-47.5c21-5.6 73.9-10.1 145.8-12.8c36.4-1.4 75.6-2.3 114.7-2.8c13.7-.2 26.4-.3 37.8-.3h28.6l37.8.3c39.1.5 78.2 1.4 114.7 2.8c71.9 2.8 124.9 7.2 145.8 12.8c23 6.2 41.2 24.4 47.4 47.5c4.7 17.7 8.5 44.1 11.2 76.3c2.1 24.7 3.4 51.3 4.2 77.9c.3 9.3.4 18 .5 25.7c0 2.7.1 5.1.1 7.1zM423 646l232-135l-232-133z"/>
-                     </svg>
-                  </a>
-               </div>
-            </div>
-            <div class="menu flex w-[50%] flex-col gap-[.4rem]">
-               <a class="menu-hover" href="/">Home</a
-                  ><a class="menu-hover" href="/about">About</a
-                  ><a class="menu-hover" href="/">Shop</a
-                  ><a class="menu-hover" href="/">Blog</a
-                  ><a class="menu-hover" href="/">Reviews</a
-                  ><a class="menu-hover" href="/">Contact Support</a
-                  ><a class="menu-hover" href="/">Secure&nbsp;Payment</a>
-            </div>
-            <div class="flex flex-col w-[100%] mr-[10px]  gap-[.4rem]">
-               <a class="menu-hover" href="./tos.html">Terms of Service</a
-                  ><a class="menu-hover" href="./privacy.html">Privacy Policy</a
-                  ><a class="menu-hover" href="./tos.html">User Policy</a
-                  ><a class="menu-hover" href="./tos.html">Cookie Policy</a
-                  ><a class="menu-hover" href="./tos.html"
-                  >Shipping &amp; Return Policy</a
-                  ><a class="menu-hover" href="./tos.html"
-                  >Cancellation &amp; Refund Policy</a
-                  ><a class="menu-hover" href="./tos.html"
-                  >Disclaimer &amp; Copyright policy</a
-                  >
-            </div>
-            <div
-               class="min-w-[280px] w-[25%] flex items-start justify-start flex-col gap-[.6rem]"
-               >
-               <div class="flex gap-[1.5rem] items-center">
-                  <a class="hover:bg-[#F8A531] p-1 rounded-md  link-hover" href="/">
-                     <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        x="0px"
-                        y="0px"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 24 24"
-                        >
-                        <path
-                           fill="#D3D3D3"
-                           d="M 12 2 C 6.4889971 2 2 6.4889971 2 12 C 2 17.511003 6.4889971 22 12 22 C 17.511003 22 22 17.511003 22 12 C 22 6.4889971 17.511003 2 12 2 z M 12 4 C 16.430123 4 20 7.5698774 20 12 C 20 16.430123 16.430123 20 12 20 C 7.5698774 20 4 16.430123 4 12 C 4 7.5698774 7.5698774 4 12 4 z M 11 6 L 11 12.414062 L 15.292969 16.707031 L 16.707031 15.292969 L 13 11.585938 L 13 6 L 11 6 z"
-                           ></path>
-                     </svg>
-                  </a>
-                  <p>Mon - Sat : 10:00 - 19:30</p>
-               </div>
-               <div class="flex gap-[1.5rem] items-center">
-                  <a class="hover:bg-[#F8A531] p-1 rounded-md  link-hover" href="/">
-                  <img
-                     src="../assets/icons/black_email.svg"
-                     alt="black_location"
-                     loading="lazy"
-                     class="w-5 invert"
-                     />
-                  </a>
-                  <p>hellonutmeals@gmail.com</p>
-               </div>
-               <div class="flex gap-[1.5rem] items-center">
-                  <a class="hover:bg-[#F8A531] p-1 rounded-md  link-hover" href="/">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 448 512">
-                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path fill="white" d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
-                     </svg>
-                  </a>
-                  <p>+91 992 44 55 776</p>
-               </div>
-               <div class="flex gap-[1.5rem] items-start">
-                  <a class="hover:bg-[#F8A531] p-1 rounded-md  link-hover" href="/">
-                  <img
-                     src="../assets/icons/black_location.svg"
-                     alt="black_location"
-                     loading="lazy"
-                     class="w-14 invert"
-                     />
-                  </a>
-                  <p>
-                     34, GF, Satyam Mall, Near Mansi circle,
-                     Ahmedabad - 380015 Gujarat, India
-                  </p>
-               </div>
-            </div>
+   <footer class="w-full justify-center mt-[75px] md:mt-0  bg-[#203354] flex">
+      <div
+         class="w-[80%]  gap-10 grid grid-cols-1 md:justify-items-center md:grid-cols-3 sm:grid-cols-2 justify-items-start lg:grid-cols-4 text-white lg:40 md:24 8 py-14 text-[13px] tracking-wider font-extralight"" >
+            <div class=" social-section text-justify leading-5">
+         <p>
+            Our desire to change the world is derived from our impulse to
+            introduce FOOD DIVERSITY to every person based on CULTURE, EARNING and
+            CELEBRATION!
+         </p>
+         <div class="mt-[2rem] flex m justify-between items-center text-center gap-2  max-w-80 my-2">
+            <a href="#"
+               class="w-8 h-8 text-[20px] flex items-center justify-center rounded-md  hover:text-primaryColor transition duration-300 group relative">
+               <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 448 512"
+                  class="group-hover:opacity-0">
+                  <path fill="currentColor"
+                     d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+               </svg>
+
+               <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <path
+                     d="M5.18232 18.5201C6.65423 19.3214 8.31304 19.7416 10 19.7416C15.513 19.7416 20 15.3126 20 9.87082C20 4.42899 15.513 0 10 0C4.48696 0 0 4.42899 0 9.87082C0 11.6188 0.466493 13.3299 1.35643 14.8354L0.083797 20L5.18232 18.5201ZM5.71333 5.25829C5.92506 5.06605 6.2002 4.96325 6.4878 4.96325H6.79238C7.19545 4.96325 7.55438 5.21248 7.69139 5.58465L8.31412 7.27897C8.37186 7.43879 8.34355 7.6165 8.23599 7.7506L7.74347 8.35747C7.54872 8.5944 7.49664 8.9185 7.60986 9.20127C8.20656 10.6832 9.98079 11.7248 10.9081 12.1831C11.2444 12.3485 11.6475 12.2859 11.9136 12.0255L12.4582 11.488C12.5884 11.3594 12.7831 11.3136 12.9598 11.3672L14.6117 11.8881C15.0091 12.0143 15.2786 12.3776 15.2786 12.7888V13.2035C15.2786 13.5064 15.1563 13.798 14.9389 14.0126C13.33 15.5807 10.6601 14.4306 8.93024 13.3834C7.68363 12.6279 6.59667 11.6355 5.78821 10.4308C3.83169 7.51586 5.02041 5.88201 5.71333 5.25829Z"
+                     fill="currentColor" />
+               </svg>
+
+            </a>
+            <a href="#"
+               class="w-8 h-8 text-[20px] flex items-center justify-center rounded-md hover:text-primaryColor transition duration-300 relative group">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 448 512">
+                  <path fill="currentColor" class="group-hover:opacity-0"
+                     d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+               </svg>
+
+               <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <path
+                     d="M14.19 0H5.81C2.17 0 0 2.17 0 5.81V14.18C0 17.83 2.17 20 5.81 20H14.18C17.82 20 19.99 17.83 19.99 14.19V5.81C20 2.17 17.83 0 14.19 0ZM10 13.88C7.86 13.88 6.12 12.14 6.12 10C6.12 7.86 7.86 6.12 10 6.12C12.14 6.12 13.88 7.86 13.88 10C13.88 12.14 12.14 13.88 10 13.88ZM15.92 4.88C15.87 5 15.8 5.11 15.71 5.21C15.61 5.3 15.5 5.37 15.38 5.42C15.26 5.47 15.13 5.5 15 5.5C14.73 5.5 14.48 5.4 14.29 5.21C14.2 5.11 14.13 5 14.08 4.88C14.03 4.76 14 4.63 14 4.5C14 4.37 14.03 4.24 14.08 4.12C14.13 3.99 14.2 3.89 14.29 3.79C14.52 3.56 14.87 3.45 15.19 3.52C15.26 3.53 15.32 3.55 15.38 3.58C15.44 3.6 15.5 3.63 15.56 3.67C15.61 3.7 15.66 3.75 15.71 3.79C15.8 3.89 15.87 3.99 15.92 4.12C15.97 4.24 16 4.37 16 4.5C16 4.63 15.97 4.76 15.92 4.88Z"
+                     fill="currentColor" />
+               </svg>
+            </a>
+
+            <a href="#"
+               class="w-8 h-8 text-[20px] flex items-center justify-center rounded-md hover:text-primaryColor transition duration-300 group relative">
+               <svg width="24" height="24" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="group-hover:opacity-0">
+                  <path
+                     d="M8.66602 0.5L11.498 0.50293L11.4912 3.37305L9.60352 3.37402C8.90748 3.37408 8.33248 3.48941 7.95605 3.87402C7.5783 4.26014 7.52441 4.79338 7.52441 5.26758V7.69141H11.2441L10.5938 10.7959H7.52539L7.52441 11.2949L7.52051 19.5H3.84082L3.84473 11.2959V10.7959H0.5V7.69043H3.84473V4.92285C3.84473 3.54862 4.32121 2.45674 5.13281 1.70605C5.89749 0.998906 7.00023 0.557241 8.38574 0.504883L8.66602 0.5Z"
+                     fill="white" stroke="currentColor" />
+               </svg>
+
+
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 320 512"
+                  class="opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <path fill="currentColor"
+                     d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+               </svg></a>
+            <a href="#"
+               class="w-8 h-8 text-[20px] flex items-center justify-center rounded-md hover:text-primaryColor transition duration-300 relative group">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"
+                  class="group-hover:opacity-0">
+                  <path fill="currentColor"
+                     d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+               </svg>
+
+               <svg width="24" height="24" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <path
+                     d="M5.10742 1L9.61914 7.7627L9.99023 8.31934L10.4189 7.80566L16.1025 1H16.3926L10.3584 8.22461L10.1191 8.51172L10.3262 8.82227L17.1152 19H12.9424L8.16992 11.8457L7.79883 11.2891L7.37012 11.8027L1.35938 19H1.06934L7.43066 11.3838L7.66992 11.0967L7.46289 10.7861L0.93457 1H5.10742ZM1.22266 1.23438L1.75293 2.01562L7.43359 10.3857L8.14746 11.4375L13.0107 18.6025L13.1592 18.8213H16.8135L16.2842 18.041L10.3242 9.26074L9.61035 8.20898L5.02539 1.4541L4.87695 1.23438H1.22266ZM4.34668 2.23438L8.7832 8.77051L9.49707 9.82227L14.9258 17.8213H13.6885L8.97461 10.876L8.26074 9.82422L3.10938 2.23438H4.34668Z"
+                     fill="currentColor" stroke="currentColor" />
+               </svg>
+
+
+            </a>
+            <a href="#"
+               class="w-8 h-8 text-[20px] flex items-center justify-center rounded-md hover:text-primaryColor transition duration-300 relative group">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                  class="group-hover:opacity-0">
+                  <path fill="currentColor" fill-rule="evenodd"
+                     d="M5 1.25a2.75 2.75 0 1 0 0 5.5a2.75 2.75 0 0 0 0-5.5M3.75 4a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0m-1.5 4A.75.75 0 0 1 3 7.25h4a.75.75 0 0 1 .75.75v13a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75zm1.5.75v11.5h2.5V8.75zM9.25 8a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 .75.75v.434l.435-.187a7.792 7.792 0 0 1 2.358-.595C20.318 7.4 22.75 9.58 22.75 12.38V21a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75v-7a1.25 1.25 0 0 0-2.5 0v7a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75zm1.5.75v11.5h2.5V14a2.75 2.75 0 1 1 5.5 0v6.25h2.5v-7.87c0-1.904-1.661-3.408-3.57-3.234a6.31 6.31 0 0 0-1.904.48l-1.48.635a.75.75 0 0 1-1.046-.69V8.75z"
+                     clip-rule="evenodd" />
+               </svg>
+
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <path
+                     d="M17.0547 8.75055C15.047 8.75055 13.7123 9.74015 13.1597 10.6805H13.0722V9.02626H9.13348V21H13.2473V15.0919C13.2473 13.5312 13.5919 12.0197 15.7418 12.0197C17.8589 12.0197 17.8862 13.7823 17.8862 15.1707V21H22V14.4223C22 11.2024 21.2396 8.75055 17.0547 8.75055ZM2.39388 9.02626V21H6.55142V9.02626H2.39388Z"
+                     fill="currentColor" />
+                  <path
+                     d="M6.59001 5.1C6.59001 6.2598 5.64981 7.2 4.49001 7.2C3.33022 7.2 2.39001 6.2598 2.39001 5.1C2.39001 3.9402 3.33022 3 4.49001 3C5.64981 3 6.59001 3.9402 6.59001 5.1Z"
+                     fill="currentColor" />
+               </svg>
+
+            </a>
+            <a href="#"
+               class="w-8 h-8 text-[20px] flex items-center justify-center rounded-md hover:text-primaryColor transition duration-300 relative group">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"
+                  class="group-hover:opacity-0">
+                  <path fill="currentColor"
+                     d="M960 509.2c0-2.2 0-4.7-.1-7.6c-.1-8.1-.3-17.2-.5-26.9c-.8-27.9-2.2-55.7-4.4-81.9c-3-36.1-7.4-66.2-13.4-88.8a139.52 139.52 0 0 0-98.3-98.5c-28.3-7.6-83.7-12.3-161.7-15.2c-37.1-1.4-76.8-2.3-116.5-2.8c-13.9-.2-26.8-.3-38.4-.4h-29.4c-11.6.1-24.5.2-38.4.4c-39.7.5-79.4 1.4-116.5 2.8c-78 3-133.5 7.7-161.7 15.2A139.35 139.35 0 0 0 82.4 304C76.3 326.6 72 356.7 69 392.8c-2.2 26.2-3.6 54-4.4 81.9c-.3 9.7-.4 18.8-.5 26.9c0 2.9-.1 5.4-.1 7.6v5.6c0 2.2 0 4.7.1 7.6c.1 8.1.3 17.2.5 26.9c.8 27.9 2.2 55.7 4.4 81.9c3 36.1 7.4 66.2 13.4 88.8c12.8 47.9 50.4 85.7 98.3 98.5c28.2 7.6 83.7 12.3 161.7 15.2c37.1 1.4 76.8 2.3 116.5 2.8c13.9.2 26.8.3 38.4.4h29.4c11.6-.1 24.5-.2 38.4-.4c39.7-.5 79.4-1.4 116.5-2.8c78-3 133.5-7.7 161.7-15.2c47.9-12.8 85.5-50.5 98.3-98.5c6.1-22.6 10.4-52.7 13.4-88.8c2.2-26.2 3.6-54 4.4-81.9c.3-9.7.4-18.8.5-26.9c0-2.9.1-5.4.1-7.6zm-72 5.2c0 2.1 0 4.4-.1 7.1c-.1 7.8-.3 16.4-.5 25.7c-.7 26.6-2.1 53.2-4.2 77.9c-2.7 32.2-6.5 58.6-11.2 76.3c-6.2 23.1-24.4 41.4-47.4 47.5c-21 5.6-73.9 10.1-145.8 12.8c-36.4 1.4-75.6 2.3-114.7 2.8c-13.7.2-26.4.3-37.8.3h-28.6l-37.8-.3c-39.1-.5-78.2-1.4-114.7-2.8c-71.9-2.8-124.9-7.2-145.8-12.8c-23-6.2-41.2-24.4-47.4-47.5c-4.7-17.7-8.5-44.1-11.2-76.3c-2.1-24.7-3.4-51.3-4.2-77.9c-.3-9.3-.4-18-.5-25.7c0-2.7-.1-5.1-.1-7.1v-4.8c0-2.1 0-4.4.1-7.1c.1-7.8.3-16.4.5-25.7c.7-26.6 2.1-53.2 4.2-77.9c2.7-32.2 6.5-58.6 11.2-76.3c6.2-23.1 24.4-41.4 47.4-47.5c21-5.6 73.9-10.1 145.8-12.8c36.4-1.4 75.6-2.3 114.7-2.8c13.7-.2 26.4-.3 37.8-.3h28.6l37.8.3c39.1.5 78.2 1.4 114.7 2.8c71.9 2.8 124.9 7.2 145.8 12.8c23 6.2 41.2 24.4 47.4 47.5c4.7 17.7 8.5 44.1 11.2 76.3c2.1 24.7 3.4 51.3 4.2 77.9c.3 9.3.4 18 .5 25.7c0 2.7.1 5.1.1 7.1zM423 646l232-135l-232-133z" />
+               </svg>
+
+               <svg width="24" height="24" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <g clip-path="url(#clip0_82_45)">
+                     <path
+                        d="M19.5763 2.18986C19.3423 1.32853 18.6851 0.657211 17.8085 0.423357C16.2601 0 9.99269 0 9.99269 0C9.99269 0 3.73994 0 2.19151 0.423357C1.32953 0.656707 0.657201 1.32853 0.409048 2.18986C0 3.73713 0 6.99244 0 6.99244C0 6.99244 0 10.2478 0.409048 11.8101C0.657201 12.6569 1.32953 13.3428 2.19151 13.5766C3.73994 14 9.99269 14 9.99269 14C9.99269 14 16.2601 14 17.8085 13.5766C18.6851 13.3433 19.3423 12.6569 19.5763 11.8101C20 10.2483 20 6.99244 20 6.99244C20 6.99244 20 3.73713 19.5763 2.18986ZM8.00595 9.99978V3.99971L13.1924 6.99244L8.00595 9.99978Z"
+                        fill="currentColor" />
+                  </g>
+                  <defs>
+                     <clipPath id="clip0_82_45">
+                        <rect width="20" height="14" fill="white" />
+                     </clipPath>
+                  </defs>
+               </svg>
+
+            </a>
          </div>
-      </footer>
-      <script src="../script.js"></script>
-   </body>
+      </div>
+      <div class="menu flex w-[50%] flex-col gap-[.4rem]">
+         <a class="menu-hover" href="/">Home</a><a class="menu-hover" href="/about">About</a><a class="menu-hover"
+            href="/">Shop</a><a class="menu-hover" href="/">Blog</a><a class="menu-hover" href="/">Reviews</a><a
+            class="menu-hover" href="/">Contact Support</a><a class="menu-hover" href="/">Secure&nbsp;Payment</a>
+      </div>
+      <div class="flex flex-col w-[100%] mr-[10px]  gap-[.4rem]">
+         <a class="menu-hover" href="./tos.html">Terms of Service</a><a class="menu-hover" href="./privacy.html">Privacy
+            Policy</a><a class="menu-hover" href="./tos.html">User Policy</a><a class="menu-hover"
+            href="./tos.html">Cookie Policy</a><a class="menu-hover" href="./tos.html">Shipping &amp; Return
+            Policy</a><a class="menu-hover" href="./tos.html">Cancellation &amp; Refund Policy</a><a class="menu-hover"
+            href="./tos.html">Disclaimer &amp; Copyright policy</a>
+      </div>
+      <div class="min-w-[280px] w-[25%] flex items-start justify-start flex-col gap-[.6rem]">
+         <div class="flex gap-[1.5rem] items-center">
+            <a class="p-1 rounded-md hover:text-primaryColor transition-all duration-300 relative group" href="/">
+              
+         
+                  <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                     class="group-hover:opacity-0">
+                     <path
+                        d="M18.134 5.84662C20.4601 10.3153 18.7127 15.8416 14.2407 18.1695C9.76866 20.4975 4.23952 18.7591 1.91318 14.2907C-0.413079 9.82197 1.33403 4.29493 5.80609 1.96687C10.2782 -0.361167 15.8078 1.3779 18.134 5.84662ZM13.8255 8.08952C13.8034 8.04707 13.7492 8.02905 13.7047 8.05218L10.025 9.96772L9.6733 9.77428L7.41627 8.53481C7.3744 8.51176 7.31944 8.52645 7.29541 8.56911C7.28027 8.5967 7.28073 8.62753 7.29461 8.6543C7.30198 8.66846 7.31245 8.68084 7.32838 8.68956L7.33057 8.68953L9.98032 10.1462L9.98164 10.1466C10.0056 10.1599 10.0365 10.161 10.0642 10.1466L13.7863 8.20897C13.8307 8.18588 13.8474 8.13194 13.8255 8.08952Z"
+                        stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+
+                  <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                     class="opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                     <path
+                        d="M18.4266 5.61339C20.8453 10.2597 19.0329 16.0079 14.3866 18.4266C9.7403 20.8453 3.9921 19.0329 1.57339 14.3866C-0.845322 9.74031 0.967077 3.99211 5.61338 1.5734C10.2597 -0.845316 16.0079 0.967083 18.4266 5.61339ZM15.7656 6.99863C15.3831 6.26407 14.4771 5.97852 13.7424 6.36074L10.0194 8.29882L7.56357 6.94816C6.83836 6.54856 5.92541 6.8134 5.52642 7.53962L5.52556 7.54007C5.27548 7.99664 5.28734 8.52692 5.51066 8.95595C5.64241 9.20905 5.84964 9.42724 6.11917 9.575L6.11875 9.57632L9.27715 11.3143L9.27757 11.313C9.71728 11.556 10.248 11.562 10.6926 11.3305L15.1277 9.02177C15.8622 8.63921 16.148 7.73326 15.7656 6.99863Z"
+                        fill="currentColor" stroke="currentColor" />
+                  </svg>
+
+
+
+            </a>
+            <p>Mon - Sat : 10:00 - 19:30</p>
+         </div>
+         <div class="flex gap-[1.5rem] items-center">
+            <a class="p-1 rounded-md hover:text-primaryColor transition-all duration-300 relative group" href="/">
+              <svg width="24" height="28" viewBox="0 0 21 10" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="group-hover:opacity-0">
+              <mask id="path-1-inside-1_13_118" fill="white">
+                <path
+                  d="M7.02277 0C6.54404 0 6.14493 0.399109 6.14493 0.877847V8.33954C6.14493 8.81828 6.54404 9.21739 7.02277 9.21739H19.3126C19.7914 9.21739 20.1905 8.81828 20.1905 8.33954V0.877847C20.1905 0.399109 19.7914 0 19.3126 0H7.02277ZM7.7703 0.877847H18.5651L13.1677 5.56197L7.7703 0.877847ZM7.02277 1.38535L10.6233 4.51268L7.02277 7.78402V1.38535ZM19.3126 1.38535V7.78402L15.7121 4.51268L19.3126 1.38535ZM0.438923 1.53623C0.196506 1.53623 0 1.73274 0 1.97516C0 2.21757 0.196506 2.41408 0.438923 2.41408H4.82816C5.07057 2.41408 5.26708 2.21757 5.26708 1.97516C5.26708 1.73274 5.07057 1.53623 4.82816 1.53623H0.438923ZM1.31677 4.16977C1.07435 4.16977 0.877847 4.36628 0.877847 4.6087C0.877847 4.85111 1.07435 5.04762 1.31677 5.04762H4.82816C5.07057 5.04762 5.26708 4.85111 5.26708 4.6087C5.26708 4.36628 5.07057 4.16977 4.82816 4.16977H1.31677ZM11.2886 5.08877L12.8797 6.47412C12.9595 6.54359 13.0618 6.58184 13.1677 6.58184C13.2736 6.58184 13.3759 6.54359 13.4557 6.47412L15.0468 5.08877L18.62 8.33954H7.71544L11.2886 5.08877ZM2.19462 6.80331C1.9522 6.80331 1.75569 6.99982 1.75569 7.24224C1.75569 7.48465 1.9522 7.68116 2.19462 7.68116H4.82816C5.07057 7.68116 5.26708 7.48465 5.26708 7.24224C5.26708 6.99982 5.07057 6.80331 4.82816 6.80331H2.19462Z" />
+              </mask>
+              <path
+                d="M7.02277 0C6.54404 0 6.14493 0.399109 6.14493 0.877847V8.33954C6.14493 8.81828 6.54404 9.21739 7.02277 9.21739H19.3126C19.7914 9.21739 20.1905 8.81828 20.1905 8.33954V0.877847C20.1905 0.399109 19.7914 0 19.3126 0H7.02277ZM7.7703 0.877847H18.5651L13.1677 5.56197L7.7703 0.877847ZM7.02277 1.38535L10.6233 4.51268L7.02277 7.78402V1.38535ZM19.3126 1.38535V7.78402L15.7121 4.51268L19.3126 1.38535ZM0.438923 1.53623C0.196506 1.53623 0 1.73274 0 1.97516C0 2.21757 0.196506 2.41408 0.438923 2.41408H4.82816C5.07057 2.41408 5.26708 2.21757 5.26708 1.97516C5.26708 1.73274 5.07057 1.53623 4.82816 1.53623H0.438923ZM1.31677 4.16977C1.07435 4.16977 0.877847 4.36628 0.877847 4.6087C0.877847 4.85111 1.07435 5.04762 1.31677 5.04762H4.82816C5.07057 5.04762 5.26708 4.85111 5.26708 4.6087C5.26708 4.36628 5.07057 4.16977 4.82816 4.16977H1.31677ZM11.2886 5.08877L12.8797 6.47412C12.9595 6.54359 13.0618 6.58184 13.1677 6.58184C13.2736 6.58184 13.3759 6.54359 13.4557 6.47412L15.0468 5.08877L18.62 8.33954H7.71544L11.2886 5.08877ZM2.19462 6.80331C1.9522 6.80331 1.75569 6.99982 1.75569 7.24224C1.75569 7.48465 1.9522 7.68116 2.19462 7.68116H4.82816C5.07057 7.68116 5.26708 7.48465 5.26708 7.24224C5.26708 6.99982 5.07057 6.80331 4.82816 6.80331H2.19462Z"
+                fill="black" />
+              <path
+                d="M7.7703 0.877847V-0.122153H5.09234L7.11486 1.63309L7.7703 0.877847ZM18.5651 0.877847L19.2205 1.63309L21.2431 -0.122153H18.5651V0.877847ZM13.1677 5.56197L12.5123 6.31722L13.1677 6.88604L13.8231 6.31722L13.1677 5.56197ZM7.02277 1.38535L7.67853 0.630376L6.02277 -0.807768V1.38535H7.02277ZM10.6233 4.51268L11.2958 5.25281L12.1289 4.49585L11.2791 3.75771L10.6233 4.51268ZM7.02277 7.78402H6.02277V10.0437L7.69524 8.52415L7.02277 7.78402ZM19.3126 1.38535H20.3126V-0.807768L18.6569 0.630376L19.3126 1.38535ZM19.3126 7.78402L18.6402 8.52415L20.3126 10.0437V7.78402H19.3126ZM15.7121 4.51268L15.0563 3.75771L14.2065 4.49585L15.0396 5.25281L15.7121 4.51268ZM11.2886 5.08877L11.9452 4.33458L11.274 3.75012L10.6156 4.34908L11.2886 5.08877ZM12.8797 6.47412L12.223 7.22831L12.2235 7.22872L12.8797 6.47412ZM13.4557 6.47412L14.1119 7.22872L14.1124 7.22831L13.4557 6.47412ZM15.0468 5.08877L15.7198 4.34908L15.0614 3.75012L14.3902 4.33458L15.0468 5.08877ZM18.62 8.33954V9.33954H21.2051L19.2929 7.59986L18.62 8.33954ZM7.71544 8.33954L7.04249 7.59986L5.13029 9.33954H7.71544V8.33954ZM7.02277 0V-1C5.99176 -1 5.14493 -0.153179 5.14493 0.877847H6.14493H7.14493C7.14493 0.921131 7.12665 0.951288 7.11143 0.966505C7.09621 0.981721 7.06606 1 7.02277 1V0ZM6.14493 0.877847H5.14493V8.33954H6.14493H7.14493V0.877847H6.14493ZM6.14493 8.33954H5.14493C5.14493 9.37056 5.99176 10.2174 7.02277 10.2174V9.21739V8.21739C7.06606 8.21739 7.09622 8.23567 7.11143 8.25089C7.12665 8.2661 7.14493 8.29626 7.14493 8.33954H6.14493ZM7.02277 9.21739V10.2174H19.3126V9.21739V8.21739H7.02277V9.21739ZM19.3126 9.21739V10.2174C20.3436 10.2174 21.1905 9.37056 21.1905 8.33954H20.1905H19.1905C19.1905 8.29626 19.2088 8.2661 19.224 8.25089C19.2392 8.23567 19.2693 8.21739 19.3126 8.21739V9.21739ZM20.1905 8.33954H21.1905V0.877847H20.1905H19.1905V8.33954H20.1905ZM20.1905 0.877847H21.1905C21.1905 -0.153179 20.3436 -1 19.3126 -1V0V1C19.2693 1 19.2392 0.981721 19.224 0.966505C19.2088 0.951288 19.1905 0.921131 19.1905 0.877847H20.1905ZM19.3126 0V-1H7.02277V0V1H19.3126V0ZM7.7703 0.877847V1.87785H18.5651V0.877847V-0.122153H7.7703V0.877847ZM18.5651 0.877847L17.9097 0.1226L12.5123 4.80672L13.1677 5.56197L13.8231 6.31722L19.2205 1.63309L18.5651 0.877847ZM13.1677 5.56197L13.8231 4.80672L8.42575 0.1226L7.7703 0.877847L7.11486 1.63309L12.5123 6.31722L13.1677 5.56197ZM7.02277 1.38535L6.36702 2.14033L9.96755 5.26766L10.6233 4.51268L11.2791 3.75771L7.67853 0.630376L7.02277 1.38535ZM10.6233 4.51268L9.95084 3.77255L6.35031 7.04389L7.02277 7.78402L7.69524 8.52415L11.2958 5.25281L10.6233 4.51268ZM7.02277 7.78402H8.02277V1.38535H7.02277H6.02277V7.78402H7.02277ZM19.3126 1.38535H18.3126V7.78402H19.3126H20.3126V1.38535H19.3126ZM19.3126 7.78402L19.9851 7.04389L16.3846 3.77255L15.7121 4.51268L15.0396 5.25281L18.6402 8.52415L19.3126 7.78402ZM15.7121 4.51268L16.3678 5.26766L19.9684 2.14033L19.3126 1.38535L18.6569 0.630376L15.0563 3.75771L15.7121 4.51268ZM0.438923 1.53623V0.536232C-0.355779 0.536232 -1 1.18045 -1 1.97516H0H1C1 2.28502 0.748791 2.53623 0.438923 2.53623V1.53623ZM0 1.97516H-1C-1 2.76986 -0.355779 3.41408 0.438923 3.41408V2.41408V1.41408C0.748791 1.41408 1 1.66529 1 1.97516H0ZM0.438923 2.41408V3.41408H4.82816V2.41408V1.41408H0.438923V2.41408ZM4.82816 2.41408V3.41408C5.62286 3.41408 6.26708 2.76986 6.26708 1.97516H5.26708H4.26708C4.26708 1.66529 4.51829 1.41408 4.82816 1.41408V2.41408ZM5.26708 1.97516H6.26708C6.26708 1.18045 5.62286 0.536232 4.82816 0.536232V1.53623V2.53623C4.51829 2.53623 4.26708 2.28502 4.26708 1.97516H5.26708ZM4.82816 1.53623V0.536232H0.438923V1.53623V2.53623H4.82816V1.53623ZM1.31677 4.16977V3.16977C0.522068 3.16977 -0.122153 3.81399 -0.122153 4.6087H0.877847H1.87785C1.87785 4.91856 1.62664 5.16977 1.31677 5.16977V4.16977ZM0.877847 4.6087H-0.122153C-0.122153 5.4034 0.522068 6.04762 1.31677 6.04762V5.04762V4.04762C1.62664 4.04762 1.87785 4.29883 1.87785 4.6087H0.877847ZM1.31677 5.04762V6.04762H4.82816V5.04762V4.04762H1.31677V5.04762ZM4.82816 5.04762V6.04762C5.62286 6.04762 6.26708 5.4034 6.26708 4.6087H5.26708H4.26708C4.26708 4.29883 4.51829 4.04762 4.82816 4.04762V5.04762ZM5.26708 4.6087H6.26708C6.26708 3.81399 5.62286 3.16977 4.82816 3.16977V4.16977V5.16977C4.51829 5.16977 4.26708 4.91856 4.26708 4.6087H5.26708ZM4.82816 4.16977V3.16977H1.31677V4.16977V5.16977H4.82816V4.16977ZM11.2886 5.08877L10.6319 5.84295L12.223 7.22831L12.8797 6.47412L13.5363 5.71993L11.9452 4.33458L11.2886 5.08877ZM12.8797 6.47412L12.2235 7.22872C12.4853 7.45644 12.8207 7.58184 13.1677 7.58184V6.58184V5.58184C13.303 5.58184 13.4337 5.63073 13.5358 5.71952L12.8797 6.47412ZM13.1677 6.58184V7.58184C13.5147 7.58184 13.8501 7.45644 14.1119 7.22872L13.4557 6.47412L12.7996 5.71952C12.9017 5.63073 13.0324 5.58184 13.1677 5.58184V6.58184ZM13.4557 6.47412L14.1124 7.22831L15.7035 5.84295L15.0468 5.08877L14.3902 4.33458L12.7991 5.71993L13.4557 6.47412ZM15.0468 5.08877L14.3739 5.82845L17.947 9.07923L18.62 8.33954L19.2929 7.59986L15.7198 4.34908L15.0468 5.08877ZM18.62 8.33954V7.33954H7.71544V8.33954V9.33954H18.62V8.33954ZM7.71544 8.33954L8.38839 9.07923L11.9615 5.82845L11.2886 5.08877L10.6156 4.34908L7.04249 7.59986L7.71544 8.33954ZM2.19462 6.80331V5.80331C1.39991 5.80331 0.755694 6.44753 0.755694 7.24224H1.75569H2.75569C2.75569 7.5521 2.50448 7.80331 2.19462 7.80331V6.80331ZM1.75569 7.24224H0.755694C0.755694 8.03694 1.39991 8.68116 2.19462 8.68116V7.68116V6.68116C2.50448 6.68116 2.75569 6.93237 2.75569 7.24224H1.75569ZM2.19462 7.68116V8.68116H4.82816V7.68116V6.68116H2.19462V7.68116ZM4.82816 7.68116V8.68116C5.62286 8.68116 6.26708 8.03694 6.26708 7.24224H5.26708H4.26708C4.26708 6.93237 4.51829 6.68116 4.82816 6.68116V7.68116ZM5.26708 7.24224H6.26708C6.26708 6.44753 5.62286 5.80331 4.82816 5.80331V6.80331V7.80331C4.51829 7.80331 4.26708 7.5521 4.26708 7.24224H5.26708ZM4.82816 6.80331V5.80331H2.19462V6.80331V7.80331H4.82816V6.80331Z"
+                fill="currentColor" mask="url(#path-1-inside-1_13_118)" />
+            </svg>
+
+            <svg width="24" height="28" viewBox="0 0 20 9" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <path
+                d="M7.06677 0L13.1818 5.5288L19.2969 0H7.06677ZM6.36364 0.614309V8.3561L10.5682 4.4186L6.36364 0.614309ZM20 0.614309L15.7955 4.4186L20 8.3561V0.614309ZM0.454545 1.18421C0.2035 1.18421 0 1.39628 0 1.65789C0 1.91951 0.2035 2.13158 0.454545 2.13158H5C5.25105 2.13158 5.45455 1.91951 5.45455 1.65789C5.45455 1.39628 5.25105 1.18421 5 1.18421H0.454545ZM1.36364 4.02632C1.11259 4.02632 0.909091 4.23838 0.909091 4.5C0.909091 4.76162 1.11259 4.97368 1.36364 4.97368H5C5.25105 4.97368 5.45455 4.76162 5.45455 4.5C5.45455 4.23838 5.25105 4.02632 5 4.02632H1.36364ZM11.2571 5.04031L11.2145 5.08472L7.03836 9H19.3253L15.1491 5.08472L15.1065 5.04031L13.4801 6.51316C13.3974 6.58812 13.2914 6.62941 13.1818 6.62941C13.0722 6.62941 12.9663 6.58812 12.8835 6.51316L11.2571 5.04031ZM2.27273 6.86842C2.02168 6.86842 1.81818 7.08049 1.81818 7.34211C1.81818 7.60372 2.02168 7.81579 2.27273 7.81579H5C5.25105 7.81579 5.45455 7.60372 5.45455 7.34211C5.45455 7.08049 5.25105 6.86842 5 6.86842H2.27273Z"
+                fill="currentColor" />
+            </svg>
+            </a>
+            <p>hellonutmeals@gmail.com</p>
+         </div>
+         <div class="flex gap-[1.5rem] items-center">
+            <a class="p-1 rounded-md hover:text-primaryColor transition-all duration-300 relative group" href="/">
+               <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="group-hover:opacity-0">
+              <path
+                d="M18.134 5.84662C20.4601 10.3153 18.7127 15.8416 14.2407 18.1695C9.76866 20.4975 4.23952 18.7591 1.91318 14.2907C-0.413079 9.82197 1.33403 4.29493 5.80609 1.96687C10.2782 -0.361167 15.8078 1.3779 18.134 5.84662ZM13.8255 8.08952C13.8034 8.04707 13.7492 8.02905 13.7047 8.05218L10.025 9.96772L9.6733 9.77428L7.41627 8.53481C7.3744 8.51176 7.31944 8.52645 7.29541 8.56911C7.28027 8.5967 7.28073 8.62753 7.29461 8.6543C7.30198 8.66846 7.31245 8.68084 7.32838 8.68956L7.33057 8.68953L9.98032 10.1462L9.98164 10.1466C10.0056 10.1599 10.0365 10.161 10.0642 10.1466L13.7863 8.20897C13.8307 8.18588 13.8474 8.13194 13.8255 8.08952Z"
+                stroke="currentColor" stroke-width="1.5" />
+            </svg>
+
+            <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <path
+                d="M18.4266 5.61339C20.8453 10.2597 19.0329 16.0079 14.3866 18.4266C9.7403 20.8453 3.9921 19.0329 1.57339 14.3866C-0.845322 9.74031 0.967077 3.99211 5.61338 1.5734C10.2597 -0.845316 16.0079 0.967083 18.4266 5.61339ZM15.7656 6.99863C15.3831 6.26407 14.4771 5.97852 13.7424 6.36074L10.0194 8.29882L7.56357 6.94816C6.83836 6.54856 5.92541 6.8134 5.52642 7.53962L5.52556 7.54007C5.27548 7.99664 5.28734 8.52692 5.51066 8.95595C5.64241 9.20905 5.84964 9.42724 6.11917 9.575L6.11875 9.57632L9.27715 11.3143L9.27757 11.313C9.71728 11.556 10.248 11.562 10.6926 11.3305L15.1277 9.02177C15.8622 8.63921 16.148 7.73326 15.7656 6.99863Z"
+                fill="currentColor" stroke="currentColor" />
+            </svg>
+            </a>
+            <p>+91 992 44 55 776</p>
+         </div>
+         <div class="flex gap-[1.5rem] items-start">
+            <a class="p-1 rounded-md hover:text-primaryColor transition-all duration-300 relative group text-white" href="/">
+              <svg width="24" height="24" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="group-hover:opacity-0">
+              <path
+                d="M11.3467 17.0244L11.3525 17.0254C12.2059 17.1898 12.8263 17.3868 13.2266 17.6064C13.6331 17.8296 13.749 18.038 13.749 18.2061C13.7488 18.3589 13.6521 18.5448 13.3184 18.749C13.0695 18.9012 12.7162 19.0449 12.2529 19.1758L11.7529 19.3027C10.3889 19.5789 8.99832 19.7281 7.60254 19.748H6.39746C5.00072 19.7281 3.60967 19.579 2.24512 19.3027H2.24609C1.52922 19.1406 1.01233 18.953 0.680664 18.75C0.346964 18.5458 0.250177 18.3592 0.25 18.2061C0.25 18.0376 0.366446 17.8295 0.773438 17.6064C1.17398 17.3869 1.79404 17.1898 2.64746 17.0254L2.65332 17.0244C2.67125 17.0205 2.691 17.0231 2.70703 17.0322C2.7127 17.0357 2.71586 17.0395 2.71777 17.042C2.71876 17.0433 2.71944 17.0443 2.71973 17.0449L2.7207 17.0459V17.0498C2.72049 17.0505 2.72007 17.0519 2.71875 17.0537L2.7168 17.0557C2.71365 17.06 2.70333 17.0698 2.68262 17.0732L2.67578 17.0742C1.88582 17.227 1.33327 17.4061 0.97168 17.5781C0.791737 17.6638 0.649937 17.7523 0.548828 17.8418C0.471392 17.9104 0.378528 18.0138 0.356445 18.1465L0.351562 18.2061L0.365234 18.3008C0.390153 18.3903 0.445991 18.4651 0.499023 18.5205C0.577554 18.6024 0.689215 18.6839 0.833984 18.7637C1.12417 18.9236 1.58204 19.0961 2.2793 19.2539L2.28516 19.2549C3.64043 19.5285 5.02155 19.6764 6.4082 19.6963H7.59082C8.97712 19.6766 10.3591 19.5295 11.7148 19.2559L11.7207 19.2539C12.4182 19.0957 12.876 18.9235 13.166 18.7637C13.3107 18.6839 13.4225 18.6032 13.501 18.5215C13.5717 18.4477 13.6484 18.3386 13.6484 18.2061C13.6483 18.0453 13.5409 17.9206 13.4521 17.8418C13.351 17.7521 13.2083 17.6638 13.0283 17.5781C12.6668 17.4061 12.1143 17.2275 11.3242 17.0752L11.3174 17.0742L11.2832 17.0557L11.2812 17.0537C11.2799 17.0519 11.2795 17.0505 11.2793 17.0498V17.0459L11.2803 17.0449C11.2806 17.0443 11.2812 17.0433 11.2822 17.042C11.2841 17.0395 11.2873 17.0357 11.293 17.0322C11.309 17.0231 11.3288 17.0205 11.3467 17.0244ZM3.66797 1.06836C5.72908 -0.0225617 8.271 -0.0224625 10.332 1.06836C12.2625 2.09013 13.4881 3.91834 13.6338 5.92188L13.6484 6.3252C13.6241 8.62018 12.4264 10.539 10.9551 12.3604C10.2141 13.2776 9.43213 14.137 8.6875 15.0273C8.05626 15.7821 7.46552 16.5445 7 17.3311C6.53486 16.5447 5.94548 15.782 5.31445 15.0273C4.56974 14.1368 3.78808 13.2767 3.04688 12.3594C1.57527 10.538 0.375885 8.62012 0.351562 6.3252C0.351562 4.16613 1.60868 2.15842 3.66797 1.06836ZM10.126 6.48633C10.126 7.23383 9.80212 7.95554 9.21875 8.49121C8.63376 9.02755 7.83607 9.33301 7 9.33301C6.16396 9.33299 5.3662 9.02753 4.78125 8.49121C4.19693 7.95541 3.87207 7.23363 3.87207 6.48633C3.87214 5.73897 4.1959 5.01799 4.78027 4.48145C5.36511 3.94528 6.16288 3.64066 6.99902 3.64062C7.83514 3.64062 8.63294 3.94535 9.21777 4.48145C9.80197 5.01707 10.1259 5.73887 10.126 6.48633ZM10.626 6.48633C10.6259 5.59143 10.2376 4.73856 9.55566 4.11328C8.87423 3.48852 7.95429 3.14062 6.99902 3.14062C6.10361 3.14066 5.23925 3.44625 4.57324 3.99902L4.44238 4.11328C3.76058 4.73925 3.37214 5.59131 3.37207 6.48633C3.37207 7.38149 3.76146 8.23515 4.44336 8.86035C5.12465 9.48491 6.04466 9.83299 7 9.83301C7.95533 9.83301 8.87532 9.48488 9.55664 8.86035C10.2377 8.23507 10.626 7.38128 10.626 6.48633Z"
+                fill="#FFFEFE00" stroke="currentColor" stroke-width="0.5" />
+            </svg>
+
+            <svg width="24" height="24" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+              class="opacity-0 group-hover:opacity-100 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <path
+                d="M13.8984 6.32494C13.8984 4.0656 12.5835 1.97683 10.4494 0.847267C8.31516 -0.282422 5.68544 -0.282422 3.55109 0.847267C1.41685 1.97696 0.102044 4.0656 0.102044 6.32494C0.150611 11.0952 5.08727 14.2285 7.00036 17.8395C8.91515 14.2287 13.8499 11.0952 13.8984 6.32494ZM3.6229 6.48656C3.6229 5.66527 3.97816 4.87861 4.61133 4.2973C5.2445 3.71679 6.10342 3.39108 6.99918 3.39108C7.89495 3.39108 8.75389 3.71679 9.38704 4.2973C10.0202 4.87781 10.3764 5.6653 10.3764 6.48656C10.3764 7.30782 10.0202 8.09532 9.38793 8.67581C8.75477 9.25632 7.89584 9.58286 7.00008 9.58286C6.10432 9.58286 5.24538 9.25632 4.61223 8.67581C3.97909 8.0953 3.6229 7.30782 3.6229 6.48656ZM13.9991 18.2056C13.9991 18.7663 13.2616 19.2166 11.8082 19.5464C10.2297 19.8664 8.6163 20.0181 6.99999 19.9983C5.3829 20.0181 3.76945 19.8664 2.1909 19.5464C0.736594 19.2174 0 18.7664 0 18.2056C0 17.5913 0.875108 17.1122 2.60014 16.7799C2.67928 16.7626 2.76202 16.7758 2.83128 16.8154C2.89963 16.855 2.9482 16.9185 2.96438 16.9918C2.98147 17.0644 2.96528 17.1411 2.91942 17.2029C2.87445 17.2648 2.80339 17.3068 2.72335 17.32C1.16741 17.621 0.601706 18.0143 0.601706 18.2056C0.601706 18.3483 0.965052 18.6996 2.33481 19.0096V19.0104C3.86646 19.3196 5.43135 19.4656 7 19.4466C8.56763 19.4656 10.1334 19.3196 11.6652 19.0104C13.0358 18.6996 13.3983 18.3483 13.3983 18.2065C13.3983 18.0143 12.8335 17.621 11.2767 17.3209V17.32C11.1966 17.3068 11.1256 17.2648 11.0806 17.2029C11.0347 17.1411 11.0185 17.0644 11.0356 16.9918C11.0518 16.9185 11.1004 16.855 11.1687 16.8154C11.238 16.7758 11.3207 16.7626 11.3999 16.7799C13.1249 17.1122 14 17.5922 14 18.2056H13.9991Z"
+                fill="currentColor" />
+            </svg>
+            </a>
+            <p>
+               34, GF, Satyam Mall, Near Mansi circle,
+               Ahmedabad - 380015 Gujarat, India
+            </p>
+         </div>
+      </div>
+      </div>
+   </footer>
+   <script src="../script.js"></script>
+</body>
+
 </html>

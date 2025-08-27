@@ -7,6 +7,7 @@
 @layer base {
   body {
     @apply font-montserrat scroll-smooth;
+    background: radial-gradient(circle, rgb(250, 250, 250) 20%, rgb(248, 248, 248) 100%);
   }
 
   html {
@@ -97,31 +98,31 @@
     @apply bg-[#717171];
   }
 
-  .hover-fill-white:hover img {
+  /* .hover-fill-white:hover img {
     filter: brightness(0) invert(1);
-  }
+  } */
 
-  .fill-white-color img {
+  /* .fill-white-color img {
     filter: brightness(0) invert(1);
-  }
+  } */
 
-  .navMenuBtn {
+  /* .navMenuBtn {
     filter: brightness(0) invert(1);
-  }
+  } */
 
-  .mobNavMenu {
+  /* .mobNavMenu {
     filter: brightness(0) invert(1);
-  }
+  } */
 
 
   /* mobile nav bar */
 
-  .mobNavBarClose > :not(:first-child) {
+  .mobNavBarClose> :not(:first-child) {
     display: none;
   }
 
   .mobNavBarOpen {
-    width: calc(100% - 25px);
+    width: calc(100% - 32px);
   }
 
   .navLinksVisible {
@@ -185,6 +186,21 @@
   .swiper {
     overflow: unset !important;
   }
+
+  .checkbox-white {
+    @apply appearance-none w-[15px] h-[15px] border border-primaryColor rounded relative cursor-pointer flex-shrink-0;
+  }
+  .checkbox-white:checked {
+    @apply bg-primaryColor;
+  }
+  .checkbox-white:checked::after {
+    content: "✔";
+    color: white; /* ✅ tick white */
+    font-size: 11px;
+    position: absolute;
+    top: -2px;
+    left: 2px;
+  }
 }
 
 .carousel-container {
@@ -201,14 +217,21 @@
   display: flex;
 }
 
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 8px !important;
+}
+
 .swiper-pagination-bullet {
-  background-color: #000000 !important; /* Example color for bullets */
-  width: 11px !important;
-  height: 11px !important;
+  background-color: #000000 !important;
+  /* Example color for bullets */
+  width: 8px !important;
+  height: 8px !important;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #000000 !important; /* Example color for active bullet */
+  background-color: #000000 !important;
+  /* Example color for active bullet */
 }
 
 .swiper-pagination-bullet:hover {
@@ -235,9 +258,9 @@
 /* mobnav */
 
 .glassNav {
-  background: #F8A531;
+  /* background: #F8A531; */
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   /* backdrop-filter: blur(0px); */
   /* -webkit-backdrop-filter: blur(5px); */
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -249,7 +272,8 @@
   box-shadow: var(--tw-shadow);
 }
 
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
   outline: none;
 }
 
@@ -262,7 +286,8 @@ textarea:focus, input:focus{
 
 @media (max-width: 768px) {
   .productimage-button {
-    display: block !important; /* Force display on mobile screens */
+    display: block !important;
+    /* Force display on mobile screens */
   }
 }
 
@@ -300,10 +325,12 @@ index */
 }
 
 @keyframes mergeSeparate {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.5);
   }
@@ -316,26 +343,52 @@ index */
 .glass {
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
+  border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .glassNav {
-  background: #f8a531;
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  /* background: #f8a531; */
+  border-radius: 10px;
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
- #scroll_top {
-        transition: bottom 0.3s;
-      }
+#scroll_top {
+  transition: bottom 0.3s;
+}
 
-      #scroll_top.show {
-        bottom: 20px; /* Visible position */
-      }
+#scroll_top.show {
+  bottom: 20px;
+  /* Visible position */
+}
 
-      #scroll_top.hide {
-        bottom: -50%; /* Hidden position */
-      }
+#scroll_top.hide {
+  bottom: -50%;
+  /* Hidden position */
+}
+
+
+
+.card {
+  border-radius: inherit;
+  transition: opacity 0.26s ease-out;
+  border-radius: 10px;
+  filter: drop-shadow(-8px -10px 46px #0000005f);
+  backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 2px 2px 0px -2px rgba(255, 255, 255, 0.7),
+    inset 0 0 3px 1px rgba(255, 255, 255, 0.7);
+  box-shadow: inset 6px 6px 0px -6px rgba(255, 255, 255, 0.7),
+    inset 0 0 8px 1px rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}

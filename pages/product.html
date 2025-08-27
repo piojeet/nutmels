@@ -160,20 +160,36 @@
       .btn-slide span.circle {
         display: none;
       }
-      
+
+      .btn-slide {
+        padding-right: 0;
+      }
+
     }
   </style>
 </head>
 
 <body>
+  <svg style="display:none;">
+        <filter id="displacementFilter">
+            <feTurbulence type="turbulence" 
+                baseFrequency="0.0" 
+                numOctaves="1" 
+                result="turbulence" />
+    
+            <feDisplacementMap in="SourceGraphic"
+                in2="turbulence"    
+                            scale="50" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
 
   <!-- 
         - NAVBAR
       -->
 
   <header
-    class="z-[111] top-0 fixed w-full md:flex px-4 md:p-0 bg-white md:bg-transparent drop-shadow md:drop-shadow-none justify-center">
-    <div class="navBar flex justify-between items-center bg-white h-[3.5rem] w-full md:w-[81%]">
+    class="z-[111] top-0 fixed w-full md:flex px-4 md:p-0 card md:bg-transparent drop-shadow md:drop-shadow-none justify-center">
+    <div class="navBar flex justify-between items-center h-[3.5rem] w-full max-w-[1440px] md:px-8 px-4">
       <div class="w-48">
         <div class="navLogo w-36">
           <a href="/index.html">
@@ -195,27 +211,36 @@
             class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Blog</a>
         </div>
       </div>
-      <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
-        <a class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-          href="../pages/cart1.html">
-          <img src="../assets/icons/NavBar/white_add_to_cart.svg" alt="Add to Cart" width="17" height="17"
-            class="duration-300" />
-        </a>
-        <a class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-          href="/pages/login.html">
-          <img src="../assets/icons/NavBar/white_account_profile.svg" alt="Account Profile" width="18" height="18"
-            class="duration-300" />
-        </a>
-        <a class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-          href="/pages/search.html">
-          <img src="../assets/icons/NavBar/white_search.svg" alt="Search" width="18" height="18" class="duration-300" />
-        </a>
-        <a class="rounded-md hover-fill-white contactIcon md:hover:bg-primaryButton py-2 px-2.5"
-          href="/pages/contact.html">
-          <img src="../assets/icons/NavBar/white_contact_support.svg" alt="Contact Support" width="18" height="18"
-            class="scale-[1.1]" />
-        </a>
-      </div>
+      <!-- Right-side menu items (Cart, Profile, Search, Contact) -->
+         <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
+            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+               href="/pages/cart1.html">
+               <img src="../assets/icons/NavBar/white_add_to_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/white_add_to_cart-yellow.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+               href="/pages/login.html">
+               <img src="../assets/icons/NavBar/account_profile_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/account_profile_yellow.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+               href="/pages/search.html">
+               <img src="../assets/icons/NavBar/search-zoom-in-black.svg" alt="Account Profile" width="20" height="20"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Account Profile" width="20" height="20"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <a class="rounded-md hover-fill-white contactIcon py-2 px-2.5 relative group" href="/pages/contact.html">
+               <img src="../assets/icons/NavBar/contact_support_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/contact_support_yellow.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+         </div>
     </div>
   </header>
   <!-- Mobile Navigation Section -->
@@ -286,8 +311,8 @@
   </div>
 
   <div
-    class="w-full fixed z-[111] bg-white -top-[22px] pt-[14px] md:pt-0 md:static  md:mt-10 mt-[4.5rem] justify-center flex">
-    <div class="flex justify-between mt-[2%] md:px-[30px] rounded-lg custom-shadow bg-[#F2F2F2] md:w-[85%] w-[92%]">
+    class="w-full fixed z-[111] bg-white -top-[22px] pt-[14px] md:pt-0 md:static  md:mt-10 mt-[4.5rem] justify-center flex max-w-[1440px] md:px-8 px-4 mx-auto">
+    <div class="flex justify-between mt-[2%] md:px-[30px] rounded-lg custom-shadow bg-[#F2F2F2] w-full">
       <div class="flex mx-2 w-[100%] justify-between bg-[#F2F2F2] gap-10">
 
         <div class=" flex md:w-[50%] w-full items-center justify-between">
@@ -360,42 +385,51 @@
 
         <!-- dropdown -->
 
+        <!-- Shop dropdown menu container -->
         <div id="shop-dropdown"
-          class="  flex p-2 gap-[1.75rem] opacity-[.95] dropdown-content absolute hidden bg-[#f5f5f5] shadow-lg rounded-lg mt-[2.9rem] z-[111] md:w-[80%]">
-          <div>
-            <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category</p>
-            <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Best Seller</p>
-            <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Combo Deals</p>
-          </div>
+          class="hidden dropdown-content max-w-[1440px] w-full md:px-8 px-4 absolute left-1/2 -translate-x-1/2 z-50 mt-[2.9rem]">
+          <div class="z-10 flex p-2 gap-[1.75rem] opacity-[.95] bg-[#f5f5f5] shadow-lg rounded-lg w-full">
+            <div>
+              <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
+                Category
+              </p>
+              <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
+                Best Seller
+              </p>
+              <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
+                Combo Deals
+              </p>
+            </div>
 
-          <div class="hidden md:flex items-center border-l gap-10 border-gray-400 p-4 px-[2.25rem]">
-            <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-              <p class="text-[13px]">Peanuts</p>
-            </a>
-            <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-              <p class="text-[13px]">Peanuts</p>
-            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-              <p class="text-[13px]">Peanuts</p>
-            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-              <p class="text-[13px]">Peanuts</p>
-            </a>
-            <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-              <p class="text-[13px]">Peanuts</p>
-            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-              <p class="text-[13px]">Peanuts</p>
-            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-              <p class="text-[13px]">Peanuts</p>
-            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-              <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-              <p class="text-[13px]">Peanuts</p>
-            </a>
+            <div class="hidden md:flex items-center border-l gap-10 border-gray-400 p-4 px-[2.25rem]">
+              <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a>
+              <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a>
+              <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -547,7 +581,7 @@
 
 
   <div class="w-full  flex justify-center">
-    <div class="flex-col flex lg:flex-row md:gap-8 gap-3 w-[90%] md:w-[80%] justify-center">
+    <div class="flex-col flex lg:flex-row md:gap-8 gap-3 w-full max-w-[1440px] md:px-8 px-4 justify-center">
 
 
 
@@ -570,11 +604,11 @@
 
 
 
-      <div class="md:w-[50%] mx-auto w-full mt-[6rem] md:mt-0">
+      <div class="w-1/2 mx-auto mt-[6rem] md:mt-0">
 
 
         <div
-          class="lg:w-[38vw] slides lg:h-[74vh] md:w-product-image flex justify-center flex-col md:pt-14 relative border bg-[#f5f5f5] border-gray-300 p-4 md:p-8 rounded-lg">
+          class="w-full slides lg:h-[74vh] md:w-product-image flex justify-center flex-col md:pt-14 relative border bg-[#f5f5f5] border-gray-300 p-4 md:p-8 rounded-lg">
           <div class="md:block hidden">
             <h1
               class="stroke-2 peanuts text-primaryButton opacity-[.5] stroke-gray-400 font-[800] mt-[1.1rem] !text-9xl xs:!text-7xl 2xl:!text-8xl absolute top-0 left-1/2 transform -translate-x-1/2 z-0">
@@ -647,20 +681,9 @@
 
 
 
-
-
-
-
-      <div class="w-full md:hidden   justify-center flex">
+      <div class="w-full md:hidden   justify-center flex bg-red-300">
         <div class="flex w-[100%] justify-between  md:px-[30px] rounded-lg shadow-xl bg-[#F2F2F2] ">
           <div class="flex mx-2 w-[100%] justify-between bg-[#F2F2F2] gap-10">
-
-
-
-
-
-
-
 
             <div
               class=" flex  w-[100%] justify-between text-[15px] sm:text-lg  py-1 items-center                          sm:mt-0">
@@ -689,119 +712,131 @@
       <div class=" lg:w-[50%] ">
 
         <div
-          class="border  services-section block  lg:h-[74vh]  overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 ">
-          <div class="flex md:px-10 lg:px-1 xl:px-[1.2rem] py-[.6rem]  h-full flex-col justify-between">
-            <div
-              class="title font-[700] text-[15px] xs:text-[18px] sm:text-[24px] md:text-[20px] lg:text-[25px] 2xl:text-[32px] flex">
-              Peanuts - <span>&nbsp;roasted &amp; salted</span><span class="ml-auto"> 200 g</span></div>
-            <div class="price-set flex justify-between items-center md:mt-2">
-              <div class="incdec flex m-2">
-                <button class="text-3xl 2xl:!text-[50px]" id="decrease">-</button>
-                <input id="quantity"
-                  class="w-14 border border-black text-center rounded-lg scale-[.8] md:scale-[1] md:mx-3 bg-[#f5f5f5]"
-                  type="text" value="1" readonly>
-                <button class="text-3xl 2xl:text-[40px]" id="increase">+</button>
+          class="border  md:services-section md:block  lg:h-[74vh]  overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg md:px-4 md:py-2 xs:px-8 xs:py-4 ">
+          <!-- Item 1 -->
+          <button class="accordion-btn w-full flex justify-between items-center px-4 py-3 text-left md:hidden"
+            aria-expanded="false">
+            <span>Buy</span>
+            <span class="icon transition-transform duration-300">+</span>
+          </button>
+          <div
+            class="accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease">
+            <div class="flex md:px-10 lg:px-1 xl:px-[1.2rem] py-[.6rem] flex-col justify-between h-full">
+              <div
+                class="title font-[700] text-[15px] xs:text-[18px] sm:text-[24px] md:text-[20px] lg:text-[25px] 2xl:text-[32px] flex">
+                Peanuts - <span>&nbsp;roasted &amp; salted</span><span class="ml-auto"> 200 g</span></div>
+              <div class="price-set flex justify-between items-center md:mt-2">
+                <div class="incdec flex m-2">
+                  <button class="text-3xl 2xl:!text-[50px]" id="decrease">-</button>
+                  <input id="quantity"
+                    class="w-14 border border-black text-center rounded-lg scale-[.8] md:scale-[1] md:mx-3 bg-[#f5f5f5]"
+                    type="text" value="1" readonly>
+                  <button class="text-3xl 2xl:text-[40px]" id="increase">+</button>
+                </div>
+                <div
+                  class="price text-[17px] xs:text-[18px] sm:text-[24px] md:text-[20px] lg:text-[25px] 2xl:text-[32px] ">
+                  &#8377; 100</div>
+              </div>
+              <div class="detail-1 my-2 2xl:my-10">
+                <div class="text-[14px]  sm:text-[19px] 2xl:text-[26px] font-[600] text-green-500">consumption
+                  preference
+                </div>
+                <div class="v1-button">
+                  <div
+                    class="grid md:grid-cols-5 grid-cols-4 md:gap-x-4 gap-x-[.9rem] gap-y-1 mt-1 2xl:mt-2 text-[12px] sm:text-[17px] 2xl:text-[24px]">
+                    <div class="place-items-start">
+                      <button class="text-[#faa61a]">raw</button>
+                    </div>
+                    <div class="place-items-start">
+                      <button>flour</button>
+                    </div>
+                    <div class="place-items-start">
+                      <button>milk</button>
+                    </div>
+                    <div class="place-items-start">
+                      <button>sprouted</button>
+                    </div>
+                    <div class="place-items-start">
+                      <button>energy bar</button>
+                    </div>
+                    <div class="place-items-start">
+                      <button>oil</button>
+                    </div>
+                    <div class="place-items-start">
+                      <button>spread</button>
+                    </div>
+                    <div class="place-items-start">
+                      <button>energy bar</button>
+                    </div>
+
+                    <div class="place-items-start">
+                      <button>spread</button>
+                    </div>
+                    <div class="place-items-start">
+                      <button>energy bar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="detail-2 my-3 2xl:my-8">
+                <div class="text-[14px] sm:text-[19px] 2xl:text-[26px] font-[600] text-green-500">variants</div>
+                <div class="v1-button">
+                  <div
+                    class="grid grid-cols-3 gap-x-1 gap-y-1 mt-1 2xl:mt-2 text-[12px] sm:text-[17px] 2xl:text-[24px]">
+                    <div class=" place-items-start">
+                      <button class="text-[#faa61a] text-left">plain roasted</button>
+                    </div>
+                    <div class=" place-items-start">
+                      <button> roasted & salted</button>
+                    </div>
+                    <div class="place-items-start">
+                      <button>roasted & peppered</button>
+                    </div>
+                    <div class=" place-items-start">
+                      <button class="text-[#faa61a] text-left">plain roasted</button>
+                    </div>
+                    <div class=" place-items-start">
+                      <button> roasted & salted</button>
+                    </div>
+                    <div class="place-items-start">
+                      <button>roasted & peppered</button>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="detail-3 my-3 2xl:my-8">
+                <div class="text-[14px] sm:text-[19px] 2xl:text-[26px] font-[600] text-green-500">package</div>
+                <div class="flex text-[12px] sm:text-[17px] 2xl:text-[24px] justify-between flex-wrap mt-1 2xl:mt-2">
+                  <button>100 g</button>
+                  <button class="text-[#faa61a]">200 g</button>
+                  <button>400 g</button>
+                  <button>1 kg</button>
+                </div>
               </div>
               <div
-                class="price text-[17px] xs:text-[18px] sm:text-[24px] md:text-[20px] lg:text-[25px] 2xl:text-[32px] ">
-                &#8377; 100</div>
-            </div>
-            <div class="detail-1 my-2 2xl:my-10">
-              <div class="text-[14px]  sm:text-[19px] 2xl:text-[26px] font-[600] text-green-500">consumption preference
-              </div>
-              <div class="v1-button">
-                <div
-                  class="grid md:grid-cols-5 grid-cols-4 md:gap-x-4 gap-x-[.9rem] gap-y-1 mt-1 2xl:mt-2 text-[12px] sm:text-[17px] 2xl:text-[24px]">
-                  <div class="place-items-start">
-                    <button class="text-[#faa61a]">raw</button>
-                  </div>
-                  <div class="place-items-start">
-                    <button>flour</button>
-                  </div>
-                  <div class="place-items-start">
-                    <button>milk</button>
-                  </div>
-                  <div class="place-items-start">
-                    <button>sprouted</button>
-                  </div>
-                  <div class="place-items-start">
-                    <button>energy bar</button>
-                  </div>
-                  <div class="place-items-start">
-                    <button>oil</button>
-                  </div>
-                  <div class="place-items-start">
-                    <button>spread</button>
-                  </div>
-                  <div class="place-items-start">
-                    <button>energy bar</button>
-                  </div>
-
-                  <div class="place-items-start">
-                    <button>spread</button>
-                  </div>
-                  <div class="place-items-start">
-                    <button>energy bar</button>
-                  </div>
+                class="fixed md:static bottom-3 left-0 buy-now transform transition-transform duration-300 w-full px-4 pl-20 md:pl-0">
+                <div class="flex justify-evenly md:gap-2 gap-4 mb-3">
+                  <a class="w-fit h-[50px] border border-gray-400 hover:border-[#faa61a] text-lg rounded-md py-3 px-4 hover:bg-[#faa61a] duration-300"
+                    href="/cart">
+                    <img src="../assets/icons/generic_web_icons/add to cart.svg" class="w-5">
+                  </a>
+                  <a class="btn-slide hover:bg-green-500" href="/cart/address">
+                    <span class="circle custom-shadow p-4">
+                      <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="title">Buy Now</span>
+                  </a>
                 </div>
-              </div>
-            </div>
-            <div class="detail-2 my-3 2xl:my-8">
-              <div class="text-[14px] sm:text-[19px] 2xl:text-[26px] font-[600] text-green-500">variants</div>
-              <div class="v1-button">
-                <div class="grid grid-cols-3 gap-x-1 gap-y-1 mt-1 2xl:mt-2 text-[12px] sm:text-[17px] 2xl:text-[24px]">
-                  <div class=" place-items-start">
-                    <button class="text-[#faa61a] text-left">plain roasted</button>
-                  </div>
-                  <div class=" place-items-start">
-                    <button> roasted & salted</button>
-                  </div>
-                  <div class="place-items-start">
-                    <button>roasted & peppered</button>
-                  </div>
-                  <div class=" place-items-start">
-                    <button class="text-[#faa61a] text-left">plain roasted</button>
-                  </div>
-                  <div class=" place-items-start">
-                    <button> roasted & salted</button>
-                  </div>
-                  <div class="place-items-start">
-                    <button>roasted & peppered</button>
-                  </div>
-
-
-                </div>
-              </div>
-            </div>
-            <div class="detail-3 my-3 2xl:my-8">
-              <div class="text-[14px] sm:text-[19px] 2xl:text-[26px] font-[600] text-green-500">package</div>
-              <div class="flex text-[12px] sm:text-[17px] 2xl:text-[24px] justify-between flex-wrap mt-1 2xl:mt-2">
-                <button>100 g</button>
-                <button class="text-[#faa61a]">200 g</button>
-                <button>400 g</button>
-                <button>1 kg</button>
-              </div>
-            </div>
-            <div class="fixed md:static">
-              <div class="flex justify-evenly gap-2 mb-3">
-                <a class="w-fit h-[50px] border border-gray-400 hover:border-[#faa61a] text-lg rounded-md py-3 px-4 hover:bg-[#faa61a] duration-300"
-                  href="/cart">
-                  <img src="../assets/icons/generic_web_icons/add to cart.svg" class="w-5">
-                </a>
-                <a class="btn-slide hover:bg-green-500" href="/cart/address">
-                  <span class="circle custom-shadow p-4">
-                    <i class="fa-solid fa-arrow-right"></i></span>
-                  <span class="title">Buy Now</span>
-                </a>
               </div>
             </div>
           </div>
         </div>
 
         <div id="descriptionSection"
-          class="border hidden services-section  lg:h-[74vh]  overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 ">
-          <div class="  w-full ">
-            <div class="w-full ">
+          class="border hidden services-section lg:h-[74vh]  overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 ">
+          <div class="w-full ">
+            <div class="w-full">
               <div class="flex justify-evenly border-b"><a class="w-full border-r text-center py-2"><button
                     class="text-[#faa61a] briefBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">brief</button></a><a
                   class="w-full border-r text-center py-2"><button
@@ -1324,6 +1359,42 @@
       let value = parseInt(quantityInput.value);
       quantityInput.value = value + 1;
     });
+  </script>
+
+  <script>
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        const panel = btn.nextElementSibling;
+
+        if (expanded) {
+          // close
+          btn.setAttribute('aria-expanded', 'false');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          requestAnimationFrame(() => {
+            panel.style.maxHeight = '0px';
+          });
+          panel.addEventListener('transitionend', function handler() {
+            panel.hidden = true;
+            panel.removeEventListener('transitionend', handler);
+          });
+          btn.querySelector('.icon').classList.remove('rotate-45');
+        } else {
+          // open
+          btn.setAttribute('aria-expanded', 'true');
+          panel.hidden = false;
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          panel.addEventListener('transitionend', function handler() {
+            if (btn.getAttribute('aria-expanded') === 'true') {
+              panel.style.maxHeight = 'none';
+            }
+            panel.removeEventListener('transitionend', handler);
+          });
+          btn.querySelector('.icon').classList.add('rotate-45');
+        }
+      });
+    });
+
   </script>
 
   <!-- Swiper JS -->

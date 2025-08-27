@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GSAP Snap Scroll</title>
+  <style>
+    /* Don't block native scrolling; GSAP will handle smoothness */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      scroll-behavior: auto;
+      /* keep default; avoid double-easing */
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: white;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+</head>
+
+<body>
+  <section style="background:#ef4444">Section 1</section>
+  <section style="background:#3b82f6">Section 2</section>
+  <section style="background:#22c55e">Section 3</section>
+  <section style="background:#a855f7">Section 4</section>
+
+  <script>
+    gsap.registerPlugin(ScrollToPlugin);
+
+    function getVisibleSections() {
+      return Array.from(document.querySelectorAll("section"))
+        .filter(sec => sec.offsetParent !== null); // hidden via display:none will be excluded
+    }
+
+    let current = 0;
+    let isAnimating = false;
+    let scrollTimeout;
+
+    function nearestSectionIndex() {
+      const sections = getVisibleSections();
+      const distances = sections.map(sec => Math.abs(sec.getBoundingClientRect().top));
+      return distances.indexOf(Math.min(...distances));
+    }
+
+    function scrollToSection(index, opts = {}) {
+      const sections = getVisibleSections();
+      if (isAnimating && !opts.force) return;
+      if (!sections[index]) return; // safety check if index out of range
+
+      isAnimating = true;
+      gsap.to(window, {
+        duration: opts.duration ?? 1,
+        scrollTo: sections[index],
+        ease: opts.ease ?? "power2.inOut",
+        onComplete: () => {
+          isAnimating = false;
+          current = index;
+        }
+      });
+    }
+
+    window.addEventListener('load', () => {
+      current = nearestSectionIndex();
+      scrollToSection(current, { duration: 0.001, ease: "none", force: true });
+    });
+
+    window.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      if (isAnimating) return;
+
+      const sections = getVisibleSections();
+      let next = current;
+      if (e.deltaY > 0 && current < sections.length - 1) next = current + 1;
+      else if (e.deltaY < 0 && current > 0) next = current - 1;
+
+      if (next !== current) scrollToSection(next);
+    }, { passive: false });
+
+    window.addEventListener('keydown', (e) => {
+      if (isAnimating) return;
+      const keysNext = ['ArrowDown', 'PageDown', 'Space'];
+      const keysPrev = ['ArrowUp', 'PageUp'];
+      const sections = getVisibleSections();
+
+      if (keysNext.includes(e.key)) {
+        e.preventDefault();
+        if (current < sections.length - 1) scrollToSection(current + 1);
+      } else if (keysPrev.includes(e.key)) {
+        e.preventDefault();
+        if (current > 0) scrollToSection(current - 1);
+      }
+    });
+
+    window.addEventListener("scroll", () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        if (!isAnimating) {
+          const idx = nearestSectionIndex();
+          if (idx !== current) scrollToSection(idx);
+        }
+      }, 120);
+    });
+
+    window.addEventListener('resize', () => {
+      if (!isAnimating) {
+        const idx = nearestSectionIndex();
+        scrollToSection(idx, { duration: 0.2, ease: 'power1.out', force: true });
+      }
+    });
+  </script>
+
+</body>
+
+</html>

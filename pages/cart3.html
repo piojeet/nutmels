@@ -22,13 +22,25 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
    </head>
    <body>
+    <svg style="display:none;">
+        <filter id="displacementFilter">
+            <feTurbulence type="turbulence" 
+                baseFrequency="0.0" 
+                numOctaves="1" 
+                result="turbulence" />
+    
+            <feDisplacementMap in="SourceGraphic"
+                in2="turbulence"    
+                            scale="50" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
       <!-- Header Section -->
       <header
-         class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 bg-white md:bg-transparent drop-shadow md:drop-shadow-none justify-center"
+         class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 card md:bg-transparent drop-shadow md:drop-shadow-none justify-center"
          >
          <!-- Main Navigation Bar -->
          <div
-            class="navBar flex justify-between items-center bg-white h-[3.5rem] w-full md:w-[81%]"
+            class="navBar flex justify-between items-center h-[3.5rem] w-full max-w-[1440px] md:px-8 px-4"
             >
             <!-- Logo -->
             <div class="w-48">
@@ -67,63 +79,36 @@
                      >
                </div>
             </div>
-            <!-- Right Side Menu (icons) -->
-            <div
-               class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between"
-               >
-               <!-- Add to Cart Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="../pages/cart1.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_add_to_cart.svg"
-                  alt="Add to Cart"
-                  width="17"
-                  height="17"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Account Profile Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="/pages/login.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_account_profile.svg"
-                  alt="Account Profile"
-                  width="18"
-                  height="18"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Search Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="/pages/search.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_search.svg"
-                  alt="Search"
-                  width="18"
-                  height="18"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Contact Support Icon -->
-               <a
-                  class="rounded-md hover-fill-white contactIcon md:hover:bg-primaryButton py-2 px-2.5"
-                  href="/pages/contact.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_contact_support.svg"
-                  alt="Contact Support"
-                  width="18"
-                  height="18"
-                  class="scale-[1.1]"
-                  />
-               </a>
-            </div>
+             <!-- Right-side menu items (Cart, Profile, Search, Contact) -->
+         <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
+            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+               href="/pages/cart1.html">
+               <img src="../assets/icons/NavBar/white_add_to_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/white_add_to_cart-yellow.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+               href="/pages/login.html">
+               <img src="../assets/icons/NavBar/account_profile_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/account_profile_yellow.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+               href="/pages/search.html">
+               <img src="../assets/icons/NavBar/search-zoom-in-black.svg" alt="Account Profile" width="20" height="20"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Account Profile" width="20" height="20"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <a class="rounded-md hover-fill-white contactIcon py-2 px-2.5 relative group" href="/pages/contact.html">
+               <img src="../assets/icons/NavBar/contact_support_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="../assets/icons/NavBar/contact_support_yellow.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+         </div>
          </div>
       </header>
       <!-- Mobile Navigation Section -->
@@ -227,92 +212,77 @@
     <div
       class="lg:mx-32 md:mx-[60px] sm:mx-6 md:mt-[2%] flex items-center justify-center"
     >
-      <div class="md:mt-10 mt-[4.5rem]">
-           <div class="flex justify-between w-[45%] ml-[52px] md:ml-[17px] items-center gap-0 sm:gap-3 4xl-md:gap-16 4xl-md:text-[20px] sm:mb-7 uppercase">
-          <a class="flex flex-col items-center xs:px-3 pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative" href="./cart1.html">
-            <div class="w-8 h-8 flex items-center justify-center text-[#F8A531] rounded-full">
-              <div class="bg-white">
-                <svg stroke="currentColor" fill="white" stroke-width="0" viewBox="0 0 512 512" height="25" width="25" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="currentColor" d="M405.333 64H106.667C83.198 64 64 83.198 64 106.667v298.666C64 428.802 83.198 448 106.667 448h298.666C428.802 448 448 428.802 448 405.333V106.667C448 83.198 428.802 64 405.333 64zm-192 298.667L106.667 256l29.864-29.864 76.802 76.802 162.136-162.136 29.864 29.865-192 192z"></path>
-                </svg>
-              </div>
-            </div>
-            <span class="text-[10px] md:text-xs">CheckOut</span>
-            <div class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[1px] bg-primaryColor"></div>
-          </a>
-          <a
-            class="flex flex-col items-center xs:px-3 pr-3 pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
-            href="./cart2.html"
-          >
-            <div
-              class="w-8 h-8 flex items-center justify-center text-[#F8A531] rounded-full"
-            >
-              <div class="bg-white">
-                <svg
-                  stroke="currentColor"
-                  fill="white"
-                  stroke-width="0"
-                  viewBox="0 0 512 512"
-                  height="25"
-                  width="25"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M405.333 64H106.667C83.198 64 64 83.198 64 106.667v298.666C64 428.802 83.198 448 106.667 448h298.666C428.802 448 448 428.802 448 405.333V106.667C448 83.198 428.802 64 405.333 64zm-192 298.667L106.667 256l29.864-29.864 76.802 76.802 162.136-162.136 29.864 29.865-192 192z"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-            <span class="text-[10px ]md:text-xs">Address</span>
-            <div
-              class="absolute left-8 top-[35%] z-[-1] transform -translate-y-1/2 w-[210%] h-[1px] bg-primaryColor"
-            ></div>
-          </a>
-          <a class="flex flex-col items-center xs:px-3 pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative" href="./cart3.html">
-            <div
-              class="w-8 h-8 flex items-center justify-center text-primaryColor rounded-full"
-            >
-              <div class="bg-white">
-                <svg
-                  stroke="currentColor"
-                  fill="white"
-                  stroke-width="0"
-                  viewBox="0 0 512 512"
-                  height="25"
-                  width="25"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M405.333 64H106.667C83.198 64 64 83.198 64 106.667v298.666C64 428.802 83.198 448 106.667 448h298.666C428.802 448 448 428.802 448 405.333V106.667C448 83.198 428.802 64 405.333 64zm-192 298.667L106.667 256l29.864-29.864 76.802 76.802 162.136-162.136 29.864 29.865-192 192z"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-            
-            <span class="text-[10px] md:text-xs">Payment</span>
-            <div class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[1px] bg-primaryColor"></div>
-          </a>
-
-          <a class="flex flex-col items-center xs:px-3 pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative" href="#">
-            <div class="w-8 h-8 flex items-center justify-center bg-white text-gray-300 rounded-full">
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="25" width="25" xmlns="http://www.w3.org/2000/svg">
-                <path fill="none" d="M0 0h24v24H0z"></path>
-                <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
-              </svg>
-            </div>
-            <span class="text-[10px] md:text-xs">Success</span>
-          </a>
-        </div>
+      <div class="md:mt-10 mt-[4.5rem] max-w-[1440px] w-full md:px-8 px-4 mx-auto">
+          <div
+            class="flex justify-between items-center gap-0 sm:gap-3 4xl-md:gap-16 4xl-md:text-[20px] sm:mb-7 uppercase mx-auto max-w-[1043px] w-full">
+            <a class="inline-flex flex-col items-center xs:px-3 pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
+               href="./cart1.html">
+               <div class="size-[30px] bg-white border-2 border-[#F8A531] rounded-full flex items-center justify-center">
+                  <div class="text-[#F8A531]">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-check-icon lucide-check">
+                        <path d="M20 6 9 17l-5-5" />
+                     </svg>
+                  </div>
+               </div>
+               <span class="text-[10px] md:text-xs relative top-2 text-[#F8A531] font-semibold">Cart</span>
+               <div class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-primaryColor"></div>
+            </a>
+            <a class="flex flex-col items-center xs:px-3 pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
+               href="./cart2.html">
+               <div class="size-[30px] bg-white border-2 border-[#F8A531] rounded-full flex items-center justify-center">
+                  <div class="text-[#F8A531]">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-check-icon lucide-check">
+                        <path d="M20 6 9 17l-5-5" />
+                     </svg>
+                  </div>
+               </div>
+               <span class="text-[10px] md:text-xs relative top-2 text-[#F8A531] font-semibold">Checkout</span>
+               <div
+                  class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-[#F8A531]">
+               </div>
+            </a>
+            <a class="flex flex-col items-center xs:px-3 pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
+               href="./cart3.html">
+               <div class="size-[30px] bg-white border-2 border-[#F8A531] rounded-full flex items-center justify-center">
+                  <div class="text-gray-300">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-check-icon lucide-check">
+                        <path d="M20 6 9 17l-5-5" />
+                     </svg>
+                  </div>
+               </div>
+               <span class="text-[10px] md:text-xs relative top-2">Address</span>
+               <div
+                  class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-gray-300">
+               </div>
+            </a>
+            <a class="flex flex-col items-center xs:px-3 pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
+               href="#">
+               <div class="size-[30px] bg-white border-2 border-gray-300 rounded-full flex items-center justify-center">
+                  <div class="text-gray-300">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-check-icon lucide-check">
+                        <path d="M20 6 9 17l-5-5" />
+                     </svg>
+                  </div>
+               </div>
+               <span class="text-[10px] md:text-xs relative top-2">Payment</span>
+            </a>
+         </div>
         
 
         <div class="w-full flex justify-center items-center">
           <div
-            class="w-[94%] flex flex-wrap lg:flex-nowrap justify-center items-start gap-5 lg:gap-20"
+            class="w-full flex md:flex-row flex-col-reverse lg:flex-nowrap justify-center items-start gap-5 lg:gap-20"
           >
           <div class="w-full flex flex-wrap lg:flex-nowrap justify-center items-start gap-5 lg:gap-20">
-            <div class="lg:w-[40vw] mt-[21px] mx-[10px] md:m-0 w-full flex flex-col lg:justify-start justify-center left-div">
+            <div class="lg:w-[50vw] w-full flex flex-col lg:justify-start justify-center left-div">
               <div class="min-h-[125px] border relative p-4 flex flex-col gap-1 rounded-md text-sm text-[#707070]">
                 <p>Nutmeals</p>
                 <p>5458554154</p>
@@ -329,19 +299,41 @@
                   </button>
                 </div>
               </div>
-              <div class="rounded-2xl hidden md:block undefined">
-                <div id="cartProduct1" class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]">
+              <div class="rounded-2xl undefined">
+                <div
+                  id="cartProduct1"
+                  class="w-full -ml-[10px] md:ml-0 flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]"
+                  >
                   <div class="flex gap-6">
                     <div>
-                      <img id="cartProductNut1" src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals" class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block">
-  
-                      <div id="cartProductDelete1" class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16">
-                        <svg class=" " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="23" viewBox="0 0 50 50">
-                          <path fill="red" d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"></path>
+                      <img
+                        id="cartProductNut1"
+                        src="../assets/icons/product_category_icons/1 nuts.svg"
+                        alt="nutmeals"
+                        class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block"
+                      />
+
+                      <div
+                        id="cartProductDelete1"
+                        class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16"
+                      >
+                        <svg
+                          class=" "
+                          xmlns="http://www.w3.org/2000/svg"
+                          x="0px"
+                          y="0px"
+                          width="22"
+                          height="23"
+                          viewBox="0 0 50 50"
+                        >
+                          <path
+                            fill="red"
+                            d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"
+                          ></path>
                         </svg>
                       </div>
                     </div>
-  
+
                     <div>
                       <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
                       <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
@@ -349,28 +341,69 @@
                       </p>
                     </div>
                   </div>
-  
-                  <p class="xs:text-sm text-md min-w-10 4xl-md:!text-xl">200 g</p>
+
+                  <p
+                    class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl"
+                  >
+                    200 g
+                  </p>
                   <div class="flex gap-2 items-center justify-center">
-                    <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5" control-id="ControlID-3">
-                      -</button><input min="1" class="xs:w-10 counter w-8 border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14" type="text" value="1" control-id="ControlID-4"><button class="text-2xl increase text-md 4xl-md:!text-4xl" control-id="ControlID-5">
+                    <button
+                      class="decrease text-2xl 4xl-md:!text-5xl pb-0.5"
+                      control-id="ControlID-1"
+                    >
+                      -</button
+                    ><input
+                      min="1"
+                      class="xs:w-10 counter w-8 border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
+                      type="text"
+                      value="1"
+                      control-id="ControlID-2"
+                    /><button
+                      class="text-2xl increase text-md 4xl-md:!text-4xl"
+                      control-id="ControlID-3"
+                    >
                       +
                     </button>
                   </div>
-                  <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">400</p>
+                  <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">
+                    400
+                  </p>
                 </div>
-                <div id="cartProduct2" class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]">
+                <div
+                  id="cartProduct2"
+                  class="w-full -ml-[10px] md:ml-0 flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]"
+                >
                   <div class="flex gap-6">
                     <div>
-                      <img id="cartProductNut2" src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals" class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block">
-  
-                      <div id="cartProductDelete2" class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16">
-                        <svg class=" " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="23" viewBox="0 0 50 50">
-                          <path fill="red" d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"></path>
+                      <img
+                        id="cartProductNut2"
+                        src="../assets/icons/product_category_icons/1 nuts.svg"
+                        alt="nutmeals"
+                        class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block"
+                      />
+
+                      <div
+                        id="cartProductDelete2"
+                        class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16"
+                      >
+                        <svg
+                          class=" "
+                          xmlns="http://www.w3.org/2000/svg"
+                          x="0px"
+                          y="0px"
+                          width="22"
+                          height="23"
+                          viewBox="0 0 50 50"
+                        >
+                          <path
+                            fill="red"
+                            d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"
+                          ></path>
                         </svg>
                       </div>
                     </div>
-  
+
                     <div>
                       <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
                       <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
@@ -378,28 +411,69 @@
                       </p>
                     </div>
                   </div>
-  
-                  <p class="xs:text-sm text-md min-w-10 4xl-md:!text-xl">200 g</p>
+
+                  <p
+                    class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl"
+                  >
+                    200 g
+                  </p>
                   <div class="flex gap-2 items-center justify-center">
-                    <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5" control-id="ControlID-6">
-                      -</button><input min="1" class="xs:w-10 counter w-8 border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14" type="text" value="1" control-id="ControlID-7"><button class="text-2xl increase text-md 4xl-md:!text-4xl" control-id="ControlID-8">
+                    <button
+                      class="decrease text-2xl 4xl-md:!text-5xl pb-0.5"
+                      control-id="ControlID-4"
+                    >
+                      -</button
+                    ><input
+                      min="1"
+                      class="xs:w-10 counter w-8 border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
+                      type="text"
+                      value="1"
+                      control-id="ControlID-5"
+                    /><button
+                      class="text-2xl increase text-md 4xl-md:!text-4xl"
+                      control-id="ControlID-6"
+                    >
                       +
                     </button>
                   </div>
-                  <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">400</p>
+                  <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">
+                    400
+                  </p>
                 </div>
-                <div id="cartProduct3" class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]">
+                <div
+                  id="cartProduct3"
+                  class="w-full md:ml-0 flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]"
+                >
                   <div class="flex gap-6">
                     <div>
-                      <img id="cartProductNut3" src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals" class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block">
-  
-                      <div id="cartProductDelete3" class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16">
-                        <svg class=" " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="23" viewBox="0 0 50 50">
-                          <path fill="red" d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"></path>
+                      <img
+                        id="cartProductNut3"
+                        src="../assets/icons/product_category_icons/1 nuts.svg"
+                        alt="nutmeals"
+                        class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block"
+                      />
+
+                      <div
+                        id="cartProductDelete3"
+                        class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16"
+                      >
+                        <svg
+                          class=" "
+                          xmlns="http://www.w3.org/2000/svg"
+                          x="0px"
+                          y="0px"
+                          width="22"
+                          height="23"
+                          viewBox="0 0 50 50"
+                        >
+                          <path
+                            fill="red"
+                            d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"
+                          ></path>
                         </svg>
                       </div>
                     </div>
-  
+
                     <div>
                       <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
                       <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
@@ -407,28 +481,69 @@
                       </p>
                     </div>
                   </div>
-  
-                  <p class="xs:text-sm text-md min-w-10 4xl-md:!text-xl">200 g</p>
+
+                  <p
+                    class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl"
+                  >
+                    200 g
+                  </p>
                   <div class="flex gap-2 items-center justify-center">
-                    <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5" control-id="ControlID-9">
-                      -</button><input min="1" class="xs:w-10 counter w-8 border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14" type="text" value="1" control-id="ControlID-10"><button class="text-2xl increase text-md 4xl-md:!text-4xl" control-id="ControlID-11">
+                    <button
+                      class="decrease text-2xl 4xl-md:!text-5xl pb-0.5"
+                      control-id="ControlID-7"
+                    >
+                      -</button
+                    ><input
+                      min="1"
+                      class="xs:w-10 counter w-8 border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
+                      type="text"
+                      value="1"
+                      control-id="ControlID-8"
+                    /><button
+                      class="text-2xl increase text-md 4xl-md:!text-4xl"
+                      control-id="ControlID-9"
+                    >
                       +
                     </button>
                   </div>
-                  <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">400</p>
+                  <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">
+                    400
+                  </p>
                 </div>
-                <div id="cartProduct4" class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]">
+                <div
+                  id="cartProduct4"
+                  class="w-full md:ml-0 flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]"
+                >
                   <div class="flex gap-6">
                     <div>
-                      <img id="cartProductNut4" src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals" class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block">
-  
-                      <div id="cartProductDelete4" class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16">
-                        <svg class=" " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="23" viewBox="0 0 50 50">
-                          <path fill="red" d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"></path>
+                      <img
+                        id="cartProductNut4"
+                        src="../assets/icons/product_category_icons/1 nuts.svg"
+                        alt="nutmeals"
+                        class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block"
+                      />
+
+                      <div
+                        id="cartProductDelete4"
+                        class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16"
+                      >
+                        <svg
+                          class=" "
+                          xmlns="http://www.w3.org/2000/svg"
+                          x="0px"
+                          y="0px"
+                          width="22"
+                          height="23"
+                          viewBox="0 0 50 50"
+                        >
+                          <path
+                            fill="red"
+                            d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"
+                          ></path>
                         </svg>
                       </div>
                     </div>
-  
+
                     <div>
                       <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
                       <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
@@ -436,28 +551,69 @@
                       </p>
                     </div>
                   </div>
-  
-                  <p class="xs:text-sm text-md min-w-10 4xl-md:!text-xl">200 g</p>
+
+                  <p
+                    class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl"
+                  >
+                    200 g
+                  </p>
                   <div class="flex gap-2 items-center justify-center">
-                    <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5" control-id="ControlID-12">
-                      -</button><input min="1" class="xs:w-10 counter w-8 border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14" type="text" value="1" control-id="ControlID-13"><button class="text-2xl increase text-md 4xl-md:!text-4xl" control-id="ControlID-14">
+                    <button
+                      class="decrease text-2xl 4xl-md:!text-5xl pb-0.5"
+                      control-id="ControlID-10"
+                    >
+                      -</button
+                    ><input
+                      min="1"
+                      class="xs:w-10 counter w-8 border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
+                      type="text"
+                      value="1"
+                      control-id="ControlID-11"
+                    /><button
+                      class="text-2xl increase text-md 4xl-md:!text-4xl"
+                      control-id="ControlID-12"
+                    >
                       +
                     </button>
                   </div>
-                  <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">400</p>
+                  <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">
+                    400
+                  </p>
                 </div>
-                <div id="cartProduct5" class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]">
+                <div
+                  id="cartProduct5"
+                  class="w-full md:ml-0 flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070]"
+                >
                   <div class="flex gap-6">
                     <div>
-                      <img id="cartProductNut5" src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals" class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block">
-  
-                      <div id="cartProductDelete5" class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16">
-                        <svg class=" " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="22" height="23" viewBox="0 0 50 50">
-                          <path fill="red" d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"></path>
+                      <img
+                        id="cartProductNut5"
+                        src="../assets/icons/product_category_icons/1 nuts.svg"
+                        alt="nutmeals"
+                        class="xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16 block"
+                      />
+
+                      <div
+                        id="cartProductDelete5"
+                        class="hidden p-[.6rem] xs:w-10 w-11 border rounded-full border-gray-400 4xl-md:w-16"
+                      >
+                        <svg
+                          class=" "
+                          xmlns="http://www.w3.org/2000/svg"
+                          x="0px"
+                          y="0px"
+                          width="22"
+                          height="23"
+                          viewBox="0 0 50 50"
+                        >
+                          <path
+                            fill="red"
+                            d="M 21 0 C 19.355469 0 18 1.355469 18 3 L 18 5 L 10.1875 5 C 10.0625 4.976563 9.9375 4.976563 9.8125 5 L 8 5 C 7.96875 5 7.9375 5 7.90625 5 C 7.355469 5.027344 6.925781 5.496094 6.953125 6.046875 C 6.980469 6.597656 7.449219 7.027344 8 7 L 9.09375 7 L 12.6875 47.5 C 12.8125 48.898438 14.003906 50 15.40625 50 L 34.59375 50 C 35.996094 50 37.1875 48.898438 37.3125 47.5 L 40.90625 7 L 42 7 C 42.359375 7.003906 42.695313 6.816406 42.878906 6.503906 C 43.058594 6.191406 43.058594 5.808594 42.878906 5.496094 C 42.695313 5.183594 42.359375 4.996094 42 5 L 32 5 L 32 3 C 32 1.355469 30.644531 0 29 0 Z M 21 2 L 29 2 C 29.5625 2 30 2.4375 30 3 L 30 5 L 20 5 L 20 3 C 20 2.4375 20.4375 2 21 2 Z M 11.09375 7 L 38.90625 7 L 35.3125 47.34375 C 35.28125 47.691406 34.910156 48 34.59375 48 L 15.40625 48 C 15.089844 48 14.71875 47.691406 14.6875 47.34375 Z M 18.90625 9.96875 C 18.863281 9.976563 18.820313 9.988281 18.78125 10 C 18.316406 10.105469 17.988281 10.523438 18 11 L 18 44 C 17.996094 44.359375 18.183594 44.695313 18.496094 44.878906 C 18.808594 45.058594 19.191406 45.058594 19.503906 44.878906 C 19.816406 44.695313 20.003906 44.359375 20 44 L 20 11 C 20.011719 10.710938 19.894531 10.433594 19.6875 10.238281 C 19.476563 10.039063 19.191406 9.941406 18.90625 9.96875 Z M 24.90625 9.96875 C 24.863281 9.976563 24.820313 9.988281 24.78125 10 C 24.316406 10.105469 23.988281 10.523438 24 11 L 24 44 C 23.996094 44.359375 24.183594 44.695313 24.496094 44.878906 C 24.808594 45.058594 25.191406 45.058594 25.503906 44.878906 C 25.816406 44.695313 26.003906 44.359375 26 44 L 26 11 C 26.011719 10.710938 25.894531 10.433594 25.6875 10.238281 C 25.476563 10.039063 25.191406 9.941406 24.90625 9.96875 Z M 30.90625 9.96875 C 30.863281 9.976563 30.820313 9.988281 30.78125 10 C 30.316406 10.105469 29.988281 10.523438 30 11 L 30 44 C 29.996094 44.359375 30.183594 44.695313 30.496094 44.878906 C 30.808594 45.058594 31.191406 45.058594 31.503906 44.878906 C 31.816406 44.695313 32.003906 44.359375 32 44 L 32 11 C 32.011719 10.710938 31.894531 10.433594 31.6875 10.238281 C 31.476563 10.039063 31.191406 9.941406 30.90625 9.96875 Z"
+                          ></path>
                         </svg>
                       </div>
                     </div>
-  
+
                     <div>
                       <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
                       <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
@@ -465,30 +621,55 @@
                       </p>
                     </div>
                   </div>
-  
-                  <p class="xs:text-sm text-md min-w-10 4xl-md:!text-xl">200 g</p>
+
+                  <p
+                    class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl"
+                  >
+                    200 g
+                  </p>
                   <div class="flex gap-2 items-center justify-center">
-                    <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5" control-id="ControlID-15">
-                      -</button><input min="1" class="xs:w-10 counter w-8 border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14" type="text" value="1" control-id="ControlID-16"><button class="text-2xl increase text-md 4xl-md:!text-4xl" control-id="ControlID-17">
+                    <button
+                      class="decrease text-2xl 4xl-md:!text-5xl pb-0.5"
+                      control-id="ControlID-13"
+                    >
+                      -</button
+                    ><input
+                      min="1"
+                      class="xs:w-10 counter w-8 border text-md border-solid rounded-full p-1 text-center 4xl-md:!text-xl 4xl-md:!w-14"
+                      type="text"
+                      value="1"
+                      control-id="ControlID-14"
+                    /><button
+                      class="text-2xl increase text-md 4xl-md:!text-4xl"
+                      control-id="ControlID-15"
+                    >
                       +
                     </button>
                   </div>
-                  <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">400</p>
+                  <p class="xs:text-sm text-md 4xl-md:!text-xl mr-[1rem]">
+                    400
+                  </p>
                 </div>
-                <div class="4xl-lg:text-xl large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] w-[370px] flex justify-between items-start my-5 text-[#707070]">
-                  <a class="ml-1 cursor-pointer hover:text-[#faa61a]" href="/shop">Back in shop</a>
-                  <div class="flex flex-col justify-center items-center gap-x-1.5">
+                <div
+                  class="4xl-lg:text-xl w-full -ml-[10px] md:ml-0 flex justify-between items-start my-5 text-[#707070]"
+                >
+                  <a
+                    class="ml-1 cursor-pointer hover:text-[#faa61a]"
+                    href="/shop"
+                    >Back in shop</a
+                  >
+                  <div
+                    class="flex flex-col justify-center items-center gap-x-1.5"
+                  >
                     <div class="flex items-center justify-between w-full gap-8">
                       <p>Subtotal:</p>
                       <p class="text-lg mr-[1.2rem]">1,600</p>
                     </div>
-  
-                    
                   </div>
                 </div>
               </div>
             </div>
-            <div class="lg:w-[40vw] mt-4 md:mt-0 m-[7px] w-[98%] md:m-0 5xl:max-w-[30vw] md:w-full right-div bg-[#f5f5f5] px-10 pb-8 pt-3 rounded-xl shadow-xl">
+            <div class="lg:w-[40vw] mt-4 md:mt-0 m-[7px] w-[98%] md:m-0 right-div md:w-full bg-[#f5f5f5] px-10 pb-8 pt-3 rounded-xl shadow-xl">
               <div class="mt-[1.5rem] md:mt-10 w-full auth 4xl-lg:text-xl 6xl:text-2xl">
                 <div class="flex gap-[1.3rem] md:gap-7 4xl-lg:gap-10 6xl:gap-12 flex-col">
                   <input placeholder="Payment Option" class="bg-[#f5f5f5] border-b-2 border-gray-400" type="text" control-id="ControlID-19"><input placeholder="Card Number" class="bg-[#f5f5f5] border-b-2 border-gray-400" type="text" control-id="ControlID-20"><input placeholder="Expiry Date" class="bg-[#f5f5f5] border-b-2 border-gray-400" type="text" control-id="ControlID-21"><input placeholder="CVV" class="bg-[#f5f5f5] border-b-2 border-gray-400" type="text" control-id="ControlID-22"><input placeholder="Name" class="bg-[#f5f5f5] border-b-2 border-gray-400" type="text" control-id="ControlID-23">

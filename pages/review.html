@@ -1,775 +1,523 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <!-- Set character encoding to UTF-8 -->
-      <meta charset="UTF-8" />
-      <!-- Set viewport for responsive design -->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <!-- Link to external CSS stylesheet for main styling -->
-      <link rel="stylesheet" href="../css/main.css" />
-      <!-- Link to Font Awesome stylesheet for icons -->
-      <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-         />
-      <!-- Link to Font Awesome stylesheet for additional icons -->
-      <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-         />
-      <!-- Preconnect to Google Fonts for faster font loading -->
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-   </head>
-   <body>
-      <!-- Header Section -->
-      <header
-         class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 bg-white md:bg-transparent drop-shadow md:drop-shadow-none justify-center"
-         >
-         <!-- Main Navigation Bar -->
-         <div
-            class="navBar flex justify-between items-center bg-white h-[3.5rem] w-full md:w-[81%]"
-            >
-            <!-- Logo -->
-            <div class="w-48">
-               <div class="navLogo w-36">
-                  <a href="/index.html">
-                  <img
-                     src="../assets/icons/Nutmeals Logo ver2.svg"
-                     alt="Nutmeals Logo"
-                     />
-                  </a>
-               </div>
-            </div>
-            <!-- Main Navigation Links (visible on larger screens) -->
-            <div
-               class="navMain hidden w-64 items-center justify-between md:flex uppercase"
-               >
-               <div>
-                  <a
-                     href="/pages/about.html"
-                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-                     >About</a
-                     >
-               </div>
-               <div>
-                  <a
-                     href="/pages/shop.html"
-                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-                     >Shop</a
-                     >
-               </div>
-               <div>
-                  <a
-                     href="/pages/blog.html"
-                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-                     >Blog</a
-                     >
-               </div>
-            </div>
-            <!-- Right Side Menu (icons) -->
-            <div
-               class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between"
-               >
-               <!-- Add to Cart Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="../pages/cart1.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_add_to_cart.svg"
-                  alt="Add to Cart"
-                  width="17"
-                  height="17"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Account Profile Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="/pages/login.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_account_profile.svg"
-                  alt="Account Profile"
-                  width="18"
-                  height="18"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Search Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="/pages/search.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_search.svg"
-                  alt="Search"
-                  width="18"
-                  height="18"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Contact Support Icon -->
-               <a
-                  class="rounded-md hover-fill-white contactIcon md:hover:bg-primaryButton py-2 px-2.5"
-                  href="/pages/contact.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_contact_support.svg"
-                  alt="Contact Support"
-                  width="18"
-                  height="18"
-                  class="scale-[1.1]"
-                  />
-               </a>
-            </div>
-         </div>
-      </header>
-      <!-- Mobile Navigation Section -->
-      <div
-         class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-full glassNav z-10 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4"
-         >
-         <!-- Menu Button (visible on mobile) -->
-         <div class="navMenuBtn w-5 h-5 flex justify-center items-center navMenu">
-            <i class="fa-solid fa-bars text-[18px]"></i>
-            <img
-               src="/assets/icons/menu.svg"
-               alt="Menu"
-               class="w-5 menuWhenOpen cursor-pointer"
-               style="display: none"
-               />
-         </div>
-         <!-- Mobile Cart Icon -->
-         <a class="navMenuBtn" href="../pages/cart1.html">
-         <img
-            src="/assets/icons/generic_web_icons/add to cart.svg"
-            alt="Add to Cart"
-            class="w-[18px]"
-            />
-         </a>
-         <!-- Mobile Search Icon -->
-         <div class="navMenuBtn navSearchBtn">
-            <img
-               src="/assets/icons/NavBar/white_search.svg"
-               alt="Search"
-               class="w-5"
-               />
-         </div>
-         <!-- Mobile Account Profile Icon -->
-         <a class="navMenuBtn" href="../pages/bestsellers.html">
-         <img src="../assets/a.svg" alt="Account Profile" />
-         </a>
-         <!-- Mobile Login Icon -->
-         <a class="navMenuBtn" href="../pages/login.html">
-         <img
-            src="../assets/icons/generic_web_icons/account_profile.svg"
-            alt="Account Profile"
-            class="w-5 mr-[7px]"
-            />
-         </a>
-         <!-- Mobile Navigation Links (hidden by default) -->
-         <div
-            class="fixed mobNavLinks navLinksHidden bottom-[67px] left-0 right-0 glassNav text-white m-[12px] transition-transform transform translate-y-0"
-            >
-            <ul class="text-left">
-               <li class="p-2"><a href="../pages/about.html">About</a></li>
-               <li class="p-2"><a href="../pages/shop.html">Shop</a></li>
-               <li class="p-2"><a href="../pages/blog.html">Blog</a></li>
-            </ul>
-         </div>
-         <!-- Mobile Search Section -->
-         <div
-            class="fixed mobSearch searchHidden bottom-[80px] rounded-2xl mx-[.75rem] left-0 right-0 bg-primaryColor p-4 transition-transform transform translate-y-0"
-            >
-            <!-- Search Suggestions (hidden by default) -->
-            <div
-               class="suggestions absolute rounded-2xl -top-[220%] left-0 right-0 z-10 hidden p-2 mt-2 bg-primaryColor shadow-lg rounded"
-               >
-               <div class="text-white flex justify-between p-2">
-                  <div>
-                     <div class="p-[.3rem]">Suggestion 1</div>
-                     <div class="p-[.3rem]">Suggestion 2</div>
-                     <div class="p-[.3rem]">Suggestion 3</div>
-                  </div>
-                  <div>
-                     <div class="p-[.3rem]">Suggestion 1</div>
-                     <div class="p-[.3rem]">Suggestion 2</div>
-                     <div class="p-[.3rem]">Suggestion 3</div>
-                  </div>
-               </div>
-            </div>
-            <!-- Mobile Search Input and Icons -->
-            <ul class="flex items-center justify-between gap-5 w-full">
-               <input
-                  class="custom-input p-1 px-3 bg-primaryColor focus:outline-none text-white border-white border !w-full searchInput"
-                  placeholder="Search"
-                  type="text"
-                  />
-               <a href="/">
-               <img
-                  src="../assets/icons/generic_web_icons/search.svg"
-                  alt="Search"
-                  class="w-7 navMenuBtn"
-                  />
-               </a>
-               <a href="/scan">
-               <img
-                  src="../assets/icons/scan.svg"
-                  alt="Scan"
-                  class="w-7 navMenuBtn"
-                  />
-               </a>
-            </ul>
-         </div>
-      </div>
 
-    <div class="md:w-[80%] my-[5.5rem] mx-5 md:mx-auto">
-      <div class="grid gap-3 md:grid-cols-3">
+<head>
+  <!-- Set character encoding to UTF-8 -->
+  <meta charset="UTF-8" />
+  <!-- Set viewport for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link to external CSS stylesheet for main styling -->
+  <link rel="stylesheet" href="../css/main.css" />
+  <!-- Link to Font Awesome stylesheet for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Link to Font Awesome stylesheet for additional icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Preconnect to Google Fonts for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --speed: 250ms;
+      --easing: cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .panel-wrap {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height var(--speed) var(--easing);
+    }
+
+    .chev {
+      transition: transform var(--speed) var(--easing);
+    }
+
+    .trigger[aria-expanded="true"] .chev {
+      transform: rotate(45deg);
+    }
+
+    .trigger[aria-expanded="false"] .chev {
+      animation: popup 1s infinite;
+      color: #FAA61A;
+    }
+
+    @keyframes popup {
+      0% {
+        transform: scale(.8);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .trigger[aria-expanded="true"] {
+      background: #FAA61A;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <svg style="display:none;">
+        <filter id="displacementFilter">
+            <feTurbulence type="turbulence" 
+                baseFrequency="0.0" 
+                numOctaves="1" 
+                result="turbulence" />
+    
+            <feDisplacementMap in="SourceGraphic"
+                in2="turbulence"    
+                            scale="50" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
+  <!-- Header Section -->
+  <header
+    class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 card md:bg-transparent drop-shadow md:drop-shadow-none justify-center">
+    <!-- Main Navigation Bar -->
+    <div class="navBar flex justify-between items-center h-[3.5rem] w-full max-w-[1440px] md:px-8 px-4">
+      <!-- Logo -->
+      <div class="w-48">
+        <div class="navLogo w-36">
+          <a href="/index.html">
+            <img src="../assets/icons/Nutmeals Logo ver2.svg" alt="Nutmeals Logo" />
+          </a>
+        </div>
+      </div>
+      <!-- Main Navigation Links (visible on larger screens) -->
+      <div class="navMain hidden w-64 items-center justify-between md:flex uppercase">
         <div>
-          <div class="w-full border p-4 rounded-md">
-            <div class="w-full flex items-center justify-between gap-4">
-              <i class="fa-solid fa-plus text-xl" aria-hidden="true"></i
-              ><input
-                type="text"
-                class="border w-full"
-                control-id="ControlID-1"
-              /><i class="fa-solid fa-camera text-xl" aria-hidden="true"></i
-              ><i class="fa-solid fa-video text-xl" aria-hidden="true"></i
-              ><i class="fa-solid fa-microphone text-xl" aria-hidden="true"></i>
+          <a href="/pages/about.html"
+            class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">About</a>
+        </div>
+        <div>
+          <a href="/pages/shop.html"
+            class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Shop</a>
+        </div>
+        <div>
+          <a href="/pages/blog.html"
+            class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Blog</a>
+        </div>
+      </div>
+      <!-- Right-side menu items (Cart, Profile, Search, Contact) -->
+      <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
+        <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+          href="/pages/cart1.html">
+          <img src="../assets/icons/NavBar/white_add_to_black.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/white_add_to_cart-yellow.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
+        <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+          href="/pages/login.html">
+          <img src="../assets/icons/NavBar/account_profile_black.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/account_profile_yellow.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
+        <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+          href="/pages/search.html">
+          <img src="../assets/icons/NavBar/search-zoom-in-black.svg" alt="Account Profile" width="20" height="20"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Account Profile" width="20" height="20"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
+        <a class="rounded-md hover-fill-white contactIcon py-2 px-2.5 relative group" href="/pages/contact.html">
+          <img src="../assets/icons/NavBar/contact_support_black.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/contact_support_yellow.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
+      </div>
+    </div>
+  </header>
+  <!-- Mobile Navigation Section -->
+  <div
+    class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-full glassNav z-10 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4">
+    <!-- Menu Button (visible on mobile) -->
+    <div class="navMenuBtn w-5 h-5 flex justify-center items-center navMenu">
+      <i class="fa-solid fa-bars text-[18px]"></i>
+      <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer" style="display: none" />
+    </div>
+    <!-- Mobile Cart Icon -->
+    <a class="navMenuBtn" href="../pages/cart1.html">
+      <img src="/assets/icons/generic_web_icons/add to cart.svg" alt="Add to Cart" class="w-[18px]" />
+    </a>
+    <!-- Mobile Search Icon -->
+    <div class="navMenuBtn navSearchBtn">
+      <img src="/assets/icons/NavBar/white_search.svg" alt="Search" class="w-5" />
+    </div>
+    <!-- Mobile Account Profile Icon -->
+    <a class="navMenuBtn" href="../pages/bestsellers.html">
+      <img src="../assets/a.svg" alt="Account Profile" />
+    </a>
+    <!-- Mobile Login Icon -->
+    <a class="navMenuBtn" href="../pages/login.html">
+      <img src="../assets/icons/generic_web_icons/account_profile.svg" alt="Account Profile" class="w-5 mr-[7px]" />
+    </a>
+    <!-- Mobile Navigation Links (hidden by default) -->
+    <div
+      class="fixed mobNavLinks navLinksHidden bottom-[67px] left-0 right-0 glassNav text-white m-[12px] transition-transform transform translate-y-0">
+      <ul class="text-left">
+        <li class="p-2"><a href="../pages/about.html">About</a></li>
+        <li class="p-2"><a href="../pages/shop.html">Shop</a></li>
+        <li class="p-2"><a href="../pages/blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <!-- Mobile Search Section -->
+    <div
+      class="fixed mobSearch searchHidden bottom-[80px] rounded-2xl mx-[.75rem] left-0 right-0 bg-primaryColor p-4 transition-transform transform translate-y-0">
+      <!-- Search Suggestions (hidden by default) -->
+      <div
+        class="suggestions absolute rounded-2xl -top-[220%] left-0 right-0 z-10 hidden p-2 mt-2 bg-primaryColor shadow-lg rounded">
+        <div class="text-white flex justify-between p-2">
+          <div>
+            <div class="p-[.3rem]">Suggestion 1</div>
+            <div class="p-[.3rem]">Suggestion 2</div>
+            <div class="p-[.3rem]">Suggestion 3</div>
+          </div>
+          <div>
+            <div class="p-[.3rem]">Suggestion 1</div>
+            <div class="p-[.3rem]">Suggestion 2</div>
+            <div class="p-[.3rem]">Suggestion 3</div>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Search Input and Icons -->
+      <ul class="flex items-center justify-between gap-5 w-full">
+        <input
+          class="custom-input p-1 px-3 bg-primaryColor focus:outline-none text-white border-white border !w-full searchInput"
+          placeholder="Search" type="text" />
+        <a href="/">
+          <img src="../assets/icons/generic_web_icons/search.svg" alt="Search" class="w-7 navMenuBtn" />
+        </a>
+        <a href="/scan">
+          <img src="../assets/icons/scan.svg" alt="Scan" class="w-7 navMenuBtn" />
+        </a>
+      </ul>
+    </div>
+  </div>
+
+  <div class="w-full max-w-[1440px] md:px-8 px-4 my-[5.5rem] mx-5 md:mx-auto">
+    <div class="grid gap-3 md:grid-cols-3">
+      <div>
+        <div class="w-full border p-4 rounded-md h-full">
+          <div class="w-full flex items-center justify-between gap-4">
+            <i class="fa-solid fa-plus text-xl" aria-hidden="true"></i><input type="text" class="border w-full"
+              control-id="ControlID-1" /><i class="fa-solid fa-camera text-xl" aria-hidden="true"></i><i
+              class="fa-solid fa-video text-xl" aria-hidden="true"></i><i class="fa-solid fa-microphone text-xl"
+              aria-hidden="true"></i>
+          </div>
+          <div class="grid mt-5 grid-cols-3">
+            <img class="m-3" src="../assets/images/img10.png" alt="" />
+            <img class="m-3" src="../assets/images/img10.png" alt="" />
+            <img class="m-3" src="../assets/images/img10.png" alt="" />
+            <img class="m-3" src="../assets/images/img10.png" alt="" />
+            <img class="m-3" src="../assets/images/img10.png" alt="" />
+            <img class="m-3" src="../assets/images/img10.png" alt="" />
+          </div>
+          <div class="flex items-center justify-between gap-4 mt-5">
+            <p>Rate:</p>
+            <div class="flex gap-2">
+              <i id="heart1" class="fa-regular cursor-pointer fa-heart stars text-xl" aria-hidden="true"></i>
+              <i id="heart2" class="fa-regular cursor-pointer fa-heart stars text-xl" aria-hidden="true"></i>
+              <i id="heart3" class="fa-regular cursor-pointer fa-heart stars text-xl" aria-hidden="true"></i>
+              <i id="heart4" class="fa-regular cursor-pointer fa-heart stars text-xl" aria-hidden="true"></i>
+              <i id="heart5" class="fa-regular cursor-pointer fa-heart stars stars text-xl" aria-hidden="true"></i>
             </div>
-            <div class="grid mt-5 grid-cols-3">
-              <img class="m-3" src="../assets/images/img10.png" alt="" />
-              <img class="m-3" src="../assets/images/img10.png" alt="" />
-              <img class="m-3" src="../assets/images/img10.png" alt="" />
-              <img class="m-3" src="../assets/images/img10.png" alt="" />
-              <img class="m-3" src="../assets/images/img10.png" alt="" />
-              <img class="m-3" src="../assets/images/img10.png" alt="" />
-            </div>
-            <div class="flex items-center justify-between gap-4 mt-5">
-              <p>Rate:</p>
-              <div class="flex gap-2">
-                <i
-                  id="heart1"
-                  class="fa-regular cursor-pointer fa-heart stars text-xl"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  id="heart2"
-                  class="fa-regular cursor-pointer fa-heart stars text-xl"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  id="heart3"
-                  class="fa-regular cursor-pointer fa-heart stars text-xl"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  id="heart4"
-                  class="fa-regular cursor-pointer fa-heart stars text-xl"
-                  aria-hidden="true"
-                ></i>
-                <i
-                  id="heart5"
-                  class="fa-regular cursor-pointer fa-heart stars stars text-xl"
-                  aria-hidden="true"
-                ></i>
-              </div>
-            </div>
-            <div class="flex items-center justify-between gap-4 mt-7">
-              <p>Recommendation:</p>
-              <div class="flex gap-4">
-                <i
-                  class="fa-regular cursor-pointer fa-thumbs-up text-3xl"
-                  aria-hidden="true"
-                ></i
-                ><i
-                  class="fa-regular cursor-pointer fa-thumbs-down text-3xl"
-                  aria-hidden="true"
-                ></i>
-              </div>
+          </div>
+          <div class="flex items-center justify-between gap-4 mt-7">
+            <p>Recommendation:</p>
+            <div class="flex gap-4">
+              <i class="fa-regular cursor-pointer fa-thumbs-up text-3xl" aria-hidden="true"></i><i
+                class="fa-regular cursor-pointer fa-thumbs-down text-3xl" aria-hidden="true"></i>
             </div>
           </div>
         </div>
-        <div class="w-fit border p-4 rounded-md">
-          <p class="font-bold">What's driving your review</p>
-          <div class="mt-[1.3rem]">
-            <label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="quality"
-                control-id="ControlID-2"
-              /><span class="mr-3 text-xs ml-1">quality</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="grade"
-                control-id="ControlID-3"
-              /><span class="mr-3 text-xs ml-1">grade</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="benefits"
-                control-id="ControlID-4"
-              /><span class="mr-3 text-xs ml-1">benefits</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="satisfication"
-                control-id="ControlID-5"
-              /><span class="mr-3 text-xs ml-1">satisfication</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="expectation"
-                control-id="ControlID-6"
-              /><span class="mr-3 text-xs ml-1">expectation</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="requirements"
-                control-id="ControlID-7"
-              /><span class="mr-3 text-xs ml-1">requirements</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="comprehensive"
-                control-id="ControlID-8"
-              /><span class="mr-3 text-xs ml-1">comprehensive</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="needs"
-                control-id="ControlID-9"
-              /><span class="mr-3 text-xs ml-1">needs</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="productrange"
-                control-id="ControlID-10"
-              /><span class="mr-3 text-xs ml-1">product range</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="availability"
-                control-id="ControlID-11"
-              /><span class="mr-3 text-xs ml-1">availability</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="customerrequest"
-                control-id="ControlID-12"
-              /><span class="mr-3 text-xs ml-1">customer request</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="value"
-                control-id="ControlID-13"
-              /><span class="mr-3 text-xs ml-1">value</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="paymentoptions"
-                control-id="ControlID-14"
-              /><span class="mr-3 text-xs ml-1">paymentoptions</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="price"
-                control-id="ControlID-15"
-              /><span class="mr-3 text-xs ml-1">price</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="attractiveoffer"
-                control-id="ControlID-16"
-              /><span class="mr-3 text-xs ml-1">attractiveoffer</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="savings"
-                control-id="ControlID-17"
-              /><span class="mr-3 text-xs ml-1">savings</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="einvoice"
-                control-id="ControlID-18"
-              /><span class="mr-3 text-xs ml-1">einvoice</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="queryresponse"
-                control-id="ControlID-19"
-              /><span class="mr-3 text-xs ml-1">queryresponse</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="responsetime"
-                control-id="ControlID-20"
-              /><span class="mr-3 text-xs ml-1">responsetime</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="T&amp;C"
-                control-id="ControlID-21"
-              /><span class="mr-3 text-xs ml-1">T&amp;C</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="deliveryoptions"
-                control-id="ControlID-22"
-              /><span class="mr-3 text-xs ml-1">deliveryoptions</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="deliverycost"
-                control-id="ControlID-23"
-              /><span class="mr-3 text-xs ml-1">deliverycost</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="deliverytime"
-                control-id="ControlID-24"
-              /><span class="mr-3 text-xs ml-1">deliverytime</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="packaging"
-                control-id="ControlID-25"
-              /><span class="mr-3 text-xs ml-1">packaging</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="packagecondition"
-                control-id="ControlID-26"
-              /><span class="mr-3 text-xs ml-1">packagecondition</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="productinformation"
-                control-id="ControlID-27"
-              /><span class="mr-3 text-xs ml-1">productinformation</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="transparency"
-                control-id="ControlID-28"
-              /><span class="mr-3 text-xs ml-1">transparency</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="explanation"
-                control-id="ControlID-29"
-              /><span class="mr-3 text-xs ml-1">explanation</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="assistance"
-                control-id="ControlID-30"
-              /><span class="mr-3 text-xs ml-1">assistance</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="webnavigation"
-                control-id="ControlID-31"
-              /><span class="mr-3 text-xs ml-1">webnavigation</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="websearch"
-                control-id="ControlID-32"
-              /><span class="mr-3 text-xs ml-1">websearch</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="solution"
-                control-id="ControlID-33"
-              /><span class="mr-3 text-xs ml-1">solution</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="aftersalessupport"
-                control-id="ControlID-34"
-              /><span class="mr-3 text-xs ml-1">aftersalessupport</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="attentive"
-                control-id="ControlID-35"
-              /><span class="mr-3 text-xs ml-1">attentive</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="mature"
-                control-id="ControlID-36"
-              /><span class="mr-3 text-xs ml-1">mature</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="qualifiedstaff"
-                control-id="ControlID-37"
-              /><span class="mr-3 text-xs ml-1">qualifiedstaff</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="reachablehours"
-                control-id="ControlID-38"
-              /><span class="mr-3 text-xs ml-1">reachablehours</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="shoppingexperience"
-                control-id="ControlID-39"
-              /><span class="mr-3 text-xs ml-1">shoppingexperience</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="patronage"
-                control-id="ControlID-40"
-              /><span class="mr-3 text-xs ml-1">patronage</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="moneysaver"
-                control-id="ControlID-41"
-              /><span class="mr-3 text-xs ml-1">moneysaver</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="valueformoney"
-                control-id="ControlID-42"
-              /><span class="mr-3 text-xs ml-1">valueformoney</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="instoreavailability"
-                control-id="ControlID-43"
-              /><span class="mr-3 text-xs ml-1"
-                >instoreavailability</span
-              ></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="waitingtime"
-                control-id="ControlID-44"
-              /><span class="mr-3 text-xs ml-1">waitingtime</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="turnaroundtime"
-                control-id="ControlID-45"
-              /><span class="mr-3 text-xs ml-1">turnaroundtime</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="facility"
-                control-id="ControlID-46"
-              /><span class="mr-3 text-xs ml-1">facility</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="takeaway"
-                control-id="ControlID-47"
-              /><span class="mr-3 text-xs ml-1">takeaway</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="considerate"
-                control-id="ControlID-48"
-              /><span class="mr-3 text-xs ml-1">considerate</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="freedomtochoose"
-                control-id="ControlID-49"
-              /><span class="mr-3 text-xs ml-1">freedomtochoose</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="customtailored"
-                control-id="ControlID-50"
-              /><span class="mr-3 text-xs ml-1">customtailored</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="bespoke"
-                control-id="ControlID-51"
-              /><span class="mr-3 text-xs ml-1">bespoke</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="transparentcommunicaiton"
-                control-id="ControlID-52"
-              /><span class="mr-3 text-xs ml-1"
-                >transparentcommunicaiton</span
-              ></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="reasonable"
-                control-id="ControlID-53"
-              /><span class="mr-3 text-xs ml-1">reasonable</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="transactions"
-                control-id="ControlID-54"
-              /><span class="mr-3 text-xs ml-1">transactions</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="returns"
-                control-id="ControlID-55"
-              /><span class="mr-3 text-xs ml-1">returns</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="decoration"
-                control-id="ControlID-56"
-              /><span class="mr-3 text-xs ml-1">decoration</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="onlinepurchase"
-                control-id="ControlID-57"
-              /><span class="mr-3 text-xs ml-1">onlinepurchase</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="offlinepurchase"
-                control-id="ControlID-58"
-              /><span class="mr-3 text-xs ml-1">offlinepurchase</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="delivery"
-                control-id="ControlID-59"
-              /><span class="mr-3 text-xs ml-1">delivery</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="time"
-                control-id="ControlID-60"
-              /><span class="mr-3 text-xs ml-1">time</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="vibe"
-                control-id="ControlID-61"
-              /><span class="mr-3 text-xs ml-1">vibe</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="staff"
-                control-id="ControlID-62"
-              /><span class="mr-3 text-xs ml-1">staff</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="gift"
-                control-id="ControlID-63"
-              /><span class="mr-3 text-xs ml-1">gift</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="authority"
-                control-id="ControlID-64"
-              /><span class="mr-3 text-xs ml-1">authority</span></label
-            ><label class="inline-flex items-center mt-3"
-              ><input
-                type="checkbox"
-                class="form-checkbox h-4 w-4 text-gray-600"
-                value="premium"
-                control-id="ControlID-65"
-              /><span class="mr-3 text-xs ml-1">premium</span></label
-            >
+      </div>
+      <div class="w-full border p-4 rounded-md space-y-2.5 feedback-filters" id="accordion">
+        <p class="font-bold font-montserrat">What's driving your feedback</p>
+        <div class="item border border-[#e5e7eb] rounded-xl overflow-hidden">
+          <button
+            class="trigger w-full text-left py-2 px-4 border-none bg-[#f8fafc] cursor-pointer flex justify-between items-center"
+            aria-expanded="true" aria-controls="p1">
+            <p class="font-bold">Product Experience</p>
+            <span class="text-2xl chev"><i class="ri-add-line"></i></span>
+          </button>
+          <div aria-labelledby="t1" role="region" class="panel-wrap select-none">
+            <div class="mt-[.5rem] flex flex-col gap-1.5 text-sm py-3 px-4 pb-4">
+              <label for="f1">
+                <input type="checkbox" id="f1" data-label="High Product Quality">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">High Product Quality</span>
+              </label>
+              <label for="f2">
+                <input type="checkbox" id="f2" data-label="Freshness & Taste">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Freshness & Taste</span>
+              </label>
+              <label for="f3">
+                <input type="checkbox" id="f3" data-label="Secure Packaging Quality">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Secure Packaging Quality</span>
+              </label>
+              <label for="f4">
+                <input type="checkbox" id="f4" data-label="Health and Nutrition Benefits">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Health and Nutrition Benefits</span>
+              </label>
+              <label for="f5">
+                <input type="checkbox" id="f5" data-label="Wide Variety Available">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Wide Variety Available</span>
+              </label>
+              <label for="f6">
+                <input type="checkbox" id="f6" data-label="Matches Product Description">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Matches Product Description</span>
+              </label>
+            </div>
           </div>
         </div>
-        <div>
-          <div class="w-full border p-4 rounded-md">
-            <div class="flex flex-col items-start justify-center">
-              <p class="font-bold">Share / Edit your Feedback</p>
-              <textarea
-                rows="6"
-                class="resize-none mt-[2.1rem] border rounded-md w-full"
-                control-id="ControlID-66"
-              ></textarea
-              ><button
-                class="m-auto mt-5 w-fit text-[16px] rounded-md py-1 px-5 hover:bg-[#faa61a] hover:text-white duration-300"
-                control-id="ControlID-67"
-              >
-                Submit
-              </button>
+
+        <div class="item border border-[#e5e7eb] rounded-xl overflow-hidden">
+          <button
+            class="trigger w-full text-left py-2 px-4 border-none bg-[#f8fafc] cursor-pointer flex justify-between items-center"
+            aria-expanded="false" aria-controls="p2">
+            <p class="font-bold">Service & Support</p>
+            <span class="text-2xl chev"><i class="ri-add-line"></i></span>
+          </button>
+          <div aria-labelledby="t2" role="region" class="panel-wrap select-none">
+            <div class="mt-[.5rem] flex flex-col gap-1.5 text-sm py-3 px-4 pb-4">
+              <label for="f7" class="">
+                <input type="checkbox" id="f7" data-label="Fast Delivery Service">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Fast Delivery Service</span>
+              </label>
+              <label for="f8">
+                <input type="checkbox" id="f8" data-label="Affordable Delivery Cost">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Affordable Delivery Cost</span>
+              </label>
+              <label for="f9">
+                <input type="checkbox" id="f9" data-label="Helpful Customer Support">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Helpful Customer Support</span>
+              </label>
+              <label for="f10">
+                <input type="checkbox" id="f10" data-label="Quick Response Time">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Quick Response Time</span>
+              </label>
+              <label for="f11">
+                <input type="checkbox" id="f11" data-label="Effective Problem Resolution">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Effective Problem Resolution</span>
+              </label>
+              <label for="f12">
+                <input type="checkbox" id="f12" data-label="Easy Online Ordering">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Easy Online Ordering</span>
+              </label>
             </div>
+          </div>
+        </div>
+
+        <div class="item border border-[#e5e7eb] rounded-xl overflow-hidden">
+          <button
+            class="trigger w-full text-left py-2 px-4 border-none bg-[#f8fafc] cursor-pointer flex justify-between items-center"
+            aria-expanded="false" aria-controls="p3">
+            <p class="font-bold">Value & Pricing</p>
+            <span class="text-2xl chev"><i class="ri-add-line"></i></span>
+          </button>
+          <div aria-labelledby="t3" role="region" class="panel-wrap select-none">
+            <div class="mt-[.5rem] flex flex-col gap-1.5 text-sm py-3 px-4 pb-4">
+              <label for="f13" class="">
+                <input type="checkbox" id="f13" data-label="Worth the Price">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Worth the Price</span>
+              </label>
+              <label for="f14">
+                <input type="checkbox" id="f14" data-label="Discounts and Special Offers">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Discounts and Special Offers</span>
+              </label>
+              <label for="f15">
+                <input type="checkbox" id="f15" data-label="Easy Payment Options">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Easy Payment Options</span>
+              </label>
+              <label for="f16">
+                <input type="checkbox" id="f16" data-label="Transparent Pricing">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Transparent Pricing</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="item border border-[#e5e7eb] rounded-xl overflow-hidden">
+          <button
+            class="trigger w-full text-left py-2 px-4 border-none bg-[#f8fafc] cursor-pointer flex justify-between items-center"
+            aria-expanded="false" aria-controls="p3">
+            <p class="font-bold">Trust & Brand</p>
+            <span class="text-2xl chev"><i class="ri-add-line"></i></span>
+          </button>
+          <div aria-labelledby="t3" role="region" class="panel-wrap">
+            <div class="mt-[.5rem] flex flex-col gap-1.5 text-sm py-3 px-4 pb-4">
+              <label for="f17" class="">
+                <input type="checkbox" id="f17" data-label="Authentic & Natural Products">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Authentic & Natural Products</span>
+              </label>
+              <label for="f18">
+                <input type="checkbox" id="f18" data-label="Eco-Friendly & Sustainable Practices">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Eco-Friendly & Sustainable Practices</span>
+              </label>
+              <label for="f19">
+                <input type="checkbox" id="f19" data-label="Honest & Transparent Information">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Honest & Transparent Information</span>
+              </label>
+              <label for="f20">
+                <input type="checkbox" id="f20" data-label="Reliable and Trusted Brand">
+                <span class="form-checkbox h-4 w-4 text-gray-600 ml-1.5">Reliable and Trusted Brand</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div>
+        <div class="w-full border p-4 rounded-md h-full">
+          <div class="flex flex-col items-start justify-center">
+            <p class="font-bold">Share / Edit your Review</p>
+            <!-- TAG STRIP -->
+            <div id="selected-tags" class="flex flex-wrap gap-2 mt-2 text-xs"></div>
+            <textarea rows="10" class="resize-y mt-[.8rem] border rounded-md w-full p-4"
+              control-id="ControlID-66"></textarea><button
+              class="m-auto mt-5 w-fit text-[16px] rounded-md py-1 px-5 hover:bg-[#faa61a] hover:text-white duration-300"
+              control-id="ControlID-67">
+              Submit
+            </button>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="../script.js"></script>
-  </body>
+  <script>
+    const accordion = document.getElementById('accordion');
+    const items = accordion.querySelectorAll('.item');
+
+    function openPanel(panelWrap) {
+      panelWrap.style.maxHeight = panelWrap.scrollHeight + 'px';
+    }
+
+    function closePanel(panelWrap) {
+      panelWrap.style.maxHeight = '0px'
+    }
+
+    items.forEach(item => {
+      const btn = item.querySelector('.trigger');
+      const wrap = item.querySelector('.panel-wrap');
+
+      btn.addEventListener('click', () => {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+        items.forEach(other => {
+          if (other !== item) {
+            const obtn = other.querySelector('.trigger');
+            const owrap = other.querySelector('.panel-wrap');
+            obtn.setAttribute('aria-expanded', 'false');
+            closePanel(owrap)
+          }
+        });
+
+        if (isOpen) {
+          btn.setAttribute('aria-expanded', 'false');
+          closePanel(wrap);
+        } else {
+          btn.setAttribute('aria-expanded', 'true');
+          openPanel(wrap);
+        }
+      })
+
+
+      wrap.addEventListener('transitionend', (e) => {
+        if (e.propertyName !== 'max-height') return;
+        if (btn.getAttribute('aria-expanded') === 'true') {
+          wrap.style.maxHeight = wrap.scrollHeight + 'px';
+        }
+      });
+
+      const ro = new ResizeObserver(() => {
+        if (btn.getAttribute('aria-expanded') === 'true') {
+          wrap.style.maxHeight = wrap.scrollHeight + 'px';
+        }
+      });
+      ro.observe(wrap);
+      window.addEventListener('resize', () => {
+        if (btn.getAttribute('aria-expanded') === 'true') {
+          wrap.style.maxHeight = wrap.scrollHeight + 'px'
+        }
+      })
+    })
+  </script>
+
+  <script>
+    // ====== Core Logic ======
+    const container = document.querySelector('.feedback-filters');
+    const allChecks = container.querySelectorAll('.feedback-filters input[type="checkbox"][data-label]');
+    const tagBox = document.getElementById('selected-tags');
+
+    function makeTag(id, label) {
+      // Avoid duplicates
+      if (tagBox.querySelector(`[data-for="${id}"]`)) return;
+
+      const tag = document.createElement('button');
+      tag.type = 'button';
+      tag.className = 'tag-chip';
+      tag.setAttribute('data-for', id);
+      tag.setAttribute('aria-label', `Remove ${label}`);
+      tag.innerHTML = `<span>${label}</span><span class="close" aria-hidden="true">&times;</span>`;
+      Object.assign(tag.style, {
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '8px',
+        padding: '5px 8px',
+        borderRadius: '999px',
+        border: '1px solid #f59e0b',
+        background: '#fffbeb',
+        cursor: 'pointer',
+        fontSize: '11px'
+      });
+      tag.querySelector('.close').style.fontWeight = '700';
+      tag.querySelector('.close').style.lineHeight = '1';
+      tagBox.appendChild(tag);
+    }
+
+    function removeTag(id) {
+      const t = tagBox.querySelector(`[data-for="${id}"]`);
+      if (t) t.remove();
+    }
+
+    // When a checkbox changes -> add/remove tag
+    allChecks.forEach(cb => {
+      cb.addEventListener('change', () => {
+        if (cb.checked) {
+          makeTag(cb.id, cb.dataset.label || cb.nextElementSibling?.textContent?.trim() || cb.id);
+        } else {
+          removeTag(cb.id);
+        }
+      });
+    });
+
+    // Click on a tag -> uncheck linked checkbox + remove tag
+    tagBox.addEventListener('click', (e) => {
+      const tag = e.target.closest('.tag-chip');
+      if (!tag) return;
+      const id = tag.getAttribute('data-for');
+      const checkbox = document.getElementById(id);
+      if (checkbox) checkbox.checked = false;
+      tag.remove();
+    });
+
+    // If some checkboxes are pre-checked on load, sync them
+    window.addEventListener('DOMContentLoaded', () => {
+      allChecks.forEach(cb => {
+        if (cb.checked) makeTag(cb.id, cb.dataset.label);
+      });
+    });
+  </script>
+  <script src="../script.js"></script>
+</body>
+
 </html>

@@ -22,13 +22,25 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
    </head>
    <body>
+      <svg style="display:none;">
+        <filter id="displacementFilter">
+            <feTurbulence type="turbulence" 
+                baseFrequency="0.0" 
+                numOctaves="1" 
+                result="turbulence" />
+    
+            <feDisplacementMap in="SourceGraphic"
+                in2="turbulence"    
+                            scale="50" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+    </svg>
       <!-- Header Section -->
       <header
-         class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 bg-white md:bg-transparent drop-shadow md:drop-shadow-none justify-center"
+         class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 card md:bg-transparent drop-shadow md:drop-shadow-none justify-center"
          >
          <!-- Main Navigation Bar -->
          <div
-            class="navBar flex justify-between items-center bg-white h-[3.5rem] w-full md:w-[81%]"
+            class="navBar flex justify-between items-center h-[3.5rem] w-full md:w-[81%]"
             >
             <!-- Logo -->
             <div class="w-48">

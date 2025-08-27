@@ -1,399 +1,297 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <!-- Set character encoding to UTF-8 -->
-      <meta charset="UTF-8" />
-      <!-- Set viewport for responsive design -->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <!-- Link to external CSS stylesheet for main styling -->
-      <link rel="stylesheet" href="../css/main.css" />
-      <!-- Link to Font Awesome stylesheet for icons -->
-      <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-         />
-      <!-- Link to Font Awesome stylesheet for additional icons -->
-      <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-         />
-      <!-- Preconnect to Google Fonts for faster font loading -->
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-   </head>
-   <body>
-      <!-- Header Section -->
-      <header
-         class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 bg-white md:bg-transparent drop-shadow md:drop-shadow-none justify-center"
-         >
-         <!-- Main Navigation Bar -->
-         <div
-            class="navBar flex justify-between items-center bg-white h-[3.5rem] w-full md:w-[81%]"
-            >
-            <!-- Logo -->
-            <div class="w-48">
-               <div class="navLogo w-36">
-                  <a href="/index.html">
-                  <img
-                     src="../assets/icons/Nutmeals Logo ver2.svg"
-                     alt="Nutmeals Logo"
-                     />
-                  </a>
-               </div>
-            </div>
-            <!-- Main Navigation Links (visible on larger screens) -->
-            <div
-               class="navMain hidden w-64 items-center justify-between md:flex uppercase"
-               >
-               <div>
-                  <a
-                     href="/pages/about.html"
-                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-                     >About</a
-                     >
-               </div>
-               <div>
-                  <a
-                     href="/pages/shop.html"
-                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-                     >Shop</a
-                     >
-               </div>
-               <div>
-                  <a
-                     href="/pages/blog.html"
-                     class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-                     >Blog</a
-                     >
-               </div>
-            </div>
-            <!-- Right Side Menu (icons) -->
-            <div
-               class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between"
-               >
-               <!-- Add to Cart Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="../pages/cart1.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_add_to_cart.svg"
-                  alt="Add to Cart"
-                  width="17"
-                  height="17"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Account Profile Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="/pages/login.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_account_profile.svg"
-                  alt="Account Profile"
-                  width="18"
-                  height="18"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Search Icon (hidden on mobile) -->
-               <a
-                  class="rounded-md hover-fill-white hover:bg-primaryButton py-2 px-2.5 duration-300 hidden md:block"
-                  href="/pages/search.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_search.svg"
-                  alt="Search"
-                  width="18"
-                  height="18"
-                  class="duration-300"
-                  />
-               </a>
-               <!-- Contact Support Icon -->
-               <a
-                  class="rounded-md hover-fill-white contactIcon md:hover:bg-primaryButton py-2 px-2.5"
-                  href="/pages/contact.html"
-                  >
-               <img
-                  src="../assets/icons/NavBar/white_contact_support.svg"
-                  alt="Contact Support"
-                  width="18"
-                  height="18"
-                  class="scale-[1.1]"
-                  />
-               </a>
-            </div>
-         </div>
-      </header>
-      <!-- Mobile Navigation Section -->
-      <div
-         class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-full glassNav z-10 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4"
-         >
-         <!-- Menu Button (visible on mobile) -->
-         <div class="navMenuBtn w-5 h-5 flex justify-center items-center navMenu">
-            <i class="fa-solid fa-bars text-[18px]"></i>
-            <img
-               src="/assets/icons/menu.svg"
-               alt="Menu"
-               class="w-5 menuWhenOpen cursor-pointer"
-               style="display: none"
-               />
-         </div>
-         <!-- Mobile Cart Icon -->
-         <a class="navMenuBtn" href="../pages/cart1.html">
-         <img
-            src="/assets/icons/generic_web_icons/add to cart.svg"
-            alt="Add to Cart"
-            class="w-[18px]"
-            />
-         </a>
-         <!-- Mobile Search Icon -->
-         <div class="navMenuBtn navSearchBtn">
-            <img
-               src="/assets/icons/NavBar/white_search.svg"
-               alt="Search"
-               class="w-5"
-               />
-         </div>
-         <!-- Mobile Account Profile Icon -->
-         <a class="navMenuBtn" href="../pages/bestsellers.html">
-         <img src="../assets/a.svg" alt="Account Profile" />
-         </a>
-         <!-- Mobile Login Icon -->
-         <a class="navMenuBtn" href="../pages/login.html">
-         <img
-            src="../assets/icons/generic_web_icons/account_profile.svg"
-            alt="Account Profile"
-            class="w-5 mr-[7px]"
-            />
-         </a>
-         <!-- Mobile Navigation Links (hidden by default) -->
-         <div
-            class="fixed mobNavLinks navLinksHidden bottom-[67px] left-0 right-0 glassNav text-white m-[12px] transition-transform transform translate-y-0"
-            >
-            <ul class="text-left">
-               <li class="p-2"><a href="../pages/about.html">About</a></li>
-               <li class="p-2"><a href="../pages/shop.html">Shop</a></li>
-               <li class="p-2"><a href="../pages/blog.html">Blog</a></li>
-            </ul>
-         </div>
-         <!-- Mobile Search Section -->
-         <div
-            class="fixed mobSearch searchHidden bottom-[80px] rounded-2xl mx-[.75rem] left-0 right-0 bg-primaryColor p-4 transition-transform transform translate-y-0"
-            >
-            <!-- Search Suggestions (hidden by default) -->
-            <div
-               class="suggestions absolute rounded-2xl -top-[220%] left-0 right-0 z-10 hidden p-2 mt-2 bg-primaryColor shadow-lg rounded"
-               >
-               <div class="text-white flex justify-between p-2">
-                  <div>
-                     <div class="p-[.3rem]">Suggestion 1</div>
-                     <div class="p-[.3rem]">Suggestion 2</div>
-                     <div class="p-[.3rem]">Suggestion 3</div>
-                  </div>
-                  <div>
-                     <div class="p-[.3rem]">Suggestion 1</div>
-                     <div class="p-[.3rem]">Suggestion 2</div>
-                     <div class="p-[.3rem]">Suggestion 3</div>
-                  </div>
-               </div>
-            </div>
-            <!-- Mobile Search Input and Icons -->
-            <ul class="flex items-center justify-between gap-5 w-full">
-               <input
-                  class="custom-input p-1 px-3 bg-primaryColor focus:outline-none text-white border-white border !w-full searchInput"
-                  placeholder="Search"
-                  type="text"
-                  />
-               <a href="/">
-               <img
-                  src="../assets/icons/generic_web_icons/search.svg"
-                  alt="Search"
-                  class="w-7 navMenuBtn"
-                  />
-               </a>
-               <a href="/scan">
-               <img
-                  src="../assets/icons/scan.svg"
-                  alt="Scan"
-                  class="w-7 navMenuBtn"
-                  />
-               </a>
-            </ul>
-         </div>
-      </div>
 
-    <div class="md:mt-10 mt-[1.5rem]">
-      <section class="w-[80vw] m-auto h-[90vh] grid place-items-center">
-        <div
-          class="max-w-[450px] flex-shrink-0 w-full custom-shadow py-[1rem] px-[2rem] md:px-12 md:py-8 rounded-md"
-        >
-          <div class="logtabs flex items-center justify-between mb-5">
+<head>
+  <!-- Set character encoding to UTF-8 -->
+  <meta charset="UTF-8" />
+  <!-- Set viewport for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link to external CSS stylesheet for main styling -->
+  <link rel="stylesheet" href="../css/main.css" />
+  <!-- Link to Font Awesome stylesheet for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Link to Font Awesome stylesheet for additional icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <!-- Preconnect to Google Fonts for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+
+<body>
+  <svg style="display:none;">
+    <filter id="displacementFilter">
+      <feTurbulence type="turbulence" baseFrequency="0.0" numOctaves="1" result="turbulence" />
+
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="50" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+  <!-- Header Section -->
+  <header
+    class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 card md:bg-transparent drop-shadow md:drop-shadow-none justify-center">
+    <!-- Main Navigation Bar -->
+    <div class="navBar flex justify-between items-center h-[3.5rem] w-full max-w-[1440px] md:px-8 px-4">
+      <!-- Logo -->
+      <div class="w-48">
+        <div class="navLogo w-36">
+          <a href="/index.html">
+            <img src="../assets/icons/Nutmeals Logo ver2.svg" alt="Nutmeals Logo" />
+          </a>
+        </div>
+      </div>
+      <!-- Main Navigation Links (visible on larger screens) -->
+      <div class="navMain hidden w-64 items-center justify-between md:flex uppercase">
+        <div>
+          <a href="/pages/about.html"
+            class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">About</a>
+        </div>
+        <div>
+          <a href="/pages/shop.html"
+            class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Shop</a>
+        </div>
+        <div>
+          <a href="/pages/blog.html"
+            class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Blog</a>
+        </div>
+      </div>
+      <!-- Right-side menu items (Cart, Profile, Search, Contact) -->
+      <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
+        <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+          href="/pages/cart1.html">
+          <img src="../assets/icons/NavBar/white_add_to_black.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/white_add_to_cart-yellow.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
+        <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+          href="/pages/login.html">
+          <img src="../assets/icons/NavBar/account_profile_black.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/account_profile_yellow.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
+        <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+          href="/pages/search.html">
+          <img src="../assets/icons/NavBar/search-zoom-in-black.svg" alt="Account Profile" width="20" height="20"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Account Profile" width="20" height="20"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
+        <a class="rounded-md hover-fill-white contactIcon py-2 px-2.5 relative group" href="/pages/contact.html">
+          <img src="../assets/icons/NavBar/contact_support_black.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/contact_support_yellow.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
+      </div>
+    </div>
+  </header>
+  <!-- Mobile Navigation Section -->
+  <div
+    class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-full glassNav z-10 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4">
+    <!-- Menu Button (visible on mobile) -->
+    <div class="navMenuBtn w-5 h-5 flex justify-center items-center navMenu">
+      <i class="fa-solid fa-bars text-[18px]"></i>
+      <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer" style="display: none" />
+    </div>
+    <!-- Mobile Cart Icon -->
+    <a class="navMenuBtn" href="../pages/cart1.html">
+      <img src="/assets/icons/generic_web_icons/add to cart.svg" alt="Add to Cart" class="w-[18px]" />
+    </a>
+    <!-- Mobile Search Icon -->
+    <div class="navMenuBtn navSearchBtn">
+      <img src="/assets/icons/NavBar/white_search.svg" alt="Search" class="w-5" />
+    </div>
+    <!-- Mobile Account Profile Icon -->
+    <a class="navMenuBtn" href="../pages/bestsellers.html">
+      <img src="../assets/a.svg" alt="Account Profile" />
+    </a>
+    <!-- Mobile Login Icon -->
+    <a class="navMenuBtn" href="../pages/login.html">
+      <img src="../assets/icons/generic_web_icons/account_profile.svg" alt="Account Profile" class="w-5 mr-[7px]" />
+    </a>
+    <!-- Mobile Navigation Links (hidden by default) -->
+    <div
+      class="fixed mobNavLinks navLinksHidden bottom-[67px] left-0 right-0 glassNav text-white m-[12px] transition-transform transform translate-y-0">
+      <ul class="text-left">
+        <li class="p-2"><a href="../pages/about.html">About</a></li>
+        <li class="p-2"><a href="../pages/shop.html">Shop</a></li>
+        <li class="p-2"><a href="../pages/blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <!-- Mobile Search Section -->
+    <div
+      class="fixed mobSearch searchHidden bottom-[80px] rounded-2xl mx-[.75rem] left-0 right-0 bg-primaryColor p-4 transition-transform transform translate-y-0">
+      <!-- Search Suggestions (hidden by default) -->
+      <div
+        class="suggestions absolute rounded-2xl -top-[220%] left-0 right-0 z-10 hidden p-2 mt-2 bg-primaryColor shadow-lg rounded">
+        <div class="text-white flex justify-between p-2">
+          <div>
+            <div class="p-[.3rem]">Suggestion 1</div>
+            <div class="p-[.3rem]">Suggestion 2</div>
+            <div class="p-[.3rem]">Suggestion 3</div>
+          </div>
+          <div>
+            <div class="p-[.3rem]">Suggestion 1</div>
+            <div class="p-[.3rem]">Suggestion 2</div>
+            <div class="p-[.3rem]">Suggestion 3</div>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Search Input and Icons -->
+      <ul class="flex items-center justify-between gap-5 w-full">
+        <input
+          class="custom-input p-1 px-3 bg-primaryColor focus:outline-none text-white border-white border !w-full searchInput"
+          placeholder="Search" type="text" />
+        <a href="/">
+          <img src="../assets/icons/generic_web_icons/search.svg" alt="Search" class="w-7 navMenuBtn" />
+        </a>
+        <a href="/scan">
+          <img src="../assets/icons/scan.svg" alt="Scan" class="w-7 navMenuBtn" />
+        </a>
+      </ul>
+    </div>
+  </div>
+
+  <div class="md:mt-10 mt-[1.5rem]">
+    <section class="w-[80vw] m-auto h-[90vh] grid place-items-center">
+      <div class="max-w-[450px] flex-shrink-0 w-full custom-shadow py-[1rem] px-[2rem] md:px-12 md:py-8 rounded-md">
+        <div class="logtabs flex items-center justify-between mb-5">
+          <button class="loglinks active font-semibold text-darkGray w-full py-1"
+            onclick="logopenTab(event, 'logtab1')">
+            Login
+          </button>
+          <button class="loglinks font-semibold text-darkGray w-full py-1" onclick="logopenTab(event, 'logtab2')">
+            Register
+          </button>
+        </div>
+        <div>
+          <div id="logtab1" class="logcontent show">
+            <div class="usersign">
+              <input type="text" placeholder="username"
+                class="inputf w-full border-b-[2px] border-darkGray py-1 outline-none text-[14px] md:text-[16px]" />
+              <button id="nextbtn"
+                class="py-1 px-7 hover:bg-primaryColor rounded-md text-darkGray hover:text-bodyColor block my-6 w-fit mx-auto">
+                Next
+              </button>
+            </div>
+
+            <div class="passsign">
+              <input type="password" placeholder="password"
+                class="inputf w-full border-b-[2px] border-darkGray py-1 outline-none text-[14px] md:text-[16px]" />
+              <div class="flex items-center justify-between py-1">
+                <button id="backbtn"
+                  class="py-1 px-5 relative -left-4 hover:bg-primaryColor rounded-md text-darkGray hover:text-bodyColor block w-fit text-[12px] md:tetx-md">
+                  Back
+                </button>
+                <a class="cursor-pointer text-[12px] md:tetx-md text-darkGray">forget password</a>
+              </div>
+              <button
+                class="py-1 px-7 hover:bg-primaryColor rounded-md text-darkGray hover:text-bodyColor block my-[.75rem] md:my-6 w-fit mx-auto">
+                Sign in
+              </button>
+            </div>
+
+            <p class="text-[14px] text-gray-400 text-center">
+              OR <br />
+              continue with
+            </p>
+            <div class="p-[.7rem] md:pt-8 flex items-center justify-center gap-4">
+              <a
+                class="text-3xl inline-flex transition-all duration-300 w-11 h-11 rounded-full items-center justify-center group hover:text-primaryButton">
+                <i class="ri-apple-fill hidden group-hover:block"></i>
+                <i class="ri-apple-line group-hover:hidden"></i>
+              </a>
+              <a
+                class="text-3xl inline-flex hover:text-primaryButton transition-all duration-300 w-11 h-11 rounded-full items-center justify-center group">
+                <i class="ri-google-fill hidden group-hover:block"></i>
+
+                <svg width="26" height="26" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="group-hover:hidden">
+                  <path
+                    d="M10.1823 0C4.5637 0 0 4.482 0 10C0 15.518 4.5637 20 10.1823 20C14.5731 20 17.2535 18.0163 18.6491 15.5571C20.0447 13.0978 20.221 10.2089 19.7974 8.2337L19.7144 7.89402H19.3685L10.1823 7.88043H9.73958V12.4049H14.8031C14.0387 14.144 12.4823 15.3397 10.1823 15.3397C7.17672 15.3397 4.74528 12.9518 4.74528 10C4.74528 7.04823 7.17672 4.66033 10.1823 4.66033C11.5329 4.66033 12.759 5.15115 13.7101 5.95109L14.0283 6.20924L17.0581 3.2337L17.3763 2.90761L17.0443 2.6087C15.2354 0.990149 12.8212 0 10.1823 0ZM10.1823 0.869565C12.4287 0.869565 14.4555 1.67629 16.062 2.97554L13.9315 5.06793C12.8783 4.29518 11.5986 3.79076 10.1823 3.79076C6.69769 3.79076 3.85986 6.57779 3.85986 10C3.85986 13.4222 6.69769 16.2092 10.1823 16.2092C13.0824 16.2092 15.1679 14.4633 15.9098 12.0924L16.0897 11.5353H10.625V8.75L18.9673 8.76359C19.2613 10.518 19.0659 13.0367 17.8743 15.1359C16.6085 17.3641 14.3085 19.1304 10.1823 19.1304C5.04099 19.1304 0.885417 15.0476 0.885417 10C0.885417 4.95245 5.04099 0.869565 10.1823 0.869565Z"
+                    fill="black" />
+                </svg>
+              </a>
+              <!-- <a
+                  class="text-3xl inline-flex hover:bg-primaryColor hover:text-bodyColor transition-all duration-300 w-11 h-11 rounded-full items-center justify-center"
+                  ><i class="ri-fingerprint-line"></i
+                ></a> -->
+            </div>
+          </div>
+          <div id="logtab2" class="logcontent">
+            <input type="text" placeholder="First name"
+              class="inputf w-full border-b-[2px] py-1 outline-none text-[14px] md:text-[16px] border-gray-400 mb-3" />
+            <input type="text" placeholder="Last name"
+              class="inputf w-full border-b-[2px] py-1 outline-none text-[14px] md:text-[16px] border-gray-400 mb-3" />
+            <input type="text" placeholder="Email"
+              class="inputf w-full border-b-[2px] py-1 outline-none text-[14px] md:text-[16px] border-gray-400 mb-3" />
+            <input type="text" placeholder="Mobile no"
+              class="inputf w-full border-b-[2px] py-1 outline-none text-[14px] md:text-[16px] border-gray-400 mb-3" />
+            <input type="text" placeholder="Password"
+              class="inputf w-full border-b-[2px] py-1 outline-none text-[14px] md:text-[16px] border-gray-400 mb-3" />
+            <div class="flex items-start mt-3 gap-x-3">
+              <input type="checkbox" name="check" id="check"
+                class="checkbox-white scale-[1] md:scale-[1.3] mt-[.2rem] ml-[.2rem]" />
+              <p class="text-gray-500 text-xs">
+                By creating an account you agree with our Terms of Service,
+                Privacy and User policy.
+              </p>
+            </div>
             <button
-              class="loglinks active font-semibold text-darkGray w-full py-1"
-              onclick="logopenTab(event, 'logtab1')"
-            >
-              Login
-            </button>
-            <button
-              class="loglinks font-semibold text-darkGray w-full py-1"
-              onclick="logopenTab(event, 'logtab2')"
-            >
+              class="py-1 px-7 hover:bg-primaryColor rounded-md text-darkGray hover:text-bodyColor block mt-[.5rem] md:my-6 mb-0 w-fit mx-auto">
               Register
             </button>
           </div>
-          <div>
-            <div id="logtab1" class="logcontent show">
-              <div class="usersign">
-                <input
-                  type="text"
-                  placeholder="username"
-                  class="inputf w-full border-b-[2px] border-darkGray py-1 outline-none text-[14px] md:text-[16px]"
-                />
-                <button
-                  id="nextbtn"
-                  class="py-1 px-7 hover:bg-primaryColor rounded-md text-darkGray hover:text-bodyColor block my-6 w-fit mx-auto"
-                >
-                  Next
-                </button>
-              </div>
-
-              <div class="passsign">
-                <input
-                  type="password"
-                  placeholder="password"
-                  class="inputf w-full border-b-[2px] border-darkGray py-1 outline-none text-[14px] md:text-[16px]"
-                />
-                <div class="flex items-center justify-between py-1">
-                  <button
-                    id="backbtn"
-                    class="py-1 px-5 relative -left-4 hover:bg-primaryColor rounded-md text-darkGray hover:text-bodyColor block w-fit text-[12px] md:tetx-md"
-                  >
-                    Back
-                  </button>
-                  <a class="cursor-pointer text-[12px] md:tetx-md text-darkGray"
-                    >forget password</a
-                  >
-                </div>
-                <button
-                  class="py-1 px-7 hover:bg-primaryColor rounded-md text-darkGray hover:text-bodyColor block my-[.75rem] md:my-6 w-fit mx-auto"
-                >
-                  Sign in
-                </button>
-              </div>
-
-              <p class="text-[14px] text-gray-400 text-center">
-                OR <br />
-                continue with
-              </p>
-              <div class="p-[.7rem] md:pt-8 flex items-center justify-evenly">
-                <a
-                  class="text-3xl inline-flex hover:bg-primaryColor hover:text-bodyColor transition-all duration-300 w-11 h-11 rounded-full items-center justify-center"
-                  ><i class="ri-apple-fill"></i
-                ></a>
-                <a
-                  class="text-3xl inline-flex hover:bg-primaryColor hover:text-bodyColor transition-all duration-300 w-11 h-11 rounded-full items-center justify-center"
-                  ><i class="ri-google-fill"></i
-                ></a>
-                <a
-                  class="text-3xl inline-flex hover:bg-primaryColor hover:text-bodyColor transition-all duration-300 w-11 h-11 rounded-full items-center justify-center"
-                  ><i class="ri-fingerprint-line"></i
-                ></a>
-              </div>
-            </div>
-            <div id="logtab2" class="logcontent">
-              <input
-                type="text"
-                placeholder="First name"
-                class="inputf w-full border-b-[2px] py-1 outline-none text-[14px] md:text-[16px] border-gray-400 mb-3"
-              />
-              <input
-                type="text"
-                placeholder="Last name"
-                class="inputf w-full border-b-[2px] py-1 outline-none text-[14px] md:text-[16px] border-gray-400 mb-3"
-              />
-              <input
-                type="text"
-                placeholder="Email"
-                class="inputf w-full border-b-[2px] py-1 outline-none text-[14px] md:text-[16px] border-gray-400 mb-3"
-              />
-              <input
-                type="text"
-                placeholder="Mobile no"
-                class="inputf w-full border-b-[2px] py-1 outline-none text-[14px] md:text-[16px] border-gray-400 mb-3"
-              />
-              <input
-                type="text"
-                placeholder="Password"
-                class="inputf w-full border-b-[2px] py-1 outline-none text-[14px] md:text-[16px] border-gray-400 mb-3"
-              />
-              <div class="flex items-start mt-3 gap-x-3">
-                <input
-                  type="checkbox"
-                  name="check"
-                  id="check"
-                  class="accent-primaryColor scale-[1] md:scale-[1.3] border-[1px] mt-[.2rem] ml-[.2rem]"
-                />
-                <p class="text-gray-500 text-xs">
-                  By creating an account you agree with our Terms of Service,
-                  Privacy and User policy.
-                </p>
-              </div>
-              <button
-                class="py-1 px-7 hover:bg-primaryColor rounded-md text-darkGray hover:text-bodyColor block mt-[.5rem] md:my-6 mb-0 w-fit mx-auto"
-              >
-                Register
-              </button>
-            </div>
-          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+  </div>
 
-    <script src="../script.js"></script>
+  <script src="../script.js"></script>
 
-    <script>
-      //  ~~~~~~~~~~~~~~~ Login page Tabs ~~~~~~~~~~~~~~~
-      function logopenTab(evt, tabName) {
-        // Declare all variables
-        var i, tabcontent, tablinks;
+  <script>
+    //  ~~~~~~~~~~~~~~~ Login page Tabs ~~~~~~~~~~~~~~~
+    function logopenTab(evt, tabName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
 
-        // Get all elements with class="tabcontent" and hide them
-        tabcontent = document.getElementsByClassName("logcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].classList.remove("show");
-        }
-
-        // Get all elements with class="tablinks" and remove the class "active"
-        tablinks = document.getElementsByClassName("loglinks");
-        for (i = 0; i < tablinks.length; i++) {
-          tablinks[i].classList.remove("active");
-        }
-
-        // Show the current tab, and add an "active" class to the button that opened the tab
-        document.getElementById(tabName).classList.add("show");
-        evt.currentTarget.classList.add("active");
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("logcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("show");
       }
 
-      document.addEventListener("DOMContentLoaded", function () {
-        const usersign = document.querySelector(".usersign");
-        const passsign = document.querySelector(".passsign");
-        const nextbtn = document.getElementById("nextbtn");
-        const backbtn = document.getElementById("backbtn");
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("loglinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
 
-        usersign.style.display = "block"; // Initial state
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(tabName).classList.add("show");
+      evt.currentTarget.classList.add("active");
+    }
 
-        nextbtn.addEventListener("click", function () {
-          usersign.style.display = "none";
-          passsign.style.display = "block";
-        });
+    document.addEventListener("DOMContentLoaded", function () {
+      const usersign = document.querySelector(".usersign");
+      const passsign = document.querySelector(".passsign");
+      const nextbtn = document.getElementById("nextbtn");
+      const backbtn = document.getElementById("backbtn");
 
-        backbtn.addEventListener("click", function () {
-          passsign.style.display = "none";
-          usersign.style.display = "block";
-        });
+      usersign.style.display = "block"; // Initial state
+
+      nextbtn.addEventListener("click", function () {
+        usersign.style.display = "none";
+        passsign.style.display = "block";
       });
-    </script>
-  </body>
+
+      backbtn.addEventListener("click", function () {
+        passsign.style.display = "none";
+        usersign.style.display = "block";
+      });
+    });
+  </script>
+</body>
+
 </html>
