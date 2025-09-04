@@ -1,3 +1,70 @@
+ document.addEventListener("click", function (e) {
+    // Delete button click
+    if (e.target.closest(".delete-btn")) {
+      const card = e.target.closest(".product-card");
+      const modal = document.querySelector(".delete_box"); // modal common rakha hai
+      const deleteBtn = modal.querySelector(".confirm_delete");
+      const cancelBtn = modal.querySelector(".cancel_modle");
+
+      // Show modal
+      modal.style.display = "flex";
+
+      if (card) {
+        // Confirm delete
+        deleteBtn.onclick = () => {
+          card.remove();
+          modal.style.display = "none";
+        };
+
+        // Cancel delete
+        cancelBtn.onclick = () => {
+          modal.style.display = "none";
+        };
+      }
+    }
+  });
+
+
+  // Hover effect
+  document.querySelectorAll(".product-card").forEach((product) => {
+    const nut = product.querySelector(".cartProductNut");
+    const del = product.querySelector(".cartProductDelete");
+
+    product.addEventListener("mouseover", () => {
+      nut.style.display = "none";
+      del.style.display = "block";
+    });
+
+    product.addEventListener("mouseleave", () => {
+      nut.style.display = "block";
+      del.style.display = "none";
+    });
+  });
+
+  // Quantity decrease
+  document.querySelectorAll(".decrease").forEach((button) => {
+    button.addEventListener("click", function () {
+      let counter = this.nextElementSibling;
+      let value = parseInt(counter.value);
+      if (value > 1) {
+        counter.value = value - 1;
+      }
+    });
+  });
+
+  // Quantity increase
+  document.querySelectorAll(".increase").forEach((button) => {
+    button.addEventListener("click", function () {
+      let counter = this.previousElementSibling;
+      let value = parseInt(counter.value);
+      if (value < 400) {
+        counter.value = value + 1;
+      }
+    });
+  });
+
+
+
 // ~~~~~~~~~~~~~~~ MOBILE NAV ~~~~~~~~~~~~~~~
 document.addEventListener("DOMContentLoaded", function () {
   // Select elements for mobile navigation
@@ -319,47 +386,26 @@ function contactopenTab(evt, tabName) {
 }
 
 //  ~~~~~~~~~~~~~~~ Cart ~~~~~~~~~~~~~~~
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".decrease").forEach((button) => {
-    button.addEventListener("click", function () {
-      let counter = this.nextElementSibling;
-      let value = parseInt(counter.value);
-      if (value > 1) {
-        counter.value = value - 1;
-      }
-    });
-  });
-
-  document.querySelectorAll(".increase").forEach((button) => {
-    button.addEventListener("click", function () {
-      let counter = this.previousElementSibling;
-      let value = parseInt(counter.value);
-      counter.value = value + 1;
-    });
-  });
-});
-
-//  ~~~~~~~~~~~~~~~ Product Page ~~~~~~~~~~~~~~~
-
-//product image slide btn
-// const proButtons = document.querySelectorAll(".pro-button");
-// const productSlides = document.querySelectorAll(".productSlides");
-// const productbannerbtn1 = document.querySelectorAll(".productbannerbtn1");
-// const productbannerbtn2 = document.querySelectorAll(".productbannerbtn2");
-
-// productSlides.forEach((slide) => {
-//   slide.addEventListener("mouseenter", () => {
-//     proButtons.forEach((button) => {
-//       button.style.display = "block";
+// document.addEventListener("DOMContentLoaded", function () {
+//   document.querySelectorAll(".decrease").forEach((button) => {
+//     button.addEventListener("click", function () {
+//       let counter = this.nextElementSibling;
+//       let value = parseInt(counter.value);
+//       if (value > 1) {
+//         counter.value = value - 1;
+//       }
 //     });
 //   });
 
-//   slide.addEventListener("mouseleave", () => {
-//     proButtons.forEach((button) => {
-//       button.style.display = "none";
+//   document.querySelectorAll(".increase").forEach((button) => {
+//     button.addEventListener("click", function () {
+//       let counter = this.previousElementSibling;
+//       let value = parseInt(counter.value);
+//       counter.value = value + 1;
 //     });
 //   });
 // });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const contactSection = document.getElementById("contact");

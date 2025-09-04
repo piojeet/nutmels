@@ -1,0 +1,19 @@
+<svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_i_162_85)">
+<path d="M45 20.25C46.1258 20.25 47.2474 20.4379 48.3164 20.8193H48.3184L79.4375 31.8936H79.4385C80.3342 32.2121 81 33.1471 81 33.9873C80.9998 34.8321 80.3293 35.7742 79.4385 36.0908H79.4375H79.4365C79.4357 36.0911 79.4342 36.0922 79.4326 36.0928C79.4292 36.094 79.4236 36.0953 79.417 36.0977C79.4032 36.1026 79.3824 36.1105 79.3555 36.1201C79.3013 36.1394 79.2209 36.1678 79.1162 36.2051C78.9058 36.2799 78.5962 36.3901 78.2021 36.5303C77.414 36.8105 76.2849 37.212 74.9229 37.6963C72.1985 38.665 68.54 39.9659 64.8047 41.2939C57.3333 43.9504 49.5543 46.7162 48.3193 47.1543C46.1721 47.916 43.8225 47.9153 41.6816 47.1543L10.5615 36.0908C9.67069 35.7742 9.0002 34.8322 9 33.9873C9 33.147 9.66592 32.2119 10.5615 31.8936H10.5625L41.6768 20.8203L41.6777 20.8213C42.7537 20.4418 43.8779 20.25 45 20.25Z" stroke="black" stroke-width="3"/>
+<path d="M10.0593 52.5039L41.1792 63.5676C43.6455 64.4443 46.3494 64.4443 48.8208 63.5676C51.2922 62.6909 79.9407 52.5039 79.9407 52.5039" stroke="black" stroke-width="3" stroke-linecap="round"/>
+<path d="M10.05 44.25L41.17 55.3137C43.6362 56.1904 46.3401 56.1904 48.8115 55.3137C51.2829 54.437 79.9315 44.25 79.9315 44.25" stroke="black" stroke-width="3" stroke-linecap="round"/>
+</g>
+<defs>
+<filter id="filter0_i_162_85" x="7.5" y="18.75" width="75" height="50.9751" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_162_85"/>
+</filter>
+</defs>
+</svg>
