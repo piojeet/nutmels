@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @font-face {
+  font-family: Brendiva;
+  src: url('fonts/BrendivaExtraBold-YzYnL.woff2') format('woff2');
+} */
+
 @layer base {
   body {
     @apply font-montserrat scroll-smooth;

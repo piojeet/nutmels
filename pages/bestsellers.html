@@ -158,26 +158,33 @@
       </div>
    </div>
    <!-- Main container for alignment and margin -->
-   <div class="w-full md:mt-10 mt-[4.5rem] justify-center flex max-w-[1440px] md:px-8 px-4 mx-auto relative z-50">
-      <div class="flex justify-between mt-[2%] px-[30px] rounded-lg custom-shadow bg-[#F2F2F2] w-full">
+   <div class="mt-10 justify-center flex max-w-[1440px] md:px-8 p-4 w-full mx-auto fixed left-1/2 -translate-x-1/2 top-7">
+      <!-- Inner container with background, shadow, and padding -->
+      <div class="flex justify-between px-[30px] rounded-lg custom-shadow bg-[#F2F2F2] w-full h-[48px]">
+         <!-- Container for the items with spacing between them -->
          <div class="flex mx-2 gap-16">
+            <!-- Shop item with cursor pointer for interaction -->
             <div id="shop" class="flex items-center cursor-pointer gap-[.5rem]">
                <p class="text-[25px]">+</p>
-               <p class="text-[15px] md:text-[16px]">Shop</p>
+               <p class="text-[15px] md:text-[16px] xl:text-[18px]">Shop</p>
             </div>
+            <!-- Category item with cursor pointer for interaction -->
             <div id="category" class="flex cursor-pointer items-center gap-[.5rem]">
                <p class="text-[25px]">+</p>
-               <p class="text-[15px] md:text-[16px]">Category</p>
+               <p class="text-[15px] md:text-[16px] xl:text-[18px]">Category</p>
             </div>
          </div>
       </div>
    </div>
    <!-- Dropdown menus -->
    <!-- Shop dropdown menu container -->
-   <div id="shop-dropdown"
-      class="hidden dropdown-content max-w-[1440px] w-full md:px-8 px-4 absolute left-1/2 -translate-x-1/2 z-50">
-      <div class="z-10 flex p-2 gap-[1.75rem] opacity-[.95] bg-[#f5f5f5] shadow-lg rounded-lg mt-2 w-full">
+   <div
+      class="hidden max-w-[1440px] w-full mx-auto px-4 absolute dropdown-content z-50 left-1/2 -translate-x-1/2 top-32 md:px-8"
+      id="shop-dropdown">
+      <div class="z-10 flex p-2 gap-[1.75rem] opacity-[.95]  bg-[#f5f5f5] shadow-lg rounded-lg mt-2 w-full md:pl-12">
+         <!-- Dropdown content with options -->
          <div>
+            <!-- List of dropdown options -->
             <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
                Category
             </p>
@@ -188,43 +195,47 @@
                Combo Deals
             </p>
          </div>
-
+         <!-- Additional section with images, visible on larger screens -->
          <div class="hidden md:flex items-center border-l gap-10 border-gray-400 p-4 px-[2.25rem]">
+            <!-- List of items with images and labels -->
             <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
                <p class="text-[13px]">Peanuts</p>
             </a>
             <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-               <p class="text-[13px]">Peanuts</p>
-            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-               <p class="text-[13px]">Peanuts</p>
-            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
                <p class="text-[13px]">Peanuts</p>
             </a>
             <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
                <p class="text-[13px]">Peanuts</p>
-            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+            </a>
+            <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
                <p class="text-[13px]">Peanuts</p>
-            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+            </a>
+            <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
                <p class="text-[13px]">Peanuts</p>
-            </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+            </a>
+            <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
+               <p class="text-[13px]">Peanuts</p>
+            </a>
+            <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+               <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
                <p class="text-[13px]">Peanuts</p>
             </a>
          </div>
       </div>
    </div>
    <!-- Category dropdown menu container -->
-   <div id="category-dropdown"
-      class="hidden dropdown-content max-w-[1440px] w-full md:px-8 px-4 absolute left-1/2 -translate-x-1/2 z-50">
-      <div class="flex z-10 w-full gap-[1.75rem] dropdown-content rounded-lg mt-2">
+   <div id="category-dropdown" class="hidden max-w-[1440px] w-full mx-auto px-4 absolute dropdown-content z-50 left-1/2 -translate-x-1/2 top-32 md:px-8">
+      <div 
+         class="flex gap-[1.75rem] dropdown-content rounded-lg mt-2 w-full md:pl-[12%]">
+         <!-- Dropdown content with options and images -->
          <div class="flex p-2 gap-[1.75rem] shadow-lg rounded-lg opacity-[.95] bg-[#f5f5f5] w-full">
+            <!-- List of text options -->
             <div class="whitespace-nowrap md:pl-[17px]">
                <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
                   Category
@@ -257,33 +268,35 @@
                   Combo Deals
                </p>
             </div>
-
+            <!-- Additional section with images, visible on larger screens -->
             <div class="hidden md:flex items-start border-l gap-10 border-gray-400 p-4 px-[2.25rem]">
+               <!-- List of items with images and labels -->
                <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
                   <p class="text-[13px]">Peanuts</p>
                </a>
                <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-                  <p class="text-[13px]">Peanuts</p>
-               </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-                  <p class="text-[13px]">Peanuts</p>
-               </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
                   <p class="text-[13px]">Peanuts</p>
                </a>
                <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
                   <p class="text-[13px]">Peanuts</p>
-               </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+               </a>
+               <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
                   <p class="text-[13px]">Peanuts</p>
-               </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+               </a>
+               <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
                   <p class="text-[13px]">Peanuts</p>
-               </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+               </a>
+               <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
+                  <p class="text-[13px]">Peanuts</p>
+               </a>
+               <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                  <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="Peanuts" />
                   <p class="text-[13px]">Peanuts</p>
                </a>
             </div>
@@ -291,7 +304,7 @@
       </div>
    </div>
    <!-- Bestsellers Section -->
-   <div class="w-full flex items-center justify-center">
+   <div class="w-full flex items-center justify-center pt-[148px] pb-6">
       <div
          class="mt-3 w-full max-w-[1440px] md:px-8 px-4 gap-x-0 md:gap-4 left-div right-div grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xs:gap-x-4 md:gap-y-0 justify-items-center h-[]">
          <a class="" href="../pages/product.html">

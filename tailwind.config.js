@@ -43,6 +43,7 @@ module.exports = {
     // Configure custom font families
     fontFamily: {
       montserrat: ['Montserrat', 'sans-serif'], // Custom font family
+      brendiva: ['Brendiva', 'cursive']
     }
   },
   plugins: [], // Array of plugins to extend Tailwind CSS functionality

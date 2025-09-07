@@ -150,10 +150,9 @@
     }
 
     .productLinkActive {
-
-      background-color: #FAA61A;
-      color: white;
-
+      border-bottom: 3px solid #FAA61A;
+      color: #FAA61A;
+font-weight: 600;
     }
 
     @media only screen and (max-width: 767px) {
@@ -312,72 +311,30 @@
 
   <div
     class="w-full fixed z-[111] pt-[14px] md:pt-0  md:mt-10 mt-[4.5rem] justify-center flex max-w-[1440px] md:px-8 px-4 mx-auto left-1/2 -translate-x-1/2 top-4">
-    <div class="flex justify-between mt-[2%] md:px-[30px] rounded-lg custom-shadow bg-[#F2F2F2] w-full h-[48px]">
-      <div class="flex mx-2 w-[100%] justify-between bg-[#F2F2F2] gap-10">
+    <div class="flex justify-between mt-[2%] md:px-[30px] rounded-lg custom-shadow bg-[#F2F2F2] w-full h-[48px] relative">
+      <div class="flex mx-2 w-[100%] justify-between bg-[#F2F2F2] gap-10 ">
 
         <div class=" flex md:w-[50%] w-full items-center justify-between">
 
           <div class="flex justify-between items-center w-full">
-            <div id="shop" class="flex items-center justify-between gap-[.5rem]">
+            <div id="shop" class="flex items-center justify-between gap-[.5rem] cursor-pointer">
               <p class="text-[25px]">+</p>
               <p class="text-[15px] md:text-[16px] xl:text-[18px]">Shop</p>
             </div>
-            <div id="category" class="flex items-center gap-[.5rem]">
+            <div id="category" class="flex items-center gap-[.5rem] cursor-pointer">
               <p class="text-[25px]">+</p>
               <p class="text-[15px] md:text-[16px] xl:text-[18px]">Category</p>
             </div>
 
-            <div id="product" class="flex items-center gap-[.5rem]">
+            <div id="product" class="flex items-center gap-[.5rem] cursor-pointer">
               <p class="text-[25px]">+</p>
               <p class="text-[15px] md:text-[16px] xl:text-[18px]">Product</p>
             </div>
 
-            <div class="flex p-3  hover:text-white rounded-md hover:bg-primaryButton items-center "><svg
-                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-                width="17.75" height="17.75" viewBox="0 0 256 256" xml:space="preserve">
-
-                <defs>
-                </defs>
-                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
-                  transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
-                  <path
-                    d="M 15.205 90 c -1.104 0 -2 -0.896 -2 -2 V 55.115 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 V 88 C 17.205 89.104 16.31 90 15.205 90 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                  <path
-                    d="M 74.795 59.357 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 55.357 C 76.795 58.462 75.899 59.357 74.795 59.357 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                  <path
-                    d="M 45 90 c -1.104 0 -2 -0.896 -2 -2 V 27.922 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 V 88 C 47 89.104 46.104 90 45 90 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                  <path
-                    d="M 45 29.922 c -5.464 0 -9.91 -4.445 -9.91 -9.91 s 4.445 -9.91 9.91 -9.91 c 5.465 0 9.91 4.445 9.91 9.91 S 50.465 29.922 45 29.922 z M 45 14.103 c -3.259 0 -5.91 2.651 -5.91 5.91 s 2.651 5.91 5.91 5.91 s 5.91 -2.651 5.91 -5.91 S 48.259 14.103 45 14.103 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                  <path
-                    d="M 15.205 57.115 c -5.464 0 -9.91 -4.445 -9.91 -9.91 c 0 -5.464 4.445 -9.91 9.91 -9.91 s 9.91 4.445 9.91 9.91 C 25.115 52.67 20.669 57.115 15.205 57.115 z M 15.205 41.295 c -3.259 0 -5.91 2.651 -5.91 5.91 s 2.651 5.91 5.91 5.91 s 5.91 -2.651 5.91 -5.91 S 18.464 41.295 15.205 41.295 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                  <path
-                    d="M 74.795 75.177 c -5.464 0 -9.909 -4.445 -9.909 -9.91 c 0 -5.464 4.445 -9.909 9.909 -9.909 c 5.465 0 9.91 4.445 9.91 9.909 C 84.705 70.731 80.26 75.177 74.795 75.177 z M 74.795 59.357 c -3.259 0 -5.909 2.65 -5.909 5.909 s 2.65 5.91 5.909 5.91 s 5.91 -2.651 5.91 -5.91 S 78.054 59.357 74.795 59.357 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                  <path
-                    d="M 15.205 41.295 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 37.295 C 17.205 40.4 16.31 41.295 15.205 41.295 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                  <path
-                    d="M 45 14.103 c -1.104 0 -2 -0.896 -2 -2 V 2 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 v 10.103 C 47 13.207 46.104 14.103 45 14.103 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                  <path
-                    d="M 74.795 90 c -1.104 0 -2 -0.896 -2 -2 V 73.177 c 0 -1.104 0.896 -2 2 -2 s 2 0.896 2 2 V 88 C 76.795 89.104 75.899 90 74.795 90 z"
-                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: currentColor; fill-rule: nonzero; opacity: 1;"
-                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                </g>
-              </svg></div>
+            <div class="flex p-3  hover:text-white rounded-md items-center group">
+              <img src="../assets/icons/filter-outline.svg" alt="icon" class="hidden group-hover:block">
+              <img src="../assets/icons/filter-solid.svg" alt="icon" class="group-hover:hidden">
+            </div>
           </div>
 
         </div>
@@ -387,8 +344,8 @@
 
         <!-- Shop dropdown menu container -->
         <div id="shop-dropdown"
-          class="hidden dropdown-content max-w-[1440px] w-full md:px-8 px-4 absolute left-1/2 -translate-x-1/2 z-50 mt-[2.9rem]">
-          <div class="z-10 flex p-2 gap-[1.75rem] opacity-[.95] bg-[#f5f5f5] shadow-lg rounded-lg w-full">
+          class="opacity-[.95] dropdown-content absolute hidden  top-12 z-[111] w-full md:ml-0 left-0 pt-1">
+          <div class="z-10 flex p-2 gap-[1.75rem] opacity-[.95] bg-[#f5f5f5] shadow-lg rounded-lg w-full md:pl-12">
             <div>
               <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
                 Category
@@ -434,7 +391,7 @@
         </div>
 
         <div id="category-dropdown"
-          class="flex ml-[22%]  md:ml-0 lg:pl-[164px] opacity-[.95] dropdown-content absolute hidden  mt-[2.9rem] z-[111] w-[80%]">
+          class="lg:pl-[15%] opacity-[.95] dropdown-content absolute hidden  top-12 z-[111] w-full md:ml-0 left-0 pt-1">
           <div class="flex p-2 px-3 md:px-2 gap-[1.75rem] shadow-lg rounded-lg opacity-[.95]  bg-[#f5f5f5] ">
             <div class="whitespace-nowrap md:pl-[17px] ">
               <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category</p>
@@ -482,7 +439,7 @@
         </div>
 
         <div id="product-dropdown"
-          class="flex   lg:pl-[351px] opacity-[.95] dropdown-content absolute hidden  mt-[2.9rem] z-[111] w-[80%] ml-[47%] md:ml-0">
+          class="lg:pl-[30%] opacity-[.95] dropdown-content absolute hidden  top-12 z-[111] w-full md:ml-0 left-0 pt-1">
           <div class="flex p-2 px-3 md:px-2 gap-[1.75rem] shadow-lg rounded-lg opacity-[.95]  bg-[#f5f5f5] ">
             <div class="whitespace-nowrap md:pl-[17px] ">
               <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category</p>
@@ -535,14 +492,14 @@
         <div
           class="hidden md:flex  justify-between text-[16px] sm:text-lg w-[50%] items-center                          sm:mt-0">
           <a id="buyLink"
-            class="text-[16px] buyLink xl:text-[18px]  hover:bg-primaryButton bg-animate  hover:text-white duration-300 rounded-md sm:px-4 px-3 cursor-pointer"
+            class="text-[16px] buyLink xl:text-[18px]  hover:text-primaryColor duration-300 sm:px-4 cursor-pointer py-2.5 px-4 border-b-[3px] border-transparent productLinkActive"
             href="/product?q=buy">Buy</a>
           <a id="descriptionLink"
-            class="xs:px-3 descriptionLink text-[16px] xl:text-[18px] hover:bg-primaryButton hover:text-white  duration-300 rounded-md sm:px-3 px-2  cursor-pointer"
+            class="xs:px-3 descriptionLink text-[16px] xl:text-[18px] hover:text-primaryButton  duration-300 sm:px-3 cursor-pointer py-2.5 px-4 border-b-[3px] border-transparent"
             href="/product?q=description&amp;menu=brief">Description</a>
-          <a id="benefitsLink" class="xs:px-3 benefitsLink px-2 text-[16px] xl:text-[18px] rounded-[4px]"
+          <a id="benefitsLink" class="xs:px-3 benefitsLink text-[16px] xl:text-[18px] py-2.5 px-4 border-b-[3px] border-transparent"
             href="/product?q=benefits&amp;menu=benefits">Benefits</a>
-          <a id="nutriLink" class="xs:px-3 px-2 nutriLink text-[16px] xl:text-[18px] rounded-[4px]"
+          <a id="nutriLink" class="xs:px-3 nutriLink text-[16px] xl:text-[18px] py-2.5 px-4 border-b-[3px] border-transparent"
             href="/product?q=nutritions">Nutri. Label</a>
         </div>
 
@@ -581,34 +538,13 @@
 
 
   <div class="w-full  flex justify-center">
-    <div class="flex-col flex lg:flex-row md:gap-8 gap-3 w-full max-w-[1440px] md:px-8 px-4 justify-center mt-32">
+    <div class="flex-col lg:flex-row md:gap-8 gap-3 w-full max-w-[1440px] md:px-8 px-4 justify-center mt-32 grid lg:grid-cols-2 grid-cols-1">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <div class="w-1/2 mx-auto">
+      <div class="">
 
 
         <div
-          class="w-full slides lg:h-[74vh] md:w-product-image flex justify-center flex-col md:pt-14 relative border bg-[#f5f5f5] border-gray-300 p-4 md:p-8 rounded-lg">
+          class="w-full slides h-[672px] md:w-product-image flex justify-center flex-col md:pt-14 relative border bg-[#f5f5f5] border-gray-300 p-4 md:p-8 rounded-lg">
           <div class="md:block hidden">
             <h1
               class="stroke-2 peanuts text-primaryButton opacity-[.5] stroke-gray-400 font-[800] mt-[1.1rem] !text-9xl xs:!text-7xl 2xl:!text-8xl absolute top-0 left-1/2 transform -translate-x-1/2 z-0">
@@ -622,7 +558,7 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="">
-                    <img src="../assets/images/chana.png" alt="Random Image 1"
+                    <img src="../assets/icons/peanuts.png" alt="Random Image 1"
                       class="z-10 w-[140px] md:w-[370px] 2xl:w-[500px] 5xl-lg:w-[600px]  m-auto">
                   </div>
                 </div>
@@ -680,8 +616,8 @@
       </div>
 
 
-
-      <div class="w-full md:hidden   justify-center flex bg-red-300">
+<!-- 
+      <div class="w-full :hidden   justify-center flex bg-red-300">
         <div class="flex w-[100%] justify-between  md:px-[30px] rounded-lg shadow-xl bg-[#F2F2F2] ">
           <div class="flex mx-2 w-[100%] justify-between bg-[#F2F2F2] gap-10">
 
@@ -700,7 +636,7 @@
 
           </div>
         </div>
-      </div>
+      </div> -->
 
 
 
@@ -709,10 +645,10 @@
 
 
 
-      <div class=" lg:w-[50%] ">
+      <div class=" ">
 
         <div
-          class="border  md:services-section md:block  lg:h-[74vh]  overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg md:px-4 md:py-2 xs:px-8 xs:py-4 ">
+          class="border services-section md:block h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg md:px-4 md:py-2 xs:px-8 xs:py-4 ">
           <!-- Item 1 -->
           <button class="accordion-btn w-full flex justify-between items-center px-4 py-3 text-left md:hidden"
             aria-expanded="false">
@@ -834,15 +770,21 @@
         </div>
 
         <div id="descriptionSection"
-          class="border hidden services-section lg:h-[74vh]  overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 ">
-          <div class="w-full ">
+          class="border lg:hidden services-section h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 ">
+          <!-- Item 2 -->
+          <button class="accordion-btn w-full flex justify-between items-center px-4 py-3 text-left md:hidden"
+            aria-expanded="false">
+            <span>Discription</span>
+            <span class="icon transition-transform duration-300">+</span>
+          </button>
+          <div class="accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease">
             <div class="w-full">
               <div class="flex justify-evenly border-b"><a class="w-full border-r text-center py-2"><button
                     class="text-[#faa61a] briefBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">brief</button></a><a
                   class="w-full border-r text-center py-2"><button
                     class="ingrBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">ingredients</button></a>
               </div>
-              <div class="px-4 flex flex-col h-[67vh] justify-between py-2 xs:px-8 xs:py-4">
+              <div class="px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4">
                 <div class="flex items-start justify-center my-3">
                   <div class="flex items-center justify-center flex-col">
                     <div class="h-[3rem] w-[3rem] md:h-16 md:w-16 2xl:h-20 2xl:w-20 rounded-full border border-black">
@@ -894,8 +836,14 @@
 
 
         <div id="benefitsSection"
-          class="border hidden services-section  lg:h-[74vh]  overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 ">
-          <div class=" w-full">
+          class="border lg:hidden services-section h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 ">
+          <!-- Item 3 -->
+          <button class="accordion-btn w-full flex justify-between items-center px-4 py-3 text-left md:hidden"
+            aria-expanded="false">
+            <span>Benefits</span>
+            <span class="icon transition-transform duration-300">+</span>
+          </button>
+          <div class="accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease">
             <div class="w-full ">
               <div class="flex justify-evenly border-b"><a class="w-full border-r border-col text-center py-2"><button
                     class=" benBtn text-[#faa61a] font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">benefits</button></a><a
@@ -903,7 +851,7 @@
                     class="rdiBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">rdi</button></a>
               </div>
               <div
-                class="descBen block xl:flex xl:flex-col xl:h-[67vh] h-auto justify-between  px-4 py-2 xs:px-8 xs:py-4">
+                class="descBen block xl:flex xl:flex-col h-auto justify-between  px-4 py-2 xs:px-8 xs:py-4">
                 <div class="flex items-start justify-center my-3">
                   <div class="flex items-center justify-center flex-col">
                     <div class="h-[3rem] w-[3rem] md:h-16 md:w-16 2xl:h-20 2xl:w-20 rounded-full border border-black">
@@ -955,36 +903,36 @@
 
 
 
-
-
-
-
-
-
-
-        <div id="nutriSection" class="hidden">
-          <div class="nutrition w-full flex justify-center items-center -mt-2.5">
-            <fieldset
-              class="lg:w-[42vw]  xl:w-[38vw] product-image product-scrollbar lg:h-[75.5vh] overflow-auto w-full p-3 border border-gray-300 bg-[#f5f5f5] rounded-2xl px-4 py-2 xs:px-8 xs:py-4">
-              <legend class="w-fit m-auto text-[16px] md:text-[18px]  md:px-4 text-lg xl:text-xl uppercase">Nutritional
-                Facts</legend>
-              <div class="w-full flex justify-center">
-                <div class="scale-[.9] xl:scale-[1.2] xl:mt-[5.5rem]  md:w-[70%]">
+        <div id="nutriSection" class="lg:hidden">
+          <!-- Item 4 -->
+          <button class="accordion-btn w-full flex justify-between items-center px-4 py-3 text-left md:hidden"
+            aria-expanded="false">
+            <span>Nutritional</span>
+            <span class="icon transition-transform duration-300">+</span>
+          </button>
+          <div class="nutrition w-full lg:flex justify-center items-center accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease">
+            <div
+              class="product-image product-scrollbar w-full border border-gray-300 bg-[#f5f5f5] rounded-2xl p-4 h-[672px]">
+             
+              <div class="w-full bg-white h-full rounded-2xl p-4">
+                <div class="w-fit m-auto text-[16px] md:text-[18px]  md:px-4 text-lg xl:text-xl uppercase font-semibold">Nutritional
+                  Facts</div>
+                <div class="mt-6">
                   <div class="flex  justify-between items-center pb-1 -mt-2 border-b-[2.5px] border-b-[#F8A531]">
                     <span class="text-lg 2xl:text-xl">Serving Size :</span>
                     <div class="font-medium text-xl 2xl:text-2xl">100 g</div>
                   </div>
                   <div>
                     <p class="font-medium pt-1.5 list-none">Amount per Serving</p>
-                    <div class="flex justify-between items-center border-b-[2.5px] border-b-[#F8A531]">
+                    <div class="flex justify-between items-center border-b-[2.5px] border-b-[#F8A531] pb-1">
                       <span class="text-[22px] 2xl:text-[24px]">Calories :</span>
                       <div class="pt-[2px] font-medium text-2xl">570.7</div>
                     </div>
                     <div class="border-b border-black font-normal">
-                      <p class="ml-2 flex text-sm justify-end py-1">Daily Value (%)</p>
+                      <p class="ml-2 flex text-sm justify-end py-2">Daily Value (%)</p>
                     </div>
-                    <div class="flex items-center justify-between">
-                      <div class="flex  flex-col">
+                    <div class="flex items-center justify-between py-2">
+                      <div class="flex  flex-col space-y-1">
                         <p>Total Fat</p>
                         <p class="text-right">Saturated Fat</p>
                         <p class="text-right">Trans Fat</p>
@@ -996,7 +944,7 @@
                         <p class="italic text-right  text-red-600">Added Sugars</p>
                         <p>Protein</p>
                       </div>
-                      <div class=" flex mr-[42px] flex-col">
+                      <div class=" flex mr-[42px] flex-col space-y-1">
                         <p class="flex justify-end gap-2"><span
                             class="value nutritionValue inline-block w-16 text-right"> 49.9</span> <span
                             class="text-left">mg</span></p>
@@ -1019,7 +967,7 @@
                         <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right">
                             25.0</span> <span>g</span></p>
                       </div>
-                      <div class="text-end flex flex-col   ">
+                      <div class="text-end flex flex-col space-y-1">
                         <p>77%</p>
                         <p>36%</p>
                         <p>-</p>
@@ -1033,14 +981,14 @@
                       </div>
                     </div>
                     <div class="border-b-[2.5px] border-b-[#F8A531] my-1"></div>
-                    <div class="flex items-center justify-between">
-                      <div class="flex flex-col">
+                    <div class="flex items-center justify-between py-2">
+                      <div class="flex flex-col space-y-1">
                         <p>Vitamin D</p>
                         <p>Calcium</p>
                         <p>Iron</p>
                         <p>Potassium</p>
                       </div>
-                      <div class="text-end ml-[51px]  md:ml-[79px] flex flex-col">
+                      <div class="text-end ml-[51px]  md:ml-[79px] flex flex-col space-y-1">
                         <p class="flex gap-[.6rem]"> <span class="nutritionValue ">0.0 </span><span class="">mg</span>
                         </p>
                         <p class="flex gap-[.6rem]"><span class="nutritionValue">0.0 </span> <span class="">mg</span>
@@ -1050,7 +998,7 @@
                         <p class="flex gap-[.6rem]"><span class="nutritionValue">0.0 </span> <span class="">mg</span>
                         </p>
                       </div>
-                      <div class="text-end flex flex-col">
+                      <div class="text-end flex flex-col space-y-1">
                         <p class="flex">
                           <sp%>00 %</span>
                         </p>

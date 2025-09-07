@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <style>
+  <!-- <style>
     .slider-container {
       position: relative;
       width: 100%;
@@ -92,7 +92,6 @@
       z-index: 0;
     }
 
-    /* Vertical mode */
     .slider.vertical-mode .card.prev {
       transform: translateY(-120px) translateZ(-100px) scale(0.9) rotateX(-35deg);
     }
@@ -102,12 +101,10 @@
     }
 
 
-    /* Touch feedback */
     .slider.dragging .card {
       transition: none;
     }
 
-    /* Mobile responsiveness */
     @media only screen and (max-width: 767px) {
       .slider-container {
         height: 350px;
@@ -128,7 +125,7 @@
       }
 
     }
-  </style>
+  </style> -->
 </head>
 
 <body>
@@ -141,7 +138,7 @@
   </svg>
   <!-- Header Section -->
   <header
-    class="z-10 top-0 fixed w-full md:flex px-4 md:p-0  md:bg-transparent drop-shadow md:drop-shadow-none justify-center">
+    class="z-10 top-0 fixed w-full md:flex px-4 md:p-0  md:bg-transparent drop-shadow md:drop-shadow-none justify-center card">
     <!-- Main Navigation Bar -->
     <div class="navBar flex justify-between items-center h-[3.5rem] w-full max-w-[1440px] md:px-8 px-4">
       <!-- Logo -->
@@ -266,584 +263,545 @@
     </div>
   </div>
 
-  <div class="w-full md:mt-10 mt-[4.5rem] justify-center flex max-w-[1440px] m-auto md:px-8 px-4">
-    <div class="flex justify-between mt-[2%] px-[30px] rounded-lg custom-shadow bg-[#F2F2F2] z-[111] w-full">
+  <div
+    class="mt-10 justify-center flex max-w-[1440px] md:px-8 p-4 w-full mx-auto fixed left-1/2 -translate-x-1/2 top-7 z-30">
+    <!-- Inner container with background, shadow, and padding -->
+    <div class="flex justify-between px-[30px] rounded-lg custom-shadow bg-[#F2F2F2] w-full h-[48px]">
+      <!-- Container for the items with spacing between them -->
       <div class="flex mx-2 gap-16">
+        <!-- Shop item with cursor pointer for interaction -->
         <div id="shop" class="flex items-center cursor-pointer gap-[.5rem]">
           <p class="text-[25px]">+</p>
-          <p class="text-[15px] md:text-[16px]">Shop</p>
-        </div>
-
-      </div>
+          <p class="text-[15px] md:text-[16px] xl:text-[18px]"">Shop</p>
+          </div>
+    
+       </div>
     </div>
-  </div>
+ </div>
+
+
 
   <!-- Shop dropdown menu container -->
   <div id="shop-dropdown"
-    class="hidden dropdown-content max-w-[1440px] w-full md:px-8 px-4 absolute left-1/2 -translate-x-1/2 z-50">
-    <div class="z-10 flex p-2 gap-[1.75rem] opacity-[.95] bg-[#f5f5f5] shadow-lg rounded-lg mt-2 w-full">
-      <div>
-        <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
-          Category
-        </p>
-        <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
-          Best Seller
-        </p>
-        <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
-          Combo Deals
-        </p>
-      </div>
+            class="hidden dropdown-content max-w-[1440px] w-full mx-auto px-4 absolute z-50 left-1/2 -translate-x-1/2 top-32 md:px-8">
+          <div class="z-10 flex p-2 gap-[1.75rem] opacity-[.95] bg-[#f5f5f5] shadow-lg rounded-lg mt-2 w-full pl-12">
+            <div>
+              <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
+                Category
+              </p>
+              <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
+                Best Seller
+              </p>
+              <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
+                Combo Deals
+              </p>
+            </div>
 
-      <div class="hidden md:flex items-center border-l gap-10 border-gray-400 p-4 px-[2.25rem]">
-        <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a>
-        <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a>
-        <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div id="category-dropdown"
-    class="flex z-10 ml-[51%] md:ml-[10%] flex gap-[1.75rem] dropdown-content absolute hidden rounded-lg mt-2 md:w-[80%] lg:pl-[115px] dropdown-content">
-    <div class="flex p-2 gap-[1.75rem] shadow-lg rounded-lg opacity-[.95] bg-[#f5f5f5]">
-      <div class="whitespace-nowrap md:pl-[17px]">
-        <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
-          Category
-        </p>
-        <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
-          Best Seller
-        </p>
-        <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
-          Combo Deals
-        </p>
-        <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
-          Category
-        </p>
-        <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
-          Best Seller
-        </p>
-        <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
-          Combo Deals
-        </p>
-        <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
-          Category
-        </p>
-        <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
-          Best Seller
-        </p>
-        <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
-          Best Seller
-        </p>
-        <p class="p-2 hover:bg-gray-200 text-[15px] md:text-[16px] cursor-pointer">
-          Combo Deals
-        </p>
-      </div>
-
-      <div class="hidden md:flex items-start border-l gap-10 border-gray-400 p-4 px-[2.25rem]">
-        <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a>
-        <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a>
-        <a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
-          <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
-          <p class="text-[13px]">Peanuts</p>
-        </a>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="w-full mt-[.6rem] hidden">
-    <div class="bannerProducts m-auto  w-[92%] grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 md:gap-y-6">
-      <a class="scale-[.75]" href="../pages/category-product.html">
-        <div class="flex flex-col items-center">
-          <div
-            class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
-            <img src="../assets/icons/1 nuts.svg" alt="nuts"
-              class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
-          </div>
-          <div>
-            <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
-              nuts
-            </p>
+            <div class="hidden md:flex items-center border-l gap-10 border-gray-400 p-4 px-[2.25rem]">
+              <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a>
+              <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a>
+              <a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a><a class="div flex flex-col items-center gap-[.3rem] justify-center">
+                <img src="../assets/images/chana.png" width="80px" class="w-[10]" alt="" />
+                <p class="text-[13px]">Peanuts</p>
+              </a>
+            </div>
           </div>
         </div>
-      </a><a class="scale-[.75]" href="../pages/category-product.html">
-        <div class="flex flex-col items-center">
-          <div
-            class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
-            <img src="../assets/icons/1 nuts.svg" alt="nuts"
-              class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
-          </div>
-          <div>
-            <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
-              nuts
-            </p>
-          </div>
-        </div>
-      </a><a class="scale-[.75]" href="../pages/category-product.html">
-        <div class="flex flex-col items-center">
-          <div
-            class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
-            <img src="../assets/icons/1 nuts.svg" alt="nuts"
-              class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
-          </div>
-          <div>
-            <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
-              nuts
-            </p>
-          </div>
-        </div>
-      </a><a class="scale-[.75]" href="../pages/category-product.html">
-        <div class="flex flex-col items-center">
-          <div
-            class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
-            <img src="../assets/icons/1 nuts.svg" alt="nuts"
-              class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
-          </div>
-          <div>
-            <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
-              nuts
-            </p>
-          </div>
-        </div>
-      </a><a class="scale-[.75]" href="../pages/category-product.html">
-        <div class="flex flex-col items-center">
-          <div
-            class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
-            <img src="../assets/icons/1 nuts.svg" alt="nuts"
-              class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
-          </div>
-          <div>
-            <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
-              nuts
-            </p>
-          </div>
-        </div>
-      </a><a class="scale-[.75]" href="../pages/category-product.html">
-        <div class="flex flex-col items-center">
-          <div
-            class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
-            <img src="../assets/icons/1 nuts.svg" alt="nuts"
-              class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
-          </div>
-          <div>
-            <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
-              nuts
-            </p>
-          </div>
-        </div>
-      </a><a class="scale-[.75]" href="../pages/category-product.html">
-        <div class="flex flex-col items-center">
-          <div
-            class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
-            <img src="../assets/icons/1 nuts.svg" alt="nuts"
-              class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
-          </div>
-          <div>
-            <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
-              nuts
-            </p>
-          </div>
-        </div>
-      </a><a class="scale-[.75]" href="../pages/category-product.html">
-
-
-        <div class="flex flex-col items-center">
-          <div
-            class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
-            <img src="../assets/icons/1 nuts.svg" alt="nuts"
-              class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
-          </div>
-          <div>
-            <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
-              nuts
-            </p>
-          </div>
-        </div>
-      </a><a class="scale-[.75]" href="../pages/category-product.html">
-        <div class="flex flex-col items-center">
-          <div
-            class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
-            <img src="../assets/icons/1 nuts.svg" alt="nuts"
-              class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
-          </div>
-          <div>
-            <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
-              nuts
-            </p>
-          </div>
-        </div>
-      </a><a class="scale-[.75]" href="../pages/category-product.html">
-        <div class="flex flex-col items-center">
-          <div
-            class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
-            <img src="../assets/icons/1 nuts.svg" alt="nuts"
-              class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
-          </div>
-          <div>
-            <p class="text-center text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
-              nuts
-            </p>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
 
 
 
 
-  <div class="w-full h-[80vh] flex justify-center">
-    <div
-      class="w-full max-w-[1440px] mx-auto md:px-8 px-4 rounded-b-2xl  lg:mx-32 md:mx-[60px] m-2 sm:m-6 md:my-10 flex items-center justify-center relative">
-      <div class="right-div left-div w-full">
-        <div class=" flex flex-col  ">
-          <div class="bannerProducts -mt-[10px] w-full grid grid-cols-3 md:grid-cols-5 lg:grid-cols-15 md:gap-y-14 gap-y-6 gap-4">
-            <!-- Banner products grid -->
-            <a class="product__link block" href="category-product.html">
-              <!-- Product link -->
-              <div class="flex flex-col items-center h-full justify-between">
-                <div class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
-                  <img src="../assets/icons/Product category icons/1 nuts.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
-                  <img src="../assets/icons/Product category icons/1 nuts yellow.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+        <div class="w-full mt-[.6rem] hidden">
+          <div class="bannerProducts m-auto  w-[92%] grid grid-cols-3 md:grid-cols-5 lg:grid-cols-10 md:gap-y-6">
+            <a class="scale-[.75]" href="../pages/category-product.html">
+              <div class="flex flex-col items-center">
+                <div
+                  class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
+                  <img src="../assets/icons/1 nuts.svg" alt="nuts"
+                    class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
                 </div>
                 <div>
-                  <p class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
-                    Nuts
+                  <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
+                    nuts
                   </p>
                 </div>
               </div>
-            </a>
-    
-            <a class="product__link block" href="./pages/category-product.html">
-              <!-- Product link -->
-              <div class="flex flex-col items-center h-full justify-between">
-                <div class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
-                  <img src="../assets/icons/Product category icons/2 seeds.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
-                  <img src="../assets/icons/Product category icons/2 seeds yellow.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+            </a><a class="scale-[.75]" href="../pages/category-product.html">
+              <div class="flex flex-col items-center">
+                <div
+                  class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
+                  <img src="../assets/icons/1 nuts.svg" alt="nuts"
+                    class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
                 </div>
                 <div>
-                  <p class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
-                    seeds
+                  <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
+                    nuts
                   </p>
                 </div>
               </div>
-            </a>
-            <a class="product__link block" href="./pages/category-product.html">
-              <!-- Product link -->
-              <div class="flex flex-col items-center h-full justify-between">
-                <div class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
-                  <img src="../assets/icons/Product category icons/3 millets.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
-                  <img src="../assets/icons/Product category icons/3 millets yellow.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+            </a><a class="scale-[.75]" href="../pages/category-product.html">
+              <div class="flex flex-col items-center">
+                <div
+                  class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
+                  <img src="../assets/icons/1 nuts.svg" alt="nuts"
+                    class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
                 </div>
                 <div>
-                  <p class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
-                    millets
+                  <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
+                    nuts
                   </p>
                 </div>
               </div>
-            </a>
-            <a class="product__link block" href="./pages/category-product.html">
-              <!-- Product link -->
-              <div class="flex flex-col items-center h-full justify-between">
-                <div class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
-                  <img src="../assets/icons/Product category icons/4 super food.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
-                  <img src="../assets/icons/Product category icons/4 super food yellow.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+            </a><a class="scale-[.75]" href="../pages/category-product.html">
+              <div class="flex flex-col items-center">
+                <div
+                  class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
+                  <img src="../assets/icons/1 nuts.svg" alt="nuts"
+                    class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
                 </div>
                 <div>
-                  <p class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
-                    superfoods
+                  <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
+                    nuts
                   </p>
                 </div>
               </div>
-            </a>
-            <a class="product__link block" href="./pages/category-product.html">
-              <!-- Product link -->
-              <div class="flex flex-col items-center h-full justify-between">
-                <div class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
-                  <img src="../assets/icons/Product category icons/5 dry fruits.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
-                  <img src="../assets/icons/Product category icons/5 dry fruits yellow.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+            </a><a class="scale-[.75]" href="../pages/category-product.html">
+              <div class="flex flex-col items-center">
+                <div
+                  class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
+                  <img src="../assets/icons/1 nuts.svg" alt="nuts"
+                    class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
                 </div>
                 <div>
-                  <p class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
-                    dried fruits
+                  <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
+                    nuts
                   </p>
                 </div>
               </div>
-            </a>
-            <a class="product__link block" href="./pages/category-product.html">
-              <!-- Product link -->
-              <div class="flex flex-col items-center h-full justify-between">
-                <div class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
-                  <img src="../assets/icons/Product category icons/6 nosh on.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
-                  <img src="../assets/icons/Product category icons/6 nosh on yellow.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+            </a><a class="scale-[.75]" href="../pages/category-product.html">
+              <div class="flex flex-col items-center">
+                <div
+                  class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
+                  <img src="../assets/icons/1 nuts.svg" alt="nuts"
+                    class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
                 </div>
                 <div>
-                  <p class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
-                    nosh on
+                  <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
+                    nuts
                   </p>
                 </div>
               </div>
-            </a>
-            <a class="product__link block" href="./pages/category-product.html">
-              <!-- Product link -->
-              <div class="flex flex-col items-center h-full justify-between">
-                <div class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
-                  <img src="../assets/icons/Product category icons/7 energy bar.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
-                  <img src="../assets/icons/Product category icons/7 energy bar yellow.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+            </a><a class="scale-[.75]" href="../pages/category-product.html">
+              <div class="flex flex-col items-center">
+                <div
+                  class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
+                  <img src="../assets/icons/1 nuts.svg" alt="nuts"
+                    class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
                 </div>
                 <div>
-                  <p class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
-                    energy bar
+                  <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
+                    nuts
                   </p>
                 </div>
               </div>
-            </a>
-            <a class="product__link block" href="./pages/category-product.html">
-              <!-- Product link -->
-              <div class="flex flex-col items-center h-full justify-between">
-                <div class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
-                  <img src="../assets/icons/Product category icons/8 spreads.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
-                  <img src="../assets/icons/Product category icons/8 spreads yellow.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+            </a><a class="scale-[.75]" href="../pages/category-product.html">
+
+
+              <div class="flex flex-col items-center">
+                <div
+                  class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
+                  <img src="../assets/icons/1 nuts.svg" alt="nuts"
+                    class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
                 </div>
                 <div>
-                  <p class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
-                    spreads
+                  <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
+                    nuts
                   </p>
                 </div>
               </div>
-            </a>
-            <a class="product__link block" href="./pages/category-product.html">
-              <!-- Product link -->
-              <div class="flex flex-col items-center h-full justify-between w-full">
-                <div class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
-                  <img src="../assets/icons/Product category icons/9 ethnic bvrg.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
-                  <img src="../assets/icons/Product category icons/9 ethnic bvrg yellow.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
-                </div>
-                <div class="w-full">
-                  <p class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
-                    ethnic beverages 
-                  </p>
-                </div>
-              </div>
-            </a>
-            <a class="product__link block" href="./pages/category-product.html">
-              <!-- Product link -->
-              <div class="flex flex-col items-center h-full justify-between">
-                <div class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
-                  <img src="../assets/icons/Product category icons/10 gifts.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
-                  <img src="../assets/icons/Product category icons/10 gifts yellow.svg" alt="Nuts"
-                    class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+            </a><a class="scale-[.75]" href="../pages/category-product.html">
+              <div class="flex flex-col items-center">
+                <div
+                  class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
+                  <img src="../assets/icons/1 nuts.svg" alt="nuts"
+                    class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
                 </div>
                 <div>
-                  <p class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
-                    gifts
+                  <p class="text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
+                    nuts
+                  </p>
+                </div>
+              </div>
+            </a><a class="scale-[.75]" href="../pages/category-product.html">
+              <div class="flex flex-col items-center">
+                <div
+                  class="flex scale-[1.2] items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col">
+                  <img src="../assets/icons/1 nuts.svg" alt="nuts"
+                    class="lg:w-full w-[124px] bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400 p-3">
+                </div>
+                <div>
+                  <p class="text-center text-[18px] leading-4 max-w-28 xl:text-[20px] text-center mt-[.8rem]">
+                    nuts
                   </p>
                 </div>
               </div>
             </a>
           </div>
+        </div>
 
 
-          <div class="slider-wrapper hidden">
 
-            <!-- Slider Container -->
-            <div class="slider vertical-mode" id="slider">
 
-              <!-- Card 1 -->
-              <div class="card active">
-                <div class="card-content h-full">
-                  <a class="block h-full content-center backdrop-blur-2xl bg-white/80"
-                    href="../pages/category-product.html">
-                    <div class="flex flex-col items-center">
+        <div class="w-full h-[100dvh] flex justify-center pt-[148px] pb-6">
+          <div
+            class="w-full max-w-[1440px] mx-auto md:px-8 px-4 rounded-b-2xl  lg:mx-32 md:mx-[60px] m-2 flex items-center justify-center relative">
+            <div class="right-div left-div w-full">
+              <div class=" flex flex-col  ">
+                <div
+                  class="bannerProducts -mt-[10px] w-full grid grid-cols-3 md:grid-cols-5 lg:grid-cols-15 md:gap-y-14 gap-y-6 gap-4">
+                  <!-- Banner products grid -->
+                  <a class="product__link block" href="category-product.html">
+                    <!-- Product link -->
+                    <div class="flex flex-col items-center h-full justify-between">
                       <div
-                        class="flex items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col size-[200px] flex-shrink-0">
-                        <img src="../assets/icons/product_category_icons/5 dry fruits.svg" alt="nuts"
-                          class="size-full object-cover bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400" />
+                        class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
+                        <img src="../assets/icons/Product category icons/1 nuts.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
+                        <img src="../assets/icons/Product category icons/1 nuts yellow.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
                       </div>
                       <div>
                         <p
-                          class="text-[12px] md:text-[15px] leading-4 max-w-28 lg:text-[20px] text-center mt-3 lg:mt-6">
-                          dry fruits
+                          class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
+                          Nuts
                         </p>
                       </div>
                     </div>
                   </a>
-                </div>
-              </div>
-              <!-- Card 2 -->
-              <div class="card next">
-                <div class="card-content h-full">
-                  <a class="block h-full content-center backdrop-blur-2xl bg-white/80"
-                    href="../pages/category-product.html">
-                    <div class="flex flex-col items-center">
+
+                  <a class="product__link block" href="./pages/category-product.html">
+                    <!-- Product link -->
+                    <div class="flex flex-col items-center h-full justify-between">
                       <div
-                        class="flex items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col size-[200px] flex-shrink-0">
-                        <img src="../assets/icons/product_category_icons/2 nuts.svg" alt="nuts"
-                          class="size-full object-cover bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400" />
+                        class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
+                        <img src="../assets/icons/Product category icons/2 seeds.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
+                        <img src="../assets/icons/Product category icons/2 seeds yellow.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
                       </div>
                       <div>
                         <p
-                          class="text-[12px] md:text-[15px] leading-4 max-w-28 lg:text-[20px] text-center mt-3 lg:mt-6">
-                          nuts
-                        </p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <!-- Card 3 -->
-              <div class="card stack-behind">
-                <div class="card-content h-full">
-                  <a class="block h-full content-center backdrop-blur-2xl bg-white/80"
-                    href="../pages/category-product.html">
-                    <div class="flex flex-col items-center">
-                      <div
-                        class="flex items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col size-[200px]">
-                        <img src="../assets/icons/product_category_icons/2 seeds.svg" alt="nuts"
-                          class="size-full object-cover bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400" />
-                      </div>
-                      <div>
-                        <p
-                          class="text-[12px] md:text-[15px] leading-4 max-w-28 lg:text-[20px] text-center mt-3 lg:mt-6">
+                          class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
                           seeds
                         </p>
                       </div>
                     </div>
                   </a>
-                </div>
-              </div>
-              <!-- Card 4 -->
-              <div class="card hidden">
-                <div class="card-content h-full">
-                  <a class="block h-full content-center backdrop-blur-2xl bg-white/80"
-                    href="../pages/category-product.html">
-                    <div class="flex flex-col items-center">
+                  <a class="product__link block" href="./pages/category-product.html">
+                    <!-- Product link -->
+                    <div class="flex flex-col items-center h-full justify-between">
                       <div
-                        class="flex items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col size-[200px]">
-                        <img src="../assets/icons/product_category_icons/3 millets.svg" alt="nuts"
-                          class="size-full object-cover bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400" />
+                        class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
+                        <img src="../assets/icons/Product category icons/3 millets.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
+                        <img src="../assets/icons/Product category icons/3 millets yellow.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
                       </div>
                       <div>
                         <p
-                          class="text-[12px] md:text-[15px] leading-4 max-w-28 lg:text-[20px] text-center mt-3 lg:mt-6">
+                          class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
                           millets
                         </p>
                       </div>
                     </div>
                   </a>
-                </div>
-              </div>
-              <!-- Card 5 -->
-              <div class="card prev">
-                <div class="card-content h-full">
-                  <a class="block h-full content-center backdrop-blur-2xl bg-white/80"
-                    href="../pages/category-product.html">
-                    <div class="flex flex-col items-center">
+                  <a class="product__link block" href="./pages/category-product.html">
+                    <!-- Product link -->
+                    <div class="flex flex-col items-center h-full justify-between">
                       <div
-                        class="flex items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col size-[200px]">
-                        <img src="../assets/icons/product_category_icons/4 super food.svg" alt="nuts"
-                          class="size-full object-cover bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400" />
+                        class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
+                        <img src="../assets/icons/Product category icons/4 super food.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
+                        <img src="../assets/icons/Product category icons/4 super food yellow.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
                       </div>
                       <div>
                         <p
-                          class="text-[12px] md:text-[15px] leading-4 max-w-28 lg:text-[20px] text-center mt-3 lg:mt-6">
-                          super food
+                          class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
+                          superfoods
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="product__link block" href="./pages/category-product.html">
+                    <!-- Product link -->
+                    <div class="flex flex-col items-center h-full justify-between">
+                      <div
+                        class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
+                        <img src="../assets/icons/Product category icons/5 dry fruits.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
+                        <img src="../assets/icons/Product category icons/5 dry fruits yellow.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+                      </div>
+                      <div>
+                        <p
+                          class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
+                          dried fruits
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="product__link block" href="./pages/category-product.html">
+                    <!-- Product link -->
+                    <div class="flex flex-col items-center h-full justify-between">
+                      <div
+                        class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
+                        <img src="../assets/icons/Product category icons/6 nosh on.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
+                        <img src="../assets/icons/Product category icons/6 nosh on yellow.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+                      </div>
+                      <div>
+                        <p
+                          class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
+                          nosh on
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="product__link block" href="./pages/category-product.html">
+                    <!-- Product link -->
+                    <div class="flex flex-col items-center h-full justify-between">
+                      <div
+                        class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
+                        <img src="../assets/icons/Product category icons/7 energy bar.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
+                        <img src="../assets/icons/Product category icons/7 energy bar yellow.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+                      </div>
+                      <div>
+                        <p
+                          class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
+                          energy bar
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="product__link block" href="./pages/category-product.html">
+                    <!-- Product link -->
+                    <div class="flex flex-col items-center h-full justify-between">
+                      <div
+                        class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
+                        <img src="../assets/icons/Product category icons/8 spreads.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
+                        <img src="../assets/icons/Product category icons/8 spreads yellow.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+                      </div>
+                      <div>
+                        <p
+                          class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
+                          spreads
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="product__link block" href="./pages/category-product.html">
+                    <!-- Product link -->
+                    <div class="flex flex-col items-center h-full justify-between w-full">
+                      <div
+                        class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
+                        <img src="../assets/icons/Product category icons/9 ethnic bvrg.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
+                        <img src="../assets/icons/Product category icons/9 ethnic bvrg yellow.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+                      </div>
+                      <div class="w-full">
+                        <p
+                          class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
+                          ethnic beverages
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="product__link block" href="./pages/category-product.html">
+                    <!-- Product link -->
+                    <div class="flex flex-col items-center h-full justify-between">
+                      <div
+                        class="flex items-center rounded-xl justify-start flex-col group bg-[#f5f5f5] w-fit lg:w-full lg:max-w-[168px] lg:aspect-square">
+                        <img src="../assets/icons/Product category icons/10 gifts.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 group-hover:hidden" />
+                        <img src="../assets/icons/Product category icons/10 gifts yellow.svg" alt="Nuts"
+                          class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
+                      </div>
+                      <div>
+                        <p
+                          class="md:text-[18px] text-[14px] md:leading-7 xl:text-[20px] text-center md:mt-4 mt-1 lowercase">
+                          gifts
                         </p>
                       </div>
                     </div>
                   </a>
                 </div>
-              </div>
-              <!-- Navigation -->
-              <div
-                class="nav-controls nav-prev absolute z-50 md:right-[200px] left-1/2 -translate-x-1/2 bottom-[-300px] -rotate-90 md:bottom-auto md:translate-x-0 md:left-auto md:rotate-0">
-                <button
-                  class="bg-gray-100 size-10 rounded-full flex items-center justify-center border border-gray-200 hover:bg-white"
-                  id="prevBtn">
-                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24
+
+
+                <div class="slider-wrapper hidden">
+
+                  <!-- Slider Container -->
+                  <div class="slider vertical-mode" id="slider">
+
+                    <!-- Card 1 -->
+                    <div class="card active">
+                      <div class="card-content h-full">
+                        <a class="block h-full content-center backdrop-blur-2xl bg-white/80"
+                          href="../pages/category-product.html">
+                          <div class="flex flex-col items-center">
+                            <div
+                              class="flex items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col size-[200px] flex-shrink-0">
+                              <img src="../assets/icons/product_category_icons/5 dry fruits.svg" alt="nuts"
+                                class="size-full object-cover bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400" />
+                            </div>
+                            <div>
+                              <p
+                                class="text-[12px] md:text-[15px] leading-4 max-w-28 lg:text-[20px] text-center mt-3 lg:mt-6">
+                                dry fruits
+                              </p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="card next">
+                      <div class="card-content h-full">
+                        <a class="block h-full content-center backdrop-blur-2xl bg-white/80"
+                          href="../pages/category-product.html">
+                          <div class="flex flex-col items-center">
+                            <div
+                              class="flex items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col size-[200px] flex-shrink-0">
+                              <img src="../assets/icons/product_category_icons/2 nuts.svg" alt="nuts"
+                                class="size-full object-cover bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400" />
+                            </div>
+                            <div>
+                              <p
+                                class="text-[12px] md:text-[15px] leading-4 max-w-28 lg:text-[20px] text-center mt-3 lg:mt-6">
+                                nuts
+                              </p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="card stack-behind">
+                      <div class="card-content h-full">
+                        <a class="block h-full content-center backdrop-blur-2xl bg-white/80"
+                          href="../pages/category-product.html">
+                          <div class="flex flex-col items-center">
+                            <div
+                              class="flex items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col size-[200px]">
+                              <img src="../assets/icons/product_category_icons/2 seeds.svg" alt="nuts"
+                                class="size-full object-cover bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400" />
+                            </div>
+                            <div>
+                              <p
+                                class="text-[12px] md:text-[15px] leading-4 max-w-28 lg:text-[20px] text-center mt-3 lg:mt-6">
+                                seeds
+                              </p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="card hidden">
+                      <div class="card-content h-full">
+                        <a class="block h-full content-center backdrop-blur-2xl bg-white/80"
+                          href="../pages/category-product.html">
+                          <div class="flex flex-col items-center">
+                            <div
+                              class="flex items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col size-[200px]">
+                              <img src="../assets/icons/product_category_icons/3 millets.svg" alt="nuts"
+                                class="size-full object-cover bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400" />
+                            </div>
+                            <div>
+                              <p
+                                class="text-[12px] md:text-[15px] leading-4 max-w-28 lg:text-[20px] text-center mt-3 lg:mt-6">
+                                millets
+                              </p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="card prev">
+                      <div class="card-content h-full">
+                        <a class="block h-full content-center backdrop-blur-2xl bg-white/80"
+                          href="../pages/category-product.html">
+                          <div class="flex flex-col items-center">
+                            <div
+                              class="flex items-center hover:bg-primaryColor hoverborder-gray-400 p-2 rounded-full justify-start flex-col size-[200px]">
+                              <img src="../assets/icons/product_category_icons/4 super food.svg" alt="nuts"
+                                class="size-full object-cover bg-[#F4F4F4] rounded-full duration-300 border hover:shadow-custom border-gray-400" />
+                            </div>
+                            <div>
+                              <p
+                                class="text-[12px] md:text-[15px] leading-4 max-w-28 lg:text-[20px] text-center mt-3 lg:mt-6">
+                                super food
+                              </p>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <!-- Navigation -->
+                    <div
+                      class="nav-controls nav-prev absolute z-50 md:right-[200px] left-1/2 -translate-x-1/2 bottom-[-300px] -rotate-90 md:bottom-auto md:translate-x-0 md:left-auto md:rotate-0">
+                      <button
+                        class="bg-gray-100 size-10 rounded-full flex items-center justify-center border border-gray-200 hover:bg-white"
+                        id="prevBtn">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24
 24">
-                    <path d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-              </div>
-              <div
-                class="nav-controls nav-next absolute z-50 md:left-[200px] left-1/2 -translate-x-1/2 top-[-300px] -rotate-90 md:bottom-auto md:translate-x-0 md:rotate-0 md:top-auto">
-                <button
-                  class="bg-gray-100 size-10 rounded-full flex items-center justify-center border border-gray-200 hover:bg-white"
-                  id="nextBtn">
-                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-            </div>
+                          <path d="M15 19l-7-7 7-7" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div
+                      class="nav-controls nav-next absolute z-50 md:left-[200px] left-1/2 -translate-x-1/2 top-[-300px] -rotate-90 md:bottom-auto md:translate-x-0 md:rotate-0 md:top-auto">
+                      <button
+                        class="bg-gray-100 size-10 rounded-full flex items-center justify-center border border-gray-200 hover:bg-white"
+                        id="nextBtn">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
 
-          </div>
+                </div>
 
-          <!-- <div
+                <!-- <div
         class="w-full flex justify-start items-start flex-wrap lg:flex-nowrap gap-8 sm:gap-[0px] 2xl:gap-20 px-[60px]"
       >
       <a class="lg:scale-[.75]" href="../pages/category-product.html">
@@ -943,339 +901,37 @@
           </div>
         </div>
       </div> -->
-          <div
-            class="w-full flex justify-start items-start flex-wrap lg:flex-nowrap sm:gap-[70px] gap-8 2xl:gap-20 my-14">
+                <div
+                  class="w-full flex justify-start items-start flex-wrap lg:flex-nowrap sm:gap-[70px] gap-8 2xl:gap-20 my-14">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const shopButton = document.getElementById("shop");
-      const categoryButton = document.getElementById("category");
-      const shopDropdown = document.getElementById("shop-dropdown");
-      const categoryDropdown = document.getElementById("category-dropdown");
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const shopButton = document.getElementById("shop");
+            const shopDropdown = document.getElementById("shop-dropdown");
+        
+            shopButton.addEventListener("click", (e) => {
+              e.stopPropagation(); // button pe click se band na ho
+              shopDropdown.classList.toggle("hidden");
+            });
+        
+            // dropdown ke andar click se bhi band na ho
+            shopDropdown.addEventListener("click", (e) => e.stopPropagation());
+        
+            // outside click par band ho jaye
+            window.addEventListener("click", () => {
+              shopDropdown.classList.add("hidden");
+            });
+          });
+        </script>
+        
 
-      shopButton.addEventListener("click", () => {
-        shopDropdown.classList.toggle("hidden");
-        categoryDropdown.classList.add("hidden"); // Hide category dropdown if visible
-      });
-
-      categoryButton.addEventListener("click", () => {
-        categoryDropdown.classList.toggle("hidden");
-        shopDropdown.classList.add("hidden"); // Hide shop dropdown if visible
-      });
-
-      // Close dropdowns when clicking outside
-      window.addEventListener("click", (event) => {
-        if (
-          !shopButton.contains(event.target) &&
-          !shopDropdown.contains(event.target)
-        ) {
-          shopDropdown.classList.add("hidden");
-        }
-        if (
-          !categoryButton.contains(event.target) &&
-          !categoryDropdown.contains(event.target)
-        ) {
-          categoryDropdown.classList.add("hidden");
-        }
-      });
-    });
-  </script>
-
-  <script>
-    class CardSlider {
-      constructor() {
-        this.currentIndex = 0;
-        this.cards = document.querySelectorAll('.card');
-        this.indicators = document.querySelectorAll('.indicator');
-        this.slider = document.getElementById('slider');
-        this.totalCards = this.cards.length;
-        this.isVertical = true;
-
-        // Touch properties
-        this.startX = 0;
-        this.startY = 0;
-        this.currentX = 0;
-        this.currentY = 0;
-        this.isDragging = false;
-        this.dragThreshold = 50;
-
-        // Auto-play properties
-        this.autoPlayInterval = null;
-        this.autoPlayDelay = 4000;
-
-        this.init();
-      }
-
-      init() {
-        this.bindEvents();
-        this.updateCards();
-        this.startAutoPlay();
-      }
-
-      bindEvents() {
-        // Navigation buttons
-        document.getElementById('prevBtn')?.addEventListener('click', () => this.prev());
-        document.getElementById('nextBtn')?.addEventListener('click', () => this.next());
-
-        // Indicators
-        this.indicators.forEach((indicator, index) => {
-          indicator.addEventListener('click', () => this.goTo(index));
-        });
-
-        // Mode toggle buttons
-        document.querySelectorAll('.toggle-btn').forEach(btn => {
-          btn.addEventListener('click', (e) => this.toggleMode(e.target.dataset.mode));
-        });
-
-        // Enhanced touch events
-        this.bindTouchEvents();
-
-        // Mouse events for desktop dragging
-        this.bindMouseEvents();
-
-        // Keyboard events
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'ArrowLeft') this.prev();
-          if (e.key === 'ArrowRight') this.next();
-          if (e.key === 'ArrowUp' && this.isVertical) this.prev();
-          if (e.key === 'ArrowDown' && this.isVertical) this.next();
-        });
-
-        // Auto-play pause/resume
-        this.slider.addEventListener('mouseenter', () => this.stopAutoPlay());
-        this.slider.addEventListener('mouseleave', () => this.startAutoPlay());
-
-        // Prevent context menu on long press
-        this.slider.addEventListener('contextmenu', (e) => {
-          if (this.isDragging) e.preventDefault();
-        });
-      }
-
-      bindTouchEvents() {
-        // Touch start
-        this.slider.addEventListener('touchstart', (e) => {
-          this.handleStart(e.touches[0].clientX, e.touches[0].clientY);
-          this.stopAutoPlay();
-        }, { passive: true });
-
-        // Touch move
-        this.slider.addEventListener('touchmove', (e) => {
-          if (!this.isDragging) return;
-          e.preventDefault();
-          this.handleMove(e.touches[0].clientX, e.touches[0].clientY);
-        }, { passive: false });
-
-        // Touch end
-        this.slider.addEventListener('touchend', (e) => {
-          if (e.changedTouches[0]) {
-            this.handleEnd(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
-          }
-          this.startAutoPlay();
-        }, { passive: true });
-
-        // Touch cancel
-        this.slider.addEventListener('touchcancel', () => {
-          this.handleCancel();
-          this.startAutoPlay();
-        });
-      }
-
-      bindMouseEvents() {
-        // Mouse down
-        this.slider.addEventListener('mousedown', (e) => {
-          e.preventDefault();
-          this.handleStart(e.clientX, e.clientY);
-          this.stopAutoPlay();
-        });
-
-        // Mouse move
-        this.slider.addEventListener('mousemove', (e) => {
-          if (!this.isDragging) return;
-          e.preventDefault();
-          this.handleMove(e.clientX, e.clientY);
-        });
-
-        // Mouse up
-        this.slider.addEventListener('mouseup', (e) => {
-          this.handleEnd(e.clientX, e.clientY);
-          this.startAutoPlay();
-        });
-
-        // Mouse leave
-        this.slider.addEventListener('mouseleave', (e) => {
-          if (this.isDragging) {
-            this.handleEnd(e.clientX, e.clientY);
-          }
-          this.startAutoPlay();
-        });
-      }
-
-      handleStart(x, y) {
-        this.startX = x;
-        this.startY = y;
-        this.currentX = x;
-        this.currentY = y;
-        this.isDragging = true;
-        this.slider.classList.add('dragging');
-      }
-
-      handleMove(x, y) {
-        if (!this.isDragging) return;
-
-        this.currentX = x;
-        this.currentY = y;
-
-        const deltaX = this.currentX - this.startX;
-        const deltaY = this.currentY - this.startY;
-
-        // Provide visual feedback during drag
-        this.updateDragFeedback(deltaX, deltaY);
-      }
-
-      handleEnd(x, y) {
-        if (!this.isDragging) return;
-
-        const deltaX = x - this.startX;
-        const deltaY = y - this.startY;
-
-        this.isDragging = false;
-        this.slider.classList.remove('dragging');
-
-        // Determine swipe direction and magnitude
-        if (this.isVertical) {
-          if (Math.abs(deltaY) > this.dragThreshold) {
-            if (deltaY > 0) {
-              this.prev();
-            } else {
-              this.next();
-            }
-          }
-        } else {
-          if (Math.abs(deltaX) > this.dragThreshold) {
-            if (deltaX > 0) {
-              this.prev();
-            } else {
-              this.next();
-            }
-          }
-        }
-
-        // Reset any drag feedback
-        this.resetDragFeedback();
-      }
-
-      handleCancel() {
-        this.isDragging = false;
-        this.slider.classList.remove('dragging');
-        this.resetDragFeedback();
-      }
-
-      updateDragFeedback(deltaX, deltaY) {
-        const sensitivity = 0.3;
-        const primaryDelta = this.isVertical ? deltaY : deltaX;
-        const offset = primaryDelta * sensitivity;
-
-        this.cards.forEach((card, index) => {
-          if (this.isVertical) {
-            card.style.transform = card.style.transform.replace(/translateY\([^)]*\)/, '') + ` translateY(${offset}px)`;
-          } else {
-            card.style.transform = card.style.transform.replace(/translateX\([^)]*\)/, '') + ` translateX(${offset}px)`;
-          }
-        });
-      }
-
-      resetDragFeedback() {
-        this.cards.forEach(card => {
-          card.style.transform = '';
-        });
-        this.updateCards();
-      }
-
-      updateCards() {
-        this.cards.forEach((card, index) => {
-          card.className = 'card';
-          if (this.indicators[index]) {
-            this.indicators[index].classList.remove('active');
-          }
-
-          const position = (index - this.currentIndex + this.totalCards) % this.totalCards;
-
-          if (position === 0) {
-            card.classList.add('active');
-            if (this.indicators[index]) {
-              this.indicators[index].classList.add('active');
-            }
-          } else if (position === 1) {
-            card.classList.add('next');
-          } else if (position === this.totalCards - 1) {
-            card.classList.add('prev');
-          } else if (position === 2) {
-            card.classList.add('stack-behind');
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-      }
-
-      next() {
-        this.currentIndex = (this.currentIndex + 1) % this.totalCards;
-        this.updateCards();
-      }
-
-      prev() {
-        this.currentIndex = (this.currentIndex - 1 + this.totalCards) % this.totalCards;
-        this.updateCards();
-      }
-
-      goTo(index) {
-        this.currentIndex = index;
-        this.updateCards();
-      }
-
-      toggleMode(mode) {
-        document.querySelectorAll('.toggle-btn').forEach(btn =>
-          btn.classList.remove('active')
-        );
-
-        const activeToggle = document.querySelector(`[data-mode="${mode}"]`);
-        if (activeToggle) {
-          activeToggle.classList.add('active');
-        }
-
-        this.isVertical = mode === 'vertical';
-        this.slider.classList.toggle('vertical-mode', this.isVertical);
-      }
-
-      startAutoPlay() {
-        this.stopAutoPlay();
-        this.autoPlayInterval = setInterval(() => {
-          if (!this.isDragging) {
-            this.next();
-          }
-        }, this.autoPlayDelay);
-      }
-
-      stopAutoPlay() {
-        if (this.autoPlayInterval) {
-          clearInterval(this.autoPlayInterval);
-          this.autoPlayInterval = null;
-        }
-      }
-    }
-
-    // Initialize slider after DOM is ready
-    document.addEventListener('DOMContentLoaded', () => {
-      new CardSlider();
-    });
-  </script>
-
-  <script src="../script.js"></script>
+        <script src="../script.js"></script>
 </body>
 
 </html>
