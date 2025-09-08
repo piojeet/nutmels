@@ -4160,21 +4160,6 @@ index */
     padding-bottom: 2rem;
   }
 
-  .md\:px-\[5vw\]{
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-
-  .md\:px-\[6vw\]{
-    padding-left: 6vw;
-    padding-right: 6vw;
-  }
-
-  .md\:px-\[100px\]{
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-
   .md\:pb-0{
     padding-bottom: 0px;
   }
@@ -4462,6 +4447,11 @@ index */
   .lg\:px-24{
     padding-left: 6rem;
     padding-right: 6rem;
+  }
+
+  .lg\:px-\[100px\]{
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
   .lg\:py-16{
