@@ -3487,7 +3487,7 @@ index */
   border-radius: 10px;
   filter: drop-shadow(-8px -10px 46px #0000005f);
   -webkit-backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
-          backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
+  backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
 }
 
 .card::before {

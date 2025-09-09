@@ -377,20 +377,15 @@ index */
 
 
 .card {
-  position: relative; /* pseudo-element ke liye zaroori */
-  border-radius: 10px;
+  border-radius: inherit;
+  -webkit-transition: opacity 0.26s ease-out;
+  -o-transition: opacity 0.26s ease-out;
   transition: opacity 0.26s ease-out;
-  /* Drop shadow fallback */
-  -webkit-box-shadow: -8px -10px 46px rgba(0, 0, 0, 0.37);
-  -moz-box-shadow: -8px -10px 46px rgba(0, 0, 0, 0.37);
-  box-shadow: -8px -10px 46px rgba(0, 0, 0, 0.37);
-
-  /* Backdrop filter with vendor prefixes + graceful fallback */
-  background: rgba(255, 255, 255, 0.1); /* fallback transparency */
-  -webkit-backdrop-filter: brightness(1.1) blur(2px);
-  backdrop-filter: brightness(1.1) blur(2px);
-  /* Note: url(#displacementFilter) ka support limited hai,
-     agar filter svg na mile to simply ignore hoga */
+  border-radius: 10px;
+  -webkit-filter: drop-shadow(-8px -10px 46px #0000005f);
+          filter: drop-shadow(-8px -10px 46px #0000005f);
+  -webkit-backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
+          backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
 }
 
 .card::before {
@@ -398,14 +393,11 @@ index */
   position: absolute;
   inset: 0;
   z-index: 0;
+  overflow: hidden;
   border-radius: 10px;
-  pointer-events: none;
-
-  /* Inner shadow with vendor prefixes */
   -webkit-box-shadow: inset 2px 2px 0px -2px rgba(255, 255, 255, 0.7),
-    inset 0 0 3px 1px rgba(255, 255, 255, 0.7);
-  -moz-box-shadow: inset 2px 2px 0px -2px rgba(255, 255, 255, 0.7),
     inset 0 0 3px 1px rgba(255, 255, 255, 0.7);
   box-shadow: inset 6px 6px 0px -6px rgba(255, 255, 255, 0.7),
     inset 0 0 8px 1px rgba(255, 255, 255, 0.7);
+  pointer-events: none;
 }
