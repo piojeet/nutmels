@@ -271,13 +271,13 @@
         </div>
 
         <button
-          class="pro-button productbannerbtn1 rounded-full prev absolute left-0 md:left-[0] top-1/2 transform -translate-y-1/2 text-primaryColor px-4 py-2 z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          class="pro-button productbannerbtn1 rounded-full prev absolute left-0 md:left-[0] top-1/2 transform -translate-y-1/2 text-primaryColor px-4 py-2 z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xl">
           <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
         </button>
         <!-- Previous slide button -->
 
         <button
-          class="pro-button productbannerbtn2 next absolute right-[0] md:right-[0] top-1/2 transform -translate-y-1/2 text-primaryColor rounded-full px-4 py-2 z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          class="pro-button productbannerbtn2 next absolute right-[0] md:right-[0] top-1/2 transform -translate-y-1/2 text-primaryColor rounded-full px-4 py-2 z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xl">
           <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
         </button>
         <!-- Next slide button -->
@@ -1001,7 +1001,7 @@
         </div>
       </div>
 
-      <div class="px-6 pt-0 md:pb-0 rounded-md shadow-xl md:shadow-none pb-4 lg:block hidden">
+      <div class="px-6 pt-0 md:pb-0 rounded-md shadow-xl md:shadow-none pb-4 lg:flex hidden  flex-col">
         <div class="tabs flex items-center justify-between mb-5">
           <button class="tablinks active font-semibold text-darkGray w-full py-1" onclick="openTab(event, 'Tab1')">
             QUERY
@@ -1011,8 +1011,8 @@
           </button>
         </div>
 
-        <div id="Tab1" class="tabcontent show h-full">
-          <form action="#" class="flex flex-col gap-5">
+        <div id="Tab1" class="tabcontent show h-full flex flex-col justify-between">
+          <form action="#" class="flex flex-col gap-5 justify-between h-full">
             <div>
               <input type="text" placeholder="Name" id="name" name="name"
                 class="inputf w-full border-[1px] border-darkGray px-4 py-3 outline-none rounded-md text-[18px]" />
