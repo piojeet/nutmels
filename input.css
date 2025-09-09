@@ -374,30 +374,32 @@ index */
   /* Hidden position */
 }
 
-
-
 .card {
-  border-radius: inherit;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2); /* Transparent background is a must */
+  
+  /* Cross-browser transitions */
+  transition: opacity 0.26s ease-out;
   -webkit-transition: opacity 0.26s ease-out;
   -o-transition: opacity 0.26s ease-out;
-  transition: opacity 0.26s ease-out;
-  border-radius: 10px;
+  
+  /* Shadow */
   -webkit-filter: drop-shadow(-8px -10px 46px #0000005f);
-          filter: drop-shadow(-8px -10px 46px #0000005f);
-  -webkit-backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
-          backdrop-filter: brightness(1.1) blur(2px) url(#displacementFilter);
+  filter: drop-shadow(-8px -10px 46px #0000005f);
+
+  /* Backdrop filters with Safari support */
+  -webkit-backdrop-filter: brightness(1.1) blur(10px);
+  backdrop-filter: brightness(1.1) blur(10px);
 }
 
 .card::before {
   content: '';
   position: absolute;
   inset: 0;
-  z-index: 0;
-  overflow: hidden;
   border-radius: 10px;
-  -webkit-box-shadow: inset 2px 2px 0px -2px rgba(255, 255, 255, 0.7),
-    inset 0 0 3px 1px rgba(255, 255, 255, 0.7);
-  box-shadow: inset 6px 6px 0px -6px rgba(255, 255, 255, 0.7),
-    inset 0 0 8px 1px rgba(255, 255, 255, 0.7);
   pointer-events: none;
+
+  /* Optional inner highlights */
+  box-shadow: inset 2px 2px 0px -2px rgba(255, 255, 255, 0.7),
+              inset 0 0 3px 1px rgba(255, 255, 255, 0.7);
 }
