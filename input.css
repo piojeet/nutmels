@@ -271,10 +271,19 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-.custom-shadow {
-  --tw-shadow: 0 1px 10px 6px rgba(0, 0, 0, 0.1),
-    0 4px 6px -4px rgba(0, 0, 0, 0.1), 0 -4px 6px -4px rgba(0, 0, 0, 0.1);
-  box-shadow: var(--tw-shadow);
+@media (min-width: 1280px) {
+  .custom-shadow {
+    --tw-shadow: 0 1px 10px 6px rgba(0, 0, 0, 0.1),
+      0 4px 6px -4px rgba(0, 0, 0, 0.1), 0 -4px 6px -4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--tw-shadow);
+  }
+}
+
+@media (max-width: 1279px) {
+  .product-filter-btn .active {
+    background: #f8a531;
+    color: #fff;
+  }
 }
 
 textarea:focus,
@@ -303,11 +312,7 @@ input:focus {
 /* 
 index */
 
-.custom-shadow {
-  --tw-shadow: 0 1px 10px 6px rgba(0, 0, 0, 0.1),
-    0 4px 6px -4px rgba(0, 0, 0, 0.1), 0 -4px 6px -4px rgba(0, 0, 0, 0.1);
-  box-shadow: var(--tw-shadow);
-}
+
 
 .justify-center {
   justify-content: center;
@@ -399,4 +404,18 @@ index */
   box-shadow: inset 6px 6px 0px -6px rgba(255, 255, 255, 0.7),
     inset 0 0 8px 1px rgba(255, 255, 255, 0.7);
   pointer-events: none;
+}
+
+
+/* HEART */
+
+/* THUMB */
+.like-btn svg {
+  fill: none;
+  stroke: #000;
+  transition: all 0.25s ease;
+}
+.like-btn.liked svg {
+  fill: #2563eb;      /* blue */
+  stroke: #2563eb;
 }

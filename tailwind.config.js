@@ -12,7 +12,8 @@ module.exports = {
       sm: "480px",   // Small screens (mobile)
       md: "768px",   // Medium screens (tablet)
       lg: "1025px",  // Large screens (small desktops)
-      xl: "1550px"   // Extra large screens (large desktops)
+      xl: "1550px",   // Extra large screens (large desktops)
+      '2xl': '1280px'
     },
     extend: {
       // Extend the default theme with custom colors

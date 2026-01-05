@@ -1,0 +1,728 @@
+[
+  {
+    "id": 1,
+    "slug": "cashewnuts-plain-roasted",
+    "basic": {
+      "name": "Cashewnuts",
+      "backgroundText": "Plain Roasted Cashew",
+      "category": "nuts"
+    },
+    "likes": 8500,
+    "media": {
+      "mainImage": "https://nutmeals.com/images/product/product_img_bf8621.jpg",
+      "gallery": [
+        "/assets/products/3.png",
+        "/assets/products/4.png",
+        "/assets/products/5.png",
+        "/assets/products/6.png"
+      ]
+    },
+    "buy": {
+      "currency": "₹",
+      "defaultPrice": 500,
+      "defaultQty": 1,
+      "defaultSize": "250 g",
+      "consumptionPreference": [
+        "munch handful daily",
+        "healthy snacking",
+        "garnish curry",
+        "garnish dessert",
+        "garnish salads"
+      ],
+      "variants": ["plain roasted"],
+      "packages": [
+        { "size": "250 g", "price": 500 },
+        { "size": "500 g", "price": 950 },
+        { "size": "1 kg", "price": 1800 }
+      ]
+    },
+    "description": {
+      "brief": [
+        "Premium plain roasted cashew nuts",
+        "Freshly roasted to perfection",
+        "Source of copper and minerals"
+      ],
+      "ingredients": ["cashew nuts", "cashew nuts"],
+      "storage": "After opening the package, store in air tight container, keep it under hygienic, cool and away from sunlight",
+      "shelfLife": "90 days"
+    },
+    "benefits": {
+      "list": [
+        "Source of Copper",
+        "Source of Minerals",
+        "Source of good fats",
+        "Source of vitamin K",
+        "Source of phytosterols",
+        "Aids weight management"
+      ],
+      "rdi": [
+        "Copper supports iron absorption and energy production",
+        "Minerals support overall body functions",
+        "Good fats support heart health",
+        "Vitamin K supports bone health",
+        "Phytosterols help manage cholesterol levels"
+      ]
+    },
+    "nutrition": {
+      "servingSize": "100 g",
+
+      "calories": {
+        "value": "574 kcal",
+        "percent": "29 %"
+      },
+      "fat": {
+        "value": "46.3 g",
+        "percent": "71 %"
+      },
+      "saturatedFat": {
+        "value": "9.2 g",
+        "percent": "46 %"
+      },
+      "transFat": {
+        "value": "0 g",
+        "percent": "5 %"
+      },
+      "cholesterol": {
+        "value": "0 mg",
+        "percent": "54 %"
+      },
+      "sodium": {
+        "value": "16 mg",
+        "percent": ""
+      },
+      "carbohydrates": {
+        "value": "32.7 g",
+        "percent": "11 %"
+      },
+      "dietaryFiber": {
+        "value": "3 g",
+        "percent": "12 %"
+      },
+      "totalSugars": {
+        "value": "5 g",
+        "percent": "-"
+      },
+      "protein": {
+        "value": "15.3 g",
+        "percent": "31 %"
+      },
+      "vitaminD": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "calcium": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "iron": {
+        "value": "6 mg",
+        "percent": "33 %"
+      },
+      "potassium": {
+        "value": "6 mg",
+        "percent": "33 %"
+      }
+    }
+  },
+  {
+    "id": 2,
+    "slug": "cashew-nuts-roasted-salted",
+    "basic": {
+      "name": "Cashew Nuts - Roasted & Salted",
+      "backgroundText": "Roasted & Salted Cashew",
+      "category": "nuts"
+    },
+    "likes": 9200,
+    "media": {
+      "mainImage": "https://nutmeals.com/images/product/product_img_f4f781.jpg",
+      "gallery": [
+        "https://nutmeals.com/images/product/product_img_f4f781.jpg",
+        "https://nutmeals.com/images/alter image/kj002.jpg",
+        "https://nutmeals.com/images/alter image/kj004.jpg"
+      ]
+    },
+    "buy": {
+      "currency": "₹",
+      "defaultPrice": 500,
+      "defaultQty": 1,
+      "defaultSize": "250 g",
+      "consumptionPreference": [
+        "raw",
+        "roasted",
+        "oil",
+        "flour",
+        "spread",
+        "milk",
+        "energy bar",
+        "sprouted"
+      ],
+      "variants": ["plain roasted", "roasted & salted", "roasted & peppered", "plain roasted", "roasted & salted", "roasted & peppered"],
+      "packages": [
+        { "size": "250 g", "price": 500 },
+        { "size": "500 g", "price": 950 },
+        { "size": "1 kg", "price": 1800 }
+      ]
+    },
+    "description": {
+      "brief": [
+        "Premium roasted and salted cashew nuts",
+        "Perfect blend of roasted flavor and rock salt",
+        "Source of copper and minerals"
+      ],
+      "ingredients": ["cashew nuts", "rock salt"],
+      "storage": "After opening the package, store in air tight container, keep it under hygienic, cool and away from sunlight",
+      "shelfLife": "90 days"
+    },
+    "benefits": {
+      "list": [
+        "Source of Copper",
+        "Source of Minerals",
+        "Source of good fats",
+        "Source of vitamin K",
+        "Source of phytosterols",
+        "Aids weight management"
+      ],
+      "rdi": [
+        "Copper supports iron absorption and energy production",
+        "Minerals support overall body functions",
+        "Good fats support heart health",
+        "Vitamin K supports bone health",
+        "Phytosterols help manage cholesterol levels"
+      ]
+    },
+    "nutrition": {
+      "servingSize": "100 g",
+      "calories": "637 kcal",
+      "fat": "50.5 g",
+      "saturatedFat": "9 g",
+      "transFat": "0 g",
+      "cholesterol": "0 mg",
+      "sodium": "750 mg",
+      "carbohydrates": "25.4 g",
+      "dietaryFiber": "4 g",
+      "totalSugars": "5 g",
+      "protein": "20.3 g",
+      "calcium": "0 mg",
+      "iron": "0 mg"
+    }
+  },
+  {
+    "id": 3,
+    "slug": "cashew-nuts-roasted-peppered",
+    "basic": {
+      "name": "Cashew Nuts - Roasted & Peppered",
+      "backgroundText": "Roasted & Peppered Cashew",
+      "category": "nuts"
+    },
+    "likes": 7800,
+    "media": {
+      "mainImage": "https://nutmeals.com/images/product/product_img_456868.JPG",
+      "gallery": ["https://nutmeals.com/images/product/product_img_456868.JPG"]
+    },
+    "buy": {
+      "currency": "₹",
+      "defaultPrice": 500,
+      "defaultQty": 1,
+      "defaultSize": "250 g",
+      "consumptionPreference": [
+        "munch handful daily",
+        "healthy snacking",
+        "garnish curry",
+        "garnish dessert",
+        "garnish salads"
+      ],
+      "variants": ["roasted & peppered"],
+      "packages": [
+        { "size": "250 g", "price": 500 },
+        { "size": "500 g", "price": 950 },
+        { "size": "1 kg", "price": 1800 }
+      ]
+    },
+    "description": {
+      "brief": [
+        "Premium roasted and peppered cashew nuts",
+        "Spicy blend of roasted flavor with pepper",
+        "Source of copper and minerals"
+      ],
+      "ingredients": ["cashew nuts", "rock salt", "pepper"],
+      "storage": "After opening the package, store in air tight container, keep it under hygienic, cool and away from sunlight",
+      "shelfLife": "90 days"
+    },
+    "benefits": {
+      "list": [
+        "Source of Copper",
+        "Source of Minerals",
+        "Source of good fats",
+        "Source of vitamin K",
+        "Source of phytosterols",
+        "Aids weight management"
+      ],
+      "rdi": [
+        "Copper supports iron absorption and energy production",
+        "Minerals support overall body functions",
+        "Good fats support heart health",
+        "Vitamin K supports bone health",
+        "Phytosterols help manage cholesterol levels"
+      ]
+    },
+    "nutrition": {
+      "servingSize": "100 g",
+      "calories": "637 kcal",
+      "fat": "50.5 g",
+      "saturatedFat": "9 g",
+      "transFat": "0 g",
+      "cholesterol": "0 mg",
+      "sodium": "750 mg",
+      "carbohydrates": "25.4 g",
+      "dietaryFiber": "4 g",
+      "totalSugars": "5 g",
+      "protein": "20.3 g",
+      "calcium": "0 mg",
+      "iron": "0 mg"
+    }
+  },
+  {
+    "id": 4,
+    "slug": "cashewnuts-w210",
+    "basic": {
+      "name": "Cashewnuts (W210)",
+      "backgroundText": "Cashewnuts W210 Grade",
+      "category": "nuts"
+    },
+    "likes": 6500,
+    "media": {
+      "mainImage": "https://nutmeals.com/images/product/product_img_60b374.JPG",
+      "gallery": [
+        "https://nutmeals.com/images/product/product_img_60b374.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5378.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5379.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5380.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5381_1.jpg"
+      ]
+    },
+    "buy": {
+      "currency": "₹",
+      "defaultPrice": 550,
+      "defaultQty": 1,
+      "defaultSize": "250 g",
+      "consumptionPreference": [
+        "handful daily",
+        "munch handful daily",
+        "garnish salads",
+        "garnish desserts",
+        "healthy nut bar"
+      ],
+      "variants": ["W210"],
+      "packages": [
+        { "size": "250 g", "price": 550 },
+        { "size": "500 g", "price": 1050 },
+        { "size": "1 kg", "price": 2000 }
+      ]
+    },
+    "description": {
+      "brief": [
+        "Premium W210 grade cashew nuts",
+        "Large whole cashews (210 nuts per pound)",
+        "Top quality whole cashews"
+      ],
+      "ingredients": ["cashewnuts (W210)"],
+      "storage": "Package once open, store in air tight containers. Keep in cool, dark and dry place",
+      "shelfLife": "180 days",
+      "rdi": "4-5 nuts per day"
+    },
+    "benefits": {
+      "list": [
+        "Source of Copper",
+        "Source of Minerals",
+        "Source of good fats",
+        "Source of vitamin K",
+        "Source of phytosterols",
+        "Aids weight management"
+      ],
+      "rdi": [
+        "Copper supports iron absorption and energy production",
+        "Minerals support overall body functions",
+        "Good fats support heart health",
+        "Vitamin K supports bone health",
+        "Phytosterols help manage cholesterol levels"
+      ]
+    },
+    "nutrition": {
+      "servingSize": "100 g",
+      "calories": "553 kcal",
+      "fat": "43.8 g",
+      "saturatedFat": "7.8 g",
+      "transFat": "0 g",
+      "cholesterol": "0 mg",
+      "sodium": "12 mg",
+      "carbohydrates": "30.2 g",
+      "dietaryFiber": "3.3 g",
+      "totalSugars": "5.9 g",
+      "protein": "18.2 g"
+    }
+  },
+  {
+    "id": 5,
+    "slug": "cashewnuts-w240",
+    "basic": {
+      "name": "Cashewnuts (W240)",
+      "backgroundText": "Cashewnuts W240 Grade",
+      "category": "nuts"
+    },
+    "likes": 7200,
+    "media": {
+      "mainImage": "https://nutmeals.com/images/product/product_img_ad45a2.JPG",
+      "gallery": [
+        "https://nutmeals.com/images/product/product_img_ad45a2.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5363.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5364.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5365.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5366_1.jpg"
+      ]
+    },
+    "buy": {
+      "currency": "₹",
+      "defaultPrice": 520,
+      "defaultQty": 1,
+      "defaultSize": "250 g",
+      "consumptionPreference": [
+        "handful daily",
+        "munch handful daily",
+        "garnish salads",
+        "garnish desserts",
+        "healthy nut bar"
+      ],
+      "variants": ["W240"],
+      "packages": [
+        { "size": "250 g", "price": 520 },
+        { "size": "500 g", "price": 1000 },
+        { "size": "1 kg", "price": 1900 }
+      ]
+    },
+    "description": {
+      "brief": [
+        "Premium W240 grade cashew nuts",
+        "Medium-large whole cashews (240 nuts per pound)",
+        "High quality whole cashews"
+      ],
+      "ingredients": ["cashewnuts (W240)"],
+      "storage": "Package once open, store in air tight containers. Keep in cool, dark and dry place",
+      "shelfLife": "180 days",
+      "rdi": "4-5 nuts per day"
+    },
+    "benefits": {
+      "list": [
+        "Source of Copper",
+        "Source of Minerals",
+        "Source of good fats",
+        "Source of vitamin K",
+        "Source of phytosterols",
+        "Aids weight management"
+      ],
+      "rdi": [
+        "Copper supports iron absorption and energy production",
+        "Minerals support overall body functions",
+        "Good fats support heart health",
+        "Vitamin K supports bone health",
+        "Phytosterols help manage cholesterol levels"
+      ]
+    },
+    "nutrition": {
+      "servingSize": "100 g",
+      "calories": "553 kcal",
+      "fat": "43.8 g",
+      "saturatedFat": "7.8 g",
+      "transFat": "0 g",
+      "cholesterol": "0 mg",
+      "sodium": "12 mg",
+      "carbohydrates": "30.2 g",
+      "dietaryFiber": "3.3 g",
+      "totalSugars": "5.9 g",
+      "protein": "18.2 g"
+    }
+  },
+  {
+    "id": 6,
+    "slug": "cashewnuts-w320",
+    "basic": {
+      "name": "Cashewnuts (W320)",
+      "backgroundText": "Cashewnuts W320 Grade",
+      "category": "nuts"
+    },
+    "likes": 8000,
+    "media": {
+      "mainImage": "https://nutmeals.com/images/product/product_img_e50cd3.JPG",
+      "gallery": [
+        "https://nutmeals.com/images/product/product_img_e50cd3.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5367.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5368.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5373.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5366_1.jpg"
+      ]
+    },
+    "buy": {
+      "currency": "₹",
+      "defaultPrice": 500,
+      "defaultQty": 1,
+      "defaultSize": "250 g",
+      "consumptionPreference": [
+        "handful daily",
+        "munch handful daily",
+        "garnish salads",
+        "garnish desserts",
+        "healthy nut bar"
+      ],
+      "variants": ["W320"],
+      "packages": [
+        { "size": "250 g", "price": 500 },
+        { "size": "500 g", "price": 950 },
+        { "size": "1 kg", "price": 1800 }
+      ]
+    },
+    "description": {
+      "brief": [
+        "Premium W320 grade cashew nuts",
+        "Medium whole cashews (320 nuts per pound)",
+        "Most popular cashew grade"
+      ],
+      "ingredients": ["cashewnuts (W320)"],
+      "storage": "Package once open, store in air tight containers. Keep in cool, dark and dry place",
+      "shelfLife": "180 days",
+      "rdi": "4-5 nuts per day"
+    },
+    "benefits": {
+      "list": [
+        "Source of Copper",
+        "Source of Minerals",
+        "Source of good fats",
+        "Source of vitamin K",
+        "Source of phytosterols",
+        "Aids weight management"
+      ],
+      "rdi": [
+        "Copper supports iron absorption and energy production",
+        "Minerals support overall body functions",
+        "Good fats support heart health",
+        "Vitamin K supports bone health",
+        "Phytosterols help manage cholesterol levels"
+      ]
+    },
+    "nutrition": {
+      "servingSize": "100 g",
+      "calories": "553 kcal",
+      "fat": "43.8 g",
+      "saturatedFat": "7.8 g",
+      "transFat": "0 g",
+      "cholesterol": "0 mg",
+      "sodium": "12 mg",
+      "carbohydrates": "30.2 g",
+      "dietaryFiber": "3.3 g",
+      "totalSugars": "5.9 g",
+      "protein": "18.2 g"
+    }
+  },
+  {
+    "id": 7,
+    "slug": "cashewnuts-2-split",
+    "basic": {
+      "name": "Cashewnuts (2 Split)",
+      "backgroundText": "Cashewnuts 2 Split",
+      "category": "nuts"
+    },
+    "likes": 5500,
+    "media": {
+      "mainImage": "https://nutmeals.com/images/product/product_img_d220b7.JPG",
+      "gallery": [
+        "https://nutmeals.com/images/product/product_img_d220b7.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5382.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5383.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5387.JPG",
+        "https://nutmeals.com/images/alter image/MBP_5388_1.jpg"
+      ]
+    },
+    "buy": {
+      "currency": "₹",
+      "defaultPrice": 450,
+      "defaultQty": 1,
+      "defaultSize": "250 g",
+      "consumptionPreference": [
+        "small handful daily",
+        "munch handful daily",
+        "garnish salads",
+        "garnish desserts",
+        "vegetable curries"
+      ],
+      "variants": ["2 split"],
+      "packages": [
+        { "size": "250 g", "price": 450 },
+        { "size": "500 g", "price": 850 },
+        { "size": "1 kg", "price": 1600 }
+      ]
+    },
+    "description": {
+      "brief": [
+        "Premium 2-split cashew nuts",
+        "Cashews split into two pieces",
+        "Perfect for cooking and garnishing"
+      ],
+      "ingredients": ["cashewnuts (2 split)"],
+      "storage": "Package once open, store in air tight containers. Keep in cool, dark and dry place",
+      "shelfLife": "180 days",
+      "rdi": "4-5 nuts per day"
+    },
+    "benefits": {
+      "list": [
+        "Source of Copper",
+        "Source of Minerals",
+        "Source of good fats",
+        "Source of vitamin K",
+        "Source of phytosterols",
+        "Aids weight management"
+      ],
+      "rdi": [
+        "Copper supports iron absorption and energy production",
+        "Minerals support overall body functions",
+        "Good fats support heart health",
+        "Vitamin K supports bone health",
+        "Phytosterols help manage cholesterol levels"
+      ]
+    },
+    "nutrition": {
+      "servingSize": "100 g",
+      "calories": "553 kcal",
+      "fat": "43.8 g",
+      "saturatedFat": "7.8 g",
+      "transFat": "0 g",
+      "cholesterol": "0 mg",
+      "sodium": "12 mg",
+      "carbohydrates": "30.2 g",
+      "dietaryFiber": "3.3 g",
+      "totalSugars": "5.9 g",
+      "protein": "18.2 g"
+    }
+  },
+  {
+    "id": 8,
+    "slug": "cashewnuts-4-6-split",
+    "basic": {
+      "name": "Cashewnuts (4-6 Split)",
+      "backgroundText": "Cashewnuts 4-6 Split",
+      "category": "nuts"
+    },
+    "likes": 4800,
+    "media": {
+      "mainImage": "https://nutmeals.com/images/product/product_img_ff623d.JPG",
+      "gallery": ["https://nutmeals.com/images/product/product_img_ff623d.JPG"]
+    },
+    "buy": {
+      "currency": "₹",
+      "defaultPrice": 400,
+      "defaultQty": 1,
+      "defaultSize": "250 g",
+      "consumptionPreference": [
+        "raw",
+        "roasted",
+        "oil",
+        "flour",
+        "spread",
+        "milk",
+        "energy bar",
+        "sprouted"
+      ],
+      "variants": ["plain roasted", "roasted & salted", "roasted & peppered", "plain roasted", "roasted & salted", "roasted & peppered"],
+      "packages": [
+        { "size": "250 g", "price": 400 },
+        { "size": "500 g", "price": 750 },
+        { "size": "1 kg", "price": 1400 }
+      ]
+    },
+    "description": {
+      "brief": [
+        "Premium 4-6 split cashew nuts",
+        "Cashews split into smaller pieces",
+        "Ideal for cooking and baking"
+      ],
+      "ingredients": ["cashewnuts (4-6 splits)"],
+      "storage": "Package once open, store in air tight containers. Keep in cool, dark and dry place",
+      "shelfLife": "180 days",
+      "rdi": "4-5 nuts per day"
+    },
+    "benefits": {
+      "list": [
+        "Source of Copper",
+        "Source of Minerals",
+        "Source of good fats",
+        "Source of vitamin K",
+        "Source of phytosterols",
+        "Aids weight management"
+      ],
+      "rdi": [
+        "Copper supports iron absorption and energy production",
+        "Minerals support overall body functions",
+        "Good fats support heart health",
+        "Vitamin K supports bone health",
+        "Phytosterols help manage cholesterol levels"
+      ]
+    },
+    "nutrition": {
+      "servingSize": "100 g",
+
+      "calories": {
+        "value": "574 kcal",
+        "percent": "29 %"
+      },
+      "fat": {
+        "value": "46.3 g",
+        "percent": "71 %"
+      },
+      "saturatedFat": {
+        "value": "9.2 g",
+        "percent": "46 %"
+      },
+      "transFat": {
+        "value": "0 g",
+        "percent": "5 %"
+      },
+      "cholesterol": {
+        "value": "0 mg",
+        "percent": "54 %"
+      },
+      "sodium": {
+        "value": "16 mg",
+        "percent": ""
+      },
+      "carbohydrates": {
+        "value": "32.7 g",
+        "percent": "11 %"
+      },
+      "dietaryFiber": {
+        "value": "3 g",
+        "percent": "12 %"
+      },
+      "totalSugars": {
+        "value": "5 g",
+        "percent": "-"
+      },
+      "protein": {
+        "value": "15.3 g",
+        "percent": "31 %"
+      },
+      "vitaminD": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "calcium": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "iron": {
+        "value": "6 mg",
+        "percent": "33 %"
+      },
+      "potassium": {
+        "value": "6 mg",
+        "percent": "33 %"
+      }
+    }
+  }
+]

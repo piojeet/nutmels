@@ -41,28 +41,6 @@
     });
   });
 
-  // Quantity decrease
-  document.querySelectorAll(".decrease").forEach((button) => {
-    button.addEventListener("click", function () {
-      let counter = this.nextElementSibling;
-      let value = parseInt(counter.value);
-      if (value > 1) {
-        counter.value = value - 1;
-      }
-    });
-  });
-
-  // Quantity increase
-  document.querySelectorAll(".increase").forEach((button) => {
-    button.addEventListener("click", function () {
-      let counter = this.previousElementSibling;
-      let value = parseInt(counter.value);
-      if (value < 400) {
-        counter.value = value + 1;
-      }
-    });
-  });
-
 
 
 // ~~~~~~~~~~~~~~~ MOBILE NAV ~~~~~~~~~~~~~~~
