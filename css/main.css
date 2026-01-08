@@ -1505,6 +1505,10 @@ html {
   min-height: 100vh;
 }
 
+.min-h-\[550px\]{
+  min-height: 550px;
+}
+
 .\!w-full{
   width: 100% !important;
 }
@@ -2312,11 +2316,6 @@ html {
 .border-white{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.\!border-gray-300{
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity)) !important;
 }
 
 .border-b-\[\#F8A531\]{
@@ -3651,11 +3650,6 @@ index */
   border-color: transparent;
 }
 
-.hover\:\!border-gray-300:hover{
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity)) !important;
-}
-
 .hover\:bg-\[\#f5f5f5\]:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(245 245 245 / var(--tw-bg-opacity));
@@ -4647,6 +4641,10 @@ index */
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+
+  .lg\:text-\[22px\]{
+    font-size: 22px;
+  }
 }
 
 @media (min-width: 1280px){
@@ -4663,6 +4661,11 @@ index */
   .\32xl\:my-8{
     margin-top: 2rem;
     margin-bottom: 2rem;
+  }
+
+  .\32xl\:my-4{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .\32xl\:mt-2{
@@ -4771,6 +4774,19 @@ index */
   .\32xl\:text-xl{
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .\32xl\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .\32xl\:text-\[25px\]{
+    font-size: 25px;
+  }
+
+  .\32xl\:text-\[23px\]{
+    font-size: 23px;
   }
 }
 

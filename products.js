@@ -182,8 +182,8 @@ function updateProductTitle() {
   const packageSize = document.querySelector('.packages .active')?.innerText || '';
 
   let title = state.baseName;
-  if (variant) title += ` - ${variant}`;
-  if (consumption) title += ` (${consumption})`;
+  if (variant) title += ` - ${consumption}`;
+  if (consumption) title += ` - ${variant}`;
 
   updateElements('.title', title);
 }

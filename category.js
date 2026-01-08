@@ -150,7 +150,7 @@ function createProductCard(p) {
             </div> 
           </div> 
           <div class="text-gray-500 mt-2 items-center justify-center text-center"> 
-            <h2 class="2xl:text-xl">${productName}</h2>
+            <h2 class="2xl:text-lg">${productName}</h2>
           </div> 
           <div class="justify-center mt-3 group-hover:opacity-100 flex opacity-0"> 
             <button class="border border-gray-400 text-xs rounded-md py-1 px-4 hover:bg-[#faa61a] hover:text-white hover:border-[#faa61a] duration-300">Select Option</button> 

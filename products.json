@@ -1,50 +1,49 @@
 [
   {
     "id": 1,
-    "slug": "cashewnuts-plain-roasted",
+    "slug": "cashewnuts-4-6-split",
     "basic": {
-      "name": "Cashewnuts",
-      "backgroundText": "Plain Roasted Cashew",
+      "name": "Cashewnuts (4-6 Split)",
+      "backgroundText": "Cashewnuts 4-6 Split",
       "category": "nuts"
     },
-    "likes": 8500,
+    "likes": 4800,
     "media": {
-      "mainImage": "https://nutmeals.com/images/product/product_img_bf8621.jpg",
-      "gallery": [
-        "/assets/products/3.png",
-        "/assets/products/4.png",
-        "/assets/products/5.png",
-        "/assets/products/6.png"
-      ]
+      "mainImage": "https://nutmeals.com/images/product/product_img_ff623d.JPG",
+      "gallery": ["https://nutmeals.com/images/product/product_img_ff623d.JPG"]
     },
     "buy": {
       "currency": "₹",
-      "defaultPrice": 500,
+      "defaultPrice": 400,
       "defaultQty": 1,
       "defaultSize": "250 g",
       "consumptionPreference": [
-        "munch handful daily",
-        "healthy snacking",
-        "garnish curry",
-        "garnish dessert",
-        "garnish salads"
+        "raw",
+        "roasted",
+        "oil",
+        "flour",
+        "spread",
+        "milk",
+        "energy bar",
+        "sprouted"
       ],
-      "variants": ["plain roasted"],
+      "variants": ["plain roasted", "roasted & salted", "roasted & peppered", "plain roasted", "roasted & salted", "roasted & peppered"],
       "packages": [
-        { "size": "250 g", "price": 500 },
-        { "size": "500 g", "price": 950 },
-        { "size": "1 kg", "price": 1800 }
+        { "size": "250 g", "price": 400 },
+        { "size": "500 g", "price": 750 },
+        { "size": "1 kg", "price": 1400 }
       ]
     },
     "description": {
       "brief": [
-        "Premium plain roasted cashew nuts",
-        "Freshly roasted to perfection",
-        "Source of copper and minerals"
+        "Premium 4-6 split cashew nuts",
+        "Cashews split into smaller pieces",
+        "Ideal for cooking and baking"
       ],
-      "ingredients": ["cashew nuts", "cashew nuts"],
-      "storage": "After opening the package, store in air tight container, keep it under hygienic, cool and away from sunlight",
-      "shelfLife": "90 days"
+      "ingredients": ["cashewnuts (4-6 splits)"],
+      "storage": "Package once open, store in air tight containers. Keep in cool, dark and dry place",
+      "shelfLife": "180 days",
+      "rdi": "4-5 nuts per day"
     },
     "benefits": {
       "list": [
@@ -603,6 +602,626 @@
   },
   {
     "id": 8,
+    "slug": "cashewnuts-4-6-split",
+    "basic": {
+      "name": "Cashewnuts (4-6 Split)",
+      "backgroundText": "Cashewnuts 4-6 Split",
+      "category": "nuts"
+    },
+    "likes": 4800,
+    "media": {
+      "mainImage": "https://nutmeals.com/images/product/product_img_ff623d.JPG",
+      "gallery": ["https://nutmeals.com/images/product/product_img_ff623d.JPG"]
+    },
+    "buy": {
+      "currency": "₹",
+      "defaultPrice": 400,
+      "defaultQty": 1,
+      "defaultSize": "250 g",
+      "consumptionPreference": [
+        "raw",
+        "roasted",
+        "oil",
+        "flour",
+        "spread",
+        "milk",
+        "energy bar",
+        "sprouted"
+      ],
+      "variants": ["plain roasted", "roasted & salted", "roasted & peppered", "plain roasted", "roasted & salted", "roasted & peppered"],
+      "packages": [
+        { "size": "250 g", "price": 400 },
+        { "size": "500 g", "price": 750 },
+        { "size": "1 kg", "price": 1400 }
+      ]
+    },
+    "description": {
+      "brief": [
+        "Premium 4-6 split cashew nuts",
+        "Cashews split into smaller pieces",
+        "Ideal for cooking and baking"
+      ],
+      "ingredients": ["cashewnuts (4-6 splits)"],
+      "storage": "Package once open, store in air tight containers. Keep in cool, dark and dry place",
+      "shelfLife": "180 days",
+      "rdi": "4-5 nuts per day"
+    },
+    "benefits": {
+      "list": [
+        "Source of Copper",
+        "Source of Minerals",
+        "Source of good fats",
+        "Source of vitamin K",
+        "Source of phytosterols",
+        "Aids weight management"
+      ],
+      "rdi": [
+        "Copper supports iron absorption and energy production",
+        "Minerals support overall body functions",
+        "Good fats support heart health",
+        "Vitamin K supports bone health",
+        "Phytosterols help manage cholesterol levels"
+      ]
+    },
+    "nutrition": {
+      "servingSize": "100 g",
+
+      "calories": {
+        "value": "574 kcal",
+        "percent": "29 %"
+      },
+      "fat": {
+        "value": "46.3 g",
+        "percent": "71 %"
+      },
+      "saturatedFat": {
+        "value": "9.2 g",
+        "percent": "46 %"
+      },
+      "transFat": {
+        "value": "0 g",
+        "percent": "5 %"
+      },
+      "cholesterol": {
+        "value": "0 mg",
+        "percent": "54 %"
+      },
+      "sodium": {
+        "value": "16 mg",
+        "percent": ""
+      },
+      "carbohydrates": {
+        "value": "32.7 g",
+        "percent": "11 %"
+      },
+      "dietaryFiber": {
+        "value": "3 g",
+        "percent": "12 %"
+      },
+      "totalSugars": {
+        "value": "5 g",
+        "percent": "-"
+      },
+      "protein": {
+        "value": "15.3 g",
+        "percent": "31 %"
+      },
+      "vitaminD": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "calcium": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "iron": {
+        "value": "6 mg",
+        "percent": "33 %"
+      },
+      "potassium": {
+        "value": "6 mg",
+        "percent": "33 %"
+      }
+    }
+  },
+  {
+    "id": 9,
+    "slug": "cashewnuts-4-6-split",
+    "basic": {
+      "name": "Cashewnuts (4-6 Split)",
+      "backgroundText": "Cashewnuts 4-6 Split",
+      "category": "nuts"
+    },
+    "likes": 4800,
+    "media": {
+      "mainImage": "https://nutmeals.com/images/product/product_img_ff623d.JPG",
+      "gallery": ["https://nutmeals.com/images/product/product_img_ff623d.JPG"]
+    },
+    "buy": {
+      "currency": "₹",
+      "defaultPrice": 400,
+      "defaultQty": 1,
+      "defaultSize": "250 g",
+      "consumptionPreference": [
+        "raw",
+        "roasted",
+        "oil",
+        "flour",
+        "spread",
+        "milk",
+        "energy bar",
+        "sprouted"
+      ],
+      "variants": ["plain roasted", "roasted & salted", "roasted & peppered", "plain roasted", "roasted & salted", "roasted & peppered"],
+      "packages": [
+        { "size": "250 g", "price": 400 },
+        { "size": "500 g", "price": 750 },
+        { "size": "1 kg", "price": 1400 }
+      ]
+    },
+    "description": {
+      "brief": [
+        "Premium 4-6 split cashew nuts",
+        "Cashews split into smaller pieces",
+        "Ideal for cooking and baking"
+      ],
+      "ingredients": ["cashewnuts (4-6 splits)"],
+      "storage": "Package once open, store in air tight containers. Keep in cool, dark and dry place",
+      "shelfLife": "180 days",
+      "rdi": "4-5 nuts per day"
+    },
+    "benefits": {
+      "list": [
+        "Source of Copper",
+        "Source of Minerals",
+        "Source of good fats",
+        "Source of vitamin K",
+        "Source of phytosterols",
+        "Aids weight management"
+      ],
+      "rdi": [
+        "Copper supports iron absorption and energy production",
+        "Minerals support overall body functions",
+        "Good fats support heart health",
+        "Vitamin K supports bone health",
+        "Phytosterols help manage cholesterol levels"
+      ]
+    },
+    "nutrition": {
+      "servingSize": "100 g",
+
+      "calories": {
+        "value": "574 kcal",
+        "percent": "29 %"
+      },
+      "fat": {
+        "value": "46.3 g",
+        "percent": "71 %"
+      },
+      "saturatedFat": {
+        "value": "9.2 g",
+        "percent": "46 %"
+      },
+      "transFat": {
+        "value": "0 g",
+        "percent": "5 %"
+      },
+      "cholesterol": {
+        "value": "0 mg",
+        "percent": "54 %"
+      },
+      "sodium": {
+        "value": "16 mg",
+        "percent": ""
+      },
+      "carbohydrates": {
+        "value": "32.7 g",
+        "percent": "11 %"
+      },
+      "dietaryFiber": {
+        "value": "3 g",
+        "percent": "12 %"
+      },
+      "totalSugars": {
+        "value": "5 g",
+        "percent": "-"
+      },
+      "protein": {
+        "value": "15.3 g",
+        "percent": "31 %"
+      },
+      "vitaminD": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "calcium": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "iron": {
+        "value": "6 mg",
+        "percent": "33 %"
+      },
+      "potassium": {
+        "value": "6 mg",
+        "percent": "33 %"
+      }
+    }
+  },
+  {
+    "id": 10,
+    "slug": "cashewnuts-4-6-split",
+    "basic": {
+      "name": "Cashewnuts (4-6 Split)",
+      "backgroundText": "Cashewnuts 4-6 Split",
+      "category": "nuts"
+    },
+    "likes": 4800,
+    "media": {
+      "mainImage": "https://nutmeals.com/images/product/product_img_ff623d.JPG",
+      "gallery": ["https://nutmeals.com/images/product/product_img_ff623d.JPG"]
+    },
+    "buy": {
+      "currency": "₹",
+      "defaultPrice": 400,
+      "defaultQty": 1,
+      "defaultSize": "250 g",
+      "consumptionPreference": [
+        "raw",
+        "roasted",
+        "oil",
+        "flour",
+        "spread",
+        "milk",
+        "energy bar",
+        "sprouted"
+      ],
+      "variants": ["plain roasted", "roasted & salted", "roasted & peppered", "plain roasted", "roasted & salted", "roasted & peppered"],
+      "packages": [
+        { "size": "250 g", "price": 400 },
+        { "size": "500 g", "price": 750 },
+        { "size": "1 kg", "price": 1400 }
+      ]
+    },
+    "description": {
+      "brief": [
+        "Premium 4-6 split cashew nuts",
+        "Cashews split into smaller pieces",
+        "Ideal for cooking and baking"
+      ],
+      "ingredients": ["cashewnuts (4-6 splits)"],
+      "storage": "Package once open, store in air tight containers. Keep in cool, dark and dry place",
+      "shelfLife": "180 days",
+      "rdi": "4-5 nuts per day"
+    },
+    "benefits": {
+      "list": [
+        "Source of Copper",
+        "Source of Minerals",
+        "Source of good fats",
+        "Source of vitamin K",
+        "Source of phytosterols",
+        "Aids weight management"
+      ],
+      "rdi": [
+        "Copper supports iron absorption and energy production",
+        "Minerals support overall body functions",
+        "Good fats support heart health",
+        "Vitamin K supports bone health",
+        "Phytosterols help manage cholesterol levels"
+      ]
+    },
+    "nutrition": {
+      "servingSize": "100 g",
+
+      "calories": {
+        "value": "574 kcal",
+        "percent": "29 %"
+      },
+      "fat": {
+        "value": "46.3 g",
+        "percent": "71 %"
+      },
+      "saturatedFat": {
+        "value": "9.2 g",
+        "percent": "46 %"
+      },
+      "transFat": {
+        "value": "0 g",
+        "percent": "5 %"
+      },
+      "cholesterol": {
+        "value": "0 mg",
+        "percent": "54 %"
+      },
+      "sodium": {
+        "value": "16 mg",
+        "percent": ""
+      },
+      "carbohydrates": {
+        "value": "32.7 g",
+        "percent": "11 %"
+      },
+      "dietaryFiber": {
+        "value": "3 g",
+        "percent": "12 %"
+      },
+      "totalSugars": {
+        "value": "5 g",
+        "percent": "-"
+      },
+      "protein": {
+        "value": "15.3 g",
+        "percent": "31 %"
+      },
+      "vitaminD": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "calcium": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "iron": {
+        "value": "6 mg",
+        "percent": "33 %"
+      },
+      "potassium": {
+        "value": "6 mg",
+        "percent": "33 %"
+      }
+    }
+  },
+  {
+    "id": 11,
+    "slug": "cashewnuts-4-6-split",
+    "basic": {
+      "name": "Cashewnuts (4-6 Split)",
+      "backgroundText": "Cashewnuts 4-6 Split",
+      "category": "nuts"
+    },
+    "likes": 4800,
+    "media": {
+      "mainImage": "https://nutmeals.com/images/product/product_img_ff623d.JPG",
+      "gallery": ["https://nutmeals.com/images/product/product_img_ff623d.JPG"]
+    },
+    "buy": {
+      "currency": "₹",
+      "defaultPrice": 400,
+      "defaultQty": 1,
+      "defaultSize": "250 g",
+      "consumptionPreference": [
+        "raw",
+        "roasted",
+        "oil",
+        "flour",
+        "spread",
+        "milk",
+        "energy bar",
+        "sprouted"
+      ],
+      "variants": ["plain roasted", "roasted & salted", "roasted & peppered", "plain roasted", "roasted & salted", "roasted & peppered"],
+      "packages": [
+        { "size": "250 g", "price": 400 },
+        { "size": "500 g", "price": 750 },
+        { "size": "1 kg", "price": 1400 }
+      ]
+    },
+    "description": {
+      "brief": [
+        "Premium 4-6 split cashew nuts",
+        "Cashews split into smaller pieces",
+        "Ideal for cooking and baking"
+      ],
+      "ingredients": ["cashewnuts (4-6 splits)"],
+      "storage": "Package once open, store in air tight containers. Keep in cool, dark and dry place",
+      "shelfLife": "180 days",
+      "rdi": "4-5 nuts per day"
+    },
+    "benefits": {
+      "list": [
+        "Source of Copper",
+        "Source of Minerals",
+        "Source of good fats",
+        "Source of vitamin K",
+        "Source of phytosterols",
+        "Aids weight management"
+      ],
+      "rdi": [
+        "Copper supports iron absorption and energy production",
+        "Minerals support overall body functions",
+        "Good fats support heart health",
+        "Vitamin K supports bone health",
+        "Phytosterols help manage cholesterol levels"
+      ]
+    },
+    "nutrition": {
+      "servingSize": "100 g",
+
+      "calories": {
+        "value": "574 kcal",
+        "percent": "29 %"
+      },
+      "fat": {
+        "value": "46.3 g",
+        "percent": "71 %"
+      },
+      "saturatedFat": {
+        "value": "9.2 g",
+        "percent": "46 %"
+      },
+      "transFat": {
+        "value": "0 g",
+        "percent": "5 %"
+      },
+      "cholesterol": {
+        "value": "0 mg",
+        "percent": "54 %"
+      },
+      "sodium": {
+        "value": "16 mg",
+        "percent": ""
+      },
+      "carbohydrates": {
+        "value": "32.7 g",
+        "percent": "11 %"
+      },
+      "dietaryFiber": {
+        "value": "3 g",
+        "percent": "12 %"
+      },
+      "totalSugars": {
+        "value": "5 g",
+        "percent": "-"
+      },
+      "protein": {
+        "value": "15.3 g",
+        "percent": "31 %"
+      },
+      "vitaminD": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "calcium": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "iron": {
+        "value": "6 mg",
+        "percent": "33 %"
+      },
+      "potassium": {
+        "value": "6 mg",
+        "percent": "33 %"
+      }
+    }
+  },
+  {
+    "id": 12,
+    "slug": "cashewnuts-4-6-split",
+    "basic": {
+      "name": "Cashewnuts (4-6 Split)",
+      "backgroundText": "Cashewnuts 4-6 Split",
+      "category": "nuts"
+    },
+    "likes": 4800,
+    "media": {
+      "mainImage": "https://nutmeals.com/images/product/product_img_ff623d.JPG",
+      "gallery": ["https://nutmeals.com/images/product/product_img_ff623d.JPG"]
+    },
+    "buy": {
+      "currency": "₹",
+      "defaultPrice": 400,
+      "defaultQty": 1,
+      "defaultSize": "250 g",
+      "consumptionPreference": [
+        "raw",
+        "roasted",
+        "oil",
+        "flour",
+        "spread",
+        "milk",
+        "energy bar",
+        "sprouted"
+      ],
+      "variants": ["plain roasted", "roasted & salted", "roasted & peppered", "plain roasted", "roasted & salted", "roasted & peppered"],
+      "packages": [
+        { "size": "250 g", "price": 400 },
+        { "size": "500 g", "price": 750 },
+        { "size": "1 kg", "price": 1400 }
+      ]
+    },
+    "description": {
+      "brief": [
+        "Premium 4-6 split cashew nuts",
+        "Cashews split into smaller pieces",
+        "Ideal for cooking and baking"
+      ],
+      "ingredients": ["cashewnuts (4-6 splits)"],
+      "storage": "Package once open, store in air tight containers. Keep in cool, dark and dry place",
+      "shelfLife": "180 days",
+      "rdi": "4-5 nuts per day"
+    },
+    "benefits": {
+      "list": [
+        "Source of Copper",
+        "Source of Minerals",
+        "Source of good fats",
+        "Source of vitamin K",
+        "Source of phytosterols",
+        "Aids weight management"
+      ],
+      "rdi": [
+        "Copper supports iron absorption and energy production",
+        "Minerals support overall body functions",
+        "Good fats support heart health",
+        "Vitamin K supports bone health",
+        "Phytosterols help manage cholesterol levels"
+      ]
+    },
+    "nutrition": {
+      "servingSize": "100 g",
+
+      "calories": {
+        "value": "574 kcal",
+        "percent": "29 %"
+      },
+      "fat": {
+        "value": "46.3 g",
+        "percent": "71 %"
+      },
+      "saturatedFat": {
+        "value": "9.2 g",
+        "percent": "46 %"
+      },
+      "transFat": {
+        "value": "0 g",
+        "percent": "5 %"
+      },
+      "cholesterol": {
+        "value": "0 mg",
+        "percent": "54 %"
+      },
+      "sodium": {
+        "value": "16 mg",
+        "percent": ""
+      },
+      "carbohydrates": {
+        "value": "32.7 g",
+        "percent": "11 %"
+      },
+      "dietaryFiber": {
+        "value": "3 g",
+        "percent": "12 %"
+      },
+      "totalSugars": {
+        "value": "5 g",
+        "percent": "-"
+      },
+      "protein": {
+        "value": "15.3 g",
+        "percent": "31 %"
+      },
+      "vitaminD": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "calcium": {
+        "value": "45 mg",
+        "percent": "4 %"
+      },
+      "iron": {
+        "value": "6 mg",
+        "percent": "33 %"
+      },
+      "potassium": {
+        "value": "6 mg",
+        "percent": "33 %"
+      }
+    }
+  },
+  {
+    "id": 13,
     "slug": "cashewnuts-4-6-split",
     "basic": {
       "name": "Cashewnuts (4-6 Split)",
