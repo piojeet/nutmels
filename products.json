@@ -3,7 +3,7 @@
     "id": 1,
     "slug": "cashewnuts-4-6-split",
     "basic": {
-      "name": "Cashewnuts (4-6 Split)",
+      "name": "Cashewnuts",
       "backgroundText": "Cashewnuts 4-6 Split",
       "category": "nuts"
     },
@@ -31,6 +31,7 @@
       "packages": [
         { "size": "250 g", "price": 400 },
         { "size": "500 g", "price": 750 },
+        { "size": "1 kg", "price": 1400 },
         { "size": "1 kg", "price": 1400 }
       ]
     },
@@ -63,65 +64,82 @@
       ]
     },
     "nutrition": {
-      "servingSize": "100 g",
+    "servingSize": {
+      "value": "100",
+      "unit": "g"
+    },
 
-      "calories": {
-        "value": "574 kcal",
-        "percent": "29 %"
-      },
-      "fat": {
-        "value": "46.3 g",
-        "percent": "71 %"
-      },
-      "saturatedFat": {
-        "value": "9.2 g",
-        "percent": "46 %"
-      },
-      "transFat": {
-        "value": "0 g",
-        "percent": "5 %"
-      },
-      "cholesterol": {
-        "value": "0 mg",
-        "percent": "54 %"
-      },
-      "sodium": {
-        "value": "16 mg",
-        "percent": ""
-      },
-      "carbohydrates": {
-        "value": "32.7 g",
-        "percent": "11 %"
-      },
-      "dietaryFiber": {
-        "value": "3 g",
-        "percent": "12 %"
-      },
-      "totalSugars": {
-        "value": "5 g",
-        "percent": "-"
-      },
-      "protein": {
-        "value": "15.3 g",
-        "percent": "31 %"
-      },
-      "vitaminD": {
-        "value": "45 mg",
-        "percent": "4 %"
-      },
-      "calcium": {
-        "value": "45 mg",
-        "percent": "4 %"
-      },
-      "iron": {
-        "value": "6 mg",
-        "percent": "33 %"
-      },
-      "potassium": {
-        "value": "6 mg",
-        "percent": "33 %"
-      }
+    "calories": {
+      "value": "574",
+      "unit": "kcal",
+      "percent": "29 %"
+    },
+    "fat": {
+      "value": "46.3",
+      "unit": "g",
+      "percent": "71 %"
+    },
+    "saturatedFat": {
+      "value": "9.2",
+      "unit": "g",
+      "percent": "46 %"
+    },
+    "transFat": {
+      "value": "0",
+      "unit": "g",
+      "percent": "5 %"
+    },
+    "cholesterol": {
+      "value": "0",
+      "unit": "mg",
+      "percent": "54 %"
+    },
+    "sodium": {
+      "value": "16",
+      "unit": "mg",
+      "percent": ""
+    },
+    "carbohydrates": {
+      "value": "32.7",
+      "unit": "g",
+      "percent": "11 %"
+    },
+    "dietaryFiber": {
+      "value": "3",
+      "unit": "g",
+      "percent": "12 %"
+    },
+    "totalSugars": {
+      "value": "5",
+      "unit": "g",
+      "percent": "-"
+    },
+    "protein": {
+      "value": "15.3",
+      "unit": "g",
+      "percent": "31 %"
+    },
+    "vitaminD": {
+      "value": "45",
+      "unit": "mg",
+      "percent": "4 %"
+    },
+    "calcium": {
+      "value": "45",
+      "unit": "mg",
+      "percent": "4 %"
+    },
+    "iron": {
+      "value": "6",
+      "unit": "mg",
+      "percent": "33 %"
+    },
+    "potassium": {
+      "value": "6",
+      "unit": "mg",
+      "percent": "33 %"
     }
+  }
   },
   {
     "id": 2,
@@ -1160,65 +1178,82 @@
       ]
     },
     "nutrition": {
-      "servingSize": "100 g",
+    "servingSize": {
+      "value": "100",
+      "unit": "g"
+    },
 
-      "calories": {
-        "value": "574 kcal",
-        "percent": "29 %"
-      },
-      "fat": {
-        "value": "46.3 g",
-        "percent": "71 %"
-      },
-      "saturatedFat": {
-        "value": "9.2 g",
-        "percent": "46 %"
-      },
-      "transFat": {
-        "value": "0 g",
-        "percent": "5 %"
-      },
-      "cholesterol": {
-        "value": "0 mg",
-        "percent": "54 %"
-      },
-      "sodium": {
-        "value": "16 mg",
-        "percent": ""
-      },
-      "carbohydrates": {
-        "value": "32.7 g",
-        "percent": "11 %"
-      },
-      "dietaryFiber": {
-        "value": "3 g",
-        "percent": "12 %"
-      },
-      "totalSugars": {
-        "value": "5 g",
-        "percent": "-"
-      },
-      "protein": {
-        "value": "15.3 g",
-        "percent": "31 %"
-      },
-      "vitaminD": {
-        "value": "45 mg",
-        "percent": "4 %"
-      },
-      "calcium": {
-        "value": "45 mg",
-        "percent": "4 %"
-      },
-      "iron": {
-        "value": "6 mg",
-        "percent": "33 %"
-      },
-      "potassium": {
-        "value": "6 mg",
-        "percent": "33 %"
-      }
+    "calories": {
+      "value": "574",
+      "unit": "kcal",
+      "percent": "29 %"
+    },
+    "fat": {
+      "value": "46.3",
+      "unit": "g",
+      "percent": "71 %"
+    },
+    "saturatedFat": {
+      "value": "9.2",
+      "unit": "g",
+      "percent": "46 %"
+    },
+    "transFat": {
+      "value": "0",
+      "unit": "g",
+      "percent": "5 %"
+    },
+    "cholesterol": {
+      "value": "0",
+      "unit": "mg",
+      "percent": "54 %"
+    },
+    "sodium": {
+      "value": "16",
+      "unit": "mg",
+      "percent": ""
+    },
+    "carbohydrates": {
+      "value": "32.7",
+      "unit": "g",
+      "percent": "11 %"
+    },
+    "dietaryFiber": {
+      "value": "3",
+      "unit": "g",
+      "percent": "12 %"
+    },
+    "totalSugars": {
+      "value": "5",
+      "unit": "g",
+      "percent": "-"
+    },
+    "protein": {
+      "value": "15.3",
+      "unit": "g",
+      "percent": "31 %"
+    },
+    "vitaminD": {
+      "value": "45",
+      "unit": "mg",
+      "percent": "4 %"
+    },
+    "calcium": {
+      "value": "45",
+      "unit": "mg",
+      "percent": "4 %"
+    },
+    "iron": {
+      "value": "6",
+      "unit": "mg",
+      "percent": "33 %"
+    },
+    "potassium": {
+      "value": "6",
+      "unit": "mg",
+      "percent": "33 %"
     }
+  }
   },
   {
     "id": 13,
@@ -1284,64 +1319,81 @@
       ]
     },
     "nutrition": {
-      "servingSize": "100 g",
+    "servingSize": {
+      "value": "100",
+      "unit": "g"
+    },
 
-      "calories": {
-        "value": "574 kcal",
-        "percent": "29 %"
-      },
-      "fat": {
-        "value": "46.3 g",
-        "percent": "71 %"
-      },
-      "saturatedFat": {
-        "value": "9.2 g",
-        "percent": "46 %"
-      },
-      "transFat": {
-        "value": "0 g",
-        "percent": "5 %"
-      },
-      "cholesterol": {
-        "value": "0 mg",
-        "percent": "54 %"
-      },
-      "sodium": {
-        "value": "16 mg",
-        "percent": ""
-      },
-      "carbohydrates": {
-        "value": "32.7 g",
-        "percent": "11 %"
-      },
-      "dietaryFiber": {
-        "value": "3 g",
-        "percent": "12 %"
-      },
-      "totalSugars": {
-        "value": "5 g",
-        "percent": "-"
-      },
-      "protein": {
-        "value": "15.3 g",
-        "percent": "31 %"
-      },
-      "vitaminD": {
-        "value": "45 mg",
-        "percent": "4 %"
-      },
-      "calcium": {
-        "value": "45 mg",
-        "percent": "4 %"
-      },
-      "iron": {
-        "value": "6 mg",
-        "percent": "33 %"
-      },
-      "potassium": {
-        "value": "6 mg",
-        "percent": "33 %"
-      }
+    "calories": {
+      "value": "574",
+      "unit": "kcal",
+      "percent": "29 %"
+    },
+    "fat": {
+      "value": "46.3",
+      "unit": "g",
+      "percent": "71 %"
+    },
+    "saturatedFat": {
+      "value": "9.2",
+      "unit": "g",
+      "percent": "46 %"
+    },
+    "transFat": {
+      "value": "0",
+      "unit": "g",
+      "percent": "5 %"
+    },
+    "cholesterol": {
+      "value": "0",
+      "unit": "mg",
+      "percent": "54 %"
+    },
+    "sodium": {
+      "value": "16",
+      "unit": "mg",
+      "percent": ""
+    },
+    "carbohydrates": {
+      "value": "32.7",
+      "unit": "g",
+      "percent": "11 %"
+    },
+    "dietaryFiber": {
+      "value": "3",
+      "unit": "g",
+      "percent": "12 %"
+    },
+    "totalSugars": {
+      "value": "5",
+      "unit": "g",
+      "percent": "-"
+    },
+    "protein": {
+      "value": "15.3",
+      "unit": "g",
+      "percent": "31 %"
+    },
+    "vitaminD": {
+      "value": "45",
+      "unit": "mg",
+      "percent": "4 %"
+    },
+    "calcium": {
+      "value": "45",
+      "unit": "mg",
+      "percent": "4 %"
+    },
+    "iron": {
+      "value": "6",
+      "unit": "mg",
+      "percent": "33 %"
+    },
+    "potassium": {
+      "value": "6",
+      "unit": "mg",
+      "percent": "33 %"
     }
+  }
   }
 ]

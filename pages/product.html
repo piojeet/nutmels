@@ -642,11 +642,11 @@ font-weight: 600;
   <div class="w-full  flex justify-center">
     <div class="flex-col lg:flex-row md:gap-8 gap-3 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 justify-center mt-[8.5rem] grid lg:grid-cols-2 grid-cols-1">
 
-      <div class="">
+      <div class="h-full">
 
 
         <div
-          class="w-full slides min-h-[550px] md:w-product-image flex justify-center flex-col relative border bg-[#f5f5f5] border-gray-300 rounded-lg p-4">
+          class="w-full slides  md:w-product-image flex justify-center flex-col relative border bg-[#f5f5f5] border-gray-300 rounded-lg p-4 h-full">
           <div class="bg-white w-full h-full rounded-lg content-end overflow-hidden relative">
             <div class="md:block hidden">
               <h1
@@ -733,7 +733,7 @@ font-weight: 600;
             class="accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease">
             <div class="flex md:px-10 lg:px-1 xl:px-[1rem] py-[.6rem] flex-col justify-between h-full">
               <div
-                class="font-[700] text-[15px] xs:text-[18px] sm:text-[20px] md:text-[21px] lg:text-[22px] 2xl:text-[23px] flex justify-between">
+                class="font-[700] text-[15px] xs:text-[18px] 2xl:text-[20px] flex justify-between">
                 <span class="title"></span><span class="ml-auto default-size whitespace-nowrap"></span></div>
               <div class="price-set flex justify-between items-center md:mt-2">
                 <div class="incdec flex m-2">
@@ -802,36 +802,40 @@ font-weight: 600;
         </div>
 
         <div id="descriptionSection"
-          class="border lg:hidden services-section h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4">
+          class="border lg:hidden services-section h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4">
 
-          <div class="h-14 border border-primaryColor bg-primaryColor p-2 flex justify-between items-center rounded-md mb-4">
+          <div class="min-h-14 border border-primaryColor bg-primaryColor p-2 flex justify-between items-center rounded-md mb-4">
 
             <div class="flex items-center h-full gap-3">
-             <div class="flex h-full object-contain">
+             <!-- <div class="flex h-full object-contain">
                <img alt="" class="image h-full object-cover rounded-md">
-             </div>
+             </div> -->
              <div>
-              <h3 class="background-text text-white"></h3>
+              <h3 class="title text-white"></h3>
              <div
                 class="text-base text-white">
+                <span class="default-size"></span>
+                -
                 <span class="currency"></span><span class="total-price"></span>
                 </div>
              </div>
            </div>
 
-           <div class="flex items-center gap-4">
+           <div class="flex items-center gap-4 flex-shrink-0">
             <div class="price-set flex justify-between items-center">
               <div class="incdec flex m-2">
-                <button class="text-3xl 2xl:!text-[50px] text-white decrease" id="decrease">-</button>
+                <button class="text-3xl 2xl:!text-[45px] text-white decrease" id="decrease">-</button>
                 <input
-                  class="w-14 border border-black text-center rounded-lg scale-[.8] md:scale-[1] md:mx-3 bg-[#f5f5f5] quantity"
+                  class="w-10 border border-black text-center rounded-lg scale-[.8] md:scale-[1] md:mx-3 bg-[#f5f5f5] quantity"
                   type="text" value="1" readonly>
-                <button class="text-3xl 2xl:text-[40px] text-white increase" id="increase">+</button>
+                <button class="text-3xl 2xl:text-[35px] text-white increase" id="increase">+</button>
               </div>
             </div>
 
-            <div>
-              <button class="bg-white py-2 px-4 text-black rounded-md">Add to Cart</button>
+            <div class="flex-shrink-0">
+              <a class="w-fit border border-gray-400 bg-white text-lg rounded-md py-2 px-3 duration-300 block" href="/cart">
+                <img src="../assets/icons/generic_web_icons/add to cart.svg" class="w-5">
+              </a>
             </div>
            </div>
 
@@ -860,7 +864,7 @@ font-weight: 600;
 
 
         <div id="benefitsSection"
-          class="border lg:hidden services-section h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 ">
+          class="border lg:hidden services-section h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 ">
           <!-- Item 3 -->
           <button class="accordion-btn w-full flex justify-between items-center px-4 py-3 text-left md:hidden"
             aria-expanded="false">
@@ -869,38 +873,42 @@ font-weight: 600;
           </button>
           <div class="accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease">
 
-            <div class="h-14 border border-primaryColor bg-primaryColor p-2 flex justify-between items-center rounded-md mb-4">
+            <div class="min-h-14 border border-primaryColor bg-primaryColor p-2 flex justify-between items-center rounded-md mb-4">
 
-            <div class="flex items-center h-full gap-3">
-             <div class="flex h-full object-contain">
-               <img alt="" class="image h-full object-cover rounded-md">
+              <div class="flex items-center h-full gap-3">
+               <!-- <div class="flex h-full object-contain">
+                 <img alt="" class="image h-full object-cover rounded-md">
+               </div> -->
+               <div>
+                <h3 class="title text-white"></h3>
+               <div
+                  class="text-base text-white">
+                  <span class="default-size"></span>
+                  -
+                  <span class="currency"></span><span class="total-price"></span>
+                  </div>
+               </div>
              </div>
-             <div>
-              <h3 class="background-text text-white"></h3>
-             <div
-                class="text-base text-white">
-                <span class="currency"></span><span class="total-price"></span>
+  
+             <div class="flex items-center gap-4 flex-shrink-0">
+              <div class="price-set flex justify-between items-center">
+                <div class="incdec flex m-2">
+                  <button class="text-3xl 2xl:!text-[45px] text-white decrease" id="decrease">-</button>
+                  <input
+                    class="w-10 border border-black text-center rounded-lg scale-[.8] md:scale-[1] md:mx-3 bg-[#f5f5f5] quantity"
+                    type="text" value="1" readonly>
+                  <button class="text-3xl 2xl:text-[35px] text-white increase" id="increase">+</button>
                 </div>
-             </div>
-           </div>
-
-           <div class="flex items-center gap-4">
-            <div class="price-set flex justify-between items-center">
-              <div class="incdec flex m-2">
-                <button class="text-3xl 2xl:!text-[50px] text-white decrease" id="decrease">-</button>
-                <input
-                  class="w-14 border border-black text-center rounded-lg scale-[.8] md:scale-[1] md:mx-3 bg-[#f5f5f5] quantity"
-                  type="text" value="1" readonly>
-                <button class="text-3xl 2xl:text-[40px] text-white increase" id="increase">+</button>
               </div>
+  
+              <div class="flex-shrink-0">
+                <a class="w-fit border border-gray-400 bg-white text-lg rounded-md py-2 px-3 duration-300 block" href="/cart">
+                  <img src="../assets/icons/generic_web_icons/add to cart.svg" class="w-5">
+                </a>
+              </div>
+             </div>
+  
             </div>
-
-            <div>
-              <button class="bg-white py-2 px-4 text-black rounded-md">Add to Cart</button>
-            </div>
-           </div>
-
-          </div>
 
             <div class="w-full ">
               <div class="flex justify-evenly border-b"><a class="w-full border-col text-center py-2"><button
@@ -927,26 +935,26 @@ font-weight: 600;
           </button>
           <div class="nutrition w-full lg:flex justify-center items-center accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease">
             <div
-              class="product-image product-scrollbar w-full border border-gray-300 bg-[#f5f5f5] rounded-2xl p-4 h-[590px]">
+              class="product-image product-scrollbar w-full border border-gray-300 bg-[#f5f5f5] rounded-2xl p-4">
              
               <div class="w-full bg-white h-full rounded-2xl p-4">
-                <div class="w-fit m-auto text-[16px] md:text-[18px]  md:px-4 text-lg xl:text-xl uppercase font-semibold">Nutritional
+                <div class="w-fit m-auto text-[16px] md:text-[18px]  md:px-4 text-lg xl:text-lg uppercase font-semibold">Nutritional
                   Facts</div>
-                <div class="mt-6">
+                <div class="mt-2">
                   <div class="flex  justify-between items-center pb-1 -mt-2 border-b-[2.5px] border-b-[#F8A531]">
                     <span class="text-lg 2xl:text-xl">Serving Size :</span>
-                    <div class="font-medium text-xl 2xl:text-2xl default-size"></div>
+                    <div class="font-medium text-xl 2xl:text-xl default-size"></div>
                   </div>
                   <div>
                     <p class="font-medium pt-1.5 list-none">Amount per Serving</p>
                     <div class="flex justify-between items-center border-b-[2.5px] border-b-[#F8A531] pb-1">
-                      <span class="text-[22px] 2xl:text-[24px]">Calories :</span>
-                      <div class="pt-[2px] font-medium text-2xl calories"></div>
+                      <span class="text-[20px]">Calories :</span>
+                      <div class="pt-[2px] font-medium text-xl calories"></div>
                     </div>
                     <div class="border-b border-black font-normal">
                       <p class="ml-2 flex text-sm justify-end py-1">Daily Value (%)</p>
                     </div>
-                    <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-between text-sm pt-2">
                       <div class="flex  flex-col">
                         <p>Total Fat</p>
                         <p class="text-right">Saturated Fat</p>
@@ -961,26 +969,28 @@ font-weight: 600;
                       </div>
                       <div class=" flex mr-[42px] flex-col">
                         <p class="flex justify-end gap-2"><span
-                            class="value nutritionValue inline-block w-16 text-right fat"></span></p>
+                            class="value nutritionValue inline-block w-16 text-right fat"></span> <span class="leading-none">mg</span></p>
                         <p class="flex justify- gap-2"><span class="value nutritionValue inline-block w-16 text-right saturated-fat">
-                            </span></p>
+                        </span><span class="leading-none">mg</span>
+                            </p>
                         <p class="flex justify- gap-2"><span class="value nutritionValue inline-block w-16 text-right trans-fat">
-                            </span></p>
+                            </span><span class="leading-none">mg</span></p>
 
                         <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right cholesterol">
-                            </span></p>
-                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right sodium">
+                            </span><span class="leading-none">g</span></p>
+                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right sodium"></span>
+                            <span class="leading-none">g</span>
                             </p>
                         <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right carbohydrates">
-                            </span></p>
+                            </span><span class="leading-none">g</span></p>
                         <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right dietary-fiber">
-                           </span></p>
+                           </span><span class="leading-none">mg</span></p>
                         <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right total-sugars">
-                            </span></p>
+                            </span><span class="leading-none">mg</span></p>
                         <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right ">
-                            00</span></p>
+                            00</span><span class="leading-none">mg</span></p>
                         <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right protein">
-                            </span></p>
+                            </span><span class="leading-none">mg</span></p>
                       </div>
                       <div class="text-end flex flex-col">
                         <p class="fat-percent"></p>
@@ -996,35 +1006,35 @@ font-weight: 600;
                       </div>
                     </div>
                     <div class="border-b-[2.5px] border-b-[#F8A531] my-1"></div>
-                    <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-between text-sm">
                       <div class="flex flex-col">
                         <p>Vitamin D</p>
                         <p>Calcium</p>
                         <p>Iron</p>
                         <p>Potassium</p>
                       </div>
-                      <div class="text-end ml-[51px]  md:ml-[79px] flex flex-col">
-                        <p class="flex gap-[.6rem]"> <span class="nutritionValue vitamin-d"></span>
+                      <div class="text-end ml-[63px]  flex flex-col">
+                        <p class="flex justify-end gap-[.6rem]"> <span class="nutritionValue vitamin-d"></span><span class="leading-none">mg</span>
                         </p>
-                        <p class="flex gap-[.6rem]"><span class="nutritionValue calcium"></span>
+                        <p class="flex justify-end gap-[.6rem]"><span class="nutritionValue calcium"></span><span class="leading-none">mg</span>
                         </p>
-                        <p class="flex gap-[.6rem]"><span class="nutritionValue iron"></span>
+                        <p class="flex justify-end gap-[.6rem]"><span class="nutritionValue iron"></span><span class="leading-none">mg</span>
                         </p>
-                        <p class="flex gap-[.6rem]"><span class="nutritionValue potassium"></span>
+                        <p class="flex justify-end gap-[.6rem] leading-none"><span class="nutritionValue potassium"></span><span class="leading-none">mg</span>
                         </p>
                       </div>
                       <div class="text-end flex flex-col">
-                        <p class="flex">
-                          <span class="vitamin-d-percent"></span>
+                        <p class="flex justify-end">
+                          <span class="vitamin-d-percent text-right"></span>
                         </p>
-                        <p class="flex ">
-                          <span class="calcium-percent"></span>
+                        <p class="flex justify-end">
+                          <span class="calcium-percent text-right"></span>
                         </p>
-                        <p class="flex ">
-                          <span class="iron-percent"></span>
+                        <p class="flex justify-end">
+                          <span class="iron-percent text-right"></span>
                         </p>
-                        <p class="flex ">
-                          <span class="potassium-percent"></span>
+                        <p class="flex justify-end">
+                          <span class="potassium-percent text-right"></span>
                         </p>
                       </div>
                     </div>
@@ -1353,7 +1363,7 @@ font-weight: 600;
 
   </script>
 
-<script src="../products.js"></script>
+<script defer src="../products.js"></script>
 
 
     <!-- Swiper JS -->

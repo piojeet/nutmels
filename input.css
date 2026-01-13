@@ -419,3 +419,16 @@ index */
   fill: #2563eb;      /* blue */
   stroke: #2563eb;
 }
+
+
+.contact-icon-fild {
+  opacity: 0;
+}
+
+.nav-contact-icon.active .contact-icon-outline {
+  opacity: 0;
+}
+
+.nav-contact-icon.active .contact-icon-fild {
+  opacity: 1;
+}
