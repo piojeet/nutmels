@@ -4651,6 +4651,10 @@ index */
     padding-top: 6rem;
   }
 
+  .lg\:pt-20{
+    padding-top: 5rem;
+  }
+
   .lg\:text-5xl{
     font-size: 3rem;
     line-height: 1;
