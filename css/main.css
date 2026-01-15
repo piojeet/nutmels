@@ -4364,6 +4364,10 @@ index */
     padding-top: 50px;
   }
 
+  .md\:pt-20{
+    padding-top: 5rem;
+  }
+
   .md\:text-right{
     text-align: right;
   }
