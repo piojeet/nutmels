@@ -1477,17 +1477,17 @@ html {
   height: auto;
 }
 
+.h-fit{
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .h-full{
   height: 100%;
 }
 
 .h-screen{
   height: 100vh;
-}
-
-.h-fit{
-  height: -moz-fit-content;
-  height: fit-content;
 }
 
 .max-h-0{
@@ -2445,18 +2445,6 @@ html {
   background-color: rgb(255 255 255 / 0.8);
 }
 
-.bg-white\/20{
-  background-color: rgb(255 255 255 / 0.2);
-}
-
-.bg-gray-400\/20{
-  background-color: rgb(156 163 175 / 0.2);
-}
-
-.bg-gray-200\/20{
-  background-color: rgb(229 231 235 / 0.2);
-}
-
 .\!fill-gray-600{
   fill: #4b5563 !important;
 }
@@ -2827,6 +2815,10 @@ html {
   padding-top: 72px;
 }
 
+.pt-16{
+  padding-top: 4rem;
+}
+
 .text-left{
   text-align: left;
 }
@@ -3141,16 +3133,16 @@ html {
   opacity: 0;
 }
 
+.opacity-100{
+  opacity: 1;
+}
+
 .opacity-\[\.5\]{
   opacity: .5;
 }
 
 .opacity-\[\.95\]{
   opacity: .95;
-}
-
-.opacity-100{
-  opacity: 1;
 }
 
 .shadow{
