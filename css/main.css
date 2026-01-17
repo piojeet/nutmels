@@ -4119,6 +4119,14 @@ index */
     width: 40%;
   }
 
+  .md\:w-\[37\%\]{
+    width: 37%;
+  }
+
+  .md\:w-\[36\%\]{
+    width: 36%;
+  }
+
   .md\:min-w-\[200px\]{
     min-width: 200px;
   }
