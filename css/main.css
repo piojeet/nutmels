@@ -1331,6 +1331,10 @@ html {
   margin-top: 80px;
 }
 
+.mb-1{
+  margin-bottom: 0.25rem;
+}
+
 .block{
   display: block;
 }
@@ -2622,6 +2626,10 @@ html {
 
 .p-\[2\.43rem\]{
   padding: 2.43rem;
+}
+
+.p-\[3rem\]{
+  padding: 3rem;
 }
 
 .px-10{
@@ -4211,6 +4219,14 @@ index */
     width: 39.2%;
   }
 
+  .md\:w-\[210px\]{
+    width: 210px;
+  }
+
+  .md\:w-\[205px\]{
+    width: 205px;
+  }
+
   .md\:min-w-\[200px\]{
     min-width: 200px;
   }
@@ -4618,6 +4634,10 @@ index */
     width: 100%;
   }
 
+  .lg\:w-\[45\%\]{
+    width: 45%;
+  }
+
   .lg\:min-w-full{
     min-width: 100%;
   }
@@ -4967,5 +4987,9 @@ index */
   .xl\:text-xl{
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .xl\:text-\[14px\]{
+    font-size: 14px;
   }
 }
