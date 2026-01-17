@@ -1371,6 +1371,14 @@ html {
   aspect-ratio: 1 / 1;
 }
 
+.aspect-\[1\/\.6\]{
+  aspect-ratio: 1/.6;
+}
+
+.aspect-\[1\/\.7\]{
+  aspect-ratio: 1/.7;
+}
+
 .size-10{
   width: 2.5rem;
   height: 2.5rem;
@@ -4105,6 +4113,10 @@ index */
 
   .md\:w-full{
     width: 100%;
+  }
+
+  .md\:w-\[40\%\]{
+    width: 40%;
   }
 
   .md\:min-w-\[200px\]{
