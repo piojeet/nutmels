@@ -1379,6 +1379,14 @@ html {
   aspect-ratio: 1/.7;
 }
 
+.aspect-\[1\/\.65\]{
+  aspect-ratio: 1/.65;
+}
+
+.aspect-\[1\/\.75\]{
+  aspect-ratio: 1/.75;
+}
+
 .size-10{
   width: 2.5rem;
   height: 2.5rem;
@@ -1731,6 +1739,34 @@ html {
   max-width: 100%;
 }
 
+.max-w-\[80\%\]{
+  max-width: 80%;
+}
+
+.max-w-\[85\%\]{
+  max-width: 85%;
+}
+
+.max-w-\[90\%\]{
+  max-width: 90%;
+}
+
+.max-w-\[95\%\]{
+  max-width: 95%;
+}
+
+.max-w-\[93\%\]{
+  max-width: 93%;
+}
+
+.max-w-\[96\%\]{
+  max-width: 96%;
+}
+
+.max-w-\[98\%\]{
+  max-width: 98%;
+}
+
 .flex-shrink-0{
   flex-shrink: 0;
 }
@@ -2060,6 +2096,10 @@ html {
 
 .gap-\[38px\]{
   gap: 38px;
+}
+
+.gap-12{
+  gap: 3rem;
 }
 
 .gap-x-0{
@@ -4129,6 +4169,14 @@ index */
 
   .md\:w-\[36\%\]{
     width: 36%;
+  }
+
+  .md\:w-\[38\%\]{
+    width: 38%;
+  }
+
+  .md\:w-\[39\.2\%\]{
+    width: 39.2%;
   }
 
   .md\:min-w-\[200px\]{
