@@ -1767,6 +1767,18 @@ html {
   max-width: 98%;
 }
 
+.max-w-\[94\%\]{
+  max-width: 94%;
+}
+
+.max-w-\[93\.1\%\]{
+  max-width: 93.1%;
+}
+
+.max-w-\[93\.2\%\]{
+  max-width: 93.2%;
+}
+
 .flex-shrink-0{
   flex-shrink: 0;
 }
