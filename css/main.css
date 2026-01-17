@@ -872,6 +872,10 @@ html {
   top: 0.5rem;
 }
 
+.top-24{
+  top: 6rem;
+}
+
 .top-32{
   top: 8rem;
 }
@@ -910,14 +914,6 @@ html {
 
 .top-\[7\.8rem\]{
   top: 7.8rem;
-}
-
-.top-24{
-  top: 6rem;
-}
-
-.top-2\/4{
-  top: 50%;
 }
 
 .z-0{
@@ -970,10 +966,6 @@ html {
 
 .m-\[12px\]{
   margin: 12px;
-}
-
-.m-\[1rem\]{
-  margin: 1rem;
 }
 
 .m-\[7px\]{
@@ -1323,10 +1315,6 @@ html {
   margin-top: 4.5rem;
 }
 
-.mt-\[5\.5rem\]{
-  margin-top: 5.5rem;
-}
-
 .mt-\[6rem\]{
   margin-top: 6rem;
 }
@@ -1554,6 +1542,10 @@ html {
   width: 0.625rem;
 }
 
+.w-2\/3{
+  width: 66.666667%;
+}
+
 .w-36{
   width: 9rem;
 }
@@ -1681,14 +1673,6 @@ html {
 
 .w-full{
   width: 100%;
-}
-
-.w-2\/3{
-  width: 66.666667%;
-}
-
-.w-1\/3{
-  width: 33.333333%;
 }
 
 .min-w-10{
@@ -2791,6 +2775,10 @@ html {
   padding-top: 0.5rem;
 }
 
+.pt-24{
+  padding-top: 6rem;
+}
+
 .pt-3{
   padding-top: 0.75rem;
 }
@@ -2821,26 +2809,6 @@ html {
 
 .pt-\[2px\]{
   padding-top: 2px;
-}
-
-.pt-\[3rem\]{
-  padding-top: 3rem;
-}
-
-.pt-\[6rem\]{
-  padding-top: 6rem;
-}
-
-.pt-\[72px\]{
-  padding-top: 72px;
-}
-
-.pt-24{
-  padding-top: 6rem;
-}
-
-.\!pb-0{
-  padding-bottom: 0px !important;
 }
 
 .text-left{
@@ -4046,10 +4014,6 @@ index */
     margin-top: 1rem;
   }
 
-  .md\:mt-8{
-    margin-top: 2rem;
-  }
-
   .md\:block{
     display: block;
   }
@@ -4095,6 +4059,10 @@ index */
     width: 50%;
   }
 
+  .md\:w-1\/3{
+    width: 33.333333%;
+  }
+
   .md\:w-16{
     width: 4rem;
   }
@@ -4137,10 +4105,6 @@ index */
 
   .md\:w-full{
     width: 100%;
-  }
-
-  .md\:w-1\/3{
-    width: 33.333333%;
   }
 
   .md\:min-w-\[200px\]{
@@ -4315,11 +4279,6 @@ index */
   .md\:px-12{
     padding-left: 3rem;
     padding-right: 3rem;
-  }
-
-  .md\:px-2{
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
   }
 
   .md\:px-4{
@@ -4511,16 +4470,16 @@ index */
     aspect-ratio: 1 / 1;
   }
 
+  .lg\:h-\[200px\]{
+    height: 200px;
+  }
+
   .lg\:h-\[74vh\]{
     height: 74vh;
   }
 
   .lg\:h-\[75\.5vh\]{
     height: 75.5vh;
-  }
-
-  .lg\:h-\[300px\]{
-    height: 300px;
   }
 
   .lg\:\!w-\[40vw\]{
@@ -4661,18 +4620,6 @@ index */
 
   .lg\:pb-16{
     padding-bottom: 4rem;
-  }
-
-  .lg\:pl-\[15\%\]{
-    padding-left: 15%;
-  }
-
-  .lg\:pl-\[30\%\]{
-    padding-left: 30%;
-  }
-
-  .lg\:pt-24{
-    padding-top: 6rem;
   }
 
   .lg\:text-5xl{
