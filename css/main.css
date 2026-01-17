@@ -4482,6 +4482,10 @@ index */
     height: 75.5vh;
   }
 
+  .lg\:h-\[240px\]{
+    height: 240px;
+  }
+
   .lg\:\!w-\[40vw\]{
     width: 40vw !important;
   }
