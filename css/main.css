@@ -2604,6 +2604,26 @@ html {
   padding: 3.25rem;
 }
 
+.p-\[2rem\]{
+  padding: 2rem;
+}
+
+.p-\[2\.4rem\]{
+  padding: 2.4rem;
+}
+
+.p-\[2\.5rem\]{
+  padding: 2.5rem;
+}
+
+.p-\[2\.45rem\]{
+  padding: 2.45rem;
+}
+
+.p-\[2\.43rem\]{
+  padding: 2.43rem;
+}
+
 .px-10{
   padding-left: 2.5rem;
   padding-right: 2.5rem;
