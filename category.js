@@ -135,7 +135,7 @@ function createProductCard(p) {
               <p>Save ₹${productPrice}</p>
             </div> 
             <div class="w-full justify-center flex"> 
-              <img src="${productImage}" alt="${productName}" class="w-[90%] md:w-[100%] object-cover p-1.5 max-h-[172px]" />
+              <img src="${productImage}" alt="${productName}" class="w-[90%] md:w-[100%] object-contain p-1.5 max-h-[102px]" />
             </div>
             <div class="w-full flex items-center justify-between mt-2"> 
               <div class="flex scale-[.9] md:scale-[1] items-center static top-[7.8rem] md:top-44 left-[1.8rem] justify-center gap-2"> 
@@ -150,7 +150,7 @@ function createProductCard(p) {
             </div> 
           </div> 
           <div class="text-gray-500 mt-2 items-center justify-center text-center"> 
-            <h2 class="2xl:text-lg">${productName}</h2>
+            <h2 class="">${productName}</h2>
           </div> 
           <div class="justify-center mt-3 group-hover:opacity-100 flex opacity-0"> 
             <button class="border border-gray-400 text-xs rounded-md py-1 px-4 hover:bg-[#faa61a] hover:text-white hover:border-[#faa61a] duration-300">Select Option</button> 

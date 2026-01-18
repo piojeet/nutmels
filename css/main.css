@@ -1079,6 +1079,10 @@ html {
   margin-bottom: 0px;
 }
 
+.mb-1{
+  margin-bottom: 0.25rem;
+}
+
 .mb-10{
   margin-bottom: 2.5rem;
 }
@@ -1331,8 +1335,8 @@ html {
   margin-top: 80px;
 }
 
-.mb-1{
-  margin-bottom: 0.25rem;
+.ml-\[65px\]{
+  margin-left: 65px;
 }
 
 .block{
@@ -1367,28 +1371,12 @@ html {
   display: none;
 }
 
-.aspect-\[1\/\.8\]{
-  aspect-ratio: 1/.8;
+.aspect-\[1\/\.75\]{
+  aspect-ratio: 1/.75;
 }
 
 .aspect-square{
   aspect-ratio: 1 / 1;
-}
-
-.aspect-\[1\/\.6\]{
-  aspect-ratio: 1/.6;
-}
-
-.aspect-\[1\/\.7\]{
-  aspect-ratio: 1/.7;
-}
-
-.aspect-\[1\/\.65\]{
-  aspect-ratio: 1/.65;
-}
-
-.aspect-\[1\/\.75\]{
-  aspect-ratio: 1/.75;
 }
 
 .size-10{
@@ -1514,8 +1502,8 @@ html {
   max-height: 0px;
 }
 
-.max-h-\[172px\]{
-  max-height: 172px;
+.max-h-\[102px\]{
+  max-height: 102px;
 }
 
 .min-h-14{
@@ -1739,48 +1727,16 @@ html {
   max-width: 900px;
 }
 
-.max-w-full{
-  max-width: 100%;
-}
-
-.max-w-\[80\%\]{
-  max-width: 80%;
-}
-
-.max-w-\[85\%\]{
-  max-width: 85%;
-}
-
-.max-w-\[90\%\]{
-  max-width: 90%;
-}
-
-.max-w-\[95\%\]{
-  max-width: 95%;
-}
-
-.max-w-\[93\%\]{
-  max-width: 93%;
-}
-
-.max-w-\[96\%\]{
-  max-width: 96%;
+.max-w-\[93\.2\%\]{
+  max-width: 93.2%;
 }
 
 .max-w-\[98\%\]{
   max-width: 98%;
 }
 
-.max-w-\[94\%\]{
-  max-width: 94%;
-}
-
-.max-w-\[93\.1\%\]{
-  max-width: 93.1%;
-}
-
-.max-w-\[93\.2\%\]{
-  max-width: 93.2%;
+.max-w-full{
+  max-width: 100%;
 }
 
 .flex-shrink-0{
@@ -2026,6 +1982,10 @@ html {
   gap: 2.5rem;
 }
 
+.gap-12{
+  gap: 3rem;
+}
+
 .gap-16{
   gap: 4rem;
 }
@@ -2112,10 +2072,6 @@ html {
 
 .gap-\[38px\]{
   gap: 38px;
-}
-
-.gap-12{
-  gap: 3rem;
 }
 
 .gap-x-0{
@@ -2600,32 +2556,12 @@ html {
   padding: 1rem;
 }
 
-.p-\[2\.7rem\]{
-  padding: 2.7rem;
-}
-
-.p-\[3\.25rem\]{
-  padding: 3.25rem;
-}
-
-.p-\[2rem\]{
-  padding: 2rem;
-}
-
-.p-\[2\.4rem\]{
-  padding: 2.4rem;
-}
-
-.p-\[2\.5rem\]{
-  padding: 2.5rem;
-}
-
-.p-\[2\.45rem\]{
-  padding: 2.45rem;
-}
-
 .p-\[2\.43rem\]{
   padding: 2.43rem;
+}
+
+.p-\[2\.7rem\]{
+  padding: 2.7rem;
 }
 
 .p-\[3rem\]{
@@ -2779,6 +2715,10 @@ html {
   padding-bottom: 0.25rem;
 }
 
+.pb-12{
+  padding-bottom: 3rem;
+}
+
 .pb-2{
   padding-bottom: 0.5rem;
 }
@@ -2879,10 +2819,6 @@ html {
   padding-top: 2rem;
 }
 
-.pt-\[1\.2rem\]{
-  padding-top: 1.2rem;
-}
-
 .pt-\[148px\]{
   padding-top: 148px;
 }
@@ -2897,10 +2833,6 @@ html {
 
 .pt-\[2px\]{
   padding-top: 2px;
-}
-
-.pb-12{
-  padding-bottom: 3rem;
 }
 
 .text-left{
@@ -4171,6 +4103,14 @@ index */
     width: 200px;
   }
 
+  .md\:w-\[205px\]{
+    width: 205px;
+  }
+
+  .md\:w-\[37\%\]{
+    width: 37%;
+  }
+
   .md\:w-\[370px\]{
     width: 370px;
   }
@@ -4197,34 +4137,6 @@ index */
 
   .md\:w-full{
     width: 100%;
-  }
-
-  .md\:w-\[40\%\]{
-    width: 40%;
-  }
-
-  .md\:w-\[37\%\]{
-    width: 37%;
-  }
-
-  .md\:w-\[36\%\]{
-    width: 36%;
-  }
-
-  .md\:w-\[38\%\]{
-    width: 38%;
-  }
-
-  .md\:w-\[39\.2\%\]{
-    width: 39.2%;
-  }
-
-  .md\:w-\[210px\]{
-    width: 210px;
-  }
-
-  .md\:w-\[205px\]{
-    width: 205px;
   }
 
   .md\:min-w-\[200px\]{
@@ -4590,8 +4502,8 @@ index */
     aspect-ratio: 1 / 1;
   }
 
-  .lg\:h-\[200px\]{
-    height: 200px;
+  .lg\:h-\[240px\]{
+    height: 240px;
   }
 
   .lg\:h-\[74vh\]{
@@ -4600,10 +4512,6 @@ index */
 
   .lg\:h-\[75\.5vh\]{
     height: 75.5vh;
-  }
-
-  .lg\:h-\[240px\]{
-    height: 240px;
   }
 
   .lg\:\!w-\[40vw\]{
@@ -4632,10 +4540,6 @@ index */
 
   .lg\:w-full{
     width: 100%;
-  }
-
-  .lg\:w-\[45\%\]{
-    width: 45%;
   }
 
   .lg\:min-w-full{
@@ -4892,11 +4796,6 @@ index */
     font-size: 40px;
   }
 
-  .\32xl\:text-lg{
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
   .\32xl\:text-xl{
     font-size: 1.25rem;
     line-height: 1.75rem;
@@ -4963,8 +4862,8 @@ index */
     line-height: 2.25rem;
   }
 
-  .xl\:text-\[15px\]{
-    font-size: 15px;
+  .xl\:text-\[14px\]{
+    font-size: 14px;
   }
 
   .xl\:text-\[16px\]{
@@ -4987,9 +4886,5 @@ index */
   .xl\:text-xl{
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .xl\:text-\[14px\]{
-    font-size: 14px;
   }
 }
