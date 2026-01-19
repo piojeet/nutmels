@@ -607,7 +607,7 @@ font-weight: 600;
       <div class=" ">
 
         <div
-          class="border services-section md:block h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg md:px-4 md:py-2 xs:px-8 xs:py-4 ">
+          class="border services-section md:block h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg md:px-4 md:py-2 xs:px-8 xs:py-4 min-h-[521px]">
           <!-- Item 1 -->
           <button class="accordion-btn w-full flex justify-between items-center px-4 py-3 text-left md:hidden"
             aria-expanded="false">
@@ -615,7 +615,7 @@ font-weight: 600;
             <span class="icon transition-transform duration-300">+</span>
           </button>
           <div
-            class="accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease">
+            class="accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease h-full">
             <div class="flex md:px-10 lg:px-1 xl:px-[1rem] py-[.6rem] flex-col justify-between h-full">
               <div
                 class="font-[700] text-[15px] xs:text-[18px] 2xl:text-[20px] flex justify-between">
@@ -660,7 +660,7 @@ font-weight: 600;
                 </div>
               </div>
               <div
-                class="fixed md:static bottom-3 left-0 buy-now transform transition-transform duration-300 w-full pl-20 md:pl-0">
+                class="fixed md:static bottom-3 left-0 buy-now transform transition-transform duration-300 w-full pl-20 md:pl-0 h-full flex-1 content-end">
                 <div class="flex justify-evenly md:gap-2 gap-4 mb-3 items-center">
                   <a class="w-fit h-[50px] border border-gray-400 hover:border-[#faa61a] text-lg rounded-md py-3 px-4 hover:bg-[#faa61a] duration-300"
                     href="/cart">
@@ -671,7 +671,7 @@ font-weight: 600;
                       <i class="fa-solid fa-arrow-right"></i></span>
                     <span class="title">Buy Now</span>
                   </a> -->
-                  <div class="swipe-container" id="swipe">
+                  <div class="swipe-container select-none" id="swipe">
                     <div class="progress-fill" id="progress"></div>
                     <div class="swipe-text" id="label">Swipe to Buy</div>
                     <div class="swipe-button" id="handle">
@@ -687,7 +687,7 @@ font-weight: 600;
         </div>
 
         <div id="descriptionSection"
-          class="border lg:hidden services-section h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4">
+          class="border lg:hidden services-section h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 min-h-[521px]">
 
           <div class="min-h-14 border border-primaryColor bg-primaryColor p-2 flex justify-between items-center rounded-md mb-4">
 
@@ -749,7 +749,7 @@ font-weight: 600;
 
 
         <div id="benefitsSection"
-          class="border lg:hidden services-section h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 ">
+          class="border lg:hidden services-section h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 min-h-[521px]">
           <!-- Item 3 -->
           <button class="accordion-btn w-full flex justify-between items-center px-4 py-3 text-left md:hidden"
             aria-expanded="false">
@@ -820,9 +820,9 @@ font-weight: 600;
           </button>
           <div class="nutrition w-full lg:flex justify-center items-center accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease">
             <div
-              class="product-image product-scrollbar w-full border border-gray-300 bg-[#f5f5f5] rounded-2xl p-4">
+              class="product-image product-scrollbar w-full border border-gray-300 bg-[#f5f5f5] rounded-lg p-4">
              
-              <div class="w-full bg-white h-full rounded-2xl p-4">
+              <div class="w-full bg-white h-full rounded-lg p-4">
                 <div class="w-fit m-auto text-[16px] md:text-[18px]  md:px-4 text-lg xl:text-lg uppercase font-semibold">Nutritional
                   Facts</div>
                 <div class="mt-2">
@@ -853,8 +853,10 @@ font-weight: 600;
                         <p>Protein</p>
                       </div>
                       <div class=" flex mr-[45px] flex-col">
-                        <p class="flex justify-end gap-2"><span
-                            class="value nutritionValue inline-block w-16 text-right fat"></span> <span class="leading-none">mg</span></p>
+                       
+                        <p class="flex justify- gap-2"><span class="value nutritionValue inline-block w-16 text-right saturated-fat">
+                        </span><span class="leading-none">mg</span>
+                            </p>
                         <p class="flex justify- gap-2"><span class="value nutritionValue inline-block w-16 text-right saturated-fat">
                         </span><span class="leading-none">mg</span>
                             </p>

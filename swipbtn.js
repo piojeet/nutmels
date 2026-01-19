@@ -45,7 +45,7 @@ const swipe = document.getElementById("swipe");
         handle.style.left = maxWidth + 4 + "px";
         progress.style.width = "100%";
         swipe.classList.add("success");
-        label.textContent = "Payment Successful ✅";
+        label.textContent = "CHECKOUT";
         label.classList.add("success-text");
 
         // make arrow disappear
