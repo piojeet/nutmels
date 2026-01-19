@@ -864,10 +864,6 @@ html {
   top: 50%;
 }
 
-.top-12{
-  top: 3rem;
-}
-
 .top-2{
   top: 0.5rem;
 }
@@ -950,6 +946,14 @@ html {
 
 .z-\[5\]{
   z-index: 5;
+}
+
+.z-\[225\]{
+  z-index: 225;
+}
+
+.z-\[1111\]{
+  z-index: 1111;
 }
 
 .float-left{
@@ -1167,8 +1171,8 @@ html {
   margin-left: 51px;
 }
 
-.ml-\[63px\]{
-  margin-left: 63px;
+.ml-\[65px\]{
+  margin-left: 65px;
 }
 
 .ml-auto{
@@ -1335,8 +1339,12 @@ html {
   margin-top: 80px;
 }
 
-.ml-\[65px\]{
-  margin-left: 65px;
+.mr-\[40px\]{
+  margin-right: 40px;
+}
+
+.mr-\[45px\]{
+  margin-right: 45px;
 }
 
 .block{
@@ -2072,6 +2080,18 @@ html {
 
 .gap-\[38px\]{
   gap: 38px;
+}
+
+.gap-\[\.65rem\]{
+  gap: .65rem;
+}
+
+.gap-\[\.63rem\]{
+  gap: .63rem;
+}
+
+.gap-\[\.62rem\]{
+  gap: .62rem;
 }
 
 .gap-x-0{
