@@ -32,11 +32,11 @@
 
     product.addEventListener("mouseover", () => {
       nut.style.display = "none";
-      del.style.display = "block";
+      del.style.display = "inline-block";
     });
 
     product.addEventListener("mouseleave", () => {
-      nut.style.display = "block";
+      nut.style.display = "inline-block";
       del.style.display = "none";
     });
   });
