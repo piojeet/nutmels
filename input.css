@@ -412,7 +412,7 @@ index */
 /* THUMB */
 .like-btn svg {
   fill: none;
-  stroke: #000;
+  /* stroke: #000; */
   transition: all 0.25s ease;
 }
 .like-btn.liked svg {
