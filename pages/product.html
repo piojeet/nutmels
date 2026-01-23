@@ -273,40 +273,40 @@ font-weight: 600;
 <body>
 
   <!-- Search Bar -->
- <div class="fixed top-0 w-full h-fit left-1/2 -translate-x-1/2 max-w-[1440px] z-[225] search-wrapper hidden">
-  <div class="pb-8 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 z-0 mx-auto -mt-4 pt-8">
-    <div
-      class="w-full left-div right-div pb-0 !mt-[-32px] md:!mt-[41px] outside-close bg-[#f5f5f5] shadow-lg backdrop-blur-lg p-4 rounded-lg"
-    >
-      <div class="mb-4">
-        <input
-          id="searchInput"
-          placeholder="Search"
-          class="border-b placeholder:text-primaryColor outline-none w-full border-solid bg-transparent border-[#F8A531] text-[#F8A531] placeholder-[#F8A531]"
-          type="text"
-          control-id="ControlID-7"
-        />
-      </div>
-      <div id="suggests" class="suggest w-full flex items-center flex-wrap justify-between hidden pb-4">
-        <div class="flex flex-col gap-4" data-group="1">
-          <p class="hover:text-primaryColor cursor-pointer">store location</p>
-          <p class="hover:text-primaryColor cursor-pointer">whatsapp</p>
-          <p class="hover:text-primaryColor cursor-pointer">phone</p>
+  <div class="fixed top-0 w-full h-fit left-1/2 -translate-x-1/2 max-w-[1440px] z-[115] search-wrapper hidden">
+    <div class="pb-8 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 z-0 mx-auto -mt-4 pt-8">
+      <div
+        class="w-full left-div right-div pb-0 !mt-[-32px] md:!mt-[41px] outside-close bg-[#f5f5f5] shadow-[0px_0px_10px_rgba(0,0,0,0.1)] backdrop-blur-lg p-4 rounded-lg border border-gray-300"
+      >
+        <div class="mb-4">
+          <input
+            id="searchInput"
+            placeholder="Search"
+            class="border-b placeholder:text-primaryColor outline-none w-full border-solid bg-transparent border-[#F8A531] text-[#F8A531] placeholder-[#F8A531]"
+            type="text"
+            control-id="ControlID-7"
+          />
         </div>
-        <div class="flex flex-col gap-4" data-group="2">
-          <p class="hover:text-primaryColor cursor-pointer">shop</p>
-          <p class="hover:text-primaryColor cursor-pointer">blog</p>
-          <p class="hover:text-primaryColor cursor-pointer">scanner</p>
-        </div>
-        <div class="flex flex-col gap-4 mr-6" data-group="3">
-          <p class="hover:text-primaryColor cursor-pointer">facebook</p>
-          <p class="hover:text-primaryColor cursor-pointer">instagram</p>
-          <p class="hover:text-primaryColor cursor-pointer">X</p>
+        <div id="suggests" class="suggest w-full flex items-center flex-wrap justify-between hidden pb-4">
+          <div class="flex flex-col gap-4" data-group="1">
+            <p class="hover:text-primaryColor cursor-pointer">store location</p>
+            <p class="hover:text-primaryColor cursor-pointer">whatsapp</p>
+            <p class="hover:text-primaryColor cursor-pointer">phone</p>
+          </div>
+          <div class="flex flex-col gap-4" data-group="2">
+            <p class="hover:text-primaryColor cursor-pointer">shop</p>
+            <p class="hover:text-primaryColor cursor-pointer">blog</p>
+            <p class="hover:text-primaryColor cursor-pointer">scanner</p>
+          </div>
+          <div class="flex flex-col gap-4 mr-6" data-group="3">
+            <p class="hover:text-primaryColor cursor-pointer">facebook</p>
+            <p class="hover:text-primaryColor cursor-pointer">instagram</p>
+            <p class="hover:text-primaryColor cursor-pointer">X</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
- </div>
+   </div>
 
   <svg style="display:none;">
         <filter id="displacementFilter">
@@ -499,33 +499,12 @@ font-weight: 600;
 
   <!-- Dropdown menus -->
 
-  <div id="shop-dropdown"
-    class="z-10  dropdown-content absolute hidden bg-[#f5f5f5] shadow-lg rounded-lg mt-2 md:w-[80%]">
-    <p class="p-2 hover:bg-gray-200 cursor-pointer">Shop Item 1</p>
-    md:text-[16px] xl:text-[18px] text-[14px] <p class="p-2 hover:bg-gray-200 cursor-pointer">Shop Item 2</p>
-    md:text-[16px] xl:text-[18px] text-[14px] <p class="p-2 hover:bg-gray-200 cursor-pointer">Shop Item 3</p>
-    md:text-[16px] xl:text-[18px] text-[14px]
-  </div>
-
-  <div id="category-dropdown"
-    class="z-10 dropdown-content ml-[18.5%] md:ml-[16%] absolute hidden bg-white shadow-lg rounded-md mt-2 w-[200px] ">
-    <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category Item 1</p>
-    <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category Item 2</p>
-    <p class="p-2 md:text-[16px] xl:text-[18px] text-[14px] hover:bg-gray-200 cursor-pointer">Category Item 3</p>
-  </div>
 
 
-
-  <div class="w-full flex justify-center mt-7">
-    <div class="w-[50%] md:w-[80%] gap-9 flex">
-
-
-    </div>
-  </div>
 
 
   <div class="w-full  flex justify-center">
-    <div class="flex-col lg:flex-row md:gap-8 gap-3 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 justify-center mt-[8.5rem] grid lg:grid-cols-2 grid-cols-1">
+    <div class="flex-col lg:flex-row md:gap-8 gap-3 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 justify-center mt-[10.5rem] grid lg:grid-cols-2 grid-cols-1">
 
       <div class="h-full">
 
@@ -541,15 +520,13 @@ font-weight: 600;
 
           <div class="group relative">
 
-            <div class="absolute bottom-4 right-4 flex gap-6 items-center">
+            <div class="absolute bottom-4 right-4 flex gap-6 items-center z-50">
               <div>
-                <button>
-                  <img src="../assets/icons/like-black.svg" alt="" class="size-6 object-contain">
+                <button class="like-btn">
                 </button>
               </div>
               <div>
-                <button>
-                  <img src="../assets/icons/heart-black.svg" alt="" class="size-6 object-contain">
+                <button class="heart-btn">
                 </button>
               </div>
             </div>
@@ -578,47 +555,14 @@ font-weight: 600;
       </div>
 
 
-<!-- 
-      <div class="w-full :hidden   justify-center flex bg-red-300">
-        <div class="flex w-[100%] justify-between  md:px-[30px] rounded-lg shadow-xl bg-[#F2F2F2] ">
-          <div class="flex mx-2 w-[100%] justify-between bg-[#F2F2F2] gap-10">
 
-            <div
-              class=" flex  w-[100%] justify-between text-[15px] sm:text-lg  py-1 items-center                          sm:mt-0">
-              <a id="buyLink"
-                class="text-[15px] buyLink  hover:bg-primaryButton bg-animate  hover:text-white duration-300 rounded-md sm:px-4 px-3 cursor-pointer">Buy</a>
-              <a id="descriptionLink"
-                class="xs:px-3  descriptionLink text-[15px] hover:bg-primaryButton hover:text-white  duration-300 rounded-md sm:px-3 px-2  cursor-pointer">Descrip.</a>
-              <a id="benefitsLink" class="xs:px-3 benefitsLink px-2 text-[15px] rounded-[4px]">Benefits</a>
-              <a id="nutriLink" class="xs:px-3 px-2 nutriLink text-[15px] rounded-[4px]">Nutrition</a>
-            </div>
-
-
-
-
-          </div>
-        </div>
-      </div> -->
-
-
-
-
-
-
-
-
-      <div class=" ">
+      <div class="space-y-4 lg:space-y-0">
 
         <div
-          class="border services-section md:block h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg md:px-4 md:py-2 xs:px-8 xs:py-4 min-h-[521px]">
-          <!-- Item 1 -->
-          <button class="accordion-btn w-full flex justify-between items-center px-4 py-3 text-left md:hidden"
-            aria-expanded="false">
-            <span>Buy</span>
-            <span class="icon transition-transform duration-300">+</span>
-          </button>
+          class="border services-section block lg:h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 md:py-2 xs:px-8 xs:py-4 md:min-h-[521px]">
+
           <div
-            class="accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease h-full">
+            class="h-full">
             <div class="flex md:px-10 lg:px-1 xl:px-[1rem] py-[.6rem] flex-col justify-between h-full">
               <div
                 class="font-[700] text-[15px] xs:text-[18px] 2xl:text-[20px] flex justify-between">
@@ -691,7 +635,7 @@ font-weight: 600;
         </div>
 
         <div id="descriptionSection"
-          class="border lg:hidden services-section h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 min-h-[521px]">
+          class="border lg:hidden services-section lg:h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[521px]">
 
           <div class="min-h-14 border border-primaryColor bg-primaryColor p-2 flex justify-between items-center rounded-md mb-4">
 
@@ -729,13 +673,8 @@ font-weight: 600;
            </div>
 
           </div>
-          <!-- Item 2 -->
-          <button class="accordion-btn w-full flex justify-between items-center px-4 py-3 text-left md:hidden"
-            aria-expanded="false">
-            <span>Discription</span>
-            <span class="icon transition-transform duration-300">+</span>
-          </button>
-          <div class="accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease">
+
+          <div class="">
             <div class="w-full">
               <div class="flex justify-evenly border-b"><a class="w-full text-center py-2"><button
                     class="text-[#faa61a] briefBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">brief</button></a>
@@ -753,14 +692,9 @@ font-weight: 600;
 
 
         <div id="benefitsSection"
-          class="border lg:hidden services-section h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 min-h-[521px]">
-          <!-- Item 3 -->
-          <button class="accordion-btn w-full flex justify-between items-center px-4 py-3 text-left md:hidden"
-            aria-expanded="false">
-            <span>Benefits</span>
-            <span class="icon transition-transform duration-300">+</span>
-          </button>
-          <div class="accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease">
+          class="border lg:hidden services-section lg:h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[521px]">
+        
+          <div class="">
 
             <div class="min-h-14 border border-primaryColor bg-primaryColor p-2 flex justify-between items-center rounded-md mb-4">
 
@@ -816,13 +750,8 @@ font-weight: 600;
 
 
         <div id="nutriSection" class="lg:hidden">
-          <!-- Item 4 -->
-          <button class="accordion-btn w-full flex justify-between items-center px-4 py-3 text-left md:hidden"
-            aria-expanded="false">
-            <span>Nutritional</span>
-            <span class="icon transition-transform duration-300">+</span>
-          </button>
-          <div class="nutrition w-full lg:flex justify-center items-center accordion-panel overflow-hidden md:overflow-visible max-h-0 md:max-h-full transition-[max-height] duration-300 ease">
+
+          <div class="nutrition w-full flex justify-center items-center accordion-panel overflow-hidden md:overflow-visible">
             <div
               class="product-image product-scrollbar w-full border border-gray-300 bg-[#f5f5f5] rounded-lg p-4">
              

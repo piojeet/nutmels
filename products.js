@@ -404,4 +404,83 @@ async function loadProduct() {
 
 // Initialize on DOM load
 setupQuantityControls();
+
+function getProductIdFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get("id"));
+  return isNaN(id) ? null : id;
+}
+
+function initLikeHeartUI() {
+  const id = getProductIdFromURL();
+  if (!id) return;
+
+  const likeBtn = document.querySelector(".like-btn");
+  const countEl = document.querySelector(".likes-count");
+  const heartBtn = document.querySelector(".heart-btn");
+
+  // ✅ initial UI set
+  if (likeBtn) {
+    likeBtn.innerHTML = isLiked(id) ? ICONS.likeActive : ICONS.likeInactive;
+  }
+
+  if (countEl) {
+    countEl.innerText = formatLikes(getLikes(id));
+  }
+
+  if (heartBtn) {
+    const wishlist = getWishlist();
+    const isWishlisted = wishlist.includes(id);
+
+    heartBtn.classList.toggle("active", isWishlisted);
+    heartBtn.innerHTML = isWishlisted ? ICONS.heartActive : ICONS.heartInactive;
+  }
+
+  // ✅ click events
+  if (likeBtn) {
+    likeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const liked = isLiked(id);
+      let count = getLikes(id);
+
+      if (liked) {
+        setLiked(id, false);
+        count = Math.max(0, count - 1);
+        likeBtn.innerHTML = ICONS.likeInactive;
+      } else {
+        setLiked(id, true);
+        count++;
+        likeBtn.innerHTML = ICONS.likeActive;
+      }
+
+      setLikes(id, count);
+      if (countEl) countEl.innerText = formatLikes(count);
+    });
+  }
+
+  if (heartBtn) {
+    heartBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      let wishlist = getWishlist();
+
+      if (wishlist.includes(id)) {
+        wishlist = wishlist.filter((x) => x !== id);
+        heartBtn.classList.remove("active");
+        heartBtn.innerHTML = ICONS.heartInactive;
+      } else {
+        wishlist.push(id);
+        heartBtn.classList.add("active");
+        heartBtn.innerHTML = ICONS.heartActive;
+      }
+
+      setWishlist(wishlist);
+    });
+  }
+}
+
+initLikeHeartUI();
 loadProduct();
