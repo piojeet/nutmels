@@ -23,7 +23,7 @@ const ICONS = {
 </svg>
 `,
   heartActive: `<svg width="22" height="22" fill="#FAA61A " viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.806 6.206a4.8 4.8 0 0 1 6.788 0L12 7.612l1.406-1.406a4.8 4.8 0 1 1 6.788 6.788L12 21.188l-8.194-8.194a4.8 4.8 0 0 1 0-6.788Z" clip-rule="evenodd"></path></svg>`,
-  heartInactive: `<svg width="22" height="22" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.343 7.778a4.5 4.5 0 0 1 7.339-1.46L12 7.636l1.318-1.318a4.5 4.5 0 1 1 6.364 6.364L12 20.364l-7.682-7.682a4.501 4.501 0 0 1-.975-4.904Z"></path></svg>`
+  heartInactive: `<svg width="22" height="22" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.343 7.778a4.5 4.5 0 0 1 7.339-1.46L12 7.636l1.318-1.318a4.5 4.5 0 1 1 6.364 6.364L12 20.364l-7.682-7.682a4.501 4.501 0 0 1-.975-4.904Z"></path></svg>`,
 };
 
 // Storage helpers
@@ -72,7 +72,7 @@ const storage = {
     } catch (e) {
       console.error("Error saving liked status:", e);
     }
-  }
+  },
 };
 
 // Wishlist functions
@@ -87,49 +87,60 @@ const setLiked = (id, val) => storage.setLiked(id, val);
 
 // Format number helper
 function formatLikes(num) {
-  if (!num || isNaN(num)) return '0';
-  if (num >= 1_000_000_000) return (num / 1_000_000_000).toFixed(1).replace(/\.0$/, "") + "B";
-  if (num >= 1_000_000) return (num / 1_000_000).toFixed(1).replace(/\.0$/, "") + "M";
+  if (!num || isNaN(num)) return "0";
+  if (num >= 1_000_000_000)
+    return (num / 1_000_000_000).toFixed(1).replace(/\.0$/, "") + "B";
+  if (num >= 1_000_000)
+    return (num / 1_000_000).toFixed(1).replace(/\.0$/, "") + "M";
   if (num >= 1_000) return (num / 1_000).toFixed(1).replace(/\.0$/, "") + "K";
   return num.toString();
 }
 
 // Convert product name to URL-friendly slug
 function createSlug(name) {
-  if (!name || typeof name !== 'string') return 'product';
+  if (!name || typeof name !== "string") return "product";
 
   try {
-    return String(name)
-      .toLowerCase()
-      .trim()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/\s+/g, '-')
-      .replace(/--+/g, '-')
-      .replace(/^-+|-+$/g, '') || 'product';
+    return (
+      String(name)
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w\s-]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/--+/g, "-")
+        .replace(/^-+|-+$/g, "") || "product"
+    );
   } catch (e) {
     console.error("Error creating slug:", e);
-    return 'product';
+    return "product";
   }
 }
+
+// ----------------------
+// ✅ Pagination State
+// ----------------------
+const paginationState = {
+  allCards: [],
+  currentPage: 1,
+  itemsPerPage: 8,
+};
 
 // Product card HTML generator
 function createProductCard(p) {
   try {
-    // Validate product data
-    if (!p || typeof p !== 'object') {
-      console.warn('Invalid product object:', p);
-      return '';
+    if (!p || typeof p !== "object") {
+      console.warn("Invalid product object:", p);
+      return "";
     }
 
     if (!p.id) {
-      console.warn('Product missing ID:', p);
-      return '';
+      console.warn("Product missing ID:", p);
+      return "";
     }
 
     const wishlist = getWishlist();
     const isWishlisted = wishlist.includes(p.id);
 
-    // Get or initialize likes data from localStorage
     let likes = getLikes(p.id);
     if (likes === 0 && p.likes && !isNaN(p.likes)) {
       likes = p.likes;
@@ -138,49 +149,58 @@ function createProductCard(p) {
 
     const liked = isLiked(p.id);
 
-    // Safely get product properties with fallbacks
-    const productName = (p.basic && p.basic.name) ? String(p.basic.name) : 'Product';
-    const productCategory = (p.basic && p.basic.category) ? String(p.basic.category) : '';
-    const productImage = (p.media && p.media.mainImage) ? String(p.media.mainImage) : '';
-    const productPrice = (p.buy && p.buy.defaultPrice) ? String(p.buy.defaultPrice) : '0';
+    const productName =
+      p.basic && p.basic.name ? String(p.basic.name) : "Product";
+    const productCategory =
+      p.basic && p.basic.category ? String(p.basic.category) : "";
+    const productImage =
+      p.media && p.media.mainImage ? String(p.media.mainImage) : "";
+    const productPrice =
+      p.buy && p.buy.defaultPrice ? String(p.buy.defaultPrice) : "0";
 
-    // Create URL-friendly slug from product name
     const slug = createSlug(productName);
 
     return `
-      <a class="product" href="../pages/product.html?name=${slug}&id=${p.id}" data-category="${productCategory}"> 
-        <div class="hover:bg-[#f5f5f5] duration-200 hover:shadow-md border border-transparent hover:border-solid hover:rounded-2xl p-3 relative group h-full hover:border-gray-300"> 
-          <div class="border p-[.5rem] md:p-2 rounded-2xl bg-white"> 
-            <div class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px]"> 
+      <a class="product" href="../pages/product.html?name=${slug}&id=${p.id}" data-category="${productCategory}">
+        <div class="hover:bg-[#f5f5f5] duration-200 hover:shadow-md border border-transparent hover:border-solid hover:rounded-2xl p-3 relative group h-full hover:border-gray-300">
+          <div class="border p-[.5rem] md:p-2 rounded-2xl bg-white">
+            <div class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px]">
               <p>Save ₹${productPrice}</p>
-            </div> 
-            <div class="w-full justify-center flex"> 
+            </div>
+
+            <div class="w-full justify-center flex">
               <img src="${productImage}" alt="${productName}" class="w-[90%] md:w-[100%] object-contain p-1.5 max-h-[102px]" />
             </div>
-            <div class="w-full flex items-center justify-between mt-2"> 
-              <div class="flex scale-[.9] md:scale-[1] items-center static top-[7.8rem] md:top-44 left-[1.8rem] justify-center gap-2"> 
+
+            <div class="w-full flex items-center justify-between mt-2">
+              <div class="flex scale-[.9] md:scale-[1] items-center static top-[7.8rem] md:top-44 left-[1.8rem] justify-center gap-2">
                 <button class="like-btn" data-id="${p.id}">
                   ${liked ? ICONS.likeActive : ICONS.likeInactive}
                 </button>
                 <span class="likes-count" data-id="${p.id}">${formatLikes(likes)}</span>
-              </div> 
+              </div>
+
               <button class="heart-btn ${isWishlisted ? "active" : ""}" data-id="${p.id}">
                 ${isWishlisted ? ICONS.heartActive : ICONS.heartInactive}
               </button>
-            </div> 
-          </div> 
-          <div class="text-gray-500 mt-2 items-center justify-center text-center"> 
-            <h2 class="">${productName}</h2>
-          </div> 
-          <div class="justify-center mt-3 group-hover:opacity-100 flex opacity-0"> 
-            <button class="border border-gray-400 text-xs rounded-md py-1 px-4 hover:bg-[#faa61a] hover:text-white hover:border-[#faa61a] duration-300">Select Option</button> 
-          </div> 
-        </div> 
+            </div>
+          </div>
+
+          <div class="text-gray-500 mt-2 items-center justify-center text-center">
+            <h2>${productName}</h2>
+          </div>
+
+          <div class="justify-center mt-3 group-hover:opacity-100 flex opacity-0">
+            <button class="border border-gray-400 text-xs rounded-md py-1 px-4 hover:bg-[#faa61a] hover:text-white hover:border-[#faa61a] duration-300">
+              Select Option
+            </button>
+          </div>
+        </div>
       </a>
     `;
   } catch (error) {
     console.error("Error creating product card:", error, p);
-    return '';
+    return "";
   }
 }
 
@@ -196,12 +216,10 @@ function toggleLike(id) {
     let count = getLikes(id);
 
     if (liked) {
-      // Unlike
       setLiked(id, false);
       count = Math.max(0, count - 1);
       likeBtn.innerHTML = ICONS.likeInactive;
     } else {
-      // Like
       setLiked(id, true);
       count++;
       likeBtn.innerHTML = ICONS.likeActive;
@@ -238,9 +256,62 @@ function toggleWishlist(id) {
   }
 }
 
+// ✅ Render current page cards
+function renderPage() {
+  const container = document.querySelector(".products-wrapper");
+  const paginationContainer = document.querySelector("#pagination-controls");
+
+  if (!container) return;
+
+  const start =
+    (paginationState.currentPage - 1) * paginationState.itemsPerPage;
+  const end = start + paginationState.itemsPerPage;
+
+  const pageCards = paginationState.allCards.slice(start, end);
+
+  container.innerHTML = pageCards.join("");
+
+  // Pagination UI
+  if (paginationContainer) {
+    const totalPages = Math.ceil(
+      paginationState.allCards.length / paginationState.itemsPerPage,
+    );
+
+    if (totalPages <= 1) {
+      paginationContainer.innerHTML = "";
+      return;
+    }
+
+    let html = "";
+
+    // Prev
+    html += `<button class="pagination-btn px-3 py-1 border border-primaryColor hover:bg-primaryColor hover:text-white rounded-md ${paginationState.currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""}"
+      data-page="${paginationState.currentPage - 1}" ${paginationState.currentPage === 1 ? "disabled" : ""}>
+      Prev
+    </button>`;
+
+    // Numbers
+    for (let i = 1; i <= totalPages; i++) {
+      const active = i === paginationState.currentPage;
+      html += `<button class="pagination-btn px-3 py-1 border border-primaryColor hover:bg-primaryColor hover:text-white rounded-md ${active ? "bg-primaryColor text-white" : ""}" data-page="${i}">
+        ${i}
+      </button>`;
+    }
+
+    // Next
+    html += `<button class="pagination-btn px-3 py-1 border border-primaryColor hover:bg-primaryColor hover:text-white rounded-md ${paginationState.currentPage === totalPages ? "opacity-50 cursor-not-allowed" : ""}"
+      data-page="${paginationState.currentPage + 1}" ${paginationState.currentPage === totalPages ? "disabled" : ""}>
+      Next
+    </button>`;
+
+    paginationContainer.innerHTML = html;
+  }
+}
+
 // Main function
 async function loadProducts() {
   const container = document.querySelector(".products-wrapper");
+  const paginationContainer = document.querySelector("#pagination-controls");
 
   if (!container) {
     console.error("Products wrapper not found!");
@@ -262,19 +333,24 @@ async function loadProducts() {
 
     console.log(`Loading ${products.length} products...`);
 
-    // Generate all product cards (filter out invalid products)
     const validCards = products
       .map(createProductCard)
-      .filter(card => card !== '');
+      .filter((card) => card !== "");
 
     if (validCards.length === 0) {
-      container.innerHTML = '<p class="text-center py-10">No products available</p>';
+      container.innerHTML =
+        '<p class="text-center py-10">No products available</p>';
       return;
     }
 
-    container.innerHTML = validCards.join("");
+    // ✅ store cards
+    paginationState.allCards = validCards;
+    paginationState.currentPage = 1;
 
-    // Event delegation
+    // ✅ first render
+    renderPage();
+
+    // ✅ Delegation for Like/Wishlist
     container.addEventListener("click", (e) => {
       const likeBtn = e.target.closest(".like-btn");
       const heartBtn = e.target.closest(".heart-btn");
@@ -283,9 +359,7 @@ async function loadProducts() {
         e.preventDefault();
         e.stopPropagation();
         const id = parseInt(likeBtn.dataset.id);
-        if (!isNaN(id)) {
-          toggleLike(id);
-        }
+        if (!isNaN(id)) toggleLike(id);
         return;
       }
 
@@ -293,16 +367,38 @@ async function loadProducts() {
         e.preventDefault();
         e.stopPropagation();
         const id = parseInt(heartBtn.dataset.id);
-        if (!isNaN(id)) {
-          toggleWishlist(id);
-        }
+        if (!isNaN(id)) toggleWishlist(id);
       }
     });
+
+    // ✅ Pagination click
+    if (paginationContainer) {
+      paginationContainer.addEventListener("click", (e) => {
+        const btn = e.target.closest(".pagination-btn");
+        if (!btn || btn.disabled) return;
+
+        const page = parseInt(btn.dataset.page);
+        const totalPages = Math.ceil(
+          paginationState.allCards.length / paginationState.itemsPerPage,
+        );
+
+        if (!isNaN(page) && page >= 1 && page <= totalPages) {
+          paginationState.currentPage = page;
+          renderPage();
+
+          // scroll up (optional)
+          document
+            .querySelector(".products-wrapper")
+            ?.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    }
 
     console.log(`Successfully loaded ${validCards.length} products`);
   } catch (error) {
     console.error("Error loading products:", error);
-    container.innerHTML = '<p class="text-center py-10 text-red-500">Error loading products. Please try again.</p>';
+    container.innerHTML =
+      '<p class="text-center py-10 text-red-500">Error loading products. Please try again.</p>';
   }
 }
 

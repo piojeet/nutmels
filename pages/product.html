@@ -1030,9 +1030,11 @@ font-weight: 600;
         dots[index].classList.remove("active");
       });
 
-      slides[imageSlideIndex].style.display = "block";
-      slides[imageSlideIndex].classList.add("active");
-      dots[imageSlideIndex].classList.add("active");
+      if (slides.length > 0 && slides[imageSlideIndex]) {
+        slides[imageSlideIndex].style.display = "block";
+        slides[imageSlideIndex].classList.add("active");
+        if(dots[imageSlideIndex]) dots[imageSlideIndex].classList.add("active");
+      }
     }
 
     function nextImageSlide() {

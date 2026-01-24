@@ -1,47 +1,44 @@
- document.addEventListener("click", function (e) {
-    // Delete button click
-    if (e.target.closest(".delete-btn")) {
-      const card = e.target.closest(".product-card");
-      const modal = document.querySelector(".delete_box"); // modal common rakha hai
-      const deleteBtn = modal.querySelector(".confirm_delete");
-      const cancelBtn = modal.querySelector(".cancel_modle");
+document.addEventListener("click", function (e) {
+  // Delete button click
+  if (e.target.closest(".delete-btn")) {
+    const card = e.target.closest(".product-card");
+    const modal = document.querySelector(".delete_box"); // modal common rakha hai
+    const deleteBtn = modal.querySelector(".confirm_delete");
+    const cancelBtn = modal.querySelector(".cancel_modle");
 
-      // Show modal
-      modal.style.display = "flex";
+    // Show modal
+    modal.style.display = "flex";
 
-      if (card) {
-        // Confirm delete
-        deleteBtn.onclick = () => {
-          card.remove();
-          modal.style.display = "none";
-        };
+    if (card) {
+      // Confirm delete
+      deleteBtn.onclick = () => {
+        card.remove();
+        modal.style.display = "none";
+      };
 
-        // Cancel delete
-        cancelBtn.onclick = () => {
-          modal.style.display = "none";
-        };
-      }
+      // Cancel delete
+      cancelBtn.onclick = () => {
+        modal.style.display = "none";
+      };
     }
+  }
+});
+
+// Hover effect
+document.querySelectorAll(".product-card").forEach((product) => {
+  const nut = product.querySelector(".cartProductNut");
+  const del = product.querySelector(".cartProductDelete");
+
+  product.addEventListener("mouseover", () => {
+    nut.style.display = "none";
+    del.style.display = "inline-block";
   });
 
-
-  // Hover effect
-  document.querySelectorAll(".product-card").forEach((product) => {
-    const nut = product.querySelector(".cartProductNut");
-    const del = product.querySelector(".cartProductDelete");
-
-    product.addEventListener("mouseover", () => {
-      nut.style.display = "none";
-      del.style.display = "inline-block";
-    });
-
-    product.addEventListener("mouseleave", () => {
-      nut.style.display = "inline-block";
-      del.style.display = "none";
-    });
+  product.addEventListener("mouseleave", () => {
+    nut.style.display = "inline-block";
+    del.style.display = "none";
   });
-
-
+});
 
 // ~~~~~~~~~~~~~~~ MOBILE NAV ~~~~~~~~~~~~~~~
 document.addEventListener("DOMContentLoaded", function () {
@@ -128,7 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-
     // Toggle search visibility
     navSearchBtn.addEventListener("click", function (event) {
       event.stopPropagation();
@@ -187,8 +183,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-
-
     // Close everything when clicking outside
     document.addEventListener("click", function (event) {
       if (!event.target.closest(".mobNavBar")) {
@@ -237,7 +231,9 @@ document.querySelectorAll(".stars").forEach((heart, index) => {
 
 // ~~~~~~~~~~~~~~~ SLIDESHOW ~~~~~~~~~~~~~~~
 let slideIndex = 0;
-showSlides(slideIndex);
+if (document.querySelectorAll(".slide").length > 0) {
+  showSlides(slideIndex);
+}
 
 function showSlides(n) {
   const slides = document.querySelectorAll(".slide");
@@ -384,7 +380,6 @@ function contactopenTab(evt, tabName) {
 //   });
 // });
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const contactSection = document.getElementById("contact");
   const contactIcon = document.querySelector(".contactIcon");
@@ -449,4 +444,3 @@ document.querySelectorAll(".fa-heart").forEach((heart, index) => {
 });
 
 //  ~~~~~~~~~~~~~~~ SwiperJS ~~~~~~~~~~~~~~~
-
