@@ -278,6 +278,10 @@
     box-shadow: var(--tw-shadow);
   }
 
+  .category-btns::-webkit-scrollbar {
+    display: none;
+  }
+
 
 @media (max-width: 1279px) {
   .product-filter-btn .active {
