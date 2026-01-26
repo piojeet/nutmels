@@ -186,7 +186,7 @@ function createProductCard(p) {
             </div>
           </div>
 
-          <div class="text-gray-500 mt-2 items-center justify-center text-center sm:text-lg text-base">
+          <div class="text-gray-500 mt-2 items-center justify-center text-center text-sm">
             <h2>${productName}</h2>
           </div>
 
