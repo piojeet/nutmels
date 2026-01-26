@@ -152,7 +152,7 @@
     .productLinkActive {
       border-bottom: 3px solid #FAA61A;
       color: #FAA61A;
-font-weight: 600;
+      font-weight: 600;
     }
 
     @media only screen and (max-width: 767px) {
@@ -214,7 +214,7 @@ font-weight: 600;
       justify-content: center;
       z-index: 3;
       cursor: grab;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       transition: left 0.3s ease, opacity 0.5s ease;
       animation: tease 2s infinite ease-in-out;
     }
@@ -231,9 +231,19 @@ font-weight: 600;
 
     /* Teasing nudge animation */
     @keyframes tease {
-      0%, 100% { transform: translateX(0); }
-      30% { transform: translateX(8px); }
-      60% { transform: translateX(0); }
+
+      0%,
+      100% {
+        transform: translateX(0);
+      }
+
+      30% {
+        transform: translateX(8px);
+      }
+
+      60% {
+        transform: translateX(0);
+      }
     }
 
     /* Pulsating glow */
@@ -243,15 +253,26 @@ font-weight: 600;
       width: 100%;
       height: 100%;
       border-radius: 8px;
-      background: rgba(21,101,192,0.3);
+      background: rgba(21, 101, 192, 0.3);
       z-index: -1;
       animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.6; }
-      70% { transform: scale(1.4); opacity: 0; }
-      100% { transform: scale(1); opacity: 0; }
+      0% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+
+      70% {
+        transform: scale(1.4);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
     }
 
     .success {
@@ -276,16 +297,11 @@ font-weight: 600;
   <div class="fixed top-0 w-full h-fit left-1/2 -translate-x-1/2 max-w-[1440px] z-[115] search-wrapper hidden">
     <div class="pb-8 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 z-0 mx-auto -mt-4 pt-8">
       <div
-        class="w-full left-div right-div pb-0 !mt-[-32px] md:!mt-[41px] outside-close bg-[#f5f5f5] shadow-[0px_0px_10px_rgba(0,0,0,0.1)] backdrop-blur-lg p-4 rounded-lg border border-gray-300"
-      >
+        class="w-full left-div right-div pb-0 !mt-[-32px] md:!mt-[41px] outside-close bg-[#f5f5f5] shadow-[0px_0px_10px_rgba(0,0,0,0.1)] backdrop-blur-lg p-4 rounded-lg border border-gray-300">
         <div class="mb-4">
-          <input
-            id="searchInput"
-            placeholder="Search"
+          <input id="searchInput" placeholder="Search"
             class="border-b placeholder:text-primaryColor outline-none w-full border-solid bg-transparent border-[#F8A531] text-[#F8A531] placeholder-[#F8A531]"
-            type="text"
-            control-id="ControlID-7"
-          />
+            type="text" control-id="ControlID-7" />
         </div>
         <div id="suggests" class="suggest w-full flex items-center flex-wrap justify-between hidden pb-4">
           <div class="flex flex-col gap-4" data-group="1">
@@ -306,27 +322,21 @@ font-weight: 600;
         </div>
       </div>
     </div>
-   </div>
+  </div>
 
   <svg style="display:none;">
-        <filter id="displacementFilter">
-            <feTurbulence type="turbulence" 
-                baseFrequency="0.0" 
-                numOctaves="1" 
-                result="turbulence" />
-    
-            <feDisplacementMap in="SourceGraphic"
-                in2="turbulence"    
-                            scale="50" xChannelSelector="R" yChannelSelector="G" />
-        </filter>
-    </svg>
+    <filter id="displacementFilter">
+      <feTurbulence type="turbulence" baseFrequency="0.0" numOctaves="1" result="turbulence" />
+
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="50" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
 
   <!-- 
         - NAVBAR
       -->
 
-  <header
-    class="z-[1111] top-0 fixed w-full md:flex px-4 md:p-0 drop-shadow md:drop-shadow-none justify-center card">
+  <header class="z-[1111] top-0 fixed w-full md:flex px-4 md:p-0 drop-shadow md:drop-shadow-none justify-center card">
     <div class="navBar flex justify-between items-center h-[3.5rem] w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4">
       <div class="w-48">
         <div class="navLogo w-36">
@@ -350,35 +360,34 @@ font-weight: 600;
         </div>
       </div>
       <!-- Right-side menu items (Cart, Profile, Search, Contact) -->
-         <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
-            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
-               href="/pages/cart1.html">
-               <img src="../assets/icons/NavBar/white_add_to_black.svg" alt="Account Profile" width="18" height="18"
-                  class="duration-300 group-hover:opacity-0" />
-               <img src="../assets/icons/NavBar/white_add_to_cart-yellow.svg" alt="Account Profile" width="18" height="18"
-                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
-            </a>
-            <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
-               href="/pages/login.html">
-               <img src="../assets/icons/NavBar/account_profile_black.svg" alt="Account Profile" width="18" height="18"
-                  class="duration-300 group-hover:opacity-0" />
-               <img src="../assets/icons/NavBar/account_profile_yellow.svg" alt="Account Profile" width="18" height="18"
-                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
-            </a>
-            <button class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group open-search"
-               >
-               <img src="../assets/icons/NavBar/search-zoom-in-black.svg" alt="Account Profile" width="20" height="20"
-                  class="duration-300 group-hover:opacity-0" />
-               <img src="../assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Account Profile" width="20" height="20"
-                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
-            </button>
-            <a class="rounded-md hover-fill-white contactIcon py-2 px-2.5 relative group" href="/pages/contact.html">
-               <img src="../assets/icons/NavBar/contact_support_black.svg" alt="Account Profile" width="18" height="18"
-                  class="duration-300 group-hover:opacity-0" />
-               <img src="../assets/icons/NavBar/contact_support_yellow.svg" alt="Account Profile" width="18" height="18"
-                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
-            </a>
-         </div>
+      <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
+        <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+          href="/pages/cart1.html">
+          <img src="../assets/icons/NavBar/white_add_to_black.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/white_add_to_cart-yellow.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
+        <a class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group"
+          href="/pages/login.html">
+          <img src="../assets/icons/NavBar/account_profile_black.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/account_profile_yellow.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
+        <button class="rounded-md hover-fill-white py-2 px-2.5 duration-300 hidden md:block relative group open-search">
+          <img src="../assets/icons/NavBar/search-zoom-in-black.svg" alt="Account Profile" width="20" height="20"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Account Profile" width="20" height="20"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </button>
+        <a class="rounded-md hover-fill-white contactIcon py-2 px-2.5 relative group" href="/pages/contact.html">
+          <img src="../assets/icons/NavBar/contact_support_black.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/contact_support_yellow.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
+      </div>
     </div>
   </header>
   <!-- Mobile Navigation Section -->
@@ -460,7 +469,7 @@ font-weight: 600;
               <p class="text-[25px]">+</p>
               <a href="category-product.html" class="text-[15px] md:text-[16px] xl:text-[18px]">Shop</a>
             </div>
-            
+
 
             <div class="flex p-3  hover:text-white rounded-md items-center group">
               <img src="../assets/icons/filter-outline.svg" alt="icon" class="hidden group-hover:block">
@@ -484,9 +493,11 @@ font-weight: 600;
           <a id="descriptionLink"
             class="xs:px-3 descriptionLink text-[16px] xl:text-[18px] hover:text-primaryButton  duration-300 sm:px-3 cursor-pointer py-2.5 px-4 border-b-[3px] border-transparent"
             href="/product?q=description&amp;menu=brief">Description</a>
-          <a id="benefitsLink" class="xs:px-3 benefitsLink text-[16px] xl:text-[18px] py-2.5 px-4 border-b-[3px] border-transparent"
+          <a id="benefitsLink"
+            class="xs:px-3 benefitsLink text-[16px] xl:text-[18px] py-2.5 px-4 border-b-[3px] border-transparent"
             href="/product?q=benefits&amp;menu=benefits">Benefits</a>
-          <a id="nutriLink" class="xs:px-3 nutriLink text-[16px] xl:text-[18px] py-2.5 px-4 border-b-[3px] border-transparent"
+          <a id="nutriLink"
+            class="xs:px-3 nutriLink text-[16px] xl:text-[18px] py-2.5 px-4 border-b-[3px] border-transparent"
             href="/product?q=nutritions">Nutri. Label</a>
         </div>
 
@@ -504,7 +515,8 @@ font-weight: 600;
 
 
   <div class="w-full  flex justify-center">
-    <div class="flex-col lg:flex-row md:gap-8 gap-3 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 justify-center mt-[10.5rem] grid lg:grid-cols-2 grid-cols-1">
+    <div
+      class="flex-col lg:flex-row md:gap-8 gap-3 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 justify-center mt-[10rem] grid lg:grid-cols-2 grid-cols-1">
 
       <div class="h-full">
 
@@ -512,61 +524,88 @@ font-weight: 600;
         <div
           class="w-full slides  md:w-product-image flex justify-center flex-col relative border bg-[#f5f5f5] border-gray-300 rounded-lg p-4 h-full">
           <div class="bg-white w-full h-full rounded-lg content-end overflow-hidden relative">
-            <div class="md:block hidden">
-              
+
+
+
+            <div class="group relative">
+
+              <div class="absolute bottom-4 right-4 flex gap-6 items-center z-50">
+                <div>
+                  <button class="like-btn">
+                  </button>
+                </div>
+                <div>
+                  <button class="heart-btn">
+                  </button>
+                </div>
+              </div>
+
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="productSwiper"></div>
+
+                <div class="swiper-pagination mt-8"></div>
+
+                <div
+                  class="absolute md:top-1/2 top-[60%] md:scale-[1]  scale-[.8] left-0 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition duration-300 z-50">
+                  <button
+                    class="productimage-button-prev bannerbtn1 rounded-full border-5 prev transform -translate-y-1/2 border-[2px] bg-primaryColor text-white px-4 py-2">❮</button>
+                </div>
+                <div
+                  class="absolute md:top-1/2 top-[60%] md:scale-[1] scale-[.8]  right-0 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition duration-300 z-50">
+                  <button
+                    class="productimage-button-next bannerbtn2 rounded-full border-5 prev transform -translate-y-1/2 border-[2px] bg-primaryColor text-white px-4 py-2">❯</button>
+                </div>
+              </div>
 
             </div>
-            
-
-          <div class="group relative">
-
-            <div class="absolute bottom-4 right-4 flex gap-6 items-center z-50">
-              <div>
-                <button class="like-btn">
-                </button>
-              </div>
-              <div>
-                <button class="heart-btn">
-                </button>
-              </div>
-            </div>
-
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper" id="productSwiper"></div>
-
-              <div class="swiper-pagination mt-8"></div>
-
-              <div
-                class="absolute md:top-1/2 top-[60%] md:scale-[1]  scale-[.8] left-0 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition duration-300 z-50">
-                <button
-                  class="productimage-button-prev bannerbtn1 rounded-full border-5 prev transform -translate-y-1/2 border-[2px] bg-primaryColor text-white px-4 py-2">❮</button>
-              </div>
-              <div
-                class="absolute md:top-1/2 top-[60%] md:scale-[1] scale-[.8]  right-0 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition duration-300 z-50">
-                <button
-                  class="productimage-button-next bannerbtn2 rounded-full border-5 prev transform -translate-y-1/2 border-[2px] bg-primaryColor text-white px-4 py-2">❯</button>
-              </div>
-            </div>
-
           </div>
-        </div>
 
         </div>
       </div>
 
 
 
-      <div class="space-y-4 lg:space-y-0">
+      <div class="space-y-4 lg:space-y-0 bg-white rounded-t-xl shadow-md border md:border-none md:bg-transparent md:shadow-none">
+
+        <div class="p-4 flex justify-between items-center md:hidden">
+
+          <div>
+            <div class="font-[700] text-[15px] xs:text-[18px] 2xl:text-[20px] flex justify-between">
+              <span class="title"></span>
+            </div>
+            <div>
+              <span class="ml-auto default-size whitespace-nowrap"></span>
+            </div>
+          </div>
+
+          <div class="text-[17px] xs:text-[18px] sm:text-[24px] md:text-[20px] lg:text-[25px] 2xl:text-[28px] ">
+            <span class="currency"></span><span class="total-price"></span>
+          </div>
+        </div>
+
+        <div class="md:hidden flex  justify-between text-[16px] sm:text-lg items-center">
+          <a id="buyLink"
+            class="text-[16px] buyLink xl:text-[18px]  hover:text-primaryColor duration-300 sm:px-4 cursor-pointer py-2.5 px-4 border-b-[3px] border-transparent productLinkActive"
+            href="/product?q=buy">Buy</a>
+          <a id="descriptionLink"
+            class="xs:px-3 descriptionLink text-[16px] xl:text-[18px] hover:text-primaryButton  duration-300 sm:px-3 cursor-pointer py-2.5 px-4 border-b-[3px] border-transparent"
+            href="/product?q=description&amp;menu=brief">Description</a>
+          <a id="benefitsLink"
+            class="xs:px-3 benefitsLink text-[16px] xl:text-[18px] py-2.5 px-4 border-b-[3px] border-transparent"
+            href="/product?q=benefits&amp;menu=benefits">Benefits</a>
+          <a id="nutriLink"
+            class="xs:px-3 nutriLink text-[16px] xl:text-[18px] py-2.5 px-4 border-b-[3px] border-transparent"
+            href="/product?q=nutritions">Nutri. Label</a>
+        </div>
 
         <div
-          class="border services-section block lg:h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 md:py-2 xs:px-8 xs:py-4 md:min-h-[521px]">
+          class="border services-section block lg:h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 md:py-2 xs:px-8 xs:py-4 md:min-h-[494px]">
 
-          <div
-            class="h-full">
+          <div class="h-full">
             <div class="flex md:px-10 lg:px-1 xl:px-[1rem] py-[.6rem] flex-col justify-between h-full">
-              <div
-                class="font-[700] text-[15px] xs:text-[18px] 2xl:text-[20px] flex justify-between">
-                <span class="title"></span><span class="ml-auto default-size whitespace-nowrap"></span></div>
+              <div class="font-[700] text-[15px] xs:text-[18px] 2xl:text-[20px] flex justify-between">
+                <span class="title"></span><span class="ml-auto default-size whitespace-nowrap"></span>
+              </div>
               <div class="price-set flex justify-between items-center md:mt-2">
                 <div class="incdec flex m-2">
                   <button class="text-3xl 2xl:!text-[50px] decrease" id="decrease">-</button>
@@ -575,10 +614,9 @@ font-weight: 600;
                     type="text" value="1" readonly>
                   <button class="text-3xl 2xl:text-[40px] increase" id="increase">+</button>
                 </div>
-                <div
-                  class="text-[17px] xs:text-[18px] sm:text-[24px] md:text-[20px] lg:text-[25px] 2xl:text-[28px] ">
+                <div class="text-[17px] xs:text-[18px] sm:text-[24px] md:text-[20px] lg:text-[25px] 2xl:text-[28px] ">
                   <span class="currency"></span><span class="total-price"></span>
-                  </div>
+                </div>
               </div>
               <div class="detail-1 my-2 2xl:my-4">
                 <div class="text-[14px]  sm:text-[19px] font-[600] text-green-500">consumption
@@ -587,15 +625,14 @@ font-weight: 600;
                 <div class="v1-button">
                   <ul
                     class="grid md:grid-cols-5 grid-cols-4 md:gap-x-4 gap-x-[.9rem] gap-y-1 mt-1 2xl:mt-2 text-[14px] 2xl:text-[15px] consumption-preference">
-                    
+
                   </ul>
                 </div>
               </div>
               <div class="detail-2">
                 <div class="text-[14px] sm:text-[19px] font-[600] text-green-500">variants</div>
                 <div class="v1-button">
-                  <ul
-                    class="grid grid-cols-3 gap-x-1 gap-y-1 mt-1 2xl:mt-2 text-[14px] 2xl:text-[15px] variants">
+                  <ul class="grid grid-cols-3 gap-x-1 gap-y-1 mt-1 2xl:mt-2 text-[14px] 2xl:text-[15px] variants">
 
                   </ul>
                 </div>
@@ -603,7 +640,7 @@ font-weight: 600;
               <div class="detail-3 my-3 2xl:my-4">
                 <div class="text-[14px] sm:text-[19px] font-[600] text-green-500">package</div>
                 <div class="flex text-[14px] 2xl:text-[15px] justify-between flex-wrap mt-1 2xl:mt-2 packages">
-                  
+
                 </div>
               </div>
               <div
@@ -612,7 +649,8 @@ font-weight: 600;
                   <a class="w-fit h-[50px] border border-gray-400 hover:border-[#faa61a] text-lg rounded-md py-3 px-4 hover:bg-[#faa61a] duration-300 group"
                     href="/cart">
                     <img src="../assets/icons/generic_web_icons/add to cart.svg" class="w-5 group-hover:hidden">
-                    <img src="../assets/icons/generic_web_icons/add to cart white.svg" class="w-5 group-hover:block hidden">
+                    <img src="../assets/icons/generic_web_icons/add to cart white.svg"
+                      class="w-5 group-hover:block hidden">
                   </a>
                   <!-- <a class="btn-slide hover:bg-green-500" href="/cart/address">
                     <span class="circle custom-shadow p-4">
@@ -624,7 +662,7 @@ font-weight: 600;
                     <div class="swipe-text" id="label">Swipe to Buy</div>
                     <div class="swipe-button" id="handle">
                       <svg viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
+                        <path d="M8 5v14l11-7z" />
                       </svg>
                     </div>
                   </div>
@@ -635,85 +673,26 @@ font-weight: 600;
         </div>
 
         <div id="descriptionSection"
-          class="border lg:hidden services-section lg:h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[521px]">
+          class="border hidden services-section lg:h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[494px]">
 
-          <div class="min-h-14 border border-primaryColor bg-primaryColor p-2 flex justify-between items-center rounded-md mb-4">
+          <div
+            class="min-h-14 border border-primaryColor bg-primaryColor p-2 flex justify-between items-center rounded-md mb-4">
 
             <div class="flex items-center h-full gap-3">
-             <!-- <div class="flex h-full object-contain">
+              <!-- <div class="flex h-full object-contain">
                <img alt="" class="image h-full object-cover rounded-md">
              </div> -->
-             <div>
-              <h3 class="title text-white"></h3>
-             <div
-                class="text-base text-white">
-                <span class="default-size"></span>
-                -
-                <span class="currency"></span><span class="total-price"></span>
-                </div>
-             </div>
-           </div>
-
-           <div class="flex items-center gap-4 flex-shrink-0">
-            <div class="price-set flex justify-between items-center">
-              <div class="incdec flex m-2">
-                <button class="text-3xl 2xl:!text-[45px] text-white decrease" id="decrease">-</button>
-                <input
-                  class="w-10 border border-white text-center rounded-lg scale-[.8] md:scale-[1] md:mx-3 bg-[#f5f5f5] quantity"
-                  type="text" value="1" readonly>
-                <button class="text-3xl 2xl:text-[35px] text-white increase" id="increase">+</button>
-              </div>
-            </div>
-
-            <div class="flex-shrink-0">
-              <a class="w-fit border border-white bg-white text-lg rounded-md py-2 px-3 duration-300 block" href="/cart">
-                <img src="../assets/icons/generic_web_icons/add to cart yellow.svg" class="w-5">
-              </a>
-            </div>
-           </div>
-
-          </div>
-
-          <div class="">
-            <div class="w-full">
-              <div class="flex justify-evenly border-b"><a class="w-full text-center py-2"><button
-                    class="text-[#faa61a] briefBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">brief</button></a>
-                    <a
-                      class="w-full text-center py-2"><button
-                    class="ingrBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">ingredients</button></a>
-              </div>
-
-              <div id="briefWrapper" class="px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4"></div>
-              <div id="ingredientWrapper" class="px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4 ingredients hidden"></div>
-
-            </div>
-          </div>
-        </div>
-
-
-        <div id="benefitsSection"
-          class="border lg:hidden services-section lg:h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[521px]">
-        
-          <div class="">
-
-            <div class="min-h-14 border border-primaryColor bg-primaryColor p-2 flex justify-between items-center rounded-md mb-4">
-
-              <div class="flex items-center h-full gap-3">
-               <!-- <div class="flex h-full object-contain">
-                 <img alt="" class="image h-full object-cover rounded-md">
-               </div> -->
-               <div>
+              <div>
                 <h3 class="title text-white"></h3>
-               <div
-                  class="text-base text-white">
+                <div class="text-base text-white">
                   <span class="default-size"></span>
                   -
                   <span class="currency"></span><span class="total-price"></span>
-                  </div>
-               </div>
-             </div>
-  
-             <div class="flex items-center gap-4 flex-shrink-0">
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4 flex-shrink-0">
               <div class="price-set flex justify-between items-center">
                 <div class="incdec flex m-2">
                   <button class="text-3xl 2xl:!text-[45px] text-white decrease" id="decrease">-</button>
@@ -723,14 +702,75 @@ font-weight: 600;
                   <button class="text-3xl 2xl:text-[35px] text-white increase" id="increase">+</button>
                 </div>
               </div>
-  
+
               <div class="flex-shrink-0">
-                <a class="w-fit border border-white bg-white text-lg rounded-md py-2 px-3 duration-300 block" href="/cart">
+                <a class="w-fit border border-white bg-white text-lg rounded-md py-2 px-3 duration-300 block"
+                  href="/cart">
                   <img src="../assets/icons/generic_web_icons/add to cart yellow.svg" class="w-5">
                 </a>
               </div>
-             </div>
-  
+            </div>
+
+          </div>
+
+          <div class="">
+            <div class="w-full">
+              <div class="flex justify-evenly border-b"><a class="w-full text-center py-2"><button
+                    class="text-[#faa61a] briefBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">brief</button></a>
+                <a class="w-full text-center py-2"><button
+                    class="ingrBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">ingredients</button></a>
+              </div>
+
+              <div id="briefWrapper" class="px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4"></div>
+              <div id="ingredientWrapper"
+                class="px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4 ingredients hidden"></div>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div id="benefitsSection"
+          class="border hidden services-section lg:h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[494px]">
+
+          <div class="">
+
+            <div
+              class="min-h-14 border border-primaryColor bg-primaryColor p-2 flex justify-between items-center rounded-md mb-4">
+
+              <div class="flex items-center h-full gap-3">
+                <!-- <div class="flex h-full object-contain">
+                 <img alt="" class="image h-full object-cover rounded-md">
+               </div> -->
+                <div>
+                  <h3 class="title text-white"></h3>
+                  <div class="text-base text-white">
+                    <span class="default-size"></span>
+                    -
+                    <span class="currency"></span><span class="total-price"></span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 flex-shrink-0">
+                <div class="price-set flex justify-between items-center">
+                  <div class="incdec flex m-2">
+                    <button class="text-3xl 2xl:!text-[45px] text-white decrease" id="decrease">-</button>
+                    <input
+                      class="w-10 border border-white text-center rounded-lg scale-[.8] md:scale-[1] md:mx-3 bg-[#f5f5f5] quantity"
+                      type="text" value="1" readonly>
+                    <button class="text-3xl 2xl:text-[35px] text-white increase" id="increase">+</button>
+                  </div>
+                </div>
+
+                <div class="flex-shrink-0">
+                  <a class="w-fit border border-white bg-white text-lg rounded-md py-2 px-3 duration-300 block"
+                    href="/cart">
+                    <img src="../assets/icons/generic_web_icons/add to cart yellow.svg" class="w-5">
+                  </a>
+                </div>
+              </div>
+
             </div>
 
             <div class="w-full ">
@@ -749,25 +789,27 @@ font-weight: 600;
 
 
 
-        <div id="nutriSection" class="lg:hidden">
+        <div id="nutriSection" class="hidden">
 
-          <div class="nutrition w-full flex justify-center items-center accordion-panel overflow-hidden md:overflow-visible">
-            <div
-              class="product-image product-scrollbar w-full border border-gray-300 bg-[#f5f5f5] rounded-lg p-4">
-             
-              <div class="w-full bg-white h-full rounded-lg p-4">
-                <div class="w-fit m-auto text-[16px] md:text-[18px]  md:px-4 text-lg xl:text-lg uppercase font-semibold">Nutritional
+          <div
+            class="nutrition w-full flex justify-center items-center accordion-panel overflow-hidden md:overflow-visible">
+            <div class="product-image product-scrollbar w-full border border-gray-300 bg-[#f5f5f5] rounded-lg p-4">
+
+              <div class="w-full bg-white h-full rounded-lg p-4 pt-2">
+                <div
+                  class="w-fit m-auto text-[16px] md:text-[18px]  md:px-4 text-lg xl:text-lg uppercase font-semibold">
+                  Nutritional
                   Facts</div>
                 <div class="mt-2">
                   <div class="flex  justify-between items-center pb-1 -mt-2 border-b-[2.5px] border-b-[#F8A531]">
-                    <span class="text-lg 2xl:text-xl">Serving Size :</span>
-                    <div class="font-medium text-xl 2xl:text-xl default-size"></div>
+                    <span class="text-sm">Serving Size :</span>
+                    <div class="font-medium text-sm default-size"></div>
                   </div>
                   <div>
-                    <p class="font-medium pt-1.5 list-none">Amount per Serving</p>
+                    <p class="font-medium pt-1.5 list-none text-sm">Amount per Serving</p>
                     <div class="flex justify-between items-center border-b-[2.5px] border-b-[#F8A531] pb-1">
-                      <span class="text-[20px]">Calories :</span>
-                      <div class="pt-[2px] font-medium text-xl calories"></div>
+                      <span class="text-sm">Calories :</span>
+                      <div class="pt-[2px] font-medium text-sm calories"></div>
                     </div>
                     <div class="border-b border-black font-normal">
                       <p class="ml-2 flex text-sm justify-end py-1">Daily Value (%)</p>
@@ -786,42 +828,52 @@ font-weight: 600;
                         <p>Protein</p>
                       </div>
                       <div class=" flex mr-[45px] flex-col">
-                       
-                        <p class="flex justify- gap-2"><span class="value nutritionValue inline-block w-16 text-right saturated-fat">
-                        </span><span class="leading-none">mg</span>
-                            </p>
-                        <p class="flex justify- gap-2"><span class="value nutritionValue inline-block w-16 text-right saturated-fat">
-                        </span><span class="leading-none">mg</span>
-                            </p>
-                        <p class="flex justify- gap-2"><span class="value nutritionValue inline-block w-16 text-right trans-fat">
-                            </span><span class="leading-none">mg</span></p>
 
-                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right cholesterol">
-                            </span><span class="leading-none">g</span></p>
-                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right sodium"></span>
-                            <span class="leading-none">g</span>
-                            </p>
-                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right carbohydrates">
-                            </span><span class="leading-none">g</span></p>
-                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right dietary-fiber">
-                           </span><span class="leading-none">mg</span></p>
-                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right total-sugars">
-                            </span><span class="leading-none">mg</span></p>
+                        <p class="flex justify- gap-2"><span
+                            class="value nutritionValue inline-block w-16 text-right saturated-fat">
+                          </span><span class="leading-none">mg</span>
+                        </p>
+                        <p class="flex justify- gap-2"><span
+                            class="value nutritionValue inline-block w-16 text-right saturated-fat">
+                          </span><span class="leading-none">mg</span>
+                        </p>
+                        <p class="flex justify- gap-2"><span
+                            class="value nutritionValue inline-block w-16 text-right trans-fat">
+                          </span><span class="leading-none">mg</span></p>
+
+                        <p class="flex gap-[.6rem]"><span
+                            class="value nutritionValue inline-block w-16 text-right cholesterol">
+                          </span><span class="leading-none">g</span></p>
+                        <p class="flex gap-[.6rem]"><span
+                            class="value nutritionValue inline-block w-16 text-right sodium"></span>
+                          <span class="leading-none">g</span>
+                        </p>
+                        <p class="flex gap-[.6rem]"><span
+                            class="value nutritionValue inline-block w-16 text-right carbohydrates">
+                          </span><span class="leading-none">g</span></p>
+                        <p class="flex gap-[.6rem]"><span
+                            class="value nutritionValue inline-block w-16 text-right dietary-fiber">
+                          </span><span class="leading-none">mg</span></p>
+                        <p class="flex gap-[.6rem]"><span
+                            class="value nutritionValue inline-block w-16 text-right total-sugars">
+                          </span><span class="leading-none">mg</span></p>
                         <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right ">
                             00</span><span class="leading-none">mg</span></p>
-                        <p class="flex gap-[.6rem]"><span class="value nutritionValue inline-block w-16 text-right protein">
-                            </span><span class="leading-none">mg</span></p>
+                        <p class="flex gap-[.6rem]"><span
+                            class="value nutritionValue inline-block w-16 text-right protein">
+                          </span><span class="leading-none">mg</span></p>
                       </div>
                       <div class="text-end flex flex-col">
                         <p class="fat-percent"></p>
                         <p class="saturated-fat-percent"></p>
                         <p class="trans-fat-percent"></p>
                         <p class="cholesterol-percent"></p>
-                        <p class="sodium-percent"></p>
+                        <!-- <p class="sodium-percent">-</p> -->
+                        <p class="">-</p>
                         <p class="carbohydrates-percent"></p>
                         <p class="dietary-fiber-percent"></p>
                         <p class="total-sugars-percent"></p>
-                        <p>-</p>
+                        <p>1</p>
                         <p class="protein-percent"></p>
                       </div>
                     </div>
@@ -834,13 +886,17 @@ font-weight: 600;
                         <p>Potassium</p>
                       </div>
                       <div class="text-end ml-[65px]  flex flex-col">
-                        <p class="flex justify-end gap-[.62rem]"> <span class="nutritionValue vitamin-d"></span><span class="leading-none">mg</span>
+                        <p class="flex justify-end gap-[.62rem]"> <span class="nutritionValue vitamin-d"></span><span
+                            class="leading-none">mg</span>
                         </p>
-                        <p class="flex justify-end gap-[.62rem]"><span class="nutritionValue calcium"></span><span class="leading-none">mg</span>
+                        <p class="flex justify-end gap-[.62rem]"><span class="nutritionValue calcium"></span><span
+                            class="leading-none">mg</span>
                         </p>
-                        <p class="flex justify-end gap-[.62rem]"><span class="nutritionValue iron"></span><span class="leading-none">mg</span>
+                        <p class="flex justify-end gap-[.62rem]"><span class="nutritionValue iron"></span><span
+                            class="leading-none">mg</span>
                         </p>
-                        <p class="flex justify-end gap-[.62rem] leading-none"><span class="nutritionValue potassium"></span><span class="leading-none">mg</span>
+                        <p class="flex justify-end gap-[.62rem] leading-none"><span
+                            class="nutritionValue potassium"></span><span class="leading-none">mg</span>
                         </p>
                       </div>
                       <div class="text-end flex flex-col">
@@ -861,14 +917,14 @@ font-weight: 600;
                   </div>
                 </div>
               </div>
-            </fieldset>
+              </fieldset>
+            </div>
           </div>
         </div>
+
+
       </div>
-
-
     </div>
-  </div>
   </div>
 
 
@@ -1033,7 +1089,7 @@ font-weight: 600;
       if (slides.length > 0 && slides[imageSlideIndex]) {
         slides[imageSlideIndex].style.display = "block";
         slides[imageSlideIndex].classList.add("active");
-        if(dots[imageSlideIndex]) dots[imageSlideIndex].classList.add("active");
+        if (dots[imageSlideIndex]) dots[imageSlideIndex].classList.add("active");
       }
     }
 
@@ -1138,18 +1194,18 @@ font-weight: 600;
 
   </script>
 
-<script defer src="../products.js"></script>
+  <script defer src="../products.js"></script>
 
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <!-- Initialize Swiper -->
 
   <script src="../category.js"></script>
 
 
-  
-  
+
+
   <script src="../search.js"></script>
   <script src="../script.js"></script>
   <script src="../swipbtn.js"></script>
