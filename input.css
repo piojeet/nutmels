@@ -436,3 +436,16 @@ index */
 .nav-contact-icon.active .contact-icon-fild {
   opacity: 1;
 }
+
+
+.reactionBtn .icon-on {
+  display: none;
+}
+
+.reactionBtn.active .icon-off {
+  display: none;
+}
+
+.reactionBtn.active .icon-on {
+  display: block;
+}

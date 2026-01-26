@@ -285,7 +285,7 @@ function renderPage() {
     let html = "";
 
     // Prev
-    html += `<button class="pagination-btn px-3 py-1 border border-primaryColor hover:bg-primaryColor hover:text-white rounded-md ${paginationState.currentPage === 1 ? "opacity-50 cursor-not-allowed" : ""}"
+    html += `<button class="pagination-btn rounded-md text-sm -rotate-90 mb-2 ${paginationState.currentPage === 1 ? "opacity-50 cursor-not-allowed text-gray-500" : "text-primaryColor"}"
       data-page="${paginationState.currentPage - 1}" ${paginationState.currentPage === 1 ? "disabled" : ""}>
       Prev
     </button>`;
@@ -293,13 +293,13 @@ function renderPage() {
     // Numbers
     for (let i = 1; i <= totalPages; i++) {
       const active = i === paginationState.currentPage;
-      html += `<button class="pagination-btn px-3 py-1 border border-primaryColor hover:bg-primaryColor hover:text-white rounded-md ${active ? "bg-primaryColor text-white" : ""}" data-page="${i}">
-        ${i}
+      html += `<button class="pagination-btn size-2 rounded-full  ${active ? "bg-primaryColor" : "bg-gray-500"}" data-page="${i}">
+       
       </button>`;
     }
 
     // Next
-    html += `<button class="pagination-btn px-3 py-1 border border-primaryColor hover:bg-primaryColor hover:text-white rounded-md ${paginationState.currentPage === totalPages ? "opacity-50 cursor-not-allowed" : ""}"
+    html += `<button class="pagination-btn rounded-md text-sm -rotate-90 text-primaryColor mt-2${paginationState.currentPage === totalPages ? "opacity-50 cursor-not-allowed text-gray-500 mt-2" : ""}"
       data-page="${paginationState.currentPage + 1}" ${paginationState.currentPage === totalPages ? "disabled" : ""}>
       Next
     </button>`;
