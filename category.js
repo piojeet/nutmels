@@ -169,7 +169,7 @@ function createProductCard(p) {
             </div>
 
             <div class="w-full justify-center flex">
-              <img src="${productImage}" alt="${productName}" class="w-[90%] md:w-[100%] object-contain p-1.5 sm:max-h-[102px] max-h-[140px]" />
+              <img src="${productImage}" alt="${productName}" class="w-[90%] md:w-[100%] object-contain p-1.5 sm:max-h-[94px] max-h-[140px]" />
             </div>
 
             <div class="w-full flex items-center justify-between mt-2">

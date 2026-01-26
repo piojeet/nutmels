@@ -916,6 +916,10 @@ html {
   left: 100%;
 }
 
+.top-20{
+  top: 5rem;
+}
+
 .z-0{
   z-index: 0;
 }
@@ -1327,6 +1331,10 @@ html {
 
 .ml-4{
   margin-left: 1rem;
+}
+
+.mt-\[3\.2rem\]{
+  margin-top: 3.2rem;
 }
 
 .block{
@@ -3900,6 +3908,10 @@ index */
 
   .sm\:max-h-\[102px\]{
     max-height: 102px;
+  }
+
+  .sm\:max-h-\[94px\]{
+    max-height: 94px;
   }
 
   .sm\:grid-cols-2{
