@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchInputs = document.querySelectorAll(".searchInput");
   const suggestions = document.querySelectorAll(".suggestions");
   const buyNowBtn = document.querySelector(".buy-now");
+  const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
 
   mobNavBars.forEach((mobNavBar, index) => {
     const navMenu = navMenus[index];
@@ -67,31 +68,67 @@ document.addEventListener("DOMContentLoaded", function () {
     let menuOpen = false;
     let linksVisible = false;
     let searchVisible = false;
+    let isAnimating = false;
+    let pendingState = null;
 
-    // Toggle menu visibility
-    navMenu.addEventListener("click", function (event) {
-      event.stopPropagation();
+    const applyDockState = (open) => {
+      if (!isMobile()) return;
+      if (open === menuOpen) return;
+      if (isAnimating) {
+        pendingState = open;
+        return;
+      }
 
-      if (!menuOpen) {
-        mobNavBar.classList.add("mobNavBarOpen");
-        mobNavBar.classList.remove("mobNavBarClose");
+      isAnimating = true;
+      menuOpen = open;
+      pendingState = null;
+
+      if (open) {
+        mobNavBar.classList.add("dock-open", "mobNavBarOpen");
+        mobNavBar.classList.remove("dock-closing", "mobNavBarClose");
         menuIcon.style.display = "none";
         menuWhenOpenIcon.style.display = "block";
         buyNowBtn.classList.add("bottom-[80px]");
         buyNowBtn.classList.remove("pl-20");
-        menuOpen = true;
       } else {
-        mobNavBar.classList.add("mobNavBarClose");
-        mobNavBar.classList.remove("mobNavBarOpen");
+        mobNavBar.classList.add("dock-closing", "mobNavBarClose");
+        mobNavBar.classList.remove("dock-open", "mobNavBarOpen");
         menuIcon.style.display = "block";
         menuWhenOpenIcon.style.display = "none";
         mobNavLinks.classList.add("navLinksHidden");
         mobNavLinks.classList.remove("navLinksVisible");
         buyNowBtn.classList.remove("bottom-[80px]");
         buyNowBtn.classList.add("pl-20");
-        menuOpen = false;
         linksVisible = false;
       }
+    };
+
+    mobNavBar.addEventListener("transitionend", (event) => {
+      if (event.propertyName !== "transform") return;
+      isAnimating = false;
+      if (!menuOpen) {
+        mobNavBar.classList.remove("dock-closing");
+      }
+      if (pendingState !== null && pendingState !== menuOpen) {
+        const next = pendingState;
+        pendingState = null;
+        applyDockState(next);
+      }
+    });
+
+    // Toggle menu visibility
+    navMenu.addEventListener("click", function (event) {
+      event.stopPropagation();
+
+      applyDockState(!menuOpen);
+    });
+
+    // Allow tap on the closed dock itself (line) to open
+    mobNavBar.addEventListener("click", function (event) {
+      if (menuOpen || isAnimating || !isMobile()) return;
+      if (event.target.closest(".navMenu")) return;
+      event.stopPropagation();
+      applyDockState(true);
     });
 
     // Toggle links visibility when clicking on menuWhenOpenIcon
@@ -187,10 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("click", function (event) {
       if (!event.target.closest(".mobNavBar")) {
         if (menuOpen || searchVisible) {
-          mobNavBar.classList.add("mobNavBarClose");
-          mobNavBar.classList.remove("mobNavBarOpen");
-          menuIcon.style.display = "block";
-          menuWhenOpenIcon.style.display = "none";
+          applyDockState(false);
           mobNavLinks.classList.add("navLinksHidden");
           mobNavLinks.classList.remove("navLinksVisible");
           mobSearchContainer.classList.add("searchHidden");
@@ -202,10 +236,23 @@ document.addEventListener("DOMContentLoaded", function () {
           buyNowBtn.classList.remove("-translate-y-16");
           buyNowBtn.classList.remove("bottom-[80px]");
           buyNowBtn.classList.add("pl-20");
-          menuOpen = false;
           linksVisible = false;
           searchVisible = false;
         }
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (!isMobile()) {
+        mobNavBar.classList.remove("dock-open", "dock-closing", "mobNavBarOpen");
+        mobNavBar.classList.add("mobNavBarClose");
+        menuIcon.style.display = "block";
+        menuWhenOpenIcon.style.display = "none";
+        menuOpen = false;
+        linksVisible = false;
+        searchVisible = false;
+        isAnimating = false;
+        pendingState = null;
       }
     });
   });

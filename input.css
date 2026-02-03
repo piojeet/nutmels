@@ -120,15 +120,100 @@
   } */
 
 
-  /* mobile nav bar */
+/* mobile nav bar */
 
-  .mobNavBarClose> :not(:first-child) {
-    display: none;
+.mobNavBarClose> :not(:first-child) {
+  display: none;
+}
+
+.mobNavBarOpen {
+  width: calc(100% - 32px);
+}
+
+@media (max-width: 768px) {
+  .mobNavBar {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(5px) scaleX(0.2);
+    transform-origin: center bottom;
+    transition: transform 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: transform;
+    width: min(100% - 24px, 560px);
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 
-  .mobNavBarOpen {
-    width: calc(100% - 32px);
+  .mobNavBar.mobNavBarOpen {
+    transform: translateX(-50%) translateY(5px) scaleX(1);
   }
+
+  .mobNavBar.mobNavBarClose {
+    transform: translateX(-50%) translateY(5px) scaleX(0.22) scaleY(0.12);
+    background-color: #f8a531;
+    border-radius: 30px;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  .mobNavBar.mobNavBarClose > :first-child {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .mobNavBar.mobNavBarClose> :not(:first-child) {
+    display: inline-flex;
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+  }
+
+  .mobNavBar> :not(:first-child) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 4px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: transform 180ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      opacity 160ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: transform, opacity;
+    pointer-events: none;
+  }
+
+  .mobNavBar.dock-open> :not(:first-child) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 140ms;
+    pointer-events: auto;
+  }
+
+  .mobNavBar.dock-closing> :not(:first-child) {
+    transition-delay: 0ms;
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+  }
+
+  .mobNavBar.dock-closing {
+    transition-delay: 140ms;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobNavBar {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobNavBar,
+  .mobNavBar> :not(:first-child) {
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
+}
 
   .navLinksVisible {
     display: block;

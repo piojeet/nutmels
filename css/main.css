@@ -1520,8 +1520,8 @@ html {
   max-height: 140px;
 }
 
-.min-h-14{
-  min-height: 3.5rem;
+.min-h-2{
+  min-height: 0.5rem;
 }
 
 .min-h-\[125px\]{
@@ -1530,10 +1530,6 @@ html {
 
 .min-h-screen{
   min-height: 100vh;
-}
-
-.min-h-2{
-  min-height: 0.5rem;
 }
 
 .\!w-full{
@@ -2240,11 +2236,6 @@ html {
   border-bottom-left-radius: 1rem;
 }
 
-.rounded-t-xl{
-  border-top-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-}
-
 .rounded-bl-3xl{
   border-bottom-left-radius: 1.5rem;
 }
@@ -2598,11 +2589,6 @@ html {
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-
-.px-2\.5{
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
 }
 
 .px-20{
@@ -3374,6 +3360,91 @@ html {
   width: calc(100% - 32px);
 }
 
+@media (max-width: 768px) {
+  .mobNavBar {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%) translateY(5px) scaleX(0.2);
+    transform-origin: center bottom;
+    transition: transform 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: transform;
+    width: min(100% - 24px, 560px);
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+
+  .mobNavBar.mobNavBarOpen {
+    transform: translateX(-50%) translateY(5px) scaleX(1);
+  }
+
+  .mobNavBar.mobNavBarClose {
+    transform: translateX(-50%) translateY(5px) scaleX(0.22) scaleY(0.12);
+    background-color: #f8a531;
+    border-radius: 30px;
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  .mobNavBar.mobNavBarClose > :first-child {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .mobNavBar.mobNavBarClose> :not(:first-child) {
+    display: inline-flex;
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+  }
+
+  .mobNavBar> :not(:first-child) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 4px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: transform 180ms cubic-bezier(0.22, 0.61, 0.36, 1),
+      opacity 160ms cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: transform, opacity;
+    pointer-events: none;
+  }
+
+  .mobNavBar.dock-open> :not(:first-child) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 140ms;
+    pointer-events: auto;
+  }
+
+  .mobNavBar.dock-closing> :not(:first-child) {
+    transition-delay: 0ms;
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+  }
+
+  .mobNavBar.dock-closing {
+    transition-delay: 140ms;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobNavBar {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobNavBar,
+  .mobNavBar> :not(:first-child) {
+    transition-duration: 1ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+
 .navLinksVisible {
   display: block;
 }
@@ -3976,6 +4047,10 @@ index */
     padding-right: 1rem;
   }
 
+  .sm\:text-\[14px\]{
+    font-size: 14px;
+  }
+
   .sm\:text-\[17px\]{
     font-size: 17px;
   }
@@ -4001,10 +4076,6 @@ index */
   .sm\:text-sm{
     font-size: 0.875rem;
     line-height: 1.25rem;
-  }
-
-  .sm\:text-\[14px\]{
-    font-size: 14px;
   }
 }
 
@@ -4189,12 +4260,12 @@ index */
     max-height: 100%;
   }
 
-  .md\:min-h-\[494px\]{
-    min-height: 494px;
-  }
-
   .md\:min-h-14{
     min-height: 3.5rem;
+  }
+
+  .md\:min-h-\[494px\]{
+    min-height: 494px;
   }
 
   .md\:w-1\/2{
@@ -4211,6 +4282,10 @@ index */
 
   .md\:w-48{
     width: 12rem;
+  }
+
+  .md\:w-5{
+    width: 1.25rem;
   }
 
   .md\:w-\[100\%\]{
@@ -4255,10 +4330,6 @@ index */
 
   .md\:w-full{
     width: 100%;
-  }
-
-  .md\:w-5{
-    width: 1.25rem;
   }
 
   .md\:min-w-\[200px\]{
@@ -4399,10 +4470,6 @@ index */
 
   .md\:overflow-visible{
     overflow: visible;
-  }
-
-  .md\:border-none{
-    border-style: none;
   }
 
   .md\:bg-transparent{
@@ -4581,14 +4648,14 @@ index */
     line-height: 1.75rem;
   }
 
-  .md\:text-xs{
-    font-size: 0.75rem;
-    line-height: 1rem;
-  }
-
   .md\:text-sm{
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .md\:text-xs{
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 
   .md\:leading-7{
@@ -4627,16 +4694,16 @@ index */
     margin-right: 9.7rem;
   }
 
+  .lg\:mb-0{
+    margin-bottom: 0px;
+  }
+
   .lg\:mt-6{
     margin-top: 1.5rem;
   }
 
   .lg\:mt-\[4rem\]{
     margin-top: 4rem;
-  }
-
-  .lg\:mb-0{
-    margin-bottom: 0px;
   }
 
   .lg\:block{
@@ -4761,6 +4828,10 @@ index */
     justify-content: space-around;
   }
 
+  .lg\:gap-2{
+    gap: 0.5rem;
+  }
+
   .lg\:gap-20{
     gap: 5rem;
   }
@@ -4771,10 +4842,6 @@ index */
 
   .lg\:gap-\[65px\]{
     gap: 65px;
-  }
-
-  .lg\:gap-2{
-    gap: 0.5rem;
   }
 
   .lg\:gap-x-3{
@@ -4810,16 +4877,16 @@ index */
     background-color: transparent;
   }
 
-  .lg\:p-\[2rem\]{
-    padding: 2rem;
+  .lg\:p-2{
+    padding: 0.5rem;
   }
 
   .lg\:p-4{
     padding: 1rem;
   }
 
-  .lg\:p-2{
-    padding: 0.5rem;
+  .lg\:p-\[2rem\]{
+    padding: 2rem;
   }
 
   .lg\:px-1{
@@ -4830,6 +4897,11 @@ index */
   .lg\:px-24{
     padding-left: 6rem;
     padding-right: 6rem;
+  }
+
+  .lg\:px-4{
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .lg\:px-\[100px\]{
@@ -4845,11 +4917,6 @@ index */
   .lg\:py-16{
     padding-top: 4rem;
     padding-bottom: 4rem;
-  }
-
-  .lg\:px-4{
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 
   .lg\:pb-12{
