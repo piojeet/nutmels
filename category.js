@@ -177,7 +177,7 @@ function createProductCard(p) {
                 <button class="like-btn" data-id="${p.id}">
                   ${liked ? ICONS.likeActive : ICONS.likeInactive}
                 </button>
-                <span class="likes-count" data-id="${p.id}">${formatLikes(likes)}</span>
+                <span class="likes-count leading-normal" data-id="${p.id}">${formatLikes(likes)}</span>
               </div>
 
               <button class="heart-btn ${isWishlisted ? "active" : ""}" data-id="${p.id}">

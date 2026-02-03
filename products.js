@@ -224,18 +224,25 @@ function updatePrice(quantity) {
 
 // Update product title with variants
 function updateProductTitle() {
-  const variant = document.querySelector(".variants .active")?.innerText || "";
+  const variant =
+    document.querySelector(".variants .active")?.innerText || "";
+
   const consumption =
     document.querySelector(".consumption-preference .active")?.innerText || "";
-  const packageSize =
-    document.querySelector(".packages .active")?.innerText || "";
+
 
   let title = state.baseName;
-  if (variant) title += ` - ${consumption}`;
-  if (consumption) title += ` - ${variant}`;
+
+  // if (consumption) title += ` - ${consumption}`;
+  // if (variant) title += ` - ${variant}`;
+  // if (packageSize) title += ` - ${packageSize}`;
 
   updateElements(".title", title);
+
+  updateElements(".variant-select", variant);
+  updateElements(".consumption-preference-select", consumption);
 }
+
 
 // Update price and size based on selected package
 function updatePackagePrice(packageText) {

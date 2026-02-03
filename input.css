@@ -449,3 +449,37 @@ index */
 .reactionBtn.active .icon-on {
   display: block;
 }
+
+
+/* Tab buttons */
+.tab-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tab-btn.active-tab {
+  border-bottom-color: #f8a531;
+  color: #f8a531;
+}
+
+.active {
+  color: #f8a531;
+}
+
+/* Mobile / Tablet → tabs */
+@media (max-width: 1023px) {
+  .tab-content {
+    display: none;
+  }
+  .tab-content.active-tab {
+    display: block;
+  }
+
+  .detail-2.active-tab {
+    display: block;
+  }
+}

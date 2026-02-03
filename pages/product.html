@@ -565,15 +565,19 @@
 
 
 
-      <div class="space-y-4 lg:space-y-0 bg-white rounded-t-xl shadow-md border md:border-none md:bg-transparent md:shadow-none">
+      <div class="space-y-4 lg:space-y-0 bg-white lg:rounded-t-xl rounded-xl shadow-md border lg:border-none lg:bg-transparent md:shadow-none">
 
-        <div class="p-4 flex justify-between items-center md:hidden">
+        <div class="p-4 pb-0 flex justify-between items-center lg:hidden">
 
           <div>
             <div class="font-[700] text-[15px] xs:text-[18px] 2xl:text-[20px] flex justify-between">
               <span class="title"></span>
             </div>
-            <div>
+            <div class="font-semibold text-sm text-primaryColor">
+              <span class="consumption-preference-select"></span>
+              <span>•</span>
+              <span class="variant-select"></span>
+              <span>•</span>
               <span class="ml-auto default-size whitespace-nowrap"></span>
             </div>
           </div>
@@ -583,30 +587,33 @@
           </div>
         </div>
 
-        <div class="md:hidden flex  justify-between text-[16px] sm:text-lg items-center">
+        <div class="lg:hidden flex  justify-between text-[16px] sm:text-lg items-center !mt-0">
           <a id="buyLink"
-            class="text-[16px] buyLink xl:text-[18px]  hover:text-primaryColor duration-300 sm:px-4 cursor-pointer py-2.5 px-4 border-b-[3px] border-transparent productLinkActive"
+            class="md:text-[16px] !text-xs buyLink xl:text-[18px]  hover:text-primaryColor duration-300 sm:px-4 cursor-pointer py-2.5 md:px-4 px-3 border-b-[3px] border-transparent productLinkActive"
             href="/product?q=buy">Buy</a>
           <a id="descriptionLink"
-            class="xs:px-3 descriptionLink text-[16px] xl:text-[18px] hover:text-primaryButton  duration-300 sm:px-3 cursor-pointer py-2.5 px-4 border-b-[3px] border-transparent"
+            class="xs:px-3 descriptionLink md:text-[16px] !text-xs xl:text-[18px] hover:text-primaryButton  duration-300 sm:px-3 cursor-pointer py-2.5 md:px-4 px-3 border-b-[3px] border-transparent"
             href="/product?q=description&amp;menu=brief">Description</a>
           <a id="benefitsLink"
-            class="xs:px-3 benefitsLink text-[16px] xl:text-[18px] py-2.5 px-4 border-b-[3px] border-transparent"
+            class="xs:px-3 benefitsLink md:text-[16px] !text-xs xl:text-[18px] py-2.5 md:px-4 px-3 border-b-[3px] border-transparent"
             href="/product?q=benefits&amp;menu=benefits">Benefits</a>
           <a id="nutriLink"
-            class="xs:px-3 nutriLink text-[16px] xl:text-[18px] py-2.5 px-4 border-b-[3px] border-transparent"
+            class="xs:px-3 nutriLink md:text-[16px] !text-xs xl:text-[18px] py-2.5 md:px-4 px-3 border-b-[3px] border-transparent"
             href="/product?q=nutritions">Nutri. Label</a>
         </div>
 
         <div
-          class="border services-section block lg:h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 md:py-2 xs:px-8 xs:py-4 md:min-h-[494px]">
+          class="lg:border services-section block lg:h-full overflow-auto lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 md:py-2 xs:px-8 xs:py-4 md:min-h-[494px]">
 
           <div class="h-full">
-            <div class="flex md:px-10 lg:px-1 xl:px-[1rem] py-[.6rem] flex-col justify-between h-full">
-              <div class="font-[700] text-[15px] xs:text-[18px] 2xl:text-[20px] flex justify-between">
-                <span class="title"></span><span class="ml-auto default-size whitespace-nowrap"></span>
+            <div class="flex lg:px-1 xl:px-[1rem] py-[.6rem] flex-col justify-between h-full">
+              <div class="font-[700] text-[15px] xs:text-[18px] 2xl:text-[20px] lg:flex justify-between hidden">
+                <span class="title"></span>&nbsp;-&nbsp;
+                <span class="consumption-preference-select"></span>&nbsp;-&nbsp;
+                <span class="variant-select"></span>
+                <span class="ml-auto default-size whitespace-nowrap"></span>
               </div>
-              <div class="price-set flex justify-between items-center md:mt-2">
+              <div class="price-set lg:flex justify-between items-center md:mt-2 hidden">
                 <div class="incdec flex m-2">
                   <button class="text-3xl 2xl:!text-[50px] decrease" id="decrease">-</button>
                   <input id="quantity"
@@ -618,33 +625,41 @@
                   <span class="currency"></span><span class="total-price"></span>
                 </div>
               </div>
-              <div class="detail-1 my-2 2xl:my-4">
-                <div class="text-[14px]  sm:text-[19px] font-[600] text-green-500">consumption
+
+              <div class="tab-buttons flex lg:gap-2 mb-3 lg:hidden text-sm md:text-base">
+                <button class="tab-btn active-tab" data-tab="detail-1">Consumption</button>
+                <button class="tab-btn" data-tab="detail-2">Variants</button>
+                <button class="tab-btn" data-tab="detail-3">Package</button>
+              </div>
+
+
+              <div class="detail-1 tab-content my-2 2xl:my-4">
+                <div class="text-[14px]  sm:text-[19px] font-[600] text-green-500 hidden lg:block">consumption
                   preference
                 </div>
                 <div class="v1-button">
                   <ul
-                    class="grid md:grid-cols-5 grid-cols-4 md:gap-x-4 gap-x-[.9rem] gap-y-1 mt-1 2xl:mt-2 text-[14px] 2xl:text-[15px] consumption-preference">
+                    class="grid md:grid-cols-5 grid-cols-4 md:gap-x-4 gap-x-[.9rem] gap-y-1 mt-1 2xl:mt-2 text-xs md:text-[14px] 2xl:text-[15px] consumption-preference">
 
                   </ul>
                 </div>
               </div>
-              <div class="detail-2">
-                <div class="text-[14px] sm:text-[19px] font-[600] text-green-500">variants</div>
+              <div class="detail-2 tab-content">
+                <div class="text-[14px] sm:text-[19px] font-[600] text-green-500 hidden lg:block">variants</div>
                 <div class="v1-button">
-                  <ul class="grid grid-cols-3 gap-x-1 gap-y-1 mt-1 2xl:mt-2 text-[14px] 2xl:text-[15px] variants">
+                  <ul class="grid md:grid-cols-3 grid-cols-2 gap-x-1 gap-y-1 mt-1 2xl:mt-2 text-xs md:text-[14px] 2xl:text-[15px] variants">
 
                   </ul>
                 </div>
               </div>
-              <div class="detail-3 my-3 2xl:my-4">
-                <div class="text-[14px] sm:text-[19px] font-[600] text-green-500">package</div>
-                <div class="flex text-[14px] 2xl:text-[15px] justify-between flex-wrap mt-1 2xl:mt-2 packages">
+              <div class="detail-3 tab-content my-3 2xl:my-4">
+                <div class="text-[14px] sm:text-[19px] font-[600] text-green-500 hidden lg:block">package</div>
+                <div class="flex text-xs md:text-[14px] 2xl:text-[15px] justify-between flex-wrap mt-1 2xl:mt-2 packages">
 
                 </div>
               </div>
               <div
-                class="fixed md:static bottom-3 left-0 buy-now transform transition-transform duration-300 w-full pl-20 md:pl-0 h-full flex-1 content-end">
+                class="hidden md:static bottom-3 left-0 buy-now transform transition-transform duration-300 w-full pl-20 md:pl-0 h-full flex-1 content-end">
                 <div class="flex justify-evenly md:gap-2 gap-4 mb-3 items-center">
                   <a class="w-fit h-[50px] border border-gray-400 hover:border-[#faa61a] text-lg rounded-md py-3 px-4 hover:bg-[#faa61a] duration-300 group"
                     href="/cart">
@@ -673,18 +688,18 @@
         </div>
 
         <div id="descriptionSection"
-          class="border hidden services-section lg:h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[494px]">
+          class="lg:border hidden services-section lg:h-full overflow-auto lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[494px]">
 
           <div
-            class="min-h-14 border border-primaryColor bg-primaryColor p-2 flex justify-between items-center rounded-md mb-4">
+            class="md:min-h-14 min-h-2 border border-primaryColor bg-primaryColor lg:p-2 px-2 flex justify-between items-center rounded-md mb-4">
 
             <div class="flex items-center h-full gap-3">
               <!-- <div class="flex h-full object-contain">
                <img alt="" class="image h-full object-cover rounded-md">
              </div> -->
               <div>
-                <h3 class="title text-white"></h3>
-                <div class="text-base text-white">
+                <h3 class="title text-white md:text-base text-sm"></h3>
+                <div class="md:text-base text-white text-sm">
                   <span class="default-size"></span>
                   -
                   <span class="currency"></span><span class="total-price"></span>
@@ -706,7 +721,7 @@
               <div class="flex-shrink-0">
                 <a class="w-fit border border-white bg-white text-lg rounded-md py-2 px-3 duration-300 block"
                   href="/cart">
-                  <img src="../assets/icons/generic_web_icons/add to cart yellow.svg" class="w-5">
+                  <img src="../assets/icons/generic_web_icons/add to cart yellow.svg" class="md:w-5 w-4">
                 </a>
               </div>
             </div>
@@ -716,14 +731,14 @@
           <div class="">
             <div class="w-full">
               <div class="flex justify-evenly border-b"><a class="w-full text-center py-2"><button
-                    class="text-[#faa61a] briefBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">brief</button></a>
+                    class="text-[#faa61a] briefBtn font-medium uppercase text-xs sm:text-[14px] md:text-[16px] xl:text-[18px]">brief</button></a>
                 <a class="w-full text-center py-2"><button
-                    class="ingrBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">ingredients</button></a>
+                    class="ingrBtn font-medium uppercase text-xs sm:text-[14px] md:text-[16px] xl:text-[18px]">ingredients</button></a>
               </div>
 
-              <div id="briefWrapper" class="px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4"></div>
+              <div id="briefWrapper" class="lg:px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4"></div>
               <div id="ingredientWrapper"
-                class="px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4 ingredients hidden"></div>
+                class="lg:px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4 ingredients hidden"></div>
 
             </div>
           </div>
@@ -731,57 +746,57 @@
 
 
         <div id="benefitsSection"
-          class="border hidden services-section lg:h-full overflow-auto bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[494px]">
+          class="lg:border hidden services-section lg:h-full overflow-auto lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[494px]">
 
           <div class="">
 
             <div
-              class="min-h-14 border border-primaryColor bg-primaryColor p-2 flex justify-between items-center rounded-md mb-4">
+            class="md:min-h-14 min-h-2 border border-primaryColor bg-primaryColor lg:p-2 px-2 flex justify-between items-center rounded-md mb-4">
 
-              <div class="flex items-center h-full gap-3">
-                <!-- <div class="flex h-full object-contain">
-                 <img alt="" class="image h-full object-cover rounded-md">
-               </div> -->
-                <div>
-                  <h3 class="title text-white"></h3>
-                  <div class="text-base text-white">
-                    <span class="default-size"></span>
-                    -
-                    <span class="currency"></span><span class="total-price"></span>
-                  </div>
+            <div class="flex items-center h-full gap-3">
+              <!-- <div class="flex h-full object-contain">
+               <img alt="" class="image h-full object-cover rounded-md">
+             </div> -->
+              <div>
+                <h3 class="title text-white md:text-base text-sm"></h3>
+                <div class="md:text-base text-white text-sm">
+                  <span class="default-size"></span>
+                  -
+                  <span class="currency"></span><span class="total-price"></span>
                 </div>
               </div>
-
-              <div class="flex items-center gap-4 flex-shrink-0">
-                <div class="price-set flex justify-between items-center">
-                  <div class="incdec flex m-2">
-                    <button class="text-3xl 2xl:!text-[45px] text-white decrease" id="decrease">-</button>
-                    <input
-                      class="w-10 border border-white text-center rounded-lg scale-[.8] md:scale-[1] md:mx-3 bg-[#f5f5f5] quantity"
-                      type="text" value="1" readonly>
-                    <button class="text-3xl 2xl:text-[35px] text-white increase" id="increase">+</button>
-                  </div>
-                </div>
-
-                <div class="flex-shrink-0">
-                  <a class="w-fit border border-white bg-white text-lg rounded-md py-2 px-3 duration-300 block"
-                    href="/cart">
-                    <img src="../assets/icons/generic_web_icons/add to cart yellow.svg" class="w-5">
-                  </a>
-                </div>
-              </div>
-
             </div>
+
+            <div class="flex items-center gap-4 flex-shrink-0">
+              <div class="price-set flex justify-between items-center">
+                <div class="incdec flex m-2">
+                  <button class="text-3xl 2xl:!text-[45px] text-white decrease" id="decrease">-</button>
+                  <input
+                    class="w-10 border border-white text-center rounded-lg scale-[.8] md:scale-[1] md:mx-3 bg-[#f5f5f5] quantity"
+                    type="text" value="1" readonly>
+                  <button class="text-3xl 2xl:text-[35px] text-white increase" id="increase">+</button>
+                </div>
+              </div>
+
+              <div class="flex-shrink-0">
+                <a class="w-fit border border-white bg-white text-lg rounded-md py-2 px-3 duration-300 block"
+                  href="/cart">
+                  <img src="../assets/icons/generic_web_icons/add to cart yellow.svg" class="md:w-5 w-4">
+                </a>
+              </div>
+            </div>
+
+          </div>
 
             <div class="w-full ">
               <div class="flex justify-evenly border-b"><a class="w-full border-col text-center py-2"><button
-                    class=" benBtn text-[#faa61a] font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">benefits</button></a><a
+                    class=" benBtn text-[#faa61a] font-medium uppercase text-xs sm:text-[14px] md:text-[16px] xl:text-[18px]">benefits</button></a><a
                   class="w-full text-center py-2"><button
-                    class="rdiBtn font-medium uppercase text-[14px] md:text-[16px] xl:text-[18px]">rdi</button></a>
+                    class="rdiBtn font-medium uppercase text-xs sm:text-[14px] md:text-[16px] xl:text-[18px]">rdi</button></a>
               </div>
 
-              <div id="benefitsWrapper" class="px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4 descBen"></div>
-              <div id="rdiWrapper" class="px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4 descBen hidden"></div>
+              <div id="benefitsWrapper" class="lg:px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4 descBen"></div>
+              <div id="rdiWrapper" class="lg:px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4 descBen hidden"></div>
 
             </div>
           </div>
@@ -793,11 +808,11 @@
 
           <div
             class="nutrition w-full flex justify-center items-center accordion-panel overflow-hidden md:overflow-visible">
-            <div class="product-image product-scrollbar w-full border border-gray-300 bg-[#f5f5f5] rounded-lg p-4">
+            <div class="product-image product-scrollbar w-full lg:border border-gray-300 lg:bg-[#f5f5f5] rounded-lg lg:p-4">
 
               <div class="w-full bg-white h-full rounded-lg p-4 pt-2">
                 <div
-                  class="w-fit m-auto text-[16px] md:text-[18px]  md:px-4 text-lg xl:text-lg uppercase font-semibold">
+                  class="w-fit m-auto text-[16px] md:text-[18px]  md:px-4 text-lg xl:text-lg uppercase font-semibold mb-4 lg:mb-0">
                   Nutritional
                   Facts</div>
                 <div class="mt-2">
@@ -814,7 +829,7 @@
                     <div class="border-b border-black font-normal">
                       <p class="ml-2 flex text-sm justify-end py-1">Daily Value (%)</p>
                     </div>
-                    <div class="flex items-center justify-between text-sm pt-2">
+                    <div class="flex items-center justify-between md:text-sm text-xs pt-2">
                       <div class="flex  flex-col">
                         <p>Total Fat</p>
                         <p class="text-right">Saturated Fat</p>
@@ -878,7 +893,7 @@
                       </div>
                     </div>
                     <div class="border-b-[2.5px] border-b-[#F8A531] my-1"></div>
-                    <div class="flex items-center justify-between text-sm">
+                    <div class="flex items-center justify-between md:text-sm text-xs">
                       <div class="flex flex-col">
                         <p>Vitamin D</p>
                         <p>Calcium</p>
@@ -1193,6 +1208,29 @@
     });
 
   </script>
+
+<script>
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+  
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active-tab'));
+      tabContents.forEach(c => c.classList.remove('active-tab'));
+  
+      btn.classList.add('active-tab');
+      document
+        .querySelector(`.${btn.dataset.tab}`)
+        .classList.add('active-tab');
+    });
+  });
+  
+  // Default active tab (mobile only)
+  if (window.innerWidth <= 1023) {
+    document.querySelector('.detail-1')?.classList.add('active-tab');
+  }
+  </script>
+  
 
   <script defer src="../products.js"></script>
 
