@@ -44,26 +44,26 @@ document.querySelectorAll(".product-card").forEach((product) => {
 document.addEventListener("DOMContentLoaded", function () {
   // Select elements for mobile navigation
   const mobNavBars = document.querySelectorAll(".mobNavBar");
-  const navMenus = document.querySelectorAll(".navMenu");
-  const menuIcons = document.querySelectorAll(".fa-bars");
-  const menuWhenOpenIcons = document.querySelectorAll(".menuWhenOpen");
-  const mobNavLinksList = document.querySelectorAll(".mobNavLinks");
-  const navSearchBtns = document.querySelectorAll(".navSearchBtn");
-  const mobSearchContainers = document.querySelectorAll(".mobSearch");
-  const searchInputs = document.querySelectorAll(".searchInput");
-  const suggestions = document.querySelectorAll(".suggestions");
-  const buyNowBtn = document.querySelector(".buy-now");
+  const buyNowBtn = document.querySelector(".buy-now") || {
+    classList: { add() {}, remove() {} },
+  };
   const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
 
-  mobNavBars.forEach((mobNavBar, index) => {
-    const navMenu = navMenus[index];
-    const menuIcon = menuIcons[index];
-    const menuWhenOpenIcon = menuWhenOpenIcons[index];
-    const mobNavLinks = mobNavLinksList[index];
-    const navSearchBtn = navSearchBtns[index];
-    const mobSearchContainer = mobSearchContainers[index];
-    const searchInput = searchInputs[index];
-    const suggestionBox = suggestions[index];
+  mobNavBars.forEach((mobNavBar) => {
+    const navMenu = mobNavBar.querySelector(".navMenu");
+    const menuIcon = mobNavBar.querySelector(".fa-bars");
+    const menuWhenOpenIcon = mobNavBar.querySelector(".menuWhenOpen");
+    const mobNavLinks =
+      mobNavBar.querySelector(".mobNavLinks") ||
+      mobNavBar.parentElement?.querySelector(".mobNavLinks") ||
+      document.querySelector(".mobNavLinks");
+    const navSearchBtn = mobNavBar.querySelector(".navMenuBtn.navSearchBtn");
+    const mobSearchContainer =
+      mobNavBar.querySelector(".mobSearch") ||
+      mobNavBar.parentElement?.querySelector(".mobSearch") ||
+      document.querySelector(".mobSearch");
+    const searchInput = mobNavBar.querySelector(".searchInput");
+    const suggestionBox = mobNavBar.querySelector(".suggestions");
 
     let menuOpen = false;
     let linksVisible = false;
@@ -86,17 +86,27 @@ document.addEventListener("DOMContentLoaded", function () {
       if (open) {
         mobNavBar.classList.add("dock-open", "mobNavBarOpen");
         mobNavBar.classList.remove("dock-closing", "mobNavBarClose");
-        menuIcon.style.display = "none";
-        menuWhenOpenIcon.style.display = "block";
+        if (menuIcon) {
+          menuIcon.style.display = "none";
+        }
+        if (menuWhenOpenIcon) {
+          menuWhenOpenIcon.style.display = "block";
+        }
         buyNowBtn.classList.add("bottom-[80px]");
         buyNowBtn.classList.remove("pl-20");
       } else {
         mobNavBar.classList.add("dock-closing", "mobNavBarClose");
         mobNavBar.classList.remove("dock-open", "mobNavBarOpen");
-        menuIcon.style.display = "block";
-        menuWhenOpenIcon.style.display = "none";
-        mobNavLinks.classList.add("navLinksHidden");
-        mobNavLinks.classList.remove("navLinksVisible");
+        if (menuIcon) {
+          menuIcon.style.display = "block";
+        }
+        if (menuWhenOpenIcon) {
+          menuWhenOpenIcon.style.display = "none";
+        }
+        if (mobNavLinks) {
+          mobNavLinks.classList.add("navLinksHidden");
+          mobNavLinks.classList.remove("navLinksVisible");
+        }
         buyNowBtn.classList.remove("bottom-[80px]");
         buyNowBtn.classList.add("pl-20");
         linksVisible = false;
@@ -117,11 +127,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Toggle menu visibility
-    navMenu.addEventListener("click", function (event) {
-      event.stopPropagation();
+    if (navMenu) {
+      navMenu.addEventListener("click", function (event) {
+        event.stopPropagation();
 
-      applyDockState(!menuOpen);
-    });
+        applyDockState(!menuOpen);
+      });
+    }
 
     // Allow tap on the closed dock itself (line) to open
     mobNavBar.addEventListener("click", function (event) {
@@ -132,105 +144,142 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Toggle links visibility when clicking on menuWhenOpenIcon
-    menuWhenOpenIcon.addEventListener("click", function (event) {
-      event.stopPropagation();
+    if (menuWhenOpenIcon) {
+      menuWhenOpenIcon.addEventListener("click", function (event) {
+        event.stopPropagation();
 
       // ⬅️ Agar search visible hai, to pehle hide karo
       if (searchVisible) {
-        mobSearchContainer.classList.add("searchHidden");
-        mobSearchContainer.classList.remove("searchVisible");
-        suggestionBox.classList.add("hidden");
-        suggestionBox.classList.remove("visible");
+        if (mobSearchContainer) {
+          mobSearchContainer.classList.add("searchHidden");
+          mobSearchContainer.classList.remove("searchVisible");
+        }
+        if (suggestionBox) {
+          suggestionBox.classList.add("hidden");
+          suggestionBox.classList.remove("visible");
+        }
         buyNowBtn.classList.remove("-translate-y-16");
         buyNowBtn.classList.remove("-translate-y-52");
         searchVisible = false;
-        searchInput.value = ""; // optional: input clear
+        if (searchInput) {
+          searchInput.value = ""; // optional: input clear
+        }
       }
 
       if (!linksVisible) {
-        mobNavLinks.classList.remove("navLinksHidden");
-        mobNavLinks.classList.add("navLinksVisible");
-        mobSearchContainer.classList.add("searchHidden");
-        mobSearchContainer.classList.remove("searchVisible");
+        if (mobNavLinks) {
+          mobNavLinks.classList.remove("navLinksHidden");
+          mobNavLinks.classList.add("navLinksVisible");
+        }
+        if (mobSearchContainer) {
+          mobSearchContainer.classList.add("searchHidden");
+          mobSearchContainer.classList.remove("searchVisible");
+        }
         buyNowBtn.classList.add("-translate-y-32");
         linksVisible = true;
       } else {
-        mobNavLinks.classList.add("navLinksHidden");
-        mobNavLinks.classList.remove("navLinksVisible");
+        if (mobNavLinks) {
+          mobNavLinks.classList.add("navLinksHidden");
+          mobNavLinks.classList.remove("navLinksVisible");
+        }
         buyNowBtn.classList.remove("-translate-y-32");
         linksVisible = false;
       }
-    });
+      });
+    }
+    // Toggle search visibility (only on the search button)
+    if (navSearchBtn && mobSearchContainer) {
+      navSearchBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
 
-    // Toggle search visibility
-    navSearchBtn.addEventListener("click", function (event) {
-      event.stopPropagation();
+        // Hide nav menu links if visible
+        if (linksVisible) {
+          if (mobNavLinks) {
+            mobNavLinks.classList.add("navLinksHidden");
+            mobNavLinks.classList.remove("navLinksVisible");
+          }
+          if (buyNowBtn) {
+            buyNowBtn.classList.add("-translate-y-16");
+            buyNowBtn.classList.remove("-translate-y-32");
+          }
+          linksVisible = false;
+        }
 
-      // Hide nav menu links if visible
-      if (linksVisible) {
-        mobNavLinks.classList.add("navLinksHidden");
-        mobNavLinks.classList.remove("navLinksVisible");
-        buyNowBtn.classList.add("-translate-y-16");
-        buyNowBtn.classList.remove("-translate-y-32");
-        linksVisible = false;
-      }
+        // Show or hide search container
+        if (!searchVisible) {
+          mobSearchContainer.classList.remove("searchHidden");
+          mobSearchContainer.classList.add("searchVisible");
+          if (mobNavLinks) {
+            mobNavLinks.classList.add("navLinksHidden");
+            mobNavLinks.classList.remove("navLinksVisible");
+          }
+          if (buyNowBtn) {
+            buyNowBtn.classList.add("-translate-y-16");
+          }
+          searchVisible = true;
+        } else {
+          mobSearchContainer.classList.add("searchHidden");
+          mobSearchContainer.classList.remove("searchVisible");
+          if (suggestionBox) {
+            suggestionBox.classList.add("hidden");
+            suggestionBox.classList.remove("visible");
+          }
 
-      // Show or hide search container
-      if (!searchVisible) {
-        mobSearchContainer.classList.remove("searchHidden");
-        mobSearchContainer.classList.add("searchVisible");
-        mobNavLinks.classList.add("navLinksHidden");
-        mobNavLinks.classList.remove("navLinksVisible");
-        buyNowBtn.classList.add("-translate-y-16");
-        searchVisible = true;
-      } else {
-        mobSearchContainer.classList.add("searchHidden");
-        mobSearchContainer.classList.remove("searchVisible");
-        suggestionBox.classList.add("hidden");
-        suggestionBox.classList.remove("visible");
+          // Reset buyNowBtn position
+          if (buyNowBtn) {
+            buyNowBtn.classList.remove("-translate-y-16");
+            buyNowBtn.classList.remove("-translate-y-52"); // reset large translate
+          }
+          searchVisible = false;
 
-        // Reset buyNowBtn position
-        buyNowBtn.classList.remove("-translate-y-16");
-        buyNowBtn.classList.remove("-translate-y-52"); // ⬅️ reset large translate
-        searchVisible = false;
-
-        // Optional: clear input so state is fresh
-        searchInput.value = ""; // ⬅️ ensures next open is fresh
-      }
-    });
+          // Optional: clear input so state is fresh
+          if (searchInput) {
+            searchInput.value = ""; // ensures next open is fresh
+          }
+        }
+      });
+    }
 
     // Show suggestions based on input
-    searchInput.addEventListener("input", function () {
-      if (searchInput.value.trim() !== "") {
-        suggestionBox.classList.remove("hidden");
-        suggestionBox.classList.add("visible");
-        buyNowBtn.classList.add("-translate-y-52");
-        buyNowBtn.classList.remove("-translate-y-16"); // avoid conflict
-      } else {
-        suggestionBox.classList.add("hidden");
-        suggestionBox.classList.remove("visible");
-        buyNowBtn.classList.remove("-translate-y-52");
-
-        // Agar search box visible hai to wapas -translate-y-16 lagao
-        if (searchVisible) {
-          buyNowBtn.classList.add("-translate-y-16");
+    if (searchInput && suggestionBox) {
+      searchInput.addEventListener("input", function () {
+        if (searchInput.value.trim() !== "") {
+          suggestionBox.classList.remove("hidden");
+          suggestionBox.classList.add("visible");
+          buyNowBtn.classList.add("-translate-y-52");
+          buyNowBtn.classList.remove("-translate-y-16"); // avoid conflict
         } else {
-          buyNowBtn.classList.remove("-translate-y-16");
+          suggestionBox.classList.add("hidden");
+          suggestionBox.classList.remove("visible");
+          buyNowBtn.classList.remove("-translate-y-52");
+
+          // Agar search box visible hai to wapas -translate-y-16 lagao
+          if (searchVisible) {
+            buyNowBtn.classList.add("-translate-y-16");
+          } else {
+            buyNowBtn.classList.remove("-translate-y-16");
+          }
         }
-      }
-    });
+      });
+    }
 
     // Close everything when clicking outside
     document.addEventListener("click", function (event) {
       if (!event.target.closest(".mobNavBar")) {
         if (menuOpen || searchVisible) {
           applyDockState(false);
-          mobNavLinks.classList.add("navLinksHidden");
-          mobNavLinks.classList.remove("navLinksVisible");
-          mobSearchContainer.classList.add("searchHidden");
-          mobSearchContainer.classList.remove("searchVisible");
-          suggestionBox.classList.add("hidden");
-          suggestionBox.classList.remove("visible");
+          if (mobNavLinks) {
+            mobNavLinks.classList.add("navLinksHidden");
+            mobNavLinks.classList.remove("navLinksVisible");
+          }
+          if (mobSearchContainer) {
+            mobSearchContainer.classList.add("searchHidden");
+            mobSearchContainer.classList.remove("searchVisible");
+          }
+          if (suggestionBox) {
+            suggestionBox.classList.add("hidden");
+            suggestionBox.classList.remove("visible");
+          }
           buyNowBtn.classList.remove("-translate-y-32");
           buyNowBtn.classList.remove("-translate-y-52");
           buyNowBtn.classList.remove("-translate-y-16");
@@ -246,8 +295,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!isMobile()) {
         mobNavBar.classList.remove("dock-open", "dock-closing", "mobNavBarOpen");
         mobNavBar.classList.add("mobNavBarClose");
-        menuIcon.style.display = "block";
-        menuWhenOpenIcon.style.display = "none";
+        if (menuIcon) {
+          menuIcon.style.display = "block";
+        }
+        if (menuWhenOpenIcon) {
+          menuWhenOpenIcon.style.display = "none";
+        }
         menuOpen = false;
         linksVisible = false;
         searchVisible = false;
@@ -369,6 +422,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextbtn = document.getElementById("nextbtn");
   const backbtn = document.getElementById("backbtn");
 
+  if (!usersign || !passsign || !nextbtn || !backbtn) return;
+
   usersign.style.display = "block"; // Initial state
 
   // Switch to password sign-in on next button click
@@ -430,6 +485,7 @@ function contactopenTab(evt, tabName) {
 document.addEventListener("DOMContentLoaded", () => {
   const contactSection = document.getElementById("contact");
   const contactIcon = document.querySelector(".contactIcon");
+  if (!contactSection || !contactIcon) return;
 
   // Define the callback function that will run when the section comes into view
   const onIntersection = (entries, observer) => {
@@ -491,3 +547,4 @@ document.querySelectorAll(".fa-heart").forEach((heart, index) => {
 });
 
 //  ~~~~~~~~~~~~~~~ SwiperJS ~~~~~~~~~~~~~~~
+

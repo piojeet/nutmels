@@ -223,11 +223,11 @@
   }
 
   .searchVisible {
-    display: block;
+    display: block !important;
   }
 
   .searchHidden {
-    display: none;
+    display: none !important;
   }
 
   .carousel-container {

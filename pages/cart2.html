@@ -1,773 +1,507 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Set character encoding to UTF-8 -->
-    <meta charset="UTF-8" />
-    <!-- Set viewport for responsive design -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Link to external CSS stylesheet for main styling -->
-    <link rel="stylesheet" href="../css/main.css" />
-    <!-- Link to Font Awesome stylesheet for icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <!-- Link to Font Awesome stylesheet for additional icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <!-- Preconnect to Google Fonts for faster font loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  </head>
 
-  <body>
-<!-- Search Bar -->
-<div class="fixed top-0 w-full h-fit left-1/2 -translate-x-1/2 max-w-[1440px] z-[5] search-wrapper hidden">
-  <div class="pb-8 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 z-0 mx-auto -mt-4 pt-8">
-    <div
-      class="w-full left-div right-div pb-0 !mt-[-32px] md:!mt-[41px] outside-close bg-[#f5f5f5] shadow-[0px_0px_10px_rgba(0,0,0,0.1)] backdrop-blur-lg p-4 rounded-lg border border-gray-300"
-    >
-      <div class="mb-4">
-        <input
-          id="searchInput"
-          placeholder="Search"
-          class="border-b placeholder:text-primaryColor outline-none w-full border-solid bg-transparent border-[#F8A531] text-[#F8A531] placeholder-[#F8A531]"
-          type="text"
-          control-id="ControlID-7"
-        />
-      </div>
-      <div id="suggests" class="suggest w-full flex items-center flex-wrap justify-between hidden pb-4">
-        <div class="flex flex-col gap-4" data-group="1">
-          <p class="hover:text-primaryColor cursor-pointer">store location</p>
-          <p class="hover:text-primaryColor cursor-pointer">whatsapp</p>
-          <p class="hover:text-primaryColor cursor-pointer">phone</p>
+<head>
+  <!-- Set character encoding to UTF-8 -->
+  <meta charset="UTF-8" />
+  <!-- Set viewport for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link to external CSS stylesheet for main styling -->
+  <link rel="stylesheet" href="../css/main.css" />
+  <!-- Link to Font Awesome stylesheet for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Link to Font Awesome stylesheet for additional icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <!-- Preconnect to Google Fonts for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+
+<body>
+  <!-- Search Bar -->
+  <div class="fixed top-0 w-full h-fit left-1/2 -translate-x-1/2 max-w-[1440px] z-[5] search-wrapper hidden">
+    <div class="pb-8 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 z-0 mx-auto -mt-4 pt-8">
+      <div
+        class="w-full left-div right-div pb-0 !mt-[-32px] md:!mt-[41px] outside-close bg-[#f5f5f5] shadow-[0px_0px_10px_rgba(0,0,0,0.1)] backdrop-blur-lg p-4 rounded-lg border border-gray-300">
+        <div class="mb-4">
+          <input id="searchInput" placeholder="Search"
+            class="border-b placeholder:text-primaryColor outline-none w-full border-solid bg-transparent border-[#F8A531] text-[#F8A531] placeholder-[#F8A531]"
+            type="text" control-id="ControlID-7" />
         </div>
-        <div class="flex flex-col gap-4" data-group="2">
-          <p class="hover:text-primaryColor cursor-pointer">shop</p>
-          <p class="hover:text-primaryColor cursor-pointer">blog</p>
-          <p class="hover:text-primaryColor cursor-pointer">scanner</p>
-        </div>
-        <div class="flex flex-col gap-4 mr-6" data-group="3">
-          <p class="hover:text-primaryColor cursor-pointer">facebook</p>
-          <p class="hover:text-primaryColor cursor-pointer">instagram</p>
-          <p class="hover:text-primaryColor cursor-pointer">X</p>
+        <div id="suggests" class="suggest w-full flex items-center flex-wrap justify-between hidden pb-4">
+          <div class="flex flex-col gap-4" data-group="1">
+            <p class="hover:text-primaryColor cursor-pointer">store location</p>
+            <p class="hover:text-primaryColor cursor-pointer">whatsapp</p>
+            <p class="hover:text-primaryColor cursor-pointer">phone</p>
+          </div>
+          <div class="flex flex-col gap-4" data-group="2">
+            <p class="hover:text-primaryColor cursor-pointer">shop</p>
+            <p class="hover:text-primaryColor cursor-pointer">blog</p>
+            <p class="hover:text-primaryColor cursor-pointer">scanner</p>
+          </div>
+          <div class="flex flex-col gap-4 mr-6" data-group="3">
+            <p class="hover:text-primaryColor cursor-pointer">facebook</p>
+            <p class="hover:text-primaryColor cursor-pointer">instagram</p>
+            <p class="hover:text-primaryColor cursor-pointer">X</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
- </div>
 
-    <svg style="display: none">
-      <filter id="displacementFilter">
-        <feTurbulence
-          type="turbulence"
-          baseFrequency="0.0"
-          numOctaves="1"
-          result="turbulence"
-        />
+  <svg style="display: none">
+    <filter id="displacementFilter">
+      <feTurbulence type="turbulence" baseFrequency="0.0" numOctaves="1" result="turbulence" />
 
-        <feDisplacementMap
-          in="SourceGraphic"
-          in2="turbulence"
-          scale="50"
-          xChannelSelector="R"
-          yChannelSelector="G"
-        />
-      </filter>
-    </svg>
-    <!-- Header Section -->
-    <header
-      class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 card md:bg-transparent drop-shadow md:drop-shadow-none justify-center"
-    >
-      <!-- Main Navigation Bar -->
-      <div
-        class="navBar flex justify-between items-center h-[3.5rem] w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4"
-      >
-        <!-- Logo -->
-        <div class="w-48">
-          <div class="navLogo w-36">
-            <a href="/index.html">
-              <img
-                src="../assets/icons/Nutmeals Logo ver2.svg"
-                alt="Nutmeals Logo"
-              />
-            </a>
-          </div>
-        </div>
-        <!-- Main Navigation Links (visible on larger screens) -->
-        <div
-          class="navMain hidden w-64 items-center justify-between md:flex uppercase"
-        >
-          <div>
-            <a
-              href="/pages/about.html"
-              class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-              >About</a
-            >
-          </div>
-          <div>
-            <a
-              href="/pages/category-product.html"
-              class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-              >Shop</a
-            >
-          </div>
-          <div>
-            <a
-              href="/pages/blog.html"
-              class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3"
-              >Blog</a
-            >
-          </div>
-        </div>
-        <!-- Right-side menu items (Cart, Profile, Search, Contact) -->
-        <div
-          class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between"
-        >
-          <a
-            class="rounded-md hover-fill-white duration-300 hidden md:block relative group"
-            href="/pages/cart1.html"
-          >
-            <img
-              src="../assets/icons/NavBar/white_add_to_black.svg"
-              alt="Account Profile"
-              width="18"
-              height="18"
-              class="duration-300 group-hover:opacity-0"
-            />
-            <img
-              src="../assets/icons/NavBar/white_add_to_cart-yellow.svg"
-              alt="Account Profile"
-              width="18"
-              height="18"
-              class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100"
-            />
-          </a>
-          <a
-            class="rounded-md hover-fill-white duration-300 hidden md:block relative group"
-            href="/pages/login.html"
-          >
-            <img
-              src="../assets/icons/NavBar/account_profile_black.svg"
-              alt="Account Profile"
-              width="18"
-              height="18"
-              class="duration-300 group-hover:opacity-0"
-            />
-            <img
-              src="../assets/icons/NavBar/account_profile_yellow.svg"
-              alt="Account Profile"
-              width="18"
-              height="18"
-              class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100"
-            />
-          </a>
-          <button
-            class="rounded-md hover-fill-white duration-300 hidden md:block relative group open-search"
-            
-          >
-            <img
-              src="../assets/icons/NavBar/search-zoom-in-black.svg"
-              alt="Account Profile"
-              width="20"
-              height="20"
-              class="duration-300 group-hover:opacity-0"
-            />
-            <img
-              src="../assets/icons/NavBar/search-zoom-in-yellow.svg"
-              alt="Account Profile"
-              width="20"
-              height="20"
-              class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100"
-            />
-          </button>
-          <a
-            class="rounded-md hover-fill-white contactIcon relative group"
-            href="/pages/contact.html"
-          >
-            <img
-              src="../assets/icons/NavBar/contact_support_black.svg"
-              alt="Account Profile"
-              width="18"
-              height="18"
-              class="duration-300 group-hover:opacity-0"
-            />
-            <img
-              src="../assets/icons/NavBar/contact_support_yellow.svg"
-              alt="Account Profile"
-              width="18"
-              height="18"
-              class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100"
-            />
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="50" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+  <!-- Header Section -->
+  <header
+    class="z-10 top-0 fixed w-full md:flex px-4 md:p-0 card md:bg-transparent drop-shadow md:drop-shadow-none justify-center">
+    <!-- Main Navigation Bar -->
+    <div class="navBar flex justify-between items-center h-[3.5rem] w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4">
+      <!-- Logo -->
+      <div class="w-48">
+        <div class="navLogo w-36">
+          <a href="/index.html">
+            <img src="../assets/icons/Nutmeals Logo ver2.svg" alt="Nutmeals Logo" />
           </a>
         </div>
       </div>
-    </header>
-    <!-- Mobile Navigation Section -->
-    <div
-      class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-full glassNav z-10 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4"
-    >
-      <!-- Menu Button (visible on mobile) -->
-      <div class="navMenuBtn w-5 h-5 flex justify-center items-center navMenu">
-        <i class="fa-solid fa-bars text-[18px]"></i>
-        <img
-          src="/assets/icons/menu.svg"
-          alt="Menu"
-          class="w-5 menuWhenOpen cursor-pointer"
-          style="display: none"
-        />
-      </div>
-      <!-- Mobile Cart Icon -->
-      <a class="navMenuBtn" href="../pages/cart1.html">
-        <img
-          src="/assets/icons/generic_web_icons/add to cart.svg"
-          alt="Add to Cart"
-          class="w-[18px]"
-        />
-      </a>
-      <!-- Mobile Search Icon -->
-      <div class="navMenuBtn navSearchBtn">
-        <img
-          src="/assets/icons/NavBar/white_search.svg"
-          alt="Search"
-          class="w-5"
-        />
-      </div>
-      <!-- Mobile Account Profile Icon -->
-      <a class="navMenuBtn" href="../pages/bestsellers.html">
-        <img src="../assets/a.svg" alt="Account Profile" />
-      </a>
-      <!-- Mobile Login Icon -->
-      <a class="navMenuBtn" href="../pages/login.html">
-        <img
-          src="../assets/icons/generic_web_icons/account_profile.svg"
-          alt="Account Profile"
-          class="w-5 mr-[7px]"
-        />
-      </a>
-      <!-- Mobile Navigation Links (hidden by default) -->
-      <div
-        class="fixed mobNavLinks navLinksHidden bottom-[67px] left-0 right-0 glassNav text-white m-[12px] transition-transform transform translate-y-0"
-      >
-        <ul class="text-left">
-          <li class="p-2"><a href="../pages/about.html">About</a></li>
-          <li class="p-2"><a href="../pages/shop.html">Shop</a></li>
-          <li class="p-2"><a href="../pages/blog.html">Blog</a></li>
-        </ul>
-      </div>
-      <!-- Mobile Search Section -->
-      <div
-        class="fixed mobSearch searchHidden bottom-[80px] rounded-2xl mx-[.75rem] left-0 right-0 bg-primaryColor p-4 transition-transform transform translate-y-0"
-      >
-        <!-- Search Suggestions (hidden by default) -->
-        <div
-          class="suggestions absolute rounded-2xl -top-[220%] left-0 right-0 z-10 hidden p-2 mt-2 bg-primaryColor shadow-lg rounded"
-        >
-          <div class="text-white flex justify-between p-2">
-            <div>
-              <div class="p-[.3rem]">Suggestion 1</div>
-              <div class="p-[.3rem]">Suggestion 2</div>
-              <div class="p-[.3rem]">Suggestion 3</div>
-            </div>
-            <div>
-              <div class="p-[.3rem]">Suggestion 1</div>
-              <div class="p-[.3rem]">Suggestion 2</div>
-              <div class="p-[.3rem]">Suggestion 3</div>
-            </div>
-          </div>
+      <!-- Main Navigation Links (visible on larger screens) -->
+      <div class="navMain hidden w-64 items-center justify-between md:flex uppercase">
+        <div>
+          <a href="/pages/about.html"
+            class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">About</a>
         </div>
-        <!-- Mobile Search Input and Icons -->
-        <ul class="flex items-center justify-between gap-5 w-full">
-          <input
-            class="custom-input p-1 px-3 bg-primaryColor focus:outline-none text-white border-white border !w-full searchInput"
-            placeholder="Search"
-            type="text"
-          />
-          <a href="/">
-            <img
-              src="../assets/icons/generic_web_icons/search.svg"
-              alt="Search"
-              class="w-7 navMenuBtn"
-            />
-          </a>
-          <a href="/scan">
-            <img
-              src="../assets/icons/scan.svg"
-              alt="Scan"
-              class="w-7 navMenuBtn"
-            />
-          </a>
-        </ul>
+        <div>
+          <a href="/pages/category-product.html"
+            class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Shop</a>
+        </div>
+        <div>
+          <a href="/pages/blog.html"
+            class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Blog</a>
+        </div>
+      </div>
+      <!-- Right-side menu items (Cart, Profile, Search, Contact) -->
+      <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
+        <a class="rounded-md hover-fill-white duration-300 hidden md:block relative group" href="/pages/cart1.html">
+          <img src="../assets/icons/NavBar/white_add_to_black.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/white_add_to_cart-yellow.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
+        <a class="rounded-md hover-fill-white duration-300 hidden md:block relative group" href="/pages/login.html">
+          <img src="../assets/icons/NavBar/account_profile_black.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/account_profile_yellow.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
+        <button class="rounded-md hover-fill-white duration-300 hidden md:block relative group open-search">
+          <img src="../assets/icons/NavBar/search-zoom-in-black.svg" alt="Account Profile" width="20" height="20"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Account Profile" width="20" height="20"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </button>
+        <a class="rounded-md hover-fill-white contactIcon relative group" href="/pages/contact.html">
+          <img src="../assets/icons/NavBar/contact_support_black.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 group-hover:opacity-0" />
+          <img src="../assets/icons/NavBar/contact_support_yellow.svg" alt="Account Profile" width="18" height="18"
+            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+        </a>
       </div>
     </div>
+  </header>
+  <!-- Mobile Navigation Section -->
+  <div
+    class="fixed mobNavLinks navLinksHidden bottom-[80px] left-0 right-0 glassNav text-primaryColor transition-transform transform translate-y-0 card mx-4 z-30">
+    <!-- Mobile navigation links container -->
+    <ul class="text-left font-semibold">
+      <li class="p-2"><a href="/pages/about.html">About</a></li>
+      <li class="p-2"><a href="/pages/shop.html">Shop</a></li>
+      <li class="p-2"><a href="/pages/blog.html">Blog</a></li>
+    </ul>
+  </div>
+
+  <div
+    class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-4 my-2 mobile-nav-bar-open rounded-full glassNav z-20 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4 card">
+    <!-- Mobile navigation bar container -->
 
     <div
-      class="flex items-center justify-center"
-    >
-      <div
-        class="pt-24 max-w-[1440px] w-full md:px-8 lg:px-[100px] px-4 mx-auto"
-      >
-        <div
-          class="flex justify-between items-center gap-0 sm:gap-3 4xl-md:gap-16 4xl-md:text-[20px] sm:mb-7 uppercase mx-auto max-w-[1043px] w-full"
-        >
-          <a
-            class="inline-flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
-            href="./cart1.html"
-          >
-            <div
-              class="md:size-[30px] size-[25px] bg-white border-2 border-[#F8A531] rounded-full flex items-center justify-center"
-            >
-              <div class="text-[#F8A531]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check-icon lucide-check md:size-4 size-3"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-            </div>
-            <span
-              class="text-[10px] md:text-xs relative top-2 text-[#F8A531] font-semibold"
-              >Cart</span
-            >
-            <div
-              class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-primaryColor"
-            ></div>
-          </a>
-          <a
-            class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
-            href="./cart2.html"
-          >
-            <div
-              class="md:size-[30px] size-[25px] bg-white border-2 border-[#F8A531] rounded-full flex items-center justify-center"
-            >
-              <div class="text-gray-300">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check-icon lucide-check md:size-4 size-3"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-            </div>
-            <span class="text-[10px] md:text-xs relative top-2">Address</span>
-            <div
-              class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-gray-300"
-            ></div>
-          </a>
-          <a
-            class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
-            href="./cart3.html"
-          >
-            <div
-              class="md:size-[30px] size-[25px] bg-white border-2 border-gray-300 rounded-full flex items-center justify-center"
-            >
-              <div class="text-gray-300">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check-icon lucide-check md:size-4 size-3"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-            </div>
-            <span class="text-[10px] md:text-xs relative top-2">Payment</span>
-            <div
-              class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-gray-300"
-            ></div>
-          </a>
-          <a
-            class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
-            href="#"
-          >
-            <div
-              class="md:size-[30px] size-[25px] bg-white border-2 border-gray-300 rounded-full flex items-center justify-center"
-            >
-              <div class="text-gray-300">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check-icon lucide-check md:size-4 size-3"
-                >
-                  <path d="M20 6 9 17l-5-5" />
-                </svg>
-              </div>
-            </div>
-            <span class="text-[10px] md:text-xs relative top-2">confirmation</span>
-          </a>
-        </div>
+      class="navMenuBtn cursor-pointer w-5 h-5 flex justify-center items-center navMenu relative z-50 text-primaryButton group">
+      <!-- Menu button with icon -->
+      <i class="fa-solid fa-bars text-[18px]"></i>
+      <img src="../assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer group-hover:hidden"
+        style="display: none" />
+      <!-- <img src="/assets/icons/menu-yellow.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer hidden group-hover:block" style="display: none" /> -->
+      <!-- Image menu icon displayed when menu is open -->
+    </div>
 
-        <div class="w-full flex justify-between items-center">
+    <a class="navMenuBtn group" href="/pages/cart1.html">
+      <!-- Link to cart page -->
+      <img src="../assets/icons/NavBar/white_add_to_black.svg" alt="Add to Cart" class="w-[18px] group-hover:hidden" />
+      <img src="../assets/icons/generic_web_icons/add-to-cart-yellow.svg" alt="Add to Cart"
+        class="w-[18px] hidden group-hover:block" />
+    </a>
+
+    <div class="navMenuBtn cursor-pointer navSearchBtn group">
+      <!-- Search button -->
+      <img src="../assets/icons/NavBar/search-zoom-in-black.svg" alt="Search" class="w-5 group-hover:hidden" />
+      <img src="../assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Search" class="w-5 hidden group-hover:block" />
+    </div>
+
+    <a class="navMenuBtn group" href="/pages/bestsellers.html">
+      <!-- Link to bestsellers page -->
+      <!-- <img src="../assets/a.svg" alt="Bestsellers" /> -->
+      <img src="../assets/a.svg" alt="Bestsellers" class="size-6 group-hover:hidden object-contain" />
+      <img src="../assets/icons/a-yellow.svg" alt="Bestsellers"
+        class=" size-6 hidden group-hover:block object-contain" />
+    </a>
+
+    <a class="navMenuBtn group" href="/pages/login.html">
+      <!-- Link to login page -->
+      <img src="../assets/icons/generic_web_icons/account_profile.svg" alt="Account Profile"
+        class="w-5 mr-[7px] group-hover:hidden" />
+      <img src="../assets/icons/generic_web_icons/account-profile-yellow.svg" alt="Bestsellers"
+        class="w-5 mr-[7px] hidden group-hover:block object-contain" />
+    </a>
+
+
+
+    <div
+      class="fixed mobSearch searchHidden bottom-[60px] rounded-[10px] left-0 right-0 bg-primaryColor p-4 transition-transform transform translate-y-0">
+      <!-- Mobile search bar container -->
+      <div
+        class="suggestions absolute rounded-2xl -top-[220%] left-0 right-0 z-10 hidden p-2 mt-2 bg-primaryColor shadow-lg rounded">
+        <!-- Suggestions for search results -->
+        <div class="text-white flex justify-between p-2">
+          <div>
+            <div class="p-[.3rem]">Suggestion 1</div>
+            <div class="p-[.3rem]">Suggestion 2</div>
+            <div class="p-[.3rem]">Suggestion 3</div>
+          </div>
+          <div>
+            <div class="p-[.3rem]">Suggestion 1</div>
+            <div class="p-[.3rem]">Suggestion 2</div>
+            <div class="p-[.3rem]">Suggestion 3</div>
+          </div>
+        </div>
+      </div>
+      <ul class="flex items-center justify-between gap-5 w-full">
+        <input
+          class="custom-input p-1 px-3 bg-primaryColor focus:outline-none text-white border-white border !w-full searchInput"
+          placeholder="Search" type="text" aria-label="Search" />
+        <a href="/">
+          <!-- Link to homepage -->
+          <img src="../assets/icons/generic_web_icons/search.svg" alt="Search" class="w-7 navMenuBtn" />
+        </a>
+        <a href="/">
+          <!-- Link to scan page -->
+          <img src="../assets/icons/scan.svg" alt="Scan" class="w-7 navMenuBtn" />
+        </a>
+      </ul>
+    </div>
+  </div>
+
+  <div class="flex items-center justify-center">
+    <div class="pt-24 max-w-[1440px] w-full md:px-8 lg:px-[100px] px-4 mx-auto">
+      <div
+        class="flex justify-between items-center gap-0 sm:gap-3 4xl-md:gap-16 4xl-md:text-[20px] sm:mb-7 uppercase mx-auto max-w-[1043px] w-full">
+        <a class="inline-flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
+          href="./cart1.html">
           <div
-            class="w-full flex md:flex-row flex-col-reverse lg:flex-nowrap justify-center items-start gap-5 lg:gap-20"
-          >
-            <div
-              class="lg:w-[50vw] w-full flex flex-col lg:justify-start justify-center left-div"
-            >
-              <div class="rounded-2xl undefined space-y-5">
-                <div
-                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card"
-                >
-                  <div class="flex gap-6 items-center">
-                    <div
-                      class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center"
-                    >
-                      <img
-                        src="../assets/icons/product_category_icons/1 nuts.svg"
-                        alt="nutmeals"
-                        class="md:block size-full object-contain cartProductNut hidden"
-                      />
-                      <div
-                        class="md:hidden rounded-full 4xl-md:w-16 delete-btn cursor-pointer cartProductDelete"
-                      >
+            class="md:size-[30px] size-[25px] bg-white border-2 border-[#F8A531] rounded-full flex items-center justify-center">
+            <div class="text-[#F8A531]">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-check-icon lucide-check md:size-4 size-3">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+            </div>
+          </div>
+          <span class="text-[10px] md:text-xs relative top-2 text-[#F8A531] font-semibold">Cart</span>
+          <div class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-primaryColor">
+          </div>
+        </a>
+        <a class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
+          href="./cart2.html">
+          <div
+            class="md:size-[30px] size-[25px] bg-white border-2 border-[#F8A531] rounded-full flex items-center justify-center">
+            <div class="text-gray-300">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-check-icon lucide-check md:size-4 size-3">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+            </div>
+          </div>
+          <span class="text-[10px] md:text-xs relative top-2">Address</span>
+          <div class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-gray-300">
+          </div>
+        </a>
+        <a class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
+          href="./cart3.html">
+          <div
+            class="md:size-[30px] size-[25px] bg-white border-2 border-gray-300 rounded-full flex items-center justify-center">
+            <div class="text-gray-300">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-check-icon lucide-check md:size-4 size-3">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+            </div>
+          </div>
+          <span class="text-[10px] md:text-xs relative top-2">Payment</span>
+          <div class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-gray-300">
+          </div>
+        </a>
+        <a class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
+          href="#">
+          <div
+            class="md:size-[30px] size-[25px] bg-white border-2 border-gray-300 rounded-full flex items-center justify-center">
+            <div class="text-gray-300">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-check-icon lucide-check md:size-4 size-3">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+            </div>
+          </div>
+          <span class="text-[10px] md:text-xs relative top-2">confirmation</span>
+        </a>
+      </div>
+
+      <div class="w-full flex justify-between items-center">
+        <div class="w-full flex md:flex-row flex-col-reverse lg:flex-nowrap justify-center items-start gap-5 lg:gap-20">
+          <div class="lg:w-[50vw] w-full flex flex-col lg:justify-start justify-center left-div">
+            <div class="rounded-2xl undefined space-y-5">
+              <div
+                class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
+                <div class="flex gap-6 items-center">
+                  <div class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
+                    <img src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
+                      class="md:block size-full object-contain cartProductNut hidden" />
+                    <div class="md:hidden rounded-full 4xl-md:w-16 delete-btn cursor-pointer cartProductDelete">
                       <img src="../assets/icons/delete-icon.svg" alt="" class="size-full object-contain">
-                      </div>
-                    </div>
-                    <div>
-                      <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
-                      <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
-                        roasted - solted
-                      </p>
                     </div>
                   </div>
-                  <p
-                    class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl"
-                  >
-                    200 g
-                  </p>
-                  <div class="flex gap-2 items-center justify-center">
-                    <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
-                      -</button
-                    ><input
-                      min="1"
-                      class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
-                      type="text"
-                      value="1"
-                    /><button
-                      class="text-2xl increase text-md 4xl-md:!text-4xl"
-                    >
-                      +
-                    </button>
+                  <div>
+                    <p class="xs:text-sm text-md 4xl-md:!text-xl">Peanuts</p>
+                    <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
+                      roasted - solted
+                    </p>
                   </div>
-                  <p class="xs:text-sm text-sm mr-[1rem]">
-                    400
-                  </p>
                 </div>
-                <div
-                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card"
-                >
-                  <div class="flex gap-6 items-center">
-                    <div
-                      class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center"
-                    >
-                      <img
-                        src="../assets/icons/product_category_icons/1 nuts.svg"
-                        alt="nutmeals"
-                        class="md:block size-full object-contain cartProductNut hidden"
-                      />
-                      <div
-                        class="md:hidden rounded-full 4xl-md:w-16 delete-btn cursor-pointer cartProductDelete"
-                      >
+                <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
+                  200 g
+                </p>
+                <div class="flex gap-2 items-center justify-center">
+                  <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
+                    -</button><input min="1"
+                    class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
+                    type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
+                    +
+                  </button>
+                </div>
+                <p class="xs:text-sm text-sm mr-[1rem]">
+                  400
+                </p>
+              </div>
+              <div
+                class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
+                <div class="flex gap-6 items-center">
+                  <div class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
+                    <img src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
+                      class="md:block size-full object-contain cartProductNut hidden" />
+                    <div class="md:hidden rounded-full 4xl-md:w-16 delete-btn cursor-pointer cartProductDelete">
                       <img src="../assets/icons/delete-icon.svg" alt="" class="size-full object-contain">
-                      </div>
-                    </div>
-                    <div>
-                      <p class="xs:text-sm text-sm">Peanuts</p>
-                      <p class="xs:text-[10px] text-[12px]">
-                        roasted - solted
-                      </p>
                     </div>
                   </div>
-                  <p
-                    class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl"
-                  >
-                    200 g
-                  </p>
-                  <div class="flex gap-2 items-center justify-center">
-                    <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
-                      -</button
-                    ><input
-                      min="1"
-                      class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
-                      type="text"
-                      value="1"
-                    /><button
-                      class="text-2xl increase text-md 4xl-md:!text-4xl"
-                    >
-                      +
-                    </button>
+                  <div>
+                    <p class="xs:text-sm text-sm">Peanuts</p>
+                    <p class="xs:text-[10px] text-[12px]">
+                      roasted - solted
+                    </p>
                   </div>
-                  <p class="xs:text-sm text-sm mr-[1rem]">
-                    400
-                  </p>
                 </div>
-                <div
-                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card"
-                >
-                  <div class="flex gap-6 items-center">
-                    <div
-                      class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center"
-                    >
-                      <img
-                        src="../assets/icons/product_category_icons/1 nuts.svg"
-                        alt="nutmeals"
-                        class="md:block size-full object-contain cartProductNut hidden"
-                      />
-                      <div
-                        class="md:hidden rounded-full 4xl-md:w-16 delete-btn cursor-pointer cartProductDelete"
-                      >
+                <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
+                  200 g
+                </p>
+                <div class="flex gap-2 items-center justify-center">
+                  <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
+                    -</button><input min="1"
+                    class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
+                    type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
+                    +
+                  </button>
+                </div>
+                <p class="xs:text-sm text-sm mr-[1rem]">
+                  400
+                </p>
+              </div>
+              <div
+                class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
+                <div class="flex gap-6 items-center">
+                  <div class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
+                    <img src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
+                      class="md:block size-full object-contain cartProductNut hidden" />
+                    <div class="md:hidden rounded-full 4xl-md:w-16 delete-btn cursor-pointer cartProductDelete">
                       <img src="../assets/icons/delete-icon.svg" alt="" class="size-full object-contain">
-                      </div>
-                    </div>
-                    <div>
-                      <p class="xs:text-sm text-sm">Peanuts</p>
-                      <p class="xs:text-[10px] text-[12px]">
-                        roasted - solted
-                      </p>
                     </div>
                   </div>
-                  <p
-                    class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl"
-                  >
-                    200 g
-                  </p>
-                  <div class="flex gap-2 items-center justify-center">
-                    <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
-                      -</button
-                    ><input
-                      min="1"
-                      class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
-                      type="text"
-                      value="1"
-                    /><button
-                      class="text-2xl increase text-md 4xl-md:!text-4xl"
-                    >
-                      +
-                    </button>
+                  <div>
+                    <p class="xs:text-sm text-sm">Peanuts</p>
+                    <p class="xs:text-[10px] text-[12px]">
+                      roasted - solted
+                    </p>
                   </div>
-                  <p class="xs:text-sm text-sm mr-[1rem]">
-                    400
-                  </p>
                 </div>
-                <div
-                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card"
-                >
-                  <div class="flex gap-6 items-center">
-                    <div
-                      class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center"
-                    >
-                      <img
-                        src="../assets/icons/product_category_icons/1 nuts.svg"
-                        alt="nutmeals"
-                        class="md:block size-full object-contain cartProductNut hidden"
-                      />
-                      <div
-                        class="md:hidden rounded-full 4xl-md:w-16 delete-btn cursor-pointer cartProductDelete"
-                      >
+                <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
+                  200 g
+                </p>
+                <div class="flex gap-2 items-center justify-center">
+                  <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
+                    -</button><input min="1"
+                    class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
+                    type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
+                    +
+                  </button>
+                </div>
+                <p class="xs:text-sm text-sm mr-[1rem]">
+                  400
+                </p>
+              </div>
+              <div
+                class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
+                <div class="flex gap-6 items-center">
+                  <div class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
+                    <img src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
+                      class="md:block size-full object-contain cartProductNut hidden" />
+                    <div class="md:hidden rounded-full 4xl-md:w-16 delete-btn cursor-pointer cartProductDelete">
                       <img src="../assets/icons/delete-icon.svg" alt="" class="size-full object-contain">
-                      </div>
-                    </div>
-                    <div>
-                      <p class="xs:text-sm text-sm">Peanuts</p>
-                      <p class="xs:text-[10px] text-[12px]">
-                        roasted - solted
-                      </p>
                     </div>
                   </div>
-                  <p
-                    class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl"
-                  >
-                    200 g
-                  </p>
-                  <div class="flex gap-2 items-center justify-center">
-                    <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
-                      -</button
-                    ><input
-                      min="1"
-                      class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
-                      type="text"
-                      value="1"
-                    /><button
-                      class="text-2xl increase text-md 4xl-md:!text-4xl"
-                    >
-                      +
-                    </button>
+                  <div>
+                    <p class="xs:text-sm text-sm">Peanuts</p>
+                    <p class="xs:text-[10px] text-[12px]">
+                      roasted - solted
+                    </p>
                   </div>
-                  <p class="xs:text-sm text-sm mr-[1rem]">
-                    400
-                  </p>
                 </div>
-                <div
-                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
-                  <div class="flex gap-6 items-center">
-                    <div
-                      class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center"
-                    >
-                      <img
-                        src="../assets/icons/product_category_icons/1 nuts.svg"
-                        alt="nutmeals"
-                        class="md:block size-full object-contain cartProductNut hidden"
-                      />
-                      <div
-                        class="md:hidden rounded-full 4xl-md:w-16 delete-btn cursor-pointer cartProductDelete"
-                      >
+                <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
+                  200 g
+                </p>
+                <div class="flex gap-2 items-center justify-center">
+                  <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
+                    -</button><input min="1"
+                    class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
+                    type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
+                    +
+                  </button>
+                </div>
+                <p class="xs:text-sm text-sm mr-[1rem]">
+                  400
+                </p>
+              </div>
+              <div
+                class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
+                <div class="flex gap-6 items-center">
+                  <div class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
+                    <img src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
+                      class="md:block size-full object-contain cartProductNut hidden" />
+                    <div class="md:hidden rounded-full 4xl-md:w-16 delete-btn cursor-pointer cartProductDelete">
                       <img src="../assets/icons/delete-icon.svg" alt="" class="size-full object-contain">
-                      </div>
-                    </div>
-                    <div>
-                      <p class="xs:text-sm text-sm">Peanuts</p>
-                      <p class="xs:text-[10px] text-[12px]">
-                        roasted - solted
-                      </p>
                     </div>
                   </div>
-                  <p
-                    class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl"
-                  >
-                    200 g
-                  </p>
-                  <div class="flex gap-2 items-center justify-center">
-                    <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
-                      -</button
-                    ><input
-                      min="1"
-                      class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
-                      type="text"
-                      value="1"
-                    /><button
-                      class="text-2xl increase text-md 4xl-md:!text-4xl"
-                    >
-                      +
-                    </button>
+                  <div>
+                    <p class="xs:text-sm text-sm">Peanuts</p>
+                    <p class="xs:text-[10px] text-[12px]">
+                      roasted - solted
+                    </p>
                   </div>
-                  <p class="xs:text-sm text-sm mr-[1rem]">
-                    400
-                  </p>
                 </div>
-                <div
-                  class="4xl-lg:text-xl w-full -ml-[10px] md:ml-0 flex justify-between items-start my-5 text-[#707070]"
-                >
-                  <a
-                    class="ml-1 cursor-pointer hover:text-[#faa61a] font-semibold"
-                    href="/shop"
-                    >Back to shop</a
-                  >
-                  <div
-                    class="flex flex-col justify-center items-center gap-x-1.5"
-                  >
-                    <div class="flex items-center justify-between w-full gap-8">
-                      <p>Subtotal:</p>
-                      <p class="text-lg mr-[1.2rem]">1,600</p>
-                    </div>
+                <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
+                  200 g
+                </p>
+                <div class="flex gap-2 items-center justify-center">
+                  <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
+                    -</button><input min="1"
+                    class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
+                    type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
+                    +
+                  </button>
+                </div>
+                <p class="xs:text-sm text-sm mr-[1rem]">
+                  400
+                </p>
+              </div>
+              <div
+                class="4xl-lg:text-xl w-full -ml-[10px] md:ml-0 flex justify-between items-start my-5 text-[#707070]">
+                <a class="ml-1 cursor-pointer hover:text-[#faa61a] font-semibold" href="/shop">Back to shop</a>
+                <div class="flex flex-col justify-center items-center gap-x-1.5">
+                  <div class="flex items-center justify-between w-full gap-8">
+                    <p>Subtotal:</p>
+                    <p class="text-lg mr-[1.2rem]">1,600</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div
-              class="lg:w-[40vw] mt-4 md:mt-0 m-[7px] w-[98%] md:m-0 right-div md:w-full bg-[#f5f5f5] px-10 pb-8 pt-3 rounded-xl shadow-xl"
-            >
-              <div class="mt-10 w-full auth 4xl-lg:text-xl 6xl:text-2xl">
-                <div class="flex gap-5 4xl-lg:gap-10 6xl:gap-12 flex-col">
-                  <input
-                    placeholder="Name"
-                    class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
-                    type="text"
-                  /><input
-                    placeholder="Phone No"
-                    class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
-                    type="text"
-                  /><input
-                    placeholder="Email"
-                    class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
-                    type="text"
-                  /><input
-                    placeholder="Address"
-                    class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
-                    type="text"
-                  />
-                  <input
-                    placeholder="State"
-                    class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
-                    type="text"
-                  />
-                  <input
-                    placeholder="Country"
-                    class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
-                    type="text"
-                  /><input
-                    placeholder="Pin Code"
-                    class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
-                    type="text"
-                  />
-                </div>
-                <a
-                  class="w-full flex justify-center mt-8"
-                  href="../pages/cart3.html"
-                  ><button
-                    class="w-fit text-lg rounded-md py-2 px-9 hover:bg-[#faa61a] hover:text-white duration-300 4xl-lg:text-xl 6xl:text-2xl"
-                  >
-                    Payment
-                  </button></a
-                >
+          </div>
+          <div
+            class="lg:w-[40vw] mt-4 md:mt-0 m-[7px] w-[98%] md:m-0 right-div md:w-full bg-[#f5f5f5] px-10 pb-8 pt-3 rounded-xl shadow-xl">
+            <div class="mt-10 w-full auth 4xl-lg:text-xl 6xl:text-2xl">
+              <div class="flex gap-5 4xl-lg:gap-10 6xl:gap-12 flex-col">
+                <input placeholder="Name"
+                  class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
+                  type="text" /><input placeholder="Phone No"
+                  class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
+                  type="text" /><input placeholder="Email"
+                  class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
+                  type="text" /><input placeholder="Address"
+                  class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
+                  type="text" />
+                <input placeholder="State"
+                  class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
+                  type="text" />
+                <input placeholder="Country"
+                  class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
+                  type="text" /><input placeholder="Pin Code"
+                  class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
+                  type="text" />
               </div>
+              <a class="w-full flex justify-center mt-8" href="../pages/cart3.html"><button
+                  class="w-fit text-lg rounded-md py-2 px-9 hover:bg-[#faa61a] hover:text-white duration-300 4xl-lg:text-xl 6xl:text-2xl">
+                  Payment
+                </button></a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- ============== delete confirmation box =============== -->
-    <div
-      class="fixed top-0 left-0 w-full h-full bg-gray-400/30 z-50 hidden items-center justify-center md:px-8 px-4 delete_box"
-    >
-      <div
-        class="max-w-[400px] w-full bg-white flex-shrink-0 p-4 rounded-lg shadow-lg shadow-gray-500/60"
-      >
-        <h3 class="font-semibold text-center text-2xl">Are you sure?</h3>
-        <p class="font-medium text-center text-gray-500 mt-3 mb-4">
-          This action cannot be undone.
-        </p>
-        <div class="flex w-full items-center justify-evenly">
-          <button
-            class="text-sm py-1 bg-red-400 px-6 rounded-lg text-white confirm_delete"
-          >
-            Confirm
-          </button>
-          <button
-            class="text-sm py-1 bg-primaryColor px-6 rounded-lg text-white cancel_modle"
-          >
-            Cancel
-          </button>
-        </div>
+  <!-- ============== delete confirmation box =============== -->
+  <div
+    class="fixed top-0 left-0 w-full h-full bg-gray-400/30 z-50 hidden items-center justify-center md:px-8 px-4 delete_box">
+    <div class="max-w-[400px] w-full bg-white flex-shrink-0 p-4 rounded-lg shadow-lg shadow-gray-500/60">
+      <h3 class="font-semibold text-center text-2xl">Are you sure?</h3>
+      <p class="font-medium text-center text-gray-500 mt-3 mb-4">
+        This action cannot be undone.
+      </p>
+      <div class="flex w-full items-center justify-evenly">
+        <button class="text-sm py-1 bg-red-400 px-6 rounded-lg text-white confirm_delete">
+          Confirm
+        </button>
+        <button class="text-sm py-1 bg-primaryColor px-6 rounded-lg text-white cancel_modle">
+          Cancel
+        </button>
       </div>
     </div>
+  </div>
 
-    <script src="../script.js"></script>
-    <script src="../search.js"></script>
-  </body>
+  <script src="../script.js"></script>
+  <script src="../search.js"></script>
+</body>
+
 </html>
