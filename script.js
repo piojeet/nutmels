@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let searchVisible = false;
     let isAnimating = false;
     let pendingState = null;
+    let nudgeTimer = null;
 
     const applyDockState = (open) => {
       if (!isMobile()) return;
@@ -86,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (open) {
         mobNavBar.classList.add("dock-open", "mobNavBarOpen");
         mobNavBar.classList.remove("dock-closing", "mobNavBarClose");
+        mobNavBar.classList.remove("dock-nudge");
         if (menuIcon) {
           menuIcon.style.display = "none";
         }
@@ -113,6 +115,29 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
 
+    const scheduleNudge = () => {
+      if (!isMobile()) return;
+      if (nudgeTimer) return;
+      nudgeTimer = setInterval(() => {
+        if (!isMobile()) return;
+        if (menuOpen || isAnimating) return;
+        mobNavBar.classList.remove("dock-nudge");
+        // retrigger animation
+        void mobNavBar.offsetWidth;
+        mobNavBar.classList.add("dock-nudge");
+      }, 7000);
+    };
+
+    const clearNudge = () => {
+      if (nudgeTimer) {
+        clearInterval(nudgeTimer);
+        nudgeTimer = null;
+      }
+      mobNavBar.classList.remove("dock-nudge");
+    };
+
+    scheduleNudge();
+
     mobNavBar.addEventListener("transitionend", (event) => {
       if (event.propertyName !== "transform") return;
       isAnimating = false;
@@ -132,6 +157,11 @@ document.addEventListener("DOMContentLoaded", function () {
         event.stopPropagation();
 
         applyDockState(!menuOpen);
+        if (menuOpen) {
+          clearNudge();
+        } else {
+          scheduleNudge();
+        }
       });
     }
 
@@ -141,6 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (event.target.closest(".navMenu")) return;
       event.stopPropagation();
       applyDockState(true);
+      clearNudge();
     });
 
     // Toggle links visibility when clicking on menuWhenOpenIcon
@@ -306,6 +337,9 @@ document.addEventListener("DOMContentLoaded", function () {
         searchVisible = false;
         isAnimating = false;
         pendingState = null;
+        clearNudge();
+      } else {
+        scheduleNudge();
       }
     });
   });

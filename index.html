@@ -36,7 +36,10 @@
       /* keep default; avoid double-easing */
     }
 
-    .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
       padding-bottom: 0 !important;
     }
   </style>
@@ -46,41 +49,36 @@
 
 
 <body>
-<!-- Search Bar -->
- <div class="fixed top-0 w-full h-fit left-1/2 -translate-x-1/2 max-w-[1440px] z-[5] search-wrapper hidden">
-  <div class="pb-8 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 z-0 mx-auto -mt-4 pt-8">
-    <div
-      class="w-full left-div right-div pb-0 !mt-[-32px] md:!mt-[41px] outside-close bg-[#f5f5f5] shadow-[0px_0px_10px_rgba(0,0,0,0.1)] backdrop-blur-lg p-4 rounded-lg border border-gray-300"
-    >
-      <div class="mb-4">
-        <input
-          id="searchInput"
-          placeholder="Search"
-          class="border-b placeholder:text-primaryColor outline-none w-full border-solid bg-transparent border-[#F8A531] text-[#F8A531] placeholder-[#F8A531]"
-          type="text"
-          control-id="ControlID-7"
-        />
-      </div>
-      <div id="suggests" class="suggest w-full flex items-center flex-wrap justify-between hidden pb-4">
-        <div class="flex flex-col gap-4" data-group="1">
-          <p class="hover:text-primaryColor cursor-pointer">store location</p>
-          <p class="hover:text-primaryColor cursor-pointer">whatsapp</p>
-          <p class="hover:text-primaryColor cursor-pointer">phone</p>
+  <!-- Search Bar -->
+  <div class="fixed top-0 w-full h-fit left-1/2 -translate-x-1/2 max-w-[1440px] z-[5] search-wrapper hidden">
+    <div class="pb-8 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 z-0 mx-auto -mt-4 pt-8">
+      <div
+        class="w-full left-div right-div pb-0 !mt-[-32px] md:!mt-[41px] outside-close bg-[#f5f5f5] shadow-[0px_0px_10px_rgba(0,0,0,0.1)] backdrop-blur-lg p-4 rounded-lg border border-gray-300">
+        <div class="mb-4">
+          <input id="searchInput" placeholder="Search"
+            class="border-b placeholder:text-primaryColor outline-none w-full border-solid bg-transparent border-[#F8A531] text-[#F8A531] placeholder-[#F8A531]"
+            type="text" control-id="ControlID-7" />
         </div>
-        <div class="flex flex-col gap-4" data-group="2">
-          <p class="hover:text-primaryColor cursor-pointer">shop</p>
-          <p class="hover:text-primaryColor cursor-pointer">blog</p>
-          <p class="hover:text-primaryColor cursor-pointer">scanner</p>
-        </div>
-        <div class="flex flex-col gap-4 mr-6" data-group="3">
-          <p class="hover:text-primaryColor cursor-pointer">facebook</p>
-          <p class="hover:text-primaryColor cursor-pointer">instagram</p>
-          <p class="hover:text-primaryColor cursor-pointer">X</p>
+        <div id="suggests" class="suggest w-full flex items-center flex-wrap justify-between hidden pb-4">
+          <div class="flex flex-col gap-4" data-group="1">
+            <p class="hover:text-primaryColor cursor-pointer">store location</p>
+            <p class="hover:text-primaryColor cursor-pointer">whatsapp</p>
+            <p class="hover:text-primaryColor cursor-pointer">phone</p>
+          </div>
+          <div class="flex flex-col gap-4" data-group="2">
+            <p class="hover:text-primaryColor cursor-pointer">shop</p>
+            <p class="hover:text-primaryColor cursor-pointer">blog</p>
+            <p class="hover:text-primaryColor cursor-pointer">scanner</p>
+          </div>
+          <div class="flex flex-col gap-4 mr-6" data-group="3">
+            <p class="hover:text-primaryColor cursor-pointer">facebook</p>
+            <p class="hover:text-primaryColor cursor-pointer">instagram</p>
+            <p class="hover:text-primaryColor cursor-pointer">X</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
- </div>
 
   <svg style="display:none;">
     <filter id="displacementFilter">
@@ -123,15 +121,13 @@
 
       <!-- Right-side menu items (Cart, Profile, Search, Contact) -->
       <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
-        <a class="rounded-md hover-fill-white duration-300 hidden md:block relative group"
-          href="/pages/cart1.html">
+        <a class="rounded-md hover-fill-white duration-300 hidden md:block relative group" href="/pages/cart1.html">
           <img src="/assets/icons/NavBar/white_add_to_black.svg" alt="Account Profile" width="18" height="18"
             class="duration-300 group-hover:opacity-0" />
           <img src="/assets/icons/NavBar/white_add_to_cart-yellow.svg" alt="Account Profile" width="18" height="18"
             class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
         </a>
-        <a class="rounded-md hover-fill-white duration-300 hidden md:block relative group"
-          href="/pages/login.html">
+        <a class="rounded-md hover-fill-white duration-300 hidden md:block relative group" href="/pages/login.html">
           <img src="/assets/icons/NavBar/account_profile_black.svg" alt="Account Profile" width="18" height="18"
             class="duration-300 group-hover:opacity-0" />
           <img src="/assets/icons/NavBar/account_profile_yellow.svg" alt="Account Profile" width="18" height="18"
@@ -144,10 +140,10 @@
             class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
         </button>
         <a class="rounded-md hover-fill-white  relative group nav-contact-icon bg-none" href="/pages/contact.html"">
-          <img src="/assets/icons/NavBar/contact_support_black.svg" alt="Account Profile" width="18" height="18"
-            class="duration-300 group-hover:opacity-0 contact-icon-outline" />
-          <img src="/assets/icons/NavBar/contact_support_yellow.svg" alt="Account Profile" width="18" height="18"
-            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 contact-icon-fild" />
+          <img src=" /assets/icons/NavBar/contact_support_black.svg" alt="Account Profile" width="18" height="18"
+          class="duration-300 group-hover:opacity-0 contact-icon-outline" />
+        <img src="/assets/icons/NavBar/contact_support_yellow.svg" alt="Account Profile" width="18" height="18"
+          class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 contact-icon-fild" />
         </a>
       </div>
     </div>
@@ -155,9 +151,9 @@
 
 
   <div
-    class="fixed mobNavLinks navLinksHidden bottom-[80px] left-0 right-0 glassNav text-primaryColor transition-transform transform translate-y-0 card mx-4 z-30">
+    class="fixed mobNavLinks navLinksHidden bottom-[66px] left-0 right-0 glassNav text-primaryColor transition-transform transform translate-y-0 card mx-4 z-30">
     <!-- Mobile navigation links container -->
-    <ul class="text-left font-semibold">
+    <ul class="flex items-center gap-4 font-semibold py-1">
       <li class="p-2"><a href="/pages/about.html">About</a></li>
       <li class="p-2"><a href="/pages/shop.html">Shop</a></li>
       <li class="p-2"><a href="/pages/blog.html">Blog</a></li>
@@ -209,12 +205,17 @@
 
 
     <div
-      class="fixed mobSearch searchHidden bottom-[60px] rounded-[10px] left-0 right-0 bg-primaryColor p-4 transition-transform transform translate-y-0">
+      class="fixed mobSearch searchHidden bottom-[53px] rounded-[10px] left-0 right-0 bg-white p-4 transition-transform transform translate-y-0">
       <!-- Mobile search bar container -->
       <div
-        class="suggestions absolute rounded-2xl -top-[220%] left-0 right-0 z-10 hidden p-2 mt-2 bg-primaryColor shadow-lg rounded">
+        class="suggestions absolute -top-[183%] left-0 right-0 z-10 hidden p-2 mt-2 bg-white shadow-lg rounded-lg w-full">
         <!-- Suggestions for search results -->
-        <div class="text-white flex justify-between p-2">
+        <div class="text-primaryColor flex justify-between p-2 text-xs">
+          <div>
+            <div class="p-[.3rem]">Suggestion 1</div>
+            <div class="p-[.3rem]">Suggestion 2</div>
+            <div class="p-[.3rem]">Suggestion 3</div>
+          </div>
           <div>
             <div class="p-[.3rem]">Suggestion 1</div>
             <div class="p-[.3rem]">Suggestion 2</div>
@@ -229,7 +230,7 @@
       </div>
       <ul class="flex items-center justify-between gap-5 w-full">
         <input
-          class="custom-input p-1 px-3 bg-primaryColor focus:outline-none text-white border-white border !w-full searchInput"
+          class="custom-input p-1 px-3 bg-white focus:outline-none text-black border-b-2 border-primaryColor border-t-0 border-l-0 border-r-0 !w-full searchInput"
           placeholder="Search" type="text" aria-label="Search" />
         <a href="/">
           <!-- Link to homepage -->
@@ -247,7 +248,7 @@
 
 
 
-  <section class="banner w-full flex flex-col items-center justify-center lg:pb-12 pt-24 md:h-screen">
+  <section class="banner w-full flex flex-col items-center justify-center lg:pb-12 pt-[4.5rem] md:h-screen">
     <!-- Banner section container -->
 
     <div class="w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 flex flex-col items-center">
@@ -264,7 +265,8 @@
                 <div class="flex mt-[30px] justify-center items-center gap-1 md:gap-20 md:flex-nowrap flex-wrap pr-8">
                   <!-- First slide -->
                   <div class="lg:w-1/2 w-2/3 md:w-1/3">
-                    <img src="assets/images/img6.png" alt="Product image 1" class="lg:h-[240px] object-contain m-auto" />
+                    <img src="assets/images/img6.png" alt="Product image 1"
+                      class="lg:h-[240px] object-contain m-auto" />
                   </div>
                   <div class="md:w-1/2 w-full">
                     <h2 class="mb-4 text-xl">Food as preventive pharmacy! 1</h2>
@@ -280,7 +282,8 @@
                 <div class="flex mt-[30px] justify-center items-center gap-1 md:gap-20 md:flex-nowrap flex-wrap pr-8">
                   <!-- First slide -->
                   <div class="lg:w-1/2 w-2/3 md:w-1/3">
-                    <img src="assets/images/img6.png" alt="Product image 1" class="lg:h-[240px] object-contain m-auto" />
+                    <img src="assets/images/img6.png" alt="Product image 1"
+                      class="lg:h-[240px] object-contain m-auto" />
                   </div>
                   <div class="md:w-1/2 w-full pr-10">
                     <h2 class="mb-4 text-xl">Food as preventive pharmacy! 1</h2>
@@ -296,7 +299,8 @@
                 <div class="flex mt-[30px] justify-center items-center gap-1 md:gap-20 md:flex-nowrap flex-wrap pr-8">
                   <!-- First slide -->
                   <div class="lg:w-1/2 w-2/3 md:w-1/3">
-                    <img src="assets/images/img6.png" alt="Product image 1" class="lg:h-[240px] object-contain m-auto" />
+                    <img src="assets/images/img6.png" alt="Product image 1"
+                      class="lg:h-[240px] object-contain m-auto" />
                   </div>
                   <div class="md:w-1/2 w-full">
                     <h2 class="mb-4 text-xl">Food as preventive pharmacy! 1</h2>
@@ -342,7 +346,8 @@
                 class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
             </div>
             <div>
-              <p class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
+              <p
+                class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
                 Gifts
               </p>
             </div>
@@ -359,7 +364,8 @@
                 class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
             </div>
             <div>
-              <p class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
+              <p
+                class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
                 Gifts
               </p>
             </div>
@@ -375,7 +381,8 @@
                 class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
             </div>
             <div>
-              <p class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
+              <p
+                class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
                 Gifts
               </p>
             </div>
@@ -391,7 +398,8 @@
                 class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
             </div>
             <div>
-              <p class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
+              <p
+                class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
                 Gifts
               </p>
             </div>
@@ -407,7 +415,8 @@
                 class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
             </div>
             <div>
-              <p class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
+              <p
+                class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
                 Gifts
               </p>
             </div>
@@ -423,7 +432,8 @@
                 class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
             </div>
             <div>
-              <p class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
+              <p
+                class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
                 Gifts
               </p>
             </div>
@@ -439,7 +449,8 @@
                 class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
             </div>
             <div>
-              <p class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
+              <p
+                class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
                 Gifts
               </p>
             </div>
@@ -455,7 +466,8 @@
                 class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
             </div>
             <div>
-              <p class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
+              <p
+                class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
                 Gifts
               </p>
             </div>
@@ -471,7 +483,8 @@
                 class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
             </div>
             <div>
-              <p class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
+              <p
+                class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
                 Gifts
               </p>
             </div>
@@ -487,7 +500,8 @@
                 class="lg:w-full w-[124px] rounded-xl duration-300 border hover:shadow-custom p-3 hidden group-hover:block" />
             </div>
             <div>
-              <p class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
+              <p
+                class="md:text-[18px] text-[14px] md:leading-7 max-w-28 xl:text-[20px] text-center md:mt-3 mt-1 lowercase group-hover:text-primaryColor">
                 Gifts
               </p>
             </div>
@@ -497,29 +511,32 @@
     </div>
   </section>
 
-  <section class="md:h-screen pt-24 content-center pb-12">
+  <section class="md:h-screen md:pt-24 pt-8 content-center md:pb-12">
     <div class="max-w-[1440px] w-full mx-auto md:px-8 lg:px-[100px]">
-      <div class=" grid md:grid-cols-2 gap-12 md:px-8 px-4">
+      <div class=" grid md:grid-cols-2 gap-1.5 md:px-8 px-4">
         <div class="border border-gray-300 bg-[#f5f5f5] rounded-2xl shadow-md">
           <div class="p-4">
-            <div><img src="../assets/plant based protein source.jpeg" alt="img" class="rounded-xl aspect-[1/.75] object-cover object-bottom"></div>
-            <p class="font-bold md:text-4xl text-2xl mt-3">plant based protein source</p>
+            <div><img src="../assets/plant based protein source.jpeg" alt="img"
+                class="rounded-xl aspect-[1/.75] object-cover object-bottom"></div>
+            <p class="font-bold md:text-4xl text-xl mt-3">plant based protein source</p>
           </div>
         </div>
 
-        <div class="grid md:grid-cols-2 max-w-[98%] w-full ml-auto border border-gray-300 bg-[#f5f5f5] rounded-2xl shadow-md p-4 gap-4">
+        <div
+          class="grid md:grid-cols-2 max-w-[98%] w-full ml-auto md:border border-gray-300 md:bg-[#f5f5f5] rounded-2xl md:shadow-md md:p-4 md:gap-4 gap-1.5">
           <a class="" href="../pages/product.html">
             <div
               class="md:hover:bg-[#f5f5f5] duration-200 hover:shadow-md border border-transparent hover:border-solid hover:rounded-2xl p-3 relative group bg-white flex gap-2 rounded-xl shadow-md md:shadow-none md:bg-transparent md:block">
-              <div class="md:border p-[.5rem] md:p-2 rounded-2xl md:bg-white w-[30vw] md:w-auto">
-                <div class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px] md:block hidden">
+              <div class="md:border md:p-2 rounded-2xl md:bg-white w-[18vw] md:w-auto flex-shrink-0">
+                <div
+                  class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px] md:block hidden">
                   <p>Save $160</p>
                 </div>
-                <div class="w-full justify-center flex">
+                <div class="justify-center flex">
                   <img src="../assets/images/chana.png" alt="nutmeals"
-                    class="w-[90%] md:w-[37%] object-cover p-1.5 rounded-full" />
+                    class="w-[100%] md:w-[37%] object-cover p-1.5 rounded-full" />
                 </div>
-                <div class="w-full flex items-center justify-between mt-2">
+                <div class="w-full md:flex items-center justify-between mt-2 hidden">
                   <div
                     class="flex scale-[.9] md:scale-[1] items-center static top-[7.8rem] md:top-44 left-[1.8rem] justify-center gap-2">
                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="19"
@@ -540,34 +557,36 @@
                   </p>
                 </div>
               </div>
-              <div class="flex md:justify-between justify-center items-center flex-col">
-                <div class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px] md:hidden">
-                  <p>Save $160</p>
+              <div class="flex md:justify-between justify-center items-center flex-col w-full">
+                
+                <div class="flex flex-col items-end w-full">
+                  <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                    <h2 class="md:text-lg text-xs">Cashew rosted salted</h2>
+                  </div>
+                  <div class="justify-center mt-3 group-hover:opacity-100 flex md:opacity-0">
+                    <button
+                      class="border border-gray-400 text-xs rounded-md py-1 px-4 hover:bg-[#faa61a] hover:text-white hover:border-[#faa61a] duration-300">
+                      Option
+                    </button>
+                  </div>
                 </div>
-                <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                <h2 class="md:text-lg text-sm">Dry fruits</h2>
-              </div>
-              <div class="justify-center mt-3 group-hover:opacity-100 flex md:opacity-0">
-                <button
-                  class="border border-gray-400 text-xs rounded-md py-1 px-4 hover:bg-[#faa61a] hover:text-white hover:border-[#faa61a] duration-300">
-                  Select Option
-                </button>
-              </div>
               </div>
             </div>
           </a>
+
           <a class="" href="../pages/product.html">
             <div
               class="md:hover:bg-[#f5f5f5] duration-200 hover:shadow-md border border-transparent hover:border-solid hover:rounded-2xl p-3 relative group bg-white flex gap-2 rounded-xl shadow-md md:shadow-none md:bg-transparent md:block">
-              <div class="md:border p-[.5rem] md:p-2 rounded-2xl md:bg-white w-[30vw] md:w-auto">
-                <div class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px] md:block hidden">
+              <div class="md:border md:p-2 rounded-2xl md:bg-white w-[18vw] md:w-auto flex-shrink-0">
+                <div
+                  class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px] md:block hidden">
                   <p>Save $160</p>
                 </div>
-                <div class="w-full justify-center flex">
+                <div class="justify-center flex">
                   <img src="../assets/images/chana.png" alt="nutmeals"
-                    class="w-[90%] md:w-[37%] object-cover p-1.5 rounded-full" />
+                    class="w-[100%] md:w-[37%] object-cover p-1.5 rounded-full" />
                 </div>
-                <div class="w-full flex items-center justify-between mt-2">
+                <div class="w-full md:flex items-center justify-between mt-2 hidden">
                   <div
                     class="flex scale-[.9] md:scale-[1] items-center static top-[7.8rem] md:top-44 left-[1.8rem] justify-center gap-2">
                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="19"
@@ -588,34 +607,36 @@
                   </p>
                 </div>
               </div>
-              <div class="flex md:justify-between justify-center items-center flex-col">
-                <div class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px] md:hidden">
-                  <p>Save $160</p>
+              <div class="flex md:justify-between justify-center items-center flex-col w-full">
+                
+                <div class="flex flex-col items-end w-full">
+                  <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                    <h2 class="md:text-lg text-xs">Cashew rosted salted</h2>
+                  </div>
+                  <div class="justify-center mt-3 group-hover:opacity-100 flex md:opacity-0">
+                    <button
+                      class="border border-gray-400 text-xs rounded-md py-1 px-4 hover:bg-[#faa61a] hover:text-white hover:border-[#faa61a] duration-300">
+                      Option
+                    </button>
+                  </div>
                 </div>
-                <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                <h2 class="md:text-lg text-sm">Dry fruits</h2>
-              </div>
-              <div class="justify-center mt-3 group-hover:opacity-100 flex md:opacity-0">
-                <button
-                  class="border border-gray-400 text-xs rounded-md py-1 px-4 hover:bg-[#faa61a] hover:text-white hover:border-[#faa61a] duration-300">
-                  Select Option
-                </button>
-              </div>
               </div>
             </div>
           </a>
+
           <a class="" href="../pages/product.html">
             <div
               class="md:hover:bg-[#f5f5f5] duration-200 hover:shadow-md border border-transparent hover:border-solid hover:rounded-2xl p-3 relative group bg-white flex gap-2 rounded-xl shadow-md md:shadow-none md:bg-transparent md:block">
-              <div class="md:border p-[.5rem] md:p-2 rounded-2xl md:bg-white w-[30vw] md:w-auto">
-                <div class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px] md:block hidden">
+              <div class="md:border md:p-2 rounded-2xl md:bg-white w-[18vw] md:w-auto flex-shrink-0">
+                <div
+                  class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px] md:block hidden">
                   <p>Save $160</p>
                 </div>
-                <div class="w-full justify-center flex">
+                <div class="justify-center flex">
                   <img src="../assets/images/chana.png" alt="nutmeals"
-                    class="w-[90%] md:w-[37%] object-cover p-1.5 rounded-full" />
+                    class="w-[100%] md:w-[37%] object-cover p-1.5 rounded-full" />
                 </div>
-                <div class="w-full flex items-center justify-between mt-2">
+                <div class="w-full md:flex items-center justify-between mt-2 hidden">
                   <div
                     class="flex scale-[.9] md:scale-[1] items-center static top-[7.8rem] md:top-44 left-[1.8rem] justify-center gap-2">
                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="19"
@@ -636,34 +657,36 @@
                   </p>
                 </div>
               </div>
-              <div class="flex md:justify-between justify-center items-center flex-col">
-                <div class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px] md:hidden">
-                  <p>Save $160</p>
+              <div class="flex md:justify-between justify-center items-center flex-col w-full">
+                
+                <div class="flex flex-col items-end w-full">
+                  <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                    <h2 class="md:text-lg text-xs">Cashew rosted salted</h2>
+                  </div>
+                  <div class="justify-center mt-3 group-hover:opacity-100 flex md:opacity-0">
+                    <button
+                      class="border border-gray-400 text-xs rounded-md py-1 px-4 hover:bg-[#faa61a] hover:text-white hover:border-[#faa61a] duration-300">
+                      Option
+                    </button>
+                  </div>
                 </div>
-                <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                <h2 class="md:text-lg text-sm">Dry fruits</h2>
-              </div>
-              <div class="justify-center mt-3 group-hover:opacity-100 flex md:opacity-0">
-                <button
-                  class="border border-gray-400 text-xs rounded-md py-1 px-4 hover:bg-[#faa61a] hover:text-white hover:border-[#faa61a] duration-300">
-                  Select Option
-                </button>
-              </div>
               </div>
             </div>
           </a>
+
           <a class="" href="../pages/product.html">
             <div
               class="md:hover:bg-[#f5f5f5] duration-200 hover:shadow-md border border-transparent hover:border-solid hover:rounded-2xl p-3 relative group bg-white flex gap-2 rounded-xl shadow-md md:shadow-none md:bg-transparent md:block">
-              <div class="md:border p-[.5rem] md:p-2 rounded-2xl md:bg-white w-[30vw] md:w-auto">
-                <div class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px] md:block hidden">
+              <div class="md:border md:p-2 rounded-2xl md:bg-white w-[18vw] md:w-auto flex-shrink-0">
+                <div
+                  class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px] md:block hidden">
                   <p>Save $160</p>
                 </div>
-                <div class="w-full justify-center flex">
+                <div class="justify-center flex">
                   <img src="../assets/images/chana.png" alt="nutmeals"
-                    class="w-[90%] md:w-[37%] object-cover p-1.5 rounded-full" />
+                    class="w-[100%] md:w-[37%] object-cover p-1.5 rounded-full" />
                 </div>
-                <div class="w-full flex items-center justify-between mt-2">
+                <div class="w-full md:flex items-center justify-between mt-2 hidden">
                   <div
                     class="flex scale-[.9] md:scale-[1] items-center static top-[7.8rem] md:top-44 left-[1.8rem] justify-center gap-2">
                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="19"
@@ -684,23 +707,24 @@
                   </p>
                 </div>
               </div>
-              <div class="flex md:justify-between justify-center items-center flex-col">
-                <div class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px] md:hidden">
-                  <p>Save $160</p>
+              <div class="flex md:justify-between justify-center items-center flex-col w-full">
+                
+                <div class="flex flex-col items-end w-full">
+                  <div class="text-gray-500 mt-2 items-center justify-center text-center">
+                    <h2 class="md:text-lg text-xs">Cashew rosted salted</h2>
+                  </div>
+                  <div class="justify-center mt-3 group-hover:opacity-100 flex md:opacity-0">
+                    <button
+                      class="border border-gray-400 text-xs rounded-md py-1 px-4 hover:bg-[#faa61a] hover:text-white hover:border-[#faa61a] duration-300">
+                      Option
+                    </button>
+                  </div>
                 </div>
-                <div class="text-gray-500 mt-2 items-center justify-center text-center">
-                <h2 class="md:text-lg text-sm">Dry fruits</h2>
-              </div>
-              <div class="justify-center mt-3 group-hover:opacity-100 flex md:opacity-0">
-                <button
-                  class="border border-gray-400 text-xs rounded-md py-1 px-4 hover:bg-[#faa61a] hover:text-white hover:border-[#faa61a] duration-300">
-                  Select Option
-                </button>
-              </div>
               </div>
             </div>
           </a>
-        
+          
+
         </div>
       </div>
     </div>
@@ -708,10 +732,11 @@
 
 
 
-  <section class="md:pt-24 pt-10 lg:pb-16 flex items-center md:h-screen">
+  <section class="md:pt-24 pt-8 lg:pb-16 flex items-center md:h-screen">
     <!-- Section container -->
 
-    <div class="w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 m-auto grid grid-cols-1 md:grid-cols-2 items-center gap-y-4 gap-8">
+    <div
+      class="w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 m-auto grid grid-cols-1 md:grid-cols-2 items-center gap-y-4 gap-8">
       <!-- Grid container for image and text -->
 
       <div class="w-full flex items-center justify-center md:block max-w-[93.2%]">
@@ -745,8 +770,9 @@
   </section>
 
 
-  <section id="contact" class="md:pt-[50px] min-h-screen md:h-screen flex pt-24 pb-10 md:pb-0">
-    <div class="w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 m-auto grid grid-cols-1 lg:grid-cols-3 gap-x-7 gap-y-8">
+  <section id="contact" class="md:pt-[50px] min-h-screen md:h-screen flex pt-8 pb-10 md:pb-0">
+    <div
+      class="w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 m-auto grid grid-cols-1 lg:grid-cols-3 gap-x-7 gap-y-8">
       <div class="custom-shadow border border-gray-300 bg-[#f5f5f5] p-[1.6rem] rounded-md">
         <div>
           <iframe
@@ -1135,34 +1161,34 @@
 
   <script>
     gsap.registerPlugin(ScrollToPlugin);
-  
+
     function isDesktop() {
       return window.innerWidth >= 1024;
     }
-  
+
     if (!isDesktop()) {
       console.log("GSAP scroll disabled (mobile/tablet)");
     } else {
       initSectionScroll();
     }
-  
+
     window.addEventListener("resize", () => {
       location.reload(); // device switch pe clean reload
     });
-  
+
     function initSectionScroll() {
-  
+
       function getVisibleSections() {
         return Array.from(document.querySelectorAll("section"))
           .filter(sec => sec.offsetParent !== null);
       }
-  
+
       let current = 0;
       let isAnimating = false;
       let scrollTimeout;
       let scrollDelta = 0;
       const SCROLL_THRESHOLD = 50;
-  
+
       function nearestSectionIndex() {
         const sections = getVisibleSections();
         const distances = sections.map(sec =>
@@ -1170,12 +1196,12 @@
         );
         return distances.indexOf(Math.min(...distances));
       }
-  
+
       function scrollToSection(index, opts = {}) {
         const sections = getVisibleSections();
         if (isAnimating && !opts.force) return;
         if (!sections[index]) return;
-  
+
         isAnimating = true;
         gsap.to(window, {
           duration: opts.duration ?? 1,
@@ -1188,42 +1214,42 @@
           }
         });
       }
-  
+
       window.addEventListener("load", () => {
         current = nearestSectionIndex();
         scrollToSection(current, { duration: 0.001, ease: "none", force: true });
       });
-  
+
       window.addEventListener("wheel", (e) => {
         e.preventDefault();
         if (isAnimating) return;
-  
+
         scrollDelta += e.deltaY;
         const sections = getVisibleSections();
-  
+
         if (scrollDelta > SCROLL_THRESHOLD && current < sections.length - 1) {
           scrollToSection(current + 1);
-        } 
+        }
         else if (scrollDelta < -SCROLL_THRESHOLD && current > 0) {
           scrollToSection(current - 1);
         }
       }, { passive: false });
-  
+
       window.addEventListener("keydown", (e) => {
         if (isAnimating) return;
-  
+
         const sections = getVisibleSections();
-  
+
         if (["ArrowDown", "PageDown", " "].includes(e.key)) {
           e.preventDefault();
           if (current < sections.length - 1) scrollToSection(current + 1);
-        } 
+        }
         else if (["ArrowUp", "PageUp"].includes(e.key)) {
           e.preventDefault();
           if (current > 0) scrollToSection(current - 1);
         }
       });
-  
+
       window.addEventListener("scroll", () => {
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(() => {
@@ -1235,34 +1261,34 @@
       });
     }
   </script>
-  
+
 
   <script>
     const contactSection = document.querySelector("#contact");
-const contactIcon = document.querySelector(".nav-contact-icon");
+    const contactIcon = document.querySelector(".nav-contact-icon");
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        contactIcon.classList.add("active");
-      } else {
-        contactIcon.classList.remove("active");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            contactIcon.classList.add("active");
+          } else {
+            contactIcon.classList.remove("active");
+          }
+        });
+      },
+      {
+        threshold: 0.4, // 40% visible
       }
-    });
-  },
-  {
-    threshold: 0.4, // 40% visible
-  }
-);
+    );
 
-observer.observe(contactSection);
+    observer.observe(contactSection);
 
   </script>
-  
 
 
-<script src="search.js"></script>
+
+  <script src="search.js"></script>
   <script src="script.js"></script>
 </body>
 
