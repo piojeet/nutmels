@@ -216,9 +216,15 @@
   </div>
 
    <div class="flex items-center justify-center w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 mx-auto">
-      <div class="pt-24">
+      <div class="pt-[4.5rem] w-full relative">
+         
          <div
-            class="flex justify-between items-center gap-0 sm:gap-3 4xl-md:gap-16 4xl-md:text-[20px] sm:mb-7 uppercase mx-auto">
+            class="md:flex justify-between items-center grid grid-cols-4 gap-0 sm:gap-3 4xl-md:gap-16 4xl-md:text-[20px] sm:mb-7 uppercase mx-auto relative">
+
+            <div
+                  class="absolute left-0 top-[18px] -translate-y-1/2 z-[-1] transform w-full h-[2px] bg-gray-300 before:w-3/12 before:absolute before:top-0 before:left-0 before:h-full before:bg-primaryColor">
+               </div>
+
             <a class="inline-flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
                href="./cart1.html">
                <div
@@ -232,9 +238,7 @@
                   </div>
                </div>
                <span class="text-[10px] md:text-xs relative top-2">Cart</span>
-               <div
-                  class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-gray-300">
-               </div>
+               
             </a>
             <a class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
                href="./cart2.html">
@@ -248,9 +252,7 @@
                   </div>
                </div>
                <span class="text-[10px] md:text-xs relative top-2">Address</span>
-               <div
-                  class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-gray-300">
-               </div>
+              
             </a>
             <a class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
                href="./cart3.html">
@@ -264,9 +266,7 @@
                   </div>
                </div>
                <span class="text-[10px] md:text-xs relative top-2">Payment</span>
-               <div
-                  class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-gray-300">
-               </div>
+               
             </a>
             <a class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
                href="#">
@@ -282,13 +282,13 @@
                <span class="text-[10px] md:text-xs relative top-2">Comfirmation</span>
             </a>
          </div>
-         <div class="w-full flex justify-center items-center">
-            <div class="flex flex-wrap lg:flex-nowrap justify-center items-start gap-5 lg:gap-20">
+         <div class="w-full flex justify-center items-center mt-2">
+            <div class="flex flex-wrap lg:flex-nowrap justify-center items-start gap-5 lg:gap-20 w-full">
                <div class="lg:w-[40vw] w-full flex flex-col lg:justify-start justify-center left-div">
                   <div class="rounded-2xl undefined">
 
                      <div id="cartProduct1"
-                        class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
+                        class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 md:my-5 my-2 gap-x-6 p-1 text-[#707070] product-card">
                         <div class="flex gap-6">
                            <div
                               class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
@@ -323,7 +323,7 @@
                      </div>
                   
                      <div id="cartProduct2"
-                        class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
+                        class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 md:my-5 my-2 gap-x-6 p-1 text-[#707070] product-card">
                         <div class="flex gap-6">
                            <div
                               class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
@@ -356,108 +356,7 @@
                            400
                         </p>
                      </div>
-                     <div id="cartProduct3"
-                        class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
-                        <div class="flex gap-6">
-                           <div
-                              class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
-                              <img id="cartProductNut3" src="../assets/icons/product_category_icons/1 nuts.svg"
-                                 alt="nutmeals" class="block size-full object-contain cartProductNut" />
-                              <div id="cartProductDelete3"
-                                 class="hidden rounded-full 4xl-md:w-16 delete-btn cursor-pointer cartProductDelete">
-                                 <img src="../assets/icons/delete-icon.svg" alt="" class="size-full object-contain">
-                              </div>
-                           </div>
-                           <div>
-                              <p class="xs:text-sm text-sm">Peanuts</p>
-                              <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
-                                 roasted - solted
-                              </p>
-                           </div>
-                        </div>
-                        <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
-                           200 g
-                        </p>
-                        <div class="flex gap-2 items-center justify-center">
-                           <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
-                              -</button><input min="1"
-                              class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
-                              type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
-                              +
-                           </button>
-                        </div>
-                        <p class="xs:text-sm text-sm mr-[1rem]">
-                           400
-                        </p>
-                     </div>
-                     <div id="cartProduct4"
-                        class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
-                        <div class="flex gap-6">
-                           <div
-                              class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
-                              <img id="cartProductNut4" src="../assets/icons/product_category_icons/1 nuts.svg"
-                                 alt="nutmeals" class="block size-full object-contain cartProductNut" />
-                              <div id="cartProductDelete4"
-                                 class="hidden rounded-full 4xl-md:w-16 delete-btn cursor-pointer cartProductDelete">
-                                 <img src="../assets/icons/delete-icon.svg" alt="" class="size-full object-contain">
-                              </div>
-                           </div>
-                           <div>
-                              <p class="xs:text-sm text-sm">Peanuts</p>
-                              <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
-                                 roasted - solted
-                              </p>
-                           </div>
-                        </div>
-                        <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
-                           200 g
-                        </p>
-                        <div class="flex gap-2 items-center justify-center">
-                           <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
-                              -</button><input min="1"
-                              class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
-                              type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
-                              +
-                           </button>
-                        </div>
-                        <p class="xs:text-sm text-sm mr-[1rem]">
-                           400
-                        </p>
-                     </div>
-                     <div id="cartProduct5"
-                        class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
-                        <div class="flex gap-6">
-                           <div
-                              class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
-                              <img id="cartProductNut5" src="../assets/icons/product_category_icons/1 nuts.svg"
-                                 alt="nutmeals" class="block size-full object-contain cartProductNut" />
-                              <div id="cartProductDelete5"
-                                 class="hidden rounded-full 4xl-md:w-16 delete-btn cursor-pointer cartProductDelete">
-                                 <img src="../assets/icons/delete-icon.svg" alt="" class="size-full object-contain">
-                              </div>
-                           </div>
-                           <div>
-                              <p class="xs:text-sm text-sm">Peanuts</p>
-                              <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
-                                 roasted - solted
-                              </p>
-                           </div>
-                        </div>
-                        <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
-                           200 g
-                        </p>
-                        <div class="flex gap-2 items-center justify-center">
-                           <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
-                              -</button><input min="1"
-                              class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
-                              type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
-                              +
-                           </button>
-                        </div>
-                        <p class="xs:text-sm text-sm mr-[1rem]">
-                           400
-                        </p>
-                     </div>
+                     
                      <div
                         class="4xl-lg:text-xl large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex justify-between items-start my-5 text-[#707070]">
                         <a class="ml-1 cursor-pointer hover:text-[#faa61a] font-semibold" href="/shop">Back to shop</a>

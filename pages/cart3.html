@@ -207,9 +207,14 @@
   </div>
 
   <div class="flex items-center justify-center">
-    <div class="pt-24 max-w-[1440px] w-full md:px-8 lg:px-[100px] px-4 mx-auto">
+    <div class="pt-[4.5rem] max-w-[1440px] w-full md:px-8 lg:px-[100px] px-4 mx-auto pb-8 md:pb-0">
       <div
-        class="flex justify-between items-center gap-0 sm:gap-3 4xl-md:gap-16 4xl-md:text-[20px] mb-7 uppercase mx-auto max-w-[1043px] w-full">
+        class="md:flex justify-between items-center grid grid-cols-4 gap-0 sm:gap-3 4xl-md:gap-16 4xl-md:text-[20px] md:mb-7 uppercase mx-auto max-w-[1043px] w-full relative">
+
+        <div
+                  class="absolute left-0 top-[18px] -translate-y-1/2 z-[-1] transform w-full h-[2px] bg-gray-300 before:w-9/12 before:absolute before:top-0 before:left-0 before:h-full before:bg-primaryColor">
+               </div>
+
         <a class="inline-flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
           href="./cart1.html">
           <div
@@ -223,8 +228,7 @@
             </div>
           </div>
           <span class="text-[10px] md:text-xs relative top-2 text-[#F8A531] font-semibold">Cart</span>
-          <div class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-primaryColor">
-          </div>
+ 
         </a>
         <a class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
           href="./cart2.html">
@@ -239,8 +243,7 @@
             </div>
           </div>
           <span class="text-[10px] md:text-xs relative top-2 text-[#F8A531] font-semibold">Address</span>
-          <div class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-[#F8A531]">
-          </div>
+
         </a>
         <a class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
           href="./cart3.html">
@@ -255,8 +258,7 @@
             </div>
           </div>
           <span class="text-[10px] md:text-xs relative top-2">Payment</span>
-          <div class="absolute left-[54%] top-[35%] z-[-1] transform -translate-y-1/2 w-[100%] h-[2px] bg-gray-300">
-          </div>
+
         </a>
         <a class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
           href="#">
@@ -275,9 +277,38 @@
       </div>
 
 
-      <div class="w-full flex justify-center items-center">
+      <div class="w-full flex justify-center items-center mt-4">
         <div class="w-full flex md:flex-row flex-col-reverse lg:flex-nowrap justify-center items-start gap-5 lg:gap-20">
           <div class="w-full flex flex-wrap lg:flex-nowrap justify-center items-start gap-5 lg:gap-20">
+
+            <div
+              class="lg:w-[40vw] m-[7px] w-[98%] md:m-0 right-div md:w-full bg-[#f5f5f5] md:px-10 md:pb-8 md:pt-3 rounded-xl shadow-[0px_0px_10px_rgba(0,0,0,0.3)] p-6 md:hidden">
+              <div class="md:mt-10 w-full auth 4xl-lg:text-xl 6xl:text-2xl">
+                <div class="flex gap-2 md:gap-7 4xl-lg:gap-10 6xl:gap-12 flex-col">
+                  <input placeholder="Payment Option"
+                    class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
+                    type="text" control-id="ControlID-19">
+                  <input placeholder="Card Number"
+                    class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
+                    type="text" control-id="ControlID-20">
+                  <input placeholder="Expiry Date"
+                    class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
+                    type="text" control-id="ControlID-21">
+                  <input placeholder="CVV"
+                    class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
+                    type="text" control-id="ControlID-22">
+                  <input placeholder="Name"
+                    class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
+                    type="text" control-id="ControlID-23">
+                </div>
+                <a class="w-full flex justify-center md:mt-8 mt-4" href="../pages/cart4.html"><button
+                    class="w-fit text-lg rounded-md py-2 px-9 hover:bg-[#faa61a] hover:text-white duration-300 4xl-lg:text-xl 6xl:text-2xl"
+                    control-id="ControlID-24">
+                    Pay Now
+                  </button></a>
+              </div>
+            </div>
+
             <div class="lg:w-[50vw] w-full flex flex-col lg:justify-start justify-center left-div">
               <div
                 class="min-h-[125px] border border-primaryColor relative p-4 flex flex-col gap-1 rounded-md text-sm text-[#707070] shadow-lg shadow-gray-500/10">
@@ -300,9 +331,9 @@
                   </button>
                 </div>
               </div>
-              <div class="rounded-2xl undefined">
+              <div class="rounded-2xl undefined mt-2">
                 <div
-                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
+                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 md:my-5 my-2 gap-x-6 p-1 text-[#707070] product-card">
                   <div class="flex gap-6">
                     <div class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
                       <img src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
@@ -334,7 +365,7 @@
                   </p>
                 </div>
                 <div
-                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
+                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 md:my-5 my-2 gap-x-6 p-1 text-[#707070] product-card">
                   <div class="flex gap-6">
                     <div class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
                       <img src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
@@ -366,7 +397,7 @@
                   </p>
                 </div>
                 <div
-                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
+                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 md:my-5 my-2 gap-x-6 p-1 text-[#707070] product-card">
                   <div class="flex gap-6">
                     <div class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
                       <img src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
@@ -398,7 +429,7 @@
                   </p>
                 </div>
                 <div
-                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
+                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 md:my-5 my-2 gap-x-6 p-1 text-[#707070] product-card">
                   <div class="flex gap-6">
                     <div class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
                       <img src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
@@ -430,7 +461,7 @@
                   </p>
                 </div>
                 <div
-                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 my-5 gap-x-6 p-1 text-[#707070] product-card">
+                  class="w-full flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 md:my-5 my-2 gap-x-6 p-1 text-[#707070] product-card">
                   <div class="flex gap-6">
                     <div class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
                       <img src="../assets/icons/product_category_icons/1 nuts.svg" alt="nutmeals"
@@ -462,8 +493,8 @@
                   </p>
                 </div>
                 <div
-                  class="4xl-lg:text-xl w-full -ml-[10px] md:ml-0 flex justify-between items-start my-5 text-[#707070]">
-                  <a class="ml-1 cursor-pointer hover:text-[#faa61a] font-semibold" href="/shop">Back to shop</a>
+                  class="4xl-lg:text-xl w-full flex justify-between items-start my-5 text-[#707070]">
+                  <a class="cursor-pointer hover:text-[#faa61a] font-semibold" href="/shop">Back to shop</a>
                   <div class="flex flex-col justify-center items-center gap-x-1.5">
                     <div class="flex items-center justify-between w-full gap-8">
                       <p>Subtotal:</p>
@@ -474,9 +505,9 @@
               </div>
             </div>
             <div
-              class="lg:w-[40vw] mt-4 md:mt-0 m-[7px] w-[98%] md:m-0 right-div md:w-full bg-[#f5f5f5] px-10 pb-8 pt-3 rounded-xl shadow-xl">
-              <div class="mt-[1.5rem] md:mt-10 w-full auth 4xl-lg:text-xl 6xl:text-2xl">
-                <div class="flex gap-[1.3rem] md:gap-7 4xl-lg:gap-10 6xl:gap-12 flex-col">
+              class="lg:w-[40vw] mt-4 md:mt-0 m-[7px] w-[98%] md:m-0 right-div md:w-full bg-[#f5f5f5] md:px-10 md:pb-8 md:pt-3 rounded-xl shadow-[0px_0px_10px_rgba(0,0,0,0.3)] p-6 md:block hidden">
+              <div class="md:mt-10 w-full auth 4xl-lg:text-xl 6xl:text-2xl">
+                <div class="flex gap-2 md:gap-7 4xl-lg:gap-10 6xl:gap-12 flex-col">
                   <input placeholder="Payment Option"
                     class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
                     type="text" control-id="ControlID-19">
@@ -493,7 +524,7 @@
                     class="bg-[#f5f5f5] border-b-2 border-gray-400 focus-visible:text-primaryColor focus-visible:border-primaryColor focus-within:placeholder:text-primaryColor"
                     type="text" control-id="ControlID-23">
                 </div>
-                <a class="w-full flex justify-center mt-8" href="../pages/cart4.html"><button
+                <a class="w-full flex justify-center md:mt-8 mt-4" href="../pages/cart4.html"><button
                     class="w-fit text-lg rounded-md py-2 px-9 hover:bg-[#faa61a] hover:text-white duration-300 4xl-lg:text-xl 6xl:text-2xl"
                     control-id="ControlID-24">
                     Pay Now
