@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // retrigger animation
         void mobNavBar.offsetWidth;
         mobNavBar.classList.add("dock-nudge");
-      }, 7000);
+      }, 3000);
     };
 
     const clearNudge = () => {

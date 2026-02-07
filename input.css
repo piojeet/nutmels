@@ -13,10 +13,13 @@
   body {
     @apply font-montserrat scroll-smooth;
     background: radial-gradient(circle, rgb(250, 250, 250) 20%, rgb(248, 248, 248) 100%);
+    overscroll-behavior-y: none;
+    touch-action: pan-y;
   }
 
   html {
     scroll-behavior: smooth;
+    overscroll-behavior-y: none;
   }
 
   .tabs button.active {
@@ -150,9 +153,9 @@
   }
 
   .mobNavBar.mobNavBarClose {
-    transform: translateX(-50%) translateY(10px) scaleX(0.31) scaleY(0.09);
+    transform: translateX(-50%) translateY(10px) scaleX(0.31) scaleY(0.12);
     background-color: #611c81;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: none;
     cursor: pointer;
   }
