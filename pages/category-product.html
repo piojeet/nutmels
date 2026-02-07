@@ -88,7 +88,7 @@
     </svg>
     <!-- Header Section -->
     <header
-      class="z-[1111] top-0 fixed w-full md:flex px-4 md:p-0 card md:bg-transparent drop-shadow md:drop-shadow-none justify-center"
+      class="z-[1111] top-0 fixed w-full md:flex px-4 md:p-0 card md:bg-transparent drop-shadow md:drop-shadow-none justify-center bg-white !bg-opacity-25 !backdrop-blur-md"
     >
       <!-- Main Navigation Bar -->
       <div
@@ -231,10 +231,8 @@
     <div
       class="navMenuBtn cursor-pointer w-5 h-5 flex justify-center items-center navMenu relative z-50 text-primaryButton group">
       <!-- Menu button with icon -->
-      <i class="fa-solid fa-bars text-[18px]"></i>
-      <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer group-hover:hidden"
-        style="display: none" />
-      <!-- <img src="/assets/icons/menu-yellow.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer hidden group-hover:block" style="display: none" /> -->
+      <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenClosed cursor-pointer" />
+      <img src="/assets/icons/menu-yellow.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer" style="display: none" />
       <!-- Image menu icon displayed when menu is open -->
     </div>
 
@@ -443,5 +441,8 @@
     <script src="../category.js"></script>
   </body>
 </html>
+
+
+
 
 

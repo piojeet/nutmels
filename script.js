@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   mobNavBars.forEach((mobNavBar) => {
     const navMenu = mobNavBar.querySelector(".navMenu");
-    const menuIcon = mobNavBar.querySelector(".fa-bars");
+    const menuIcon = mobNavBar.querySelector(".menuWhenClosed");
     const menuWhenOpenIcon = mobNavBar.querySelector(".menuWhenOpen");
     const mobNavLinks =
       mobNavBar.querySelector(".mobNavLinks") ||

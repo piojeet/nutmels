@@ -91,7 +91,7 @@
         - NAVBAR
       -->
 
-  <header class="z-10 fixed w-full md:flex md:p-0 card drop-shadow md:drop-shadow-none justify-center overflow-hidden">
+  <header class="z-10 fixed w-full md:flex md:p-0 card drop-shadow md:drop-shadow-none justify-center overflow-hidden bg-white !bg-opacity-25 !backdrop-blur-md">
     <!-- Main navigation bar container -->
     <div class="navBar flex justify-between items-center h-[3.5rem] w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4">
       <!-- Logo section -->
@@ -151,7 +151,7 @@
 
 
   <div
-    class="fixed mobNavLinks navLinksHidden bottom-[66px] left-0 right-0 glassNav text-primaryColor transition-transform transform translate-y-0 card mx-3 z-30">
+    class="fixed mobNavLinks navLinksHidden bottom-[66px] left-0 right-0 text-black transition-transform transform translate-y-0 card mx-3 z-30 bg-white !bg-opacity-40 !backdrop-blur-md">
     <!-- Mobile navigation links container -->
     <ul class="flex items-center gap-4 font-semibold py-1">
       <li class="p-2"><a href="/pages/about.html">About</a></li>
@@ -161,16 +161,14 @@
   </div>
 
   <div
-    class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-full glassNav z-20 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4 card">
+    class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-lg z-20 text-[#707070] flex justify-between items-center shadow-lg py-4 px-4 bg-white !bg-opacity-50 !backdrop-blur-md">
     <!-- Mobile navigation bar container -->
 
     <div
       class="navMenuBtn cursor-pointer w-5 h-5 flex justify-center items-center navMenu relative z-50 text-primaryButton group">
       <!-- Menu button with icon -->
-      <i class="fa-solid fa-bars text-[18px]"></i>
-      <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer group-hover:hidden"
-        style="display: none" />
-      <!-- <img src="/assets/icons/menu-yellow.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer hidden group-hover:block" style="display: none" /> -->
+      <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenClosed cursor-pointer" />
+      <img src="/assets/icons/menu-yellow.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer" style="display: none" />
       <!-- Image menu icon displayed when menu is open -->
     </div>
 
@@ -205,10 +203,10 @@
 
 
     <div
-      class="fixed mobSearch searchHidden bottom-[53px] rounded-[10px] left-0 right-0 bg-white p-4 transition-transform transform translate-y-0">
+      class="fixed mobSearch searchHidden bottom-[53px] rounded-[10px] left-0 right-0 bg-white !bg-opacity-50 !backdrop-blur-md p-4 py-2 transition-transform transform translate-y-0">
       <!-- Mobile search bar container -->
       <div
-        class="suggestions absolute -top-[183%] left-0 right-0 z-10 hidden p-2 mt-2 bg-white shadow-lg rounded-lg w-full">
+        class="suggestions absolute -top-[183%] left-0 right-0 z-10 hidden p-2 mt-2 bg-white !bg-opacity-25 !backdrop-blur-md shadow-lg rounded-lg w-full">
         <!-- Suggestions for search results -->
         <div class="text-primaryColor flex justify-between p-2 text-xs">
           <div>
@@ -230,7 +228,7 @@
       </div>
       <ul class="flex items-center justify-between gap-5 w-full">
         <input
-          class="custom-input p-1 px-3 bg-white focus:outline-none text-black border-b-2 border-primaryColor border-t-0 border-l-0 border-r-0 !w-full searchInput"
+          class="custom-input p-1 px-3 bg-transparent focus:outline-none text-black border-b-2 border-primaryColor border-t-0 border-l-0 border-r-0 !w-full searchInput"
           placeholder="Search" type="text" aria-label="Search" />
         <a href="/">
           <!-- Link to homepage -->
@@ -1293,3 +1291,4 @@
 </body>
 
 </html>
+
