@@ -245,6 +245,54 @@
     display: none;
   }
 
+  .buy-now {
+    z-index: 40;
+    transition: transform 280ms ease, bottom 280ms ease;
+    will-change: transform;
+  }
+
+  @media (max-width: 768px) {
+    .-translate-y-16 {
+      transform: translateY(-4rem) !important;
+    }
+
+    .-translate-y-32 {
+      transform: translateY(-8rem) !important;
+    }
+
+    .-translate-y-52 {
+      transform: translateY(-13rem) !important;
+    }
+
+    .-translate-y-14 {
+      transform: translateY(-3.5rem) !important;
+    }
+
+    .-translate-y-40 {
+      transform: translateY(-10rem) !important;
+    }
+
+    .bottom-\[80px\] {
+      bottom: 80px !important;
+    }
+
+    .bottom-\[60px\] {
+      bottom: 60px !important;
+    }
+
+    .bottom-\[51px\] {
+      bottom: 51px !important;
+    }
+
+  .bottom-\[70px\] {
+    bottom: 70px !important;
+  }
+
+  .cartProductDelete {
+    display: inline-block !important;
+  }
+}
+
   .dock-nudge {
     animation: dockNudge 420ms ease-out;
   }

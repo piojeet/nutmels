@@ -25,27 +25,51 @@ document.addEventListener("click", function (e) {
 });
 
 // Hover effect
-document.querySelectorAll(".product-card").forEach((product) => {
-  const nut = product.querySelector(".cartProductNut");
-  const del = product.querySelector(".cartProductDelete");
+const isMobileView = () => window.matchMedia("(max-width: 768px)").matches;
 
-  product.addEventListener("mouseover", () => {
-    nut.style.display = "none";
-    del.style.display = "inline-block";
-  });
+const findHoverContainer = (delEl) => {
+  const card = delEl.closest(".product-card");
+  if (card && card.querySelector(".cartProductNut")) return card;
 
-  product.addEventListener("mouseleave", () => {
-    nut.style.display = "inline-block";
-    del.style.display = "none";
-  });
+  let node = delEl;
+  while (node && node !== document.body) {
+    if (node.querySelector && node.querySelector(".cartProductNut")) return node;
+    node = node.parentElement;
+  }
+  return null;
+};
+
+document.querySelectorAll(".cartProductDelete").forEach((del) => {
+  const container = findHoverContainer(del);
+  if (!container) return;
+  const nut = container.querySelector(".cartProductNut");
+  const isMobile = isMobileView;
+
+  const applyDesktopHover = () => {
+    if (!nut || !del) return;
+    if (isMobile()) return;
+
+    container.addEventListener("mouseover", () => {
+      nut.style.display = "none";
+      del.style.display = "inline-block";
+    });
+
+    container.addEventListener("mouseleave", () => {
+      nut.style.display = "inline-block";
+      del.style.display = "none";
+    });
+  };
+
+  applyDesktopHover();
 });
 
 // ~~~~~~~~~~~~~~~ MOBILE NAV ~~~~~~~~~~~~~~~
 document.addEventListener("DOMContentLoaded", function () {
   // Select elements for mobile navigation
   const mobNavBars = document.querySelectorAll(".mobNavBar");
-  const buyNowBtn = document.querySelector(".buy-now") || {
+    const buyNowBtn = document.querySelector(".buy-now") || {
     classList: { add() {}, remove() {} },
+    style: {},
   };
   const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
 
@@ -72,6 +96,44 @@ document.addEventListener("DOMContentLoaded", function () {
     let pendingState = null;
     let nudgeTimer = null;
 
+    const updateBuyNowPosition = () => {
+      if (!buyNowBtn) return;
+      buyNowBtn.classList.remove(
+        "bottom-[80px]",
+        "bottom-[60px]",
+        "bottom-[51px]",
+        "bottom-[70px]",
+        "-translate-y-16",
+        "-translate-y-32",
+        "-translate-y-40",
+        "-translate-y-14"
+      );
+
+      if (menuOpen) {
+        buyNowBtn.classList.add("bottom-[70px]");
+      }
+
+      let offsetClass = "";
+      if (suggestionBox && suggestionBox.classList.contains("visible")) {
+        offsetClass = "-translate-y-40";
+      } else if (linksVisible) {
+        offsetClass = "-translate-y-14";
+      } else if (searchVisible) {
+        offsetClass = "-translate-y-14";
+      }
+
+      if (offsetClass) {
+        buyNowBtn.classList.add(offsetClass);
+      }
+
+      if (!menuOpen && !searchVisible && !linksVisible && !(suggestionBox && suggestionBox.classList.contains("visible"))) {
+        if (buyNowBtn.style) {
+          buyNowBtn.style.transform = "";
+          buyNowBtn.style.bottom = "";
+        }
+      }
+    };
+
     const applyDockState = (open) => {
       if (!isMobile()) return;
       if (open === menuOpen) return;
@@ -94,7 +156,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (menuWhenOpenIcon) {
           menuWhenOpenIcon.style.display = "block";
         }
-        buyNowBtn.classList.add("bottom-[80px]");
         buyNowBtn.classList.remove("pl-20");
       } else {
         mobNavBar.classList.add("dock-closing", "mobNavBarClose");
@@ -109,10 +170,11 @@ document.addEventListener("DOMContentLoaded", function () {
           mobNavLinks.classList.add("navLinksHidden");
           mobNavLinks.classList.remove("navLinksVisible");
         }
-        buyNowBtn.classList.remove("bottom-[80px]");
         buyNowBtn.classList.add("pl-20");
         linksVisible = false;
+        searchVisible = false;
       }
+      updateBuyNowPosition();
     };
 
     const scheduleNudge = () => {
@@ -189,8 +251,6 @@ document.addEventListener("DOMContentLoaded", function () {
           suggestionBox.classList.add("hidden");
           suggestionBox.classList.remove("visible");
         }
-        buyNowBtn.classList.remove("-translate-y-16");
-        buyNowBtn.classList.remove("-translate-y-52");
         searchVisible = false;
         if (searchInput) {
           searchInput.value = ""; // optional: input clear
@@ -206,16 +266,15 @@ document.addEventListener("DOMContentLoaded", function () {
           mobSearchContainer.classList.add("searchHidden");
           mobSearchContainer.classList.remove("searchVisible");
         }
-        buyNowBtn.classList.add("-translate-y-32");
         linksVisible = true;
       } else {
         if (mobNavLinks) {
           mobNavLinks.classList.add("navLinksHidden");
           mobNavLinks.classList.remove("navLinksVisible");
         }
-        buyNowBtn.classList.remove("-translate-y-32");
         linksVisible = false;
       }
+      updateBuyNowPosition();
       });
     }
     // Toggle search visibility (only on the search button)
@@ -229,10 +288,6 @@ document.addEventListener("DOMContentLoaded", function () {
             mobNavLinks.classList.add("navLinksHidden");
             mobNavLinks.classList.remove("navLinksVisible");
           }
-          if (buyNowBtn) {
-            buyNowBtn.classList.add("-translate-y-16");
-            buyNowBtn.classList.remove("-translate-y-32");
-          }
           linksVisible = false;
         }
 
@@ -244,9 +299,6 @@ document.addEventListener("DOMContentLoaded", function () {
             mobNavLinks.classList.add("navLinksHidden");
             mobNavLinks.classList.remove("navLinksVisible");
           }
-          if (buyNowBtn) {
-            buyNowBtn.classList.add("-translate-y-16");
-          }
           searchVisible = true;
         } else {
           mobSearchContainer.classList.add("searchHidden");
@@ -255,12 +307,6 @@ document.addEventListener("DOMContentLoaded", function () {
             suggestionBox.classList.add("hidden");
             suggestionBox.classList.remove("visible");
           }
-
-          // Reset buyNowBtn position
-          if (buyNowBtn) {
-            buyNowBtn.classList.remove("-translate-y-16");
-            buyNowBtn.classList.remove("-translate-y-52"); // reset large translate
-          }
           searchVisible = false;
 
           // Optional: clear input so state is fresh
@@ -268,6 +314,7 @@ document.addEventListener("DOMContentLoaded", function () {
             searchInput.value = ""; // ensures next open is fresh
           }
         }
+        updateBuyNowPosition();
       });
     }
 
@@ -277,20 +324,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (searchInput.value.trim() !== "") {
           suggestionBox.classList.remove("hidden");
           suggestionBox.classList.add("visible");
-          buyNowBtn.classList.add("-translate-y-52");
-          buyNowBtn.classList.remove("-translate-y-16"); // avoid conflict
         } else {
           suggestionBox.classList.add("hidden");
           suggestionBox.classList.remove("visible");
-          buyNowBtn.classList.remove("-translate-y-52");
-
-          // Agar search box visible hai to wapas -translate-y-16 lagao
-          if (searchVisible) {
-            buyNowBtn.classList.add("-translate-y-16");
-          } else {
-            buyNowBtn.classList.remove("-translate-y-16");
-          }
         }
+        updateBuyNowPosition();
       });
     }
 
@@ -311,13 +349,10 @@ document.addEventListener("DOMContentLoaded", function () {
             suggestionBox.classList.add("hidden");
             suggestionBox.classList.remove("visible");
           }
-          buyNowBtn.classList.remove("-translate-y-32");
-          buyNowBtn.classList.remove("-translate-y-52");
-          buyNowBtn.classList.remove("-translate-y-16");
-          buyNowBtn.classList.remove("bottom-[80px]");
           buyNowBtn.classList.add("pl-20");
           linksVisible = false;
           searchVisible = false;
+          updateBuyNowPosition();
         }
       }
     });
