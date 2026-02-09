@@ -148,8 +148,12 @@
   </header>
 
 
+  <div class="mobNavBar-outer fixed bottom-0 left-0 w-full z-50">
+
+
+
   <div
-    class="fixed mobNavLinks navLinksHidden bottom-[66px] left-0 right-0 text-black transition-transform transform translate-y-0 card mx-3 z-30 bg-white !bg-opacity-40 !backdrop-blur-md">
+    class="fixed mobNavLinks navLinksHidden bottom-[75px] left-0 right-0 text-black transition-transform transform translate-y-0 card mx-3 z-30 bg-white !bg-opacity-40 !backdrop-blur-md border rounded-md">
     <!-- Mobile navigation links container -->
     <ul class="flex items-center gap-4 font-semibold py-1">
       <li class="p-2"><a href="/pages/about.html">About</a></li>
@@ -159,7 +163,46 @@
   </div>
 
   <div
-    class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-lg z-20 text-[#707070] flex justify-between items-center shadow-lg py-8 px-4 bg-white !bg-opacity-50 !backdrop-blur-md">
+  class="fixed mobSearch searchHidden bottom-[75px] rounded-[10px] left-0 right-0  transition-transform transform translate-y-0  mx-3 z-50">
+  <!-- Mobile search bar container -->
+  <div
+    class="suggestions absolute -top-[123px] left-0 right-0 z-10 hidden p-2 mt-2 bg-white !bg-opacity-50 !backdrop-blur-md border rounded-lg w-full">
+    <!-- Suggestions for search results -->
+    <div class="text-primaryColor flex justify-between p-2 text-xs">
+      <div>
+        <div class="p-[.3rem]">Suggestion 1</div>
+        <div class="p-[.3rem]">Suggestion 2</div>
+        <div class="p-[.3rem]">Suggestion 3</div>
+      </div>
+      <div>
+        <div class="p-[.3rem]">Suggestion 1</div>
+        <div class="p-[.3rem]">Suggestion 2</div>
+        <div class="p-[.3rem]">Suggestion 3</div>
+      </div>
+      <div>
+        <div class="p-[.3rem]">Suggestion 1</div>
+        <div class="p-[.3rem]">Suggestion 2</div>
+        <div class="p-[.3rem]">Suggestion 3</div>
+      </div>
+    </div>
+  </div>
+  <ul class="flex items-center justify-between gap-5 w-full bg-white !bg-opacity-50 !backdrop-blur-md border p-4 py-2 rounded-lg">
+    <input
+      class="custom-input p-1 px-3 bg-transparent focus:outline-none text-black border-b-2 border-primaryColor border-t-0 border-l-0 border-r-0 !w-full searchInput"
+      placeholder="Search" type="text" aria-label="Search" />
+    <a href="/">
+      <!-- Link to homepage -->
+      <img src="../assets/icons/generic_web_icons/search.svg" alt="Search" class="w-7 navMenuBtn" />
+    </a>
+    <a href="/">
+      <!-- Link to scan page -->
+      <img src="../assets/icons/scan.svg" alt="Scan" class="w-7 navMenuBtn" />
+    </a>
+  </ul>
+</div>
+
+  <div
+    class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-lg z-20 text-[#707070] flex justify-between items-center shadow-lg py-8 px-4 bg-white !bg-opacity-50 !backdrop-blur-md border">
     <!-- Mobile navigation bar container -->
 
     <div
@@ -200,48 +243,11 @@
 
 
 
-    <div
-      class="fixed mobSearch searchHidden bottom-[53px] rounded-[10px] left-0 right-0 !bg-white !bg-opacity-60 !backdrop-blur-xl p-4 py-2 transition-transform transform translate-y-0">
-      <!-- Mobile search bar container -->
-      <div
-        class="suggestions absolute -top-[120px] left-0 right-0 z-10 hidden p-2 mt-2 bg-white !bg-opacity-50 !backdrop-blur-md shadow-lg rounded-lg w-full">
-        <!-- Suggestions for search results -->
-        <div class="text-primaryColor flex justify-between p-2 text-xs">
-          <div>
-            <div class="p-[.3rem]">Suggestion 1</div>
-            <div class="p-[.3rem]">Suggestion 2</div>
-            <div class="p-[.3rem]">Suggestion 3</div>
-          </div>
-          <div>
-            <div class="p-[.3rem]">Suggestion 1</div>
-            <div class="p-[.3rem]">Suggestion 2</div>
-            <div class="p-[.3rem]">Suggestion 3</div>
-          </div>
-          <div>
-            <div class="p-[.3rem]">Suggestion 1</div>
-            <div class="p-[.3rem]">Suggestion 2</div>
-            <div class="p-[.3rem]">Suggestion 3</div>
-          </div>
-        </div>
-      </div>
-      <ul class="flex items-center justify-between gap-5 w-full">
-        <input
-          class="custom-input p-1 px-3 bg-transparent focus:outline-none text-black border-b-2 border-primaryColor border-t-0 border-l-0 border-r-0 !w-full searchInput"
-          placeholder="Search" type="text" aria-label="Search" />
-        <a href="/">
-          <!-- Link to homepage -->
-          <img src="../assets/icons/generic_web_icons/search.svg" alt="Search" class="w-7 navMenuBtn" />
-        </a>
-        <a href="/">
-          <!-- Link to scan page -->
-          <img src="../assets/icons/scan.svg" alt="Scan" class="w-7 navMenuBtn" />
-        </a>
-      </ul>
-    </div>
+   
   </div>
   <!-- <main class=""> -->
   <!-- Main content area -->
-
+  </div>
 
 
   <section class="banner w-full flex flex-col items-center justify-center lg:pb-12 pt-[4.5rem] md:h-screen">

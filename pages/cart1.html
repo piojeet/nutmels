@@ -18,41 +18,36 @@
 </head>
 
 <body>
-<!-- Search Bar -->
-<div class="fixed top-0 w-full h-fit left-1/2 -translate-x-1/2 max-w-[1440px] z-[5] search-wrapper hidden">
-   <div class="pb-8 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 z-0 mx-auto -mt-4 pt-8">
-     <div
-       class="w-full left-div right-div pb-0 !mt-[-32px] md:!mt-[41px] outside-close bg-[#f5f5f5] shadow-[0px_0px_10px_rgba(0,0,0,0.1)] backdrop-blur-lg p-4 rounded-lg border border-gray-300"
-     >
-       <div class="mb-4">
-         <input
-           id="searchInput"
-           placeholder="Search"
-           class="border-b placeholder:text-primaryColor outline-none w-full border-solid bg-transparent border-[#F8A531] text-[#F8A531] placeholder-[#F8A531]"
-           type="text"
-           control-id="ControlID-7"
-         />
-       </div>
-       <div id="suggests" class="suggest w-full flex items-center flex-wrap justify-between hidden pb-4">
-         <div class="flex flex-col gap-4" data-group="1">
-           <p class="hover:text-primaryColor cursor-pointer">store location</p>
-           <p class="hover:text-primaryColor cursor-pointer">whatsapp</p>
-           <p class="hover:text-primaryColor cursor-pointer">phone</p>
+   <!-- Search Bar -->
+   <div class="fixed top-0 w-full h-fit left-1/2 -translate-x-1/2 max-w-[1440px] z-[5] search-wrapper hidden">
+      <div class="pb-8 w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 z-0 mx-auto -mt-4 pt-8">
+         <div
+            class="w-full left-div right-div pb-0 !mt-[-32px] md:!mt-[41px] outside-close bg-[#f5f5f5] shadow-[0px_0px_10px_rgba(0,0,0,0.1)] backdrop-blur-lg p-4 rounded-lg border border-gray-300">
+            <div class="mb-4">
+               <input id="searchInput" placeholder="Search"
+                  class="border-b placeholder:text-primaryColor outline-none w-full border-solid bg-transparent border-[#F8A531] text-[#F8A531] placeholder-[#F8A531]"
+                  type="text" control-id="ControlID-7" />
+            </div>
+            <div id="suggests" class="suggest w-full flex items-center flex-wrap justify-between hidden pb-4">
+               <div class="flex flex-col gap-4" data-group="1">
+                  <p class="hover:text-primaryColor cursor-pointer">store location</p>
+                  <p class="hover:text-primaryColor cursor-pointer">whatsapp</p>
+                  <p class="hover:text-primaryColor cursor-pointer">phone</p>
+               </div>
+               <div class="flex flex-col gap-4" data-group="2">
+                  <p class="hover:text-primaryColor cursor-pointer">shop</p>
+                  <p class="hover:text-primaryColor cursor-pointer">blog</p>
+                  <p class="hover:text-primaryColor cursor-pointer">scanner</p>
+               </div>
+               <div class="flex flex-col gap-4 mr-6" data-group="3">
+                  <p class="hover:text-primaryColor cursor-pointer">facebook</p>
+                  <p class="hover:text-primaryColor cursor-pointer">instagram</p>
+                  <p class="hover:text-primaryColor cursor-pointer">X</p>
+               </div>
+            </div>
          </div>
-         <div class="flex flex-col gap-4" data-group="2">
-           <p class="hover:text-primaryColor cursor-pointer">shop</p>
-           <p class="hover:text-primaryColor cursor-pointer">blog</p>
-           <p class="hover:text-primaryColor cursor-pointer">scanner</p>
-         </div>
-         <div class="flex flex-col gap-4 mr-6" data-group="3">
-           <p class="hover:text-primaryColor cursor-pointer">facebook</p>
-           <p class="hover:text-primaryColor cursor-pointer">instagram</p>
-           <p class="hover:text-primaryColor cursor-pointer">X</p>
-         </div>
-       </div>
-     </div>
+      </div>
    </div>
-  </div>
 
    <svg style="display:none;">
       <filter id="displacementFilter">
@@ -62,213 +57,232 @@
       </filter>
    </svg>
    <!-- Header Section -->
-   <header class="z-10 fixed w-full md:flex md:p-0 card drop-shadow md:drop-shadow-none justify-center overflow-hidden bg-white !bg-opacity-25 !backdrop-blur-md">
+   <header
+      class="z-10 fixed w-full md:flex md:p-0 card drop-shadow md:drop-shadow-none justify-center overflow-hidden bg-white !bg-opacity-25 !backdrop-blur-md">
       <!-- Main navigation bar container -->
       <div class="navBar flex justify-between items-center h-[3.5rem] w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4">
-        <!-- Logo section -->
-        <div class="w-48">
-          <div class="navLogo w-36">
-            <a href="/index.html">            <img src="/assets/icons/Nutmeals Logo ver2.svg" alt="Nutmeals Logo" width="144" height="auto" />          </a>
-          </div>
-        </div>
-  
-        <!-- Main navigation links -->
-        <nav class="navMain hidden w-64 items-center justify-between md:flex uppercase" aria-label="Main Navigation">
-          <div>
-            <a href="/pages/about.html"
-              class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">About</a>
-          </div>
-          <div>
-            <a href="/pages/category-product.html"
-              class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Shop</a>
-          </div>
-          <div>
-            <a href="/pages/blog.html"
-              class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Blog</a>
-          </div>
-        </nav>
-  
-        <!-- Right-side menu items (Cart, Profile, Search, Contact) -->
-        <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
-          <a class="rounded-md hover-fill-white duration-300 hidden md:block relative group" href="/pages/cart1.html">
-            <img src="/assets/icons/NavBar/white_add_to_black.svg" alt="Account Profile" width="18" height="18"
-              class="duration-300 group-hover:opacity-0" />
-            <img src="/assets/icons/NavBar/white_add_to_cart-yellow.svg" alt="Account Profile" width="18" height="18"
-              class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
-          </a>
-          <a class="rounded-md hover-fill-white duration-300 hidden md:block relative group" href="/pages/login.html">
-            <img src="/assets/icons/NavBar/account_profile_black.svg" alt="Account Profile" width="18" height="18"
-              class="duration-300 group-hover:opacity-0" />
-            <img src="/assets/icons/NavBar/account_profile_yellow.svg" alt="Account Profile" width="18" height="18"
-              class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
-          </a>
-          <button class="rounded-md hover-fill-white duration-300 hidden md:block relative group open-search">
-            <img src="/assets/icons/NavBar/search-zoom-in-black.svg" alt="Account Profile" width="20" height="20"
-              class="duration-300 group-hover:opacity-0" />
-            <img src="/assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Account Profile" width="20" height="20"
-              class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
-          </button>
-          <a class="rounded-md hover-fill-white  relative group nav-contact-icon bg-none" href="/pages/contact.html"">
+         <!-- Logo section -->
+         <div class="w-48">
+            <div class="navLogo w-36">
+               <a href="/index.html"> <img src="/assets/icons/Nutmeals Logo ver2.svg" alt="Nutmeals Logo" width="144"
+                     height="auto" /> </a>
+            </div>
+         </div>
+
+         <!-- Main navigation links -->
+         <nav class="navMain hidden w-64 items-center justify-between md:flex uppercase" aria-label="Main Navigation">
+            <div>
+               <a href="/pages/about.html"
+                  class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">About</a>
+            </div>
+            <div>
+               <a href="/pages/category-product.html"
+                  class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Shop</a>
+            </div>
+            <div>
+               <a href="/pages/blog.html"
+                  class="hover:bg-primaryButton hover:text-white duration-300 rounded-md py-1 sm:px-4 px-3">Blog</a>
+            </div>
+         </nav>
+
+         <!-- Right-side menu items (Cart, Profile, Search, Contact) -->
+         <div class="navbar-right-menu gap-0 sm:gap-4 flex md:flex md:w-48 items-center justify-between">
+            <a class="rounded-md hover-fill-white duration-300 hidden md:block relative group" href="/pages/cart1.html">
+               <img src="/assets/icons/NavBar/white_add_to_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="/assets/icons/NavBar/white_add_to_cart-yellow.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <a class="rounded-md hover-fill-white duration-300 hidden md:block relative group" href="/pages/login.html">
+               <img src="/assets/icons/NavBar/account_profile_black.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="/assets/icons/NavBar/account_profile_yellow.svg" alt="Account Profile" width="18" height="18"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </a>
+            <button class="rounded-md hover-fill-white duration-300 hidden md:block relative group open-search">
+               <img src="/assets/icons/NavBar/search-zoom-in-black.svg" alt="Account Profile" width="20" height="20"
+                  class="duration-300 group-hover:opacity-0" />
+               <img src="/assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Account Profile" width="20" height="20"
+                  class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100" />
+            </button>
+            <a class="rounded-md hover-fill-white  relative group nav-contact-icon bg-none" href="/pages/contact.html"">
             <img src=" /assets/icons/NavBar/contact_support_black.svg" alt="Account Profile" width="18" height="18"
-            class="duration-300 group-hover:opacity-0 contact-icon-outline" />
-          <img src="/assets/icons/NavBar/contact_support_yellow.svg" alt="Account Profile" width="18" height="18"
-            class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 contact-icon-fild" />
-          </a>
-        </div>
+               class="duration-300 group-hover:opacity-0 contact-icon-outline" />
+            <img src="/assets/icons/NavBar/contact_support_yellow.svg" alt="Account Profile" width="18" height="18"
+               class="duration-300 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 contact-icon-fild" />
+            </a>
+         </div>
       </div>
-    </header>
+   </header>
    <!-- Mobile Navigation Section -->
-   <div
-    class="fixed mobNavLinks navLinksHidden bottom-[66px] left-0 right-0 text-black transition-transform transform translate-y-0 card mx-3 z-30 bg-white !bg-opacity-40 !backdrop-blur-md">
-    <!-- Mobile navigation links container -->
-    <ul class="flex items-center gap-4 font-semibold py-1">
-      <li class="p-2"><a href="/pages/about.html">About</a></li>
-      <li class="p-2"><a href="/pages/category-product.html">Shop</a></li>
-      <li class="p-2"><a href="/pages/blog.html">Blog</a></li>
-    </ul>
-  </div>
-
-<div
-    class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-lg z-20 text-[#707070] flex justify-between items-center shadow-lg py-8 px-4 bg-white !bg-opacity-50 !backdrop-blur-md">
-    <!-- Mobile navigation bar container -->
-
-    <div
-      class="navMenuBtn cursor-pointer w-5 h-5 flex justify-center items-center navMenu relative z-50 text-primaryButton group">
-      <!-- Menu button with icon -->
-      <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenClosed cursor-pointer" />
-      <img src="/assets/icons/menu-yellow.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer" style="display: none" />
-      <!-- Image menu icon displayed when menu is open -->
-    </div>
-
-    <a class="navMenuBtn group" href="/pages/cart1.html">
-      <!-- Link to cart page -->
-      <img src="/assets/icons/NavBar/white_add_to_black.svg" alt="Add to Cart" class="w-[18px] group-hover:hidden" />
-      <img src="/assets/icons/generic_web_icons/add-to-cart-yellow.svg" alt="Add to Cart"
-        class="w-[18px] hidden group-hover:block" />
-    </a>
-
-    <div class="navMenuBtn cursor-pointer navSearchBtn group">
-      <!-- Search button -->
-      <img src="/assets/icons/NavBar/search-zoom-in-black.svg" alt="Search" class="w-5 group-hover:hidden" />
-      <img src="/assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Search" class="w-5 hidden group-hover:block" />
-    </div>
-
-    <a class="navMenuBtn group" href="/pages/bestsellers.html">
-      <!-- Link to bestsellers page -->
-      <!-- <img src="../assets/a.svg" alt="Bestsellers" /> -->
-      <img src="/assets/a.svg" alt="Bestsellers" class="size-6 group-hover:hidden object-contain" />
-      <img src="/assets/icons/a-yellow.svg" alt="Bestsellers" class=" size-6 hidden group-hover:block object-contain" />
-    </a>
-
-    <a class="navMenuBtn group" href="/pages/login.html">
-      <!-- Link to login page -->
-      <img src="/assets/icons/generic_web_icons/account_profile.svg" alt="Account Profile"
-        class="w-5 mr-[7px] group-hover:hidden" />
-      <img src="/assets/icons/generic_web_icons/account-profile-yellow.svg" alt="Bestsellers"
-        class="w-5 mr-[7px] hidden group-hover:block object-contain" />
-    </a>
+   <div class="mobNavBar-outer fixed bottom-0 left-0 w-full z-50">
 
 
 
-    <div
-      class="fixed mobSearch searchHidden bottom-[53px] rounded-[10px] left-0 right-0 bg-white !bg-opacity-50 !backdrop-blur-md p-4 py-2 transition-transform transform translate-y-0">
-      <!-- Mobile search bar container -->
       <div
-        class="suggestions absolute -top-[120px] left-0 right-0 z-10 hidden p-2 mt-2 bg-white !bg-opacity-50 !backdrop-blur-md shadow-lg rounded-lg w-full">
-        <!-- Suggestions for search results -->
-        <div class="text-primaryColor flex justify-between p-2 text-xs">
-          <div>
-            <div class="p-[.3rem]">Suggestion 1</div>
-            <div class="p-[.3rem]">Suggestion 2</div>
-            <div class="p-[.3rem]">Suggestion 3</div>
-          </div>
-          <div>
-            <div class="p-[.3rem]">Suggestion 1</div>
-            <div class="p-[.3rem]">Suggestion 2</div>
-            <div class="p-[.3rem]">Suggestion 3</div>
-          </div>
-          <div>
-            <div class="p-[.3rem]">Suggestion 1</div>
-            <div class="p-[.3rem]">Suggestion 2</div>
-            <div class="p-[.3rem]">Suggestion 3</div>
-          </div>
-        </div>
+         class="fixed mobNavLinks navLinksHidden bottom-[75px] left-0 right-0 text-black transition-transform transform translate-y-0 card mx-3 z-30 bg-white !bg-opacity-40 !backdrop-blur-md border rounded-md">
+         <!-- Mobile navigation links container -->
+         <ul class="flex items-center gap-4 font-semibold py-1">
+            <li class="p-2"><a href="/pages/about.html">About</a></li>
+            <li class="p-2"><a href="/pages/category-product.html">Shop</a></li>
+            <li class="p-2"><a href="/pages/blog.html">Blog</a></li>
+         </ul>
       </div>
-      <ul class="flex items-center justify-between gap-5 w-full">
-        <input
-          class="custom-input p-1 px-3 bg-transparent focus:outline-none text-black border-b-2 border-primaryColor border-t-0 border-l-0 border-r-0 !w-full searchInput"
-          placeholder="Search" type="text" aria-label="Search" />
-        <a href="/">
-          <!-- Link to homepage -->
-          <img src="../assets/icons/generic_web_icons/search.svg" alt="Search" class="w-7 navMenuBtn" />
-        </a>
-        <a href="/">
-          <!-- Link to scan page -->
-          <img src="../assets/icons/scan.svg" alt="Scan" class="w-7 navMenuBtn" />
-        </a>
-      </ul>
-    </div>
-  </div>
+
+      <div
+         class="fixed mobSearch searchHidden bottom-[75px] rounded-[10px] left-0 right-0  transition-transform transform translate-y-0  mx-3 z-50">
+         <!-- Mobile search bar container -->
+         <div
+            class="suggestions absolute -top-[123px] left-0 right-0 z-10 hidden p-2 mt-2 bg-white !bg-opacity-50 !backdrop-blur-md border rounded-lg w-full">
+            <!-- Suggestions for search results -->
+            <div class="text-primaryColor flex justify-between p-2 text-xs">
+               <div>
+                  <div class="p-[.3rem]">Suggestion 1</div>
+                  <div class="p-[.3rem]">Suggestion 2</div>
+                  <div class="p-[.3rem]">Suggestion 3</div>
+               </div>
+               <div>
+                  <div class="p-[.3rem]">Suggestion 1</div>
+                  <div class="p-[.3rem]">Suggestion 2</div>
+                  <div class="p-[.3rem]">Suggestion 3</div>
+               </div>
+               <div>
+                  <div class="p-[.3rem]">Suggestion 1</div>
+                  <div class="p-[.3rem]">Suggestion 2</div>
+                  <div class="p-[.3rem]">Suggestion 3</div>
+               </div>
+            </div>
+         </div>
+         <ul
+            class="flex items-center justify-between gap-5 w-full bg-white !bg-opacity-50 !backdrop-blur-md border p-4 py-2 rounded-lg">
+            <input
+               class="custom-input p-1 px-3 bg-transparent focus:outline-none text-black border-b-2 border-primaryColor border-t-0 border-l-0 border-r-0 !w-full searchInput"
+               placeholder="Search" type="text" aria-label="Search" />
+            <a href="/">
+               <!-- Link to homepage -->
+               <img src="../assets/icons/generic_web_icons/search.svg" alt="Search" class="w-7 navMenuBtn" />
+            </a>
+            <a href="/">
+               <!-- Link to scan page -->
+               <img src="../assets/icons/scan.svg" alt="Scan" class="w-7 navMenuBtn" />
+            </a>
+         </ul>
+      </div>
+
+      <div
+         class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-lg z-20 text-[#707070] flex justify-between items-center shadow-lg py-8 px-4 bg-white !bg-opacity-50 !backdrop-blur-md border">
+         <!-- Mobile navigation bar container -->
+
+         <div
+            class="navMenuBtn cursor-pointer w-5 h-5 flex justify-center items-center navMenu relative z-50 text-primaryButton group">
+            <!-- Menu button with icon -->
+            <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenClosed cursor-pointer" />
+            <img src="/assets/icons/menu-yellow.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer"
+               style="display: none" />
+            <!-- Image menu icon displayed when menu is open -->
+         </div>
+
+         <a class="navMenuBtn group" href="/pages/cart1.html">
+            <!-- Link to cart page -->
+            <img src="/assets/icons/NavBar/white_add_to_black.svg" alt="Add to Cart"
+               class="w-[18px] group-hover:hidden" />
+            <img src="/assets/icons/generic_web_icons/add-to-cart-yellow.svg" alt="Add to Cart"
+               class="w-[18px] hidden group-hover:block" />
+         </a>
+
+         <div class="navMenuBtn cursor-pointer navSearchBtn group">
+            <!-- Search button -->
+            <img src="/assets/icons/NavBar/search-zoom-in-black.svg" alt="Search" class="w-5 group-hover:hidden" />
+            <img src="/assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Search"
+               class="w-5 hidden group-hover:block" />
+         </div>
+
+         <a class="navMenuBtn group" href="/pages/bestsellers.html">
+            <!-- Link to bestsellers page -->
+            <!-- <img src="../assets/a.svg" alt="Bestsellers" /> -->
+            <img src="/assets/a.svg" alt="Bestsellers" class="size-6 group-hover:hidden object-contain" />
+            <img src="/assets/icons/a-yellow.svg" alt="Bestsellers"
+               class=" size-6 hidden group-hover:block object-contain" />
+         </a>
+
+         <a class="navMenuBtn group" href="/pages/login.html">
+            <!-- Link to login page -->
+            <img src="/assets/icons/generic_web_icons/account_profile.svg" alt="Account Profile"
+               class="w-5 mr-[7px] group-hover:hidden" />
+            <img src="/assets/icons/generic_web_icons/account-profile-yellow.svg" alt="Bestsellers"
+               class="w-5 mr-[7px] hidden group-hover:block object-contain" />
+         </a>
+
+
+
+
+      </div>
+      <!-- <main class=""> -->
+      <!-- Main content area -->
+   </div>
 
    <div class="flex items-center justify-center w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 mx-auto">
       <div class="pt-[4.5rem] w-full relative">
-         
+
          <div
             class="md:flex justify-between items-center grid grid-cols-4 gap-0 sm:gap-3 4xl-md:gap-16 4xl-md:text-[20px] sm:mb-7 uppercase mx-auto relative">
 
             <div
-                  class="absolute left-0 top-[18px] -translate-y-1/2 z-[-1] transform w-full h-[2px] bg-gray-300 before:w-3/12 before:absolute before:top-0 before:left-0 before:h-full before:bg-primaryColor">
-               </div>
+               class="absolute left-0 top-[18px] -translate-y-1/2 z-[-1] transform w-full h-[2px] bg-gray-300 before:w-3/12 before:absolute before:top-0 before:left-0 before:h-full before:bg-primaryColor">
+            </div>
 
             <a class="inline-flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
                href="./cart1.html">
                <div
                   class="md:size-[30px] size-[25px] bg-white border-2 border-[#F8A531] rounded-full flex items-center justify-center">
                   <div class="text-gray-300">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-check-icon lucide-check md:size-4 size-3">
                         <path d="M20 6 9 17l-5-5" />
                      </svg>
                   </div>
                </div>
                <span class="text-[10px] md:text-xs relative top-2">Cart</span>
-               
+
             </a>
             <a class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
                href="./cart2.html">
-               <div class="md:size-[30px] size-[25px] bg-white border-2 border-gray-300 rounded-full flex items-center justify-center">
+               <div
+                  class="md:size-[30px] size-[25px] bg-white border-2 border-gray-300 rounded-full flex items-center justify-center">
                   <div class="text-gray-300">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-check-icon lucide-check md:size-4 size-3">
                         <path d="M20 6 9 17l-5-5" />
                      </svg>
                   </div>
                </div>
                <span class="text-[10px] md:text-xs relative top-2">Address</span>
-              
+
             </a>
             <a class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
                href="./cart3.html">
-               <div class="md:size-[30px] size-[25px] bg-white border-2 border-gray-300 rounded-full flex items-center justify-center">
+               <div
+                  class="md:size-[30px] size-[25px] bg-white border-2 border-gray-300 rounded-full flex items-center justify-center">
                   <div class="text-gray-300">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-check-icon lucide-check md:size-4 size-3">
                         <path d="M20 6 9 17l-5-5" />
                      </svg>
                   </div>
                </div>
                <span class="text-[10px] md:text-xs relative top-2">Payment</span>
-               
+
             </a>
             <a class="flex flex-col items-center xs:px-3 md:pr-3 flex-grow pl-1 py-1 text-[10px] sm:text-sm rounded-[4px] relative"
                href="#">
-               <div class="md:size-[30px] size-[25px] bg-white border-2 border-gray-300 rounded-full flex items-center justify-center">
+               <div
+                  class="md:size-[30px] size-[25px] bg-white border-2 border-gray-300 rounded-full flex items-center justify-center">
                   <div class="text-gray-300">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-check-icon lucide-check md:size-4 size-3">
                         <path d="M20 6 9 17l-5-5" />
                      </svg>
@@ -290,8 +304,8 @@
                               <img id="cartProductNut1" src="../assets/icons/product_category_icons/1 nuts.svg"
                                  alt="nutmeals" class="md:block size-full object-contain cartProductNut hidden" />
                               <div id="cartProductDelete1"
-                                 class="md:hidden rounded-full delete-btn cursor-pointer cartProductDelete">
-                                 <img src="../assets/icons/delete-icon.svg" alt="" class="size-full object-contain">
+                              class="md:hidden rounded-full delete-btn cursor-pointer cartProductDelete flex items-center justify-center w-full text-center md:p-2 p-[9px]">
+                              <img src="../assets/icons/delete-icon.svg" alt="" class="size-full object-contain mx-auto">
                               </div>
                            </div>
                            <div>
@@ -316,45 +330,45 @@
                            400
                         </p>
                      </div>
-                  
+
                      <div id="cartProduct2"
-                     class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 md:my-5 my-2 gap-x-6 p-1 text-[#707070] product-card">
-                     <div class="flex gap-6">
-                        <div
-                           class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
-                           <img id="cartProductNut2" src="../assets/icons/product_category_icons/1 nuts.svg"
-                              alt="nutmeals" class="md:block size-full object-contain cartProductNut hidden" />
-                           <div id="cartProductDelete2"
-                              class="md:hidden rounded-full delete-btn cursor-pointer cartProductDelete">
-                              <img src="../assets/icons/delete-icon.svg" alt="" class="size-full object-contain">
+                        class="large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex items-center justify-between rounded-full bg-white border border-solid border-gray-400 md:my-5 my-2 gap-x-6 p-1 text-[#707070] product-card">
+                        <div class="flex gap-6">
+                           <div
+                              class="xl:size-11 size-9 border rounded-full border-gray-400 flex items-center justify-center">
+                              <img id="cartProductNut2" src="../assets/icons/product_category_icons/1 nuts.svg"
+                                 alt="nutmeals" class="md:block size-full object-contain cartProductNut hidden" />
+                              <div id="cartProductDelete2"
+                                 class="md:hidden rounded-full delete-btn cursor-pointer cartProductDelete flex items-center justify-center w-full text-center md:p-2 p-[9px]">
+                                 <img src="../assets/icons/delete-icon.svg" alt="" class="size-full object-contain mx-auto">
+                              </div>
+                           </div>
+                           <div>
+                              <p class="xs:text-sm text-sm">Peanuts</p>
+                              <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
+                                 roasted - solted
+                              </p>
                            </div>
                         </div>
-                        <div>
-                           <p class="xs:text-sm text-sm">Peanuts</p>
-                           <p class="xs:text-[10px] text-[12px] 4xl-md:!text-[14px]">
-                              roasted - solted
-                           </p>
+                        <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
+                           200 g
+                        </p>
+                        <div class="flex gap-2 items-center justify-center">
+                           <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
+                              -</button><input min="1"
+                              class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
+                              type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
+                              +
+                           </button>
                         </div>
+                        <p class="xs:text-sm text-sm mr-[1rem]">
+                           400
+                        </p>
                      </div>
-                     <p class="xs:text-sm hidden md:block text-md min-w-10 4xl-md:!text-xl">
-                        200 g
-                     </p>
-                     <div class="flex gap-2 items-center justify-center">
-                        <button class="decrease text-2xl 4xl-md:!text-5xl pb-0.5">
-                           -</button><input min="1"
-                           class="sm:size-10 counter w-7 h-7 border text-md border-solid rounded-full p-1 text-center aspect-square flex-shrink-0"
-                           type="text" value="1" /><button class="text-2xl increase text-md 4xl-md:!text-4xl">
-                           +
-                        </button>
-                     </div>
-                     <p class="xs:text-sm text-sm mr-[1rem]">
-                        400
-                     </p>
-                  </div>
-                     
+
                      <div
                         class="4xl-lg:text-xl large:!w-[35vw] lg:!w-[40vw] xs:!w-[80vw] md:w-[370px] flex justify-between items-start my-5 text-[#707070]">
-                        <a class="ml-1 cursor-pointer hover:text-[#faa61a] font-semibold" href="/shop">Back to shop</a>
+                        <a class="ml-1 cursor-pointer hover:text-[#faa61a] font-semibold" href="./category-product.html">Back to shop</a>
                         <div class="flex flex-col justify-center items-center gap-x-1.5">
                            <div class="flex items-center justify-between w-full gap-8">
                               <p>Subtotal:</p>
@@ -368,10 +382,10 @@
                      </div>
                   </div>
                </div>
-              
+
             </div>
          </div>
-         
+
       </div>
    </div>
    <!-- ============== delete confirmation box =============== -->
@@ -386,25 +400,13 @@
          </div>
       </div>
    </div>
- 
+
    <script src="../script.js"></script>
    <script src="../search.js"></script>
-<script>
-   
+   <script>
 
-</script>
+
+   </script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

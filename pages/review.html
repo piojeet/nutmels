@@ -163,97 +163,104 @@
     </div>
   </header>
   <!-- Mobile Navigation Section -->
-  <div
-    class="fixed mobNavLinks navLinksHidden bottom-[66px] left-0 right-0 text-black transition-transform transform translate-y-0 card mx-3 z-30 bg-white !bg-opacity-40 !backdrop-blur-md">
-    <!-- Mobile navigation links container -->
-    <ul class="flex items-center gap-4 font-semibold py-1">
-      <li class="p-2"><a href="/pages/about.html">About</a></li>
-      <li class="p-2"><a href="/pages/category-product.html">Shop</a></li>
-      <li class="p-2"><a href="/pages/blog.html">Blog</a></li>
-    </ul>
-  </div>
-
-<div
-    class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-lg z-20 text-[#707070] flex justify-between items-center shadow-lg py-8 px-4 bg-white !bg-opacity-50 !backdrop-blur-md">
-    <!-- Mobile navigation bar container -->
+  <div class="mobNavBar-outer fixed bottom-0 left-0 w-full z-50">
 
     <div
-      class="navMenuBtn cursor-pointer w-5 h-5 flex justify-center items-center navMenu relative z-50 text-primaryButton group">
-      <!-- Menu button with icon -->
-      <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenClosed cursor-pointer" />
-      <img src="/assets/icons/menu-yellow.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer" style="display: none" />
-      <!-- Image menu icon displayed when menu is open -->
-    </div>
-
-    <a class="navMenuBtn group" href="/pages/cart1.html">
-      <!-- Link to cart page -->
-      <img src="/assets/icons/NavBar/white_add_to_black.svg" alt="Add to Cart" class="w-[18px] group-hover:hidden" />
-      <img src="/assets/icons/generic_web_icons/add-to-cart-yellow.svg" alt="Add to Cart"
-        class="w-[18px] hidden group-hover:block" />
-    </a>
-
-    <div class="navMenuBtn cursor-pointer navSearchBtn group">
-      <!-- Search button -->
-      <img src="/assets/icons/NavBar/search-zoom-in-black.svg" alt="Search" class="w-5 group-hover:hidden" />
-      <img src="/assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Search" class="w-5 hidden group-hover:block" />
-    </div>
-
-    <a class="navMenuBtn group" href="/pages/bestsellers.html">
-      <!-- Link to bestsellers page -->
-      <!-- <img src="../assets/a.svg" alt="Bestsellers" /> -->
-      <img src="/assets/a.svg" alt="Bestsellers" class="size-6 group-hover:hidden object-contain" />
-      <img src="/assets/icons/a-yellow.svg" alt="Bestsellers" class=" size-6 hidden group-hover:block object-contain" />
-    </a>
-
-    <a class="navMenuBtn group" href="/pages/login.html">
-      <!-- Link to login page -->
-      <img src="/assets/icons/generic_web_icons/account_profile.svg" alt="Account Profile"
-        class="w-5 mr-[7px] group-hover:hidden" />
-      <img src="/assets/icons/generic_web_icons/account-profile-yellow.svg" alt="Bestsellers"
-        class="w-5 mr-[7px] hidden group-hover:block object-contain" />
-    </a>
-
-
-
-    <div
-      class="fixed mobSearch searchHidden bottom-[53px] rounded-[10px] left-0 right-0 bg-white !bg-opacity-50 !backdrop-blur-md p-4 py-2 transition-transform transform translate-y-0">
-      <!-- Mobile search bar container -->
-      <div
-        class="suggestions absolute -top-[120px] left-0 right-0 z-10 hidden p-2 mt-2 bg-white !bg-opacity-50 !backdrop-blur-md shadow-lg rounded-lg w-full">
-        <!-- Suggestions for search results -->
-        <div class="text-primaryColor flex justify-between p-2 text-xs">
-          <div>
-            <div class="p-[.3rem]">Suggestion 1</div>
-            <div class="p-[.3rem]">Suggestion 2</div>
-            <div class="p-[.3rem]">Suggestion 3</div>
-          </div>
-          <div>
-            <div class="p-[.3rem]">Suggestion 1</div>
-            <div class="p-[.3rem]">Suggestion 2</div>
-            <div class="p-[.3rem]">Suggestion 3</div>
-          </div>
-          <div>
-            <div class="p-[.3rem]">Suggestion 1</div>
-            <div class="p-[.3rem]">Suggestion 2</div>
-            <div class="p-[.3rem]">Suggestion 3</div>
-          </div>
-        </div>
-      </div>
-      <ul class="flex items-center justify-between gap-5 w-full">
-        <input
-          class="custom-input p-1 px-3 bg-transparent focus:outline-none text-black border-b-2 border-primaryColor border-t-0 border-l-0 border-r-0 !w-full searchInput"
-          placeholder="Search" type="text" aria-label="Search" />
-        <a href="/">
-          <!-- Link to homepage -->
-          <img src="../assets/icons/generic_web_icons/search.svg" alt="Search" class="w-7 navMenuBtn" />
-        </a>
-        <a href="/">
-          <!-- Link to scan page -->
-          <img src="../assets/icons/scan.svg" alt="Scan" class="w-7 navMenuBtn" />
-        </a>
+      class="fixed mobNavLinks navLinksHidden bottom-[75px] left-0 right-0 text-black transition-transform transform translate-y-0 card mx-3 z-30 bg-white !bg-opacity-40 !backdrop-blur-md border rounded-md">
+      <!-- Mobile navigation links container -->
+      <ul class="flex items-center gap-4 font-semibold py-1">
+        <li class="p-2"><a href="/pages/about.html">About</a></li>
+        <li class="p-2"><a href="/pages/category-product.html">Shop</a></li>
+        <li class="p-2"><a href="/pages/blog.html">Blog</a></li>
       </ul>
     </div>
+  
+    <div
+    class="fixed mobSearch searchHidden bottom-[75px] rounded-[10px] left-0 right-0  transition-transform transform translate-y-0  mx-3 z-50">
+    <!-- Mobile search bar container -->
+    <div
+      class="suggestions absolute -top-[123px] left-0 right-0 z-10 hidden p-2 mt-2 bg-white !bg-opacity-50 !backdrop-blur-md border rounded-lg w-full">
+      <!-- Suggestions for search results -->
+      <div class="text-primaryColor flex justify-between p-2 text-xs">
+        <div>
+          <div class="p-[.3rem]">Suggestion 1</div>
+          <div class="p-[.3rem]">Suggestion 2</div>
+          <div class="p-[.3rem]">Suggestion 3</div>
+        </div>
+        <div>
+          <div class="p-[.3rem]">Suggestion 1</div>
+          <div class="p-[.3rem]">Suggestion 2</div>
+          <div class="p-[.3rem]">Suggestion 3</div>
+        </div>
+        <div>
+          <div class="p-[.3rem]">Suggestion 1</div>
+          <div class="p-[.3rem]">Suggestion 2</div>
+          <div class="p-[.3rem]">Suggestion 3</div>
+        </div>
+      </div>
+    </div>
+    <ul class="flex items-center justify-between gap-5 w-full bg-white !bg-opacity-50 !backdrop-blur-md border p-4 py-2 rounded-lg">
+      <input
+        class="custom-input p-1 px-3 bg-transparent focus:outline-none text-black border-b-2 border-primaryColor border-t-0 border-l-0 border-r-0 !w-full searchInput"
+        placeholder="Search" type="text" aria-label="Search" />
+      <a href="/">
+        <!-- Link to homepage -->
+        <img src="../assets/icons/generic_web_icons/search.svg" alt="Search" class="w-7 navMenuBtn" />
+      </a>
+      <a href="/">
+        <!-- Link to scan page -->
+        <img src="../assets/icons/scan.svg" alt="Scan" class="w-7 navMenuBtn" />
+      </a>
+    </ul>
   </div>
+  
+    <div
+      class="md:hidden fixed mobNavBar mobNavBarClose bottom-[14px] mx-3 my-2 mobile-nav-bar-open rounded-lg z-20 text-[#707070] flex justify-between items-center shadow-lg py-8 px-4 bg-white !bg-opacity-50 !backdrop-blur-md border">
+      <!-- Mobile navigation bar container -->
+  
+      <div
+        class="navMenuBtn cursor-pointer w-5 h-5 flex justify-center items-center navMenu relative z-50 text-primaryButton group">
+        <!-- Menu button with icon -->
+        <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenClosed cursor-pointer" />
+        <img src="/assets/icons/menu-yellow.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer" style="display: none" />
+        <!-- Image menu icon displayed when menu is open -->
+      </div>
+  
+      <a class="navMenuBtn group" href="/pages/cart1.html">
+        <!-- Link to cart page -->
+        <img src="/assets/icons/NavBar/white_add_to_black.svg" alt="Add to Cart" class="w-[18px] group-hover:hidden" />
+        <img src="/assets/icons/generic_web_icons/add-to-cart-yellow.svg" alt="Add to Cart"
+          class="w-[18px] hidden group-hover:block" />
+      </a>
+  
+      <div class="navMenuBtn cursor-pointer navSearchBtn group">
+        <!-- Search button -->
+        <img src="/assets/icons/NavBar/search-zoom-in-black.svg" alt="Search" class="w-5 group-hover:hidden" />
+        <img src="/assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Search" class="w-5 hidden group-hover:block" />
+      </div>
+  
+      <a class="navMenuBtn group" href="/pages/bestsellers.html">
+        <!-- Link to bestsellers page -->
+        <!-- <img src="../assets/a.svg" alt="Bestsellers" /> -->
+        <img src="/assets/a.svg" alt="Bestsellers" class="size-6 group-hover:hidden object-contain" />
+        <img src="/assets/icons/a-yellow.svg" alt="Bestsellers" class=" size-6 hidden group-hover:block object-contain" />
+      </a>
+  
+      <a class="navMenuBtn group" href="/pages/login.html">
+        <!-- Link to login page -->
+        <img src="/assets/icons/generic_web_icons/account_profile.svg" alt="Account Profile"
+          class="w-5 mr-[7px] group-hover:hidden" />
+        <img src="/assets/icons/generic_web_icons/account-profile-yellow.svg" alt="Bestsellers"
+          class="w-5 mr-[7px] hidden group-hover:block object-contain" />
+      </a>
+  
+  
+  
+     
+    </div>
+    <!-- <main class=""> -->
+    <!-- Main content area -->
+    </div>
 
   <div class="w-full max-w-[1440px] md:px-8 lg:px-[100px] px-4 pb-[5.5rem] pt-[4.5rem] md:mx-auto">
     <div class="grid gap-3 md:grid-cols-3">

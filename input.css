@@ -149,7 +149,7 @@
   }
 
   .mobNavBar.mobNavBarOpen {
-    transform: translateX(-50%) translateY(10px) scaleX(1);
+    transform: translateX(-50%) translateY(0px) scaleX(1);
   }
 
   .mobNavBar.mobNavBarClose {
@@ -288,9 +288,6 @@
     bottom: 70px !important;
   }
 
-  .cartProductDelete {
-    display: inline-block !important;
-  }
 }
 
   .dock-nudge {

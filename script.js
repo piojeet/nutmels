@@ -25,7 +25,7 @@ document.addEventListener("click", function (e) {
 });
 
 // Hover effect
-const isMobileView = () => window.matchMedia("(max-width: 768px)").matches;
+const isMobileView = () => window.matchMedia("(min-width: 8px)").matches;
 
 const findHoverContainer = (delEl) => {
   const card = delEl.closest(".product-card");
@@ -39,29 +39,34 @@ const findHoverContainer = (delEl) => {
   return null;
 };
 
-document.querySelectorAll(".cartProductDelete").forEach((del) => {
-  const container = findHoverContainer(del);
-  if (!container) return;
-  const nut = container.querySelector(".cartProductNut");
-  const isMobile = isMobileView;
+  document.querySelectorAll(".cartProductDelete").forEach((del) => {
+    const container = findHoverContainer(del);
+    if (!container) return;
+    const nut = container.querySelector(".cartProductNut");
+    const isMobile = isMobileView;
 
-  const applyDesktopHover = () => {
-    if (!nut || !del) return;
-    if (isMobile()) return;
-
-    container.addEventListener("mouseover", () => {
-      nut.style.display = "none";
-      del.style.display = "inline-block";
-    });
-
-    container.addEventListener("mouseleave", () => {
-      nut.style.display = "inline-block";
+    if (del) {
       del.style.display = "none";
-    });
-  };
+    }
+    if (nut) {
+      nut.style.display = "inline-block";
+    }
 
-  applyDesktopHover();
-});
+    const applyHover = () => {
+      if (!nut || !del) return;
+      container.addEventListener("mouseenter", () => {
+        nut.style.display = "none";
+        del.style.display = "inline-block";
+      });
+
+      container.addEventListener("mouseleave", () => {
+        nut.style.display = "inline-block";
+        del.style.display = "none";
+      });
+    };
+
+    applyHover();
+  });
 
 // ~~~~~~~~~~~~~~~ MOBILE NAV ~~~~~~~~~~~~~~~
 document.addEventListener("DOMContentLoaded", function () {
@@ -86,8 +91,16 @@ document.addEventListener("DOMContentLoaded", function () {
       mobNavBar.querySelector(".mobSearch") ||
       mobNavBar.parentElement?.querySelector(".mobSearch") ||
       document.querySelector(".mobSearch");
-    const searchInput = mobNavBar.querySelector(".searchInput");
-    const suggestionBox = mobNavBar.querySelector(".suggestions");
+    const searchInput =
+      mobNavBar.querySelector(".searchInput") ||
+      mobNavBar.parentElement?.querySelector(".searchInput") ||
+      mobSearchContainer?.querySelector(".searchInput") ||
+      document.querySelector(".searchInput");
+    const suggestionBox =
+      mobNavBar.querySelector(".suggestions") ||
+      mobNavBar.parentElement?.querySelector(".suggestions") ||
+      mobSearchContainer?.querySelector(".suggestions") ||
+      document.querySelector(".suggestions");
 
     let menuOpen = false;
     let linksVisible = false;
@@ -334,7 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Close everything when clicking outside
     document.addEventListener("click", function (event) {
-      if (!event.target.closest(".mobNavBar")) {
+      if (!event.target.closest(".mobNavBar") && !event.target.closest(".mobNavBar-outer")) {
         if (menuOpen || searchVisible) {
           applyDockState(false);
           if (mobNavLinks) {
