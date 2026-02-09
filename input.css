@@ -153,7 +153,7 @@
   }
 
   .mobNavBar.mobNavBarClose {
-    transform: translateX(-50%) translateY(10px) scaleX(0.31) scaleY(0.09);
+    transform: translateX(-50%) translateY(10px) scaleX(0.31) scaleY(0.16);
     background-color: #611c81;
     border-radius: 15px;
     box-shadow: none;
@@ -299,13 +299,13 @@
 
   @keyframes dockNudge {
     0% {
-      transform: translateX(-50%) translateY(10px) scaleX(0.31) scaleY(0.09);
+      transform: translateX(-50%) translateY(10px) scaleX(0.31) scaleY(0.16);
     }
     45% {
-      transform: translateX(-50%) translateY(10px) scaleX(0.38) scaleY(0.12);
+      transform: translateX(-50%) translateY(10px) scaleX(0.38) scaleY(0.18);
     }
     100% {
-      transform: translateX(-50%) translateY(10px) scaleX(0.31) scaleY(0.09);
+      transform: translateX(-50%) translateY(10px) scaleX(0.31) scaleY(0.16);
     }
   }
 
