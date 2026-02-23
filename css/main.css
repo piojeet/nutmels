@@ -835,16 +835,12 @@ html {
   bottom: 66px;
 }
 
-.bottom-\[70px\]{
-  bottom: 70px;
-}
-
 .bottom-\[75px\]{
   bottom: 75px;
 }
 
-.bottom-\[80px\]{
-  bottom: 80px;
+.bottom-\[85px\]{
+  bottom: 85px;
 }
 
 .left-0{
@@ -965,6 +961,18 @@ html {
 
 .top-\[7\.8rem\]{
   top: 7.8rem;
+}
+
+.bottom-\[80px\]{
+  bottom: 80px;
+}
+
+.bottom-8{
+  bottom: 2rem;
+}
+
+.bottom-\[78px\]{
+  bottom: 78px;
 }
 
 .z-0{
@@ -1450,11 +1458,6 @@ html {
   height: 100%;
 }
 
-.size-4\/5{
-  width: 80%;
-  height: 80%;
-}
-
 .h-11{
   height: 2.75rem;
 }
@@ -1540,12 +1543,20 @@ html {
   height: 100%;
 }
 
+.h-\[40px\]{
+  height: 40px;
+}
+
 .max-h-0{
   max-height: 0px;
 }
 
 .max-h-\[140px\]{
   max-height: 140px;
+}
+
+.max-h-\[200px\]{
+  max-height: 200px;
 }
 
 .min-h-2{
@@ -1668,12 +1679,12 @@ html {
   width: 18vw;
 }
 
-.w-\[25\%\]{
-  width: 25%;
+.w-\[200px\]{
+  width: 200px;
 }
 
-.w-\[300px\]{
-  width: 300px;
+.w-\[25\%\]{
+  width: 25%;
 }
 
 .w-\[3rem\]{
@@ -1729,12 +1740,12 @@ html {
   width: 100%;
 }
 
-.w-3\/4{
-  width: 75%;
+.w-\[40px\]{
+  width: 40px;
 }
 
-.w-4\/5{
-  width: 80%;
+.w-\[50px\]{
+  width: 50px;
 }
 
 .min-w-10{
@@ -1847,11 +1858,6 @@ html {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.-translate-y-40{
-  --tw-translate-y: -10rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .translate-x-0{
   --tw-translate-x: 0px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1859,6 +1865,11 @@ html {
 
 .translate-y-0{
   --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-\[-10\.8rem\]{
+  --tw-translate-y: -10.8rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2545,11 +2556,6 @@ html {
   background-color: rgb(255 255 255 / 0.8);
 }
 
-.bg-red-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity, 1));
-}
-
 .\!bg-opacity-25{
   --tw-bg-opacity: 0.25 !important;
 }
@@ -2663,10 +2669,6 @@ html {
 
 .p-\[3rem\]{
   padding: 3rem;
-}
-
-.p-\[8px\]{
-  padding: 8px;
 }
 
 .p-\[9px\]{
@@ -3498,8 +3500,11 @@ html {
   }
 
   .mobNavBar.mobNavBarClose > :first-child {
-    opacity: 0;
-    pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .mobNavBar.mobNavBarClose> :not(:first-child) {
@@ -4004,6 +4009,29 @@ index */
   .detail-2.active-tab {
     display: block;
   }
+}
+
+.navMenu.active .menuWhenClosed-icon {
+  display: none;
+}
+
+.menuWhenOpen-icon {
+  display: none;
+}
+
+.navMenu.active .menuWhenOpen-icon {
+  display: block;
+}
+
+.productLinkActive {
+  border-bottom: 3px solid #faa61a;
+  color: #faa61a;
+  font-weight: 600;
+}
+
+.toggleTabActive {
+  color: #faa61a !important;
+  border-bottom: 2px solid #faa61a;
 }
 
 .placeholder\:text-primaryColor::-moz-placeholder{
@@ -4518,11 +4546,6 @@ index */
     height: auto;
   }
 
-  .md\:size-full{
-    width: 100%;
-    height: 100%;
-  }
-
   .md\:h-16{
     height: 4rem;
   }
@@ -4539,8 +4562,17 @@ index */
     height: 100vh;
   }
 
+  .md\:h-\[50px\]{
+    height: 50px;
+  }
+
   .md\:max-h-full{
     max-height: 100%;
+  }
+
+  .md\:max-h-max{
+    max-height: -moz-max-content;
+    max-height: max-content;
   }
 
   .md\:min-h-14{
@@ -4615,6 +4647,11 @@ index */
     width: 100%;
   }
 
+  .md\:w-fit{
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
   .md\:min-w-\[200px\]{
     min-width: 200px;
   }
@@ -4684,6 +4721,10 @@ index */
 
   .md\:flex-nowrap{
     flex-wrap: nowrap;
+  }
+
+  .md\:items-center{
+    align-items: center;
   }
 
   .md\:justify-start{
@@ -5568,3 +5609,4 @@ index */
     line-height: 1.75rem;
   }
 }
+

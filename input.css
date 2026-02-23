@@ -161,8 +161,11 @@
   }
 
   .mobNavBar.mobNavBarClose > :first-child {
-    opacity: 0;
-    pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .mobNavBar.mobNavBarClose> :not(:first-child) {
@@ -647,3 +650,27 @@ index */
     display: block;
   }
 }
+
+.navMenu.active .menuWhenClosed-icon {
+display: none;
+}
+
+.menuWhenOpen-icon {
+  display: none;
+}
+
+.navMenu.active .menuWhenOpen-icon {
+display: block;
+}
+
+.productLinkActive {
+  border-bottom: 3px solid #faa61a;
+  color: #faa61a;
+  font-weight: 600;
+}
+
+.toggleTabActive {
+  color: #faa61a !important;
+  border-bottom: 2px solid #faa61a;
+}
+

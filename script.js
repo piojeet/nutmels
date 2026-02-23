@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   mobNavBars.forEach((mobNavBar) => {
     const navMenu = mobNavBar.querySelector(".navMenu");
+    const navMenuBtn = mobNavBar.querySelector(".navMenuBtn.navMenu") || navMenu;
     const menuIcon = mobNavBar.querySelector(".menuWhenClosed");
     const menuWhenOpenIcon = mobNavBar.querySelector(".menuWhenOpen");
     const mobNavLinks =
@@ -109,26 +110,41 @@ document.addEventListener("DOMContentLoaded", function () {
     let pendingState = null;
     let nudgeTimer = null;
 
+    // Force deterministic initial dock state on load/back-forward cache restores.
+    mobNavBar.classList.remove("dock-open", "dock-closing", "mobNavBarOpen");
+    mobNavBar.classList.add("mobNavBarClose");
+    if (navMenu) {
+      navMenu.classList.remove("active");
+    }
+
+    // Keep menu icon states deterministic: closed -> default icon, open -> yellow icon.
+    if (menuIcon) {
+      menuIcon.style.display = "block";
+    }
+    if (menuWhenOpenIcon) {
+      menuWhenOpenIcon.style.display = "none";
+    }
+
     const updateBuyNowPosition = () => {
       if (!buyNowBtn) return;
       buyNowBtn.classList.remove(
-        "bottom-[80px]",
+        "bottom-[85px]",
         "bottom-[60px]",
         "bottom-[51px]",
-        "bottom-[70px]",
+        "bottom-[78px]",
         "-translate-y-16",
         "-translate-y-32",
-        "-translate-y-40",
+        "translate-y-[-10.8rem]",
         "-translate-y-14"
       );
 
       if (menuOpen) {
-        buyNowBtn.classList.add("bottom-[70px]");
+        buyNowBtn.classList.add("bottom-[78px]");
       }
 
       let offsetClass = "";
       if (suggestionBox && suggestionBox.classList.contains("visible")) {
-        offsetClass = "-translate-y-40";
+        offsetClass = "translate-y-[-10.8rem]";
       } else if (linksVisible) {
         offsetClass = "-translate-y-14";
       } else if (searchVisible) {
@@ -173,6 +189,9 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         mobNavBar.classList.add("dock-closing", "mobNavBarClose");
         mobNavBar.classList.remove("dock-open", "mobNavBarOpen");
+        if (navMenu) {
+          navMenu.classList.remove("active");
+        }
         if (menuIcon) {
           menuIcon.style.display = "block";
         }
@@ -226,17 +245,61 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Toggle menu visibility
-    if (navMenu) {
-      navMenu.addEventListener("click", function (event) {
+    const toggleMenuLinks = () => {
+      // If search is visible, hide it before showing links.
+      if (searchVisible) {
+        if (mobSearchContainer) {
+          mobSearchContainer.classList.add("searchHidden");
+          mobSearchContainer.classList.remove("searchVisible");
+        }
+        if (suggestionBox) {
+          suggestionBox.classList.add("hidden");
+          suggestionBox.classList.remove("visible");
+        }
+        searchVisible = false;
+        if (searchInput) {
+          searchInput.value = "";
+        }
+      }
+
+      if (!linksVisible) {
+        if (mobNavLinks) {
+          mobNavLinks.classList.remove("navLinksHidden");
+          mobNavLinks.classList.add("navLinksVisible");
+        }
+        if (mobSearchContainer) {
+          mobSearchContainer.classList.add("searchHidden");
+          mobSearchContainer.classList.remove("searchVisible");
+        }
+        linksVisible = true;
+        if (navMenu) {
+          navMenu.classList.add("active");
+        }
+      } else {
+        if (mobNavLinks) {
+          mobNavLinks.classList.add("navLinksHidden");
+          mobNavLinks.classList.remove("navLinksVisible");
+        }
+        linksVisible = false;
+        if (navMenu) {
+          navMenu.classList.remove("active");
+        }
+      }
+      updateBuyNowPosition();
+    };
+
+    // Clicking menu button: closed -> open dock, open -> toggle links.
+    if (navMenuBtn) {
+      navMenuBtn.addEventListener("click", function (event) {
         event.stopPropagation();
 
-        applyDockState(!menuOpen);
-        if (menuOpen) {
+        if (!menuOpen) {
+          applyDockState(true);
           clearNudge();
-        } else {
-          scheduleNudge();
+          return;
         }
+
+        toggleMenuLinks();
       });
     }
 
@@ -253,41 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (menuWhenOpenIcon) {
       menuWhenOpenIcon.addEventListener("click", function (event) {
         event.stopPropagation();
-
-      // ⬅️ Agar search visible hai, to pehle hide karo
-      if (searchVisible) {
-        if (mobSearchContainer) {
-          mobSearchContainer.classList.add("searchHidden");
-          mobSearchContainer.classList.remove("searchVisible");
-        }
-        if (suggestionBox) {
-          suggestionBox.classList.add("hidden");
-          suggestionBox.classList.remove("visible");
-        }
-        searchVisible = false;
-        if (searchInput) {
-          searchInput.value = ""; // optional: input clear
-        }
-      }
-
-      if (!linksVisible) {
-        if (mobNavLinks) {
-          mobNavLinks.classList.remove("navLinksHidden");
-          mobNavLinks.classList.add("navLinksVisible");
-        }
-        if (mobSearchContainer) {
-          mobSearchContainer.classList.add("searchHidden");
-          mobSearchContainer.classList.remove("searchVisible");
-        }
-        linksVisible = true;
-      } else {
-        if (mobNavLinks) {
-          mobNavLinks.classList.add("navLinksHidden");
-          mobNavLinks.classList.remove("navLinksVisible");
-        }
-        linksVisible = false;
-      }
-      updateBuyNowPosition();
+        toggleMenuLinks();
       });
     }
     // Toggle search visibility (only on the search button)
@@ -302,6 +331,9 @@ document.addEventListener("DOMContentLoaded", function () {
             mobNavLinks.classList.remove("navLinksVisible");
           }
           linksVisible = false;
+          if (navMenu) {
+            navMenu.classList.remove("active");
+          }
         }
 
         // Show or hide search container
@@ -350,6 +382,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!event.target.closest(".mobNavBar") && !event.target.closest(".mobNavBar-outer")) {
         if (menuOpen || searchVisible) {
           applyDockState(false);
+          if (navMenu) {
+            navMenu.classList.remove("active");
+          }
           if (mobNavLinks) {
             mobNavLinks.classList.add("navLinksHidden");
             mobNavLinks.classList.remove("navLinksVisible");
@@ -374,6 +409,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!isMobile()) {
         mobNavBar.classList.remove("dock-open", "dock-closing", "mobNavBarOpen");
         mobNavBar.classList.add("mobNavBarClose");
+        if (navMenu) {
+          navMenu.classList.remove("active");
+        }
         if (menuIcon) {
           menuIcon.style.display = "block";
         }
@@ -629,4 +667,5 @@ document.querySelectorAll(".fa-heart").forEach((heart, index) => {
 });
 
 //  ~~~~~~~~~~~~~~~ SwiperJS ~~~~~~~~~~~~~~~
+
 

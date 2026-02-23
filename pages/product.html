@@ -149,10 +149,32 @@
       background-color: #333;
     }
 
-    .productLinkActive {
-      border-bottom: 3px solid #FAA61A;
-      color: #FAA61A;
-      font-weight: 600;
+    .swipe-container {
+      position: relative;
+      width: 100%;
+      height: 56px;
+      border-radius: 8px;
+      background: #ffffff;
+      overflow: hidden;
+      border: 1px solid #F8A531;
+    }
+
+    .swipe-button {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 48px;
+      height: 48px;
+      background: #fff;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      cursor: grab;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      transition: left 0.3s ease, opacity 0.5s ease;
+      animation: tease 2s infinite ease-in-out;
     }
 
     @media only screen and (max-width: 767px) {
@@ -164,18 +186,17 @@
         padding-right: 0;
       }
 
+      .swipe-container {
+        height: 50px;
+      }
+
+      .swipe-button {
+        width: 40px;
+        height: 40px;
+      }
+
     }
 
-
-    .swipe-container {
-      position: relative;
-      width: 100%;
-      height: 56px;
-      border-radius: 8px;
-      background: #ffffff;
-      overflow: hidden;
-      border: 1px solid #F8A531;
-    }
 
     .progress-fill {
       position: absolute;
@@ -201,23 +222,7 @@
       white-space: nowrap;
     }
 
-    .swipe-button {
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      width: 48px;
-      height: 48px;
-      background: #fff;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 3;
-      cursor: grab;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      transition: left 0.3s ease, opacity 0.5s ease;
-      animation: tease 2s infinite ease-in-out;
-    }
+    
 
     .swipe-button:active {
       cursor: grabbing;
@@ -452,8 +457,8 @@
       <div
         class="navMenuBtn cursor-pointer w-5 h-5 flex justify-center items-center navMenu relative z-50 text-primaryButton group">
         <!-- Menu button with icon -->
-        <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenClosed cursor-pointer" />
-        <img src="/assets/icons/menu-yellow.svg" alt="Menu" class="w-5 menuWhenOpen cursor-pointer" style="display: none" />
+        <img src="/assets/icons/menu.svg" alt="Menu" class="w-5 menuWhenClosed-icon cursor-pointer" />
+        <img src="/assets/icons/menu-yellow.svg" alt="Menu" class="w-5 menuWhenOpen-icon cursor-pointer" />
         <!-- Image menu icon displayed when menu is open -->
       </div>
   
@@ -470,7 +475,7 @@
         <img src="/assets/icons/NavBar/search-zoom-in-yellow.svg" alt="Search" class="w-5 hidden group-hover:block" />
       </div>
   
-      <a class="navMenuBtn group" href="/pages/bestsellers.html">
+      <a class="navMenuBtn group" href="/pages/category-product.html">
         <!-- Link to bestsellers page -->
         <!-- <img src="../assets/a.svg" alt="Bestsellers" /> -->
         <img src="/assets/a.svg" alt="Bestsellers" class="size-6 group-hover:hidden object-contain" />
@@ -495,7 +500,7 @@
 
   <!-- mobile buy btn  -->
   <div
-  class="bottom-6 lg:bottom-0 left-0 buy-now transform transition-transform duration-300 w-full md:pl-0 lg:h-full flex-1 content-end fixed lg:static px-4 lg:px-0 !pl-4 lg:pl-0">
+  class="bottom-8 lg:bottom-0 left-0 buy-now transform transition-transform duration-300 w-full md:pl-0 lg:h-full flex-1 content-end fixed lg:static px-4 lg:px-0 !pl-4 lg:pl-0">
   <div class="flex justify-evenly md:gap-2 lg:gap-4 lg:mb-3 items-center gap-3 lg:hidden">
 
     <div class="incdec flex lg:hidden flex-col w-12 flex-shrink-0 border border-gray-300 rounded-md justify-center items-center py-1">
@@ -514,7 +519,7 @@
       </button>
     </div>
 
-    <a class="w-fit h-[50px] border border-gray-400 hover:border-[#faa61a] text-lg rounded-md py-3 px-4 hover:bg-[#faa61a] duration-300 group flex-shrink-0"
+    <a class="md:w-fit h-[50px] w-[50px] border border-gray-400 hover:border-[#faa61a] text-lg rounded-md py-3 px-4 hover:bg-[#faa61a] duration-300 group flex-shrink-0"
       href="/cart">
       <img src="../assets/icons/generic_web_icons/add to cart.svg" class="w-5 group-hover:hidden flex-shrink-0">
       <img src="../assets/icons/generic_web_icons/add to cart white.svg"
@@ -596,7 +601,7 @@
 
   <div class="w-full  lg:flex lg:justify-center">
     <div
-      class="flex-col lg:flex-row md:gap-8 gap-3 w-full max-w-[1440px] md:px-8 lg:px-[100px] lg:justify-center md:mt-[10rem] pt-24 md:pt-0 grid lg:grid-cols-2 grid-cols-1 bg-primaryButton md:bg-transparent bg-opacity-10 md:bg-opacity-100 mb-24 lg:pm-0">
+      class="flex-col lg:flex-row md:gap-8 w-full max-w-[1440px] md:px-8 lg:px-[100px] lg:justify-center md:mt-[10rem] pt-24 md:pt-0 grid lg:grid-cols-2 grid-cols-1 bg-primaryButton md:bg-transparent bg-opacity-10 md:bg-opacity-100 mb-24 lg:pm-0">
 
       <div class="h-full">
 
@@ -625,7 +630,7 @@
               <div class="swiper mySwiper">
                 <div class="swiper-wrapper" id="productSwiper"></div>
 
-                <div class="swiper-pagination mt-8"></div>
+                <div class="swiper-pagination mt-4"></div>
 
                 <div
                   class="absolute md:top-1/2 top-[60%] md:scale-[1]  scale-[.8] left-0 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition duration-300 z-50 md:block hidden">
@@ -686,7 +691,7 @@
         </div>
 
         <div
-          class="lg:border services-section block lg:h-full overflow-auto lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 md:py-2 xs:px-8 xs:py-4 md:min-h-[494px]">
+          class="lg:border services-section block lg:h-full lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 md:py-2 xs:px-8 xs:py-4 md:min-h-[494px] max-h-[200px] overflow-auto md:max-h-max">
 
           <div class="h-full">
             <div class="flex lg:px-1 xl:px-[1rem] py-[.6rem] flex-col justify-between h-full">
@@ -744,7 +749,7 @@
                 </div>
               </div>
               <div
-                class="bottom-6 lg:bottom-0 left-0 buy-now transform transition-transform duration-300 w-full md:pl-0 lg:h-full flex-1 content-end fixed lg:static px-4 lg:px-0 !pl-4 lg:pl-0 lg:block hidden">
+                class="bottom-6 lg:bottom-0 left-0 buy-now transform transition-transform duration-300 w-full md:pl-0 lg:h-full flex-1 content-end fixed lg:static px-4 lg:px-0 lg:block hidden">
                 <div class="flex justify-evenly md:gap-2 lg:gap-4 lg:mb-3 items-center gap-3">
 
                   <div class="incdec flex lg:hidden flex-col w-12 flex-shrink-0 border border-gray-300 rounded-md justify-center items-center py-1">
@@ -790,10 +795,10 @@
         </div>
 
         <div id="descriptionSection"
-          class="lg:border hidden services-section lg:h-full overflow-auto lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[494px]">
+          class="lg:border hidden services-section lg:h-full lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[494px] max-h-[200px] overflow-auto md:max-h-max">
 
           <div
-            class="md:min-h-14 min-h-2 border border-primaryColor bg-primaryColor lg:p-2 px-2 flex justify-between items-center rounded-md mb-4">
+            class="md:min-h-14 min-h-2 border border-primaryColor bg-primaryColor lg:p-2 px-2 md:flex justify-between items-center rounded-md mb-4 hidden">
 
             <div class="flex items-center h-full gap-3">
               <!-- <div class="flex h-full object-contain">
@@ -832,10 +837,10 @@
 
           <div class="">
             <div class="w-full">
-              <div class="flex justify-evenly border-b"><a class="w-full text-center "><button
-                    class="text-[#faa61a] briefBtn font-medium uppercase text-xs sm:text-[14px] md:text-[16px] xl:text-[18px]">brief</button></a>
-                <a class="w-full text-center "><button
-                    class="ingrBtn font-medium uppercase text-xs sm:text-[14px] md:text-[16px] xl:text-[18px]">ingredients</button></a>
+              <div class="flex justify-evenly border-b"><a class="w-full text-center"><button
+                    class="briefBtn font-medium uppercase text-xs sm:text-[14px] md:text-[16px] xl:text-[18px] py-2">brief</button></a>
+                <a class="w-full text-center"><button
+                    class="ingrBtn font-medium uppercase text-xs sm:text-[14px] md:text-[16px] xl:text-[18px] py-2">ingredients</button></a>
               </div>
 
               <div id="briefWrapper" class="lg:px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4"></div>
@@ -848,12 +853,12 @@
 
 
         <div id="benefitsSection"
-          class="lg:border hidden services-section lg:h-full overflow-auto lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[494px]">
+          class="lg:border hidden services-section lg:h-full lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-4 xs:px-8 xs:py-4 lg:min-h-[494px] max-h-[200px] overflow-auto md:max-h-max">
 
           <div class="">
 
             <div
-              class="md:min-h-14 min-h-2 border border-primaryColor bg-primaryColor lg:p-2 px-2 flex justify-between items-center rounded-md mb-4">
+              class="md:min-h-14 min-h-2 border border-primaryColor bg-primaryColor lg:p-2 px-2 md:flex justify-between items-center rounded-md mb-4 hidden">
 
               <div class="flex items-center h-full gap-3">
                 <!-- <div class="flex h-full object-contain">
@@ -891,10 +896,10 @@
             </div>
 
             <div class="w-full ">
-              <div class="flex justify-evenly border-b"><a class="w-full border-col text-center "><button
-                    class=" benBtn text-[#faa61a] font-medium uppercase text-xs sm:text-[14px] md:text-[16px] xl:text-[18px]">benefits</button></a><a
-                  class="w-full text-center py-2"><button
-                    class="rdiBtn font-medium uppercase text-xs sm:text-[14px] md:text-[16px] xl:text-[18px]">rdi</button></a>
+              <div class="flex justify-evenly border-b"><a class="w-full border-col text-center"><button
+                    class=" benBtn font-medium uppercase text-xs sm:text-[14px] md:text-[16px] xl:text-[18px] py-2">benefits</button></a><a
+                  class="w-full text-center"><button
+                    class="rdiBtn font-medium uppercase text-xs sm:text-[14px] md:text-[16px] xl:text-[18px] py-2">rdi</button></a>
               </div>
 
               <div id="benefitsWrapper" class="lg:px-4 flex flex-col justify-between py-2 xs:px-8 xs:py-4 descBen">
@@ -908,7 +913,7 @@
 
 
 
-        <div id="nutriSection" class="hidden">
+        <div id="nutriSection" class="hidden max-h-[200px] overflow-auto md:max-h-max">
 
           <div
             class="nutrition w-full flex justify-center items-center accordion-panel overflow-hidden md:overflow-visible">
@@ -1050,229 +1055,107 @@
 
 
   <script>
-    document.querySelectorAll('.buyLink').forEach(element => {
-      element.addEventListener('click', function (event) {
-        event.preventDefault();
-        console.log("buy clicked");
+    (() => {
+      const buySection = document.querySelector(".services-section:not(#descriptionSection):not(#benefitsSection)");
+      const productTabs = [
+        { link: ".buyLink", section: buySection },
+        { link: ".descriptionLink", section: document.getElementById("descriptionSection") },
+        { link: ".benefitsLink", section: document.getElementById("benefitsSection") },
+        { link: ".nutriLink", section: document.getElementById("nutriSection") }
+      ];
 
-        // Show the services section and hide others
-        document.querySelector('.services-section').style.display = "block";
-        document.getElementById('descriptionSection').style.display = "none";
-        document.getElementById('benefitsSection').style.display = "none";
-        document.getElementById('nutriSection').style.display = "none";
-
-        // Manage link active states
-        document.querySelectorAll('.buyLink').forEach(link => link.classList.add('productLinkActive'));
-        document.querySelectorAll('.descriptionLink').forEach(link => link.classList.remove('productLinkActive'));
-        document.querySelectorAll('.benefitsLink').forEach(link => link.classList.remove('productLinkActive'));
-        document.querySelectorAll('.nutriLink').forEach(link => link.classList.remove('productLinkActive'));
-      });
-    });
-
-    document.querySelectorAll('.descriptionLink').forEach(element => {
-      element.addEventListener('click', function (event) {
-        event.preventDefault();
-        console.log("description clicked");
-
-        // Show the description section and hide others
-        document.querySelector('.services-section').style.display = "none";
-        document.getElementById('descriptionSection').style.display = "block";
-        document.getElementById('benefitsSection').style.display = "none";
-        document.getElementById('nutriSection').style.display = "none";
-
-        // Manage link active states
-        document.querySelectorAll('.descriptionLink').forEach(link => link.classList.add('productLinkActive'));
-        document.querySelectorAll('.buyLink').forEach(link => link.classList.remove('productLinkActive'));
-        document.querySelectorAll('.benefitsLink').forEach(link => link.classList.remove('productLinkActive'));
-        document.querySelectorAll('.nutriLink').forEach(link => link.classList.remove('productLinkActive'));
-      });
-    });
-
-    document.querySelectorAll('.benefitsLink').forEach(element => {
-      element.addEventListener('click', function (event) {
-        event.preventDefault();
-        console.log("benefits clicked");
-
-        // Show the benefits section and hide others
-        document.querySelector('.services-section').style.display = "none";
-        document.getElementById('descriptionSection').style.display = "none";
-        document.getElementById('benefitsSection').style.display = "block";
-        document.getElementById('nutriSection').style.display = "none";
-
-        // Manage link active states
-        document.querySelectorAll('.benefitsLink').forEach(link => link.classList.add('productLinkActive'));
-        document.querySelectorAll('.buyLink').forEach(link => link.classList.remove('productLinkActive'));
-        document.querySelectorAll('.descriptionLink').forEach(link => link.classList.remove('productLinkActive'));
-        document.querySelectorAll('.nutriLink').forEach(link => link.classList.remove('productLinkActive'));
-      });
-    });
-
-    document.querySelectorAll('.nutriLink').forEach(element => {
-      element.addEventListener('click', function (event) {
-        event.preventDefault();
-        console.log("nutri clicked");
-
-        // Show the nutrition section and hide others
-        document.querySelector('.services-section').style.display = "none";
-        document.getElementById('descriptionSection').style.display = "none";
-        document.getElementById('benefitsSection').style.display = "none";
-        document.getElementById('nutriSection').style.display = "block";
-
-        // Manage link active states
-        document.querySelectorAll('.nutriLink').forEach(link => link.classList.add('productLinkActive'));
-        document.querySelectorAll('.buyLink').forEach(link => link.classList.remove('productLinkActive'));
-        document.querySelectorAll('.descriptionLink').forEach(link => link.classList.remove('productLinkActive'));
-        document.querySelectorAll('.benefitsLink').forEach(link => link.classList.remove('productLinkActive'));
-      });
-    });
-
-    document.querySelector('.benBtn').addEventListener('click', function (event) {
-      event.preventDefault();
-      // document.querySelector('.descBen').style.display = "flex";
-      document.querySelector('#benefitsWrapper').style.display = "flex";
-      document.querySelector('#rdiWrapper').style.display = "none";
-      document.querySelector('.benBtn').style.color = "#faa61a";
-      document.querySelector('.rdiBtn').style.color = "#000";
-
-
-
-    });
-
-    document.querySelector('.rdiBtn').addEventListener('click', function (event) {
-      event.preventDefault();
-      // document.querySelector('.descBen').style.display = "flex";
-      document.querySelector('#benefitsWrapper').style.display = "none";
-      document.querySelector('#rdiWrapper').style.display = "flex";
-      document.querySelector('.benBtn').style.color = "#000";
-      document.querySelector('.rdiBtn').style.color = "#faa61a";
-
-    });
-
-
-    document.querySelector('.briefBtn').addEventListener('click', function (event) {
-      event.preventDefault();
-      // document.querySelector('.descBen').style.display = "flex";
-      document.querySelector('.briefBtn').style.color = "#faa61a";
-      document.querySelector('#briefWrapper').style.display = "block";
-      document.querySelector('#ingredientWrapper').style.display = "none";
-      document.querySelector('.ingrBtn').style.color = "#000";
-
-
-
-    });
-
-    document.querySelector('.ingrBtn').addEventListener('click', function (event) {
-      event.preventDefault();
-      // document.querySelector('.descBen').style.display = "flex";
-      document.querySelector('.briefBtn').style.color = "#000";
-      document.querySelector('#ingredientWrapper').style.display = "block";
-      document.querySelector('#briefWrapper').style.display = "none";
-      document.querySelector('.ingrBtn').style.color = "#faa61a";
-
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    let imageSlideIndex = 0;
-    showImageSlides(imageSlideIndex);
-
-    function showImageSlides(n) {
-      const slides = document.querySelectorAll(".slide");
-      const dots = document.querySelectorAll(".dot");
-
-      if (n >= slides.length) {
-        imageSlideIndex = 0;
-      } else if (n < 0) {
-        imageSlideIndex = slides.length - 1;
-      } else {
-        imageSlideIndex = n;
-      }
-
-      slides.forEach((slide, index) => {
-        slide.style.display = "none";
-        slide.classList.remove("active");
-        dots[index].classList.remove("active");
-      });
-
-      if (slides.length > 0 && slides[imageSlideIndex]) {
-        slides[imageSlideIndex].style.display = "block";
-        slides[imageSlideIndex].classList.add("active");
-        if (dots[imageSlideIndex]) dots[imageSlideIndex].classList.add("active");
-      }
-    }
-
-    function nextImageSlide() {
-      showImageSlides(imageSlideIndex + 1);
-    }
-
-    function prevImageSlide() {
-      showImageSlides(imageSlideIndex - 1);
-    }
-
-    function currentImageSlide(n) {
-      showImageSlides(n);
-    }
-
-  </script>
-
-  <script>
-    const navButtons = document.querySelectorAll(".productimage-button");
-    const slides = document.querySelectorAll(".slides");
-
-    // Set initial display for nav buttons based on screen width
-    function setInitialNavButtonDisplay() {
-      if (window.innerWidth <= 768) {
-        navButtons.forEach((button) => {
-          button.style.display = "block";
-        });
-      }
-    }
-
-    // Adjust nav button display on resize
-    window.addEventListener("resize", () => {
-      if (window.innerWidth <= 768) {
-        navButtons.forEach((button) => {
-          button.style.display = "block";
-        });
-      } else {
-        navButtons.forEach((button) => {
-          button.style.display = "none";
-        });
-      }
-    });
-
-    // Set initial display state
-    setInitialNavButtonDisplay();
-
-    slides.forEach((slide) => {
-      slide.addEventListener("mouseenter", () => {
-        if (window.innerWidth > 768) {
-          navButtons.forEach((button) => {
-            button.style.display = "block";
+      function toggleProductTab(activeLink) {
+        productTabs.forEach(({ link, section }) => {
+          if (section) section.classList.toggle("hidden", link !== activeLink);
+          document.querySelectorAll(link).forEach((el) => {
+            el.classList.toggle("productLinkActive", link === activeLink);
           });
-        }
+        });
+      }
+
+      productTabs.forEach(({ link }) => {
+        document.querySelectorAll(link).forEach((el) => {
+          el.addEventListener("click", (event) => {
+            event.preventDefault();
+            toggleProductTab(link);
+          });
+        });
       });
 
-      slide.addEventListener("mouseleave", () => {
-        if (window.innerWidth > 768) {
-          navButtons.forEach((button) => {
-            button.style.display = "none";
-          });
-        }
+      function bindTwoStateSwitch({ leftBtn, rightBtn, leftContent, rightContent }) {
+        const leftButton = document.querySelector(leftBtn);
+        const rightButton = document.querySelector(rightBtn);
+        const leftWrapper = document.querySelector(leftContent);
+        const rightWrapper = document.querySelector(rightContent);
+        if (!leftButton || !rightButton || !leftWrapper || !rightWrapper) return;
+
+        const setState = (isLeftActive) => {
+          leftWrapper.classList.toggle("hidden", !isLeftActive);
+          rightWrapper.classList.toggle("hidden", isLeftActive);
+          leftButton.classList.toggle("toggleTabActive", isLeftActive);
+          rightButton.classList.toggle("toggleTabActive", !isLeftActive);
+        };
+
+        leftButton.addEventListener("click", (event) => {
+          event.preventDefault();
+          setState(true);
+        });
+
+        rightButton.addEventListener("click", (event) => {
+          event.preventDefault();
+          setState(false);
+        });
+
+        setState(!leftWrapper.classList.contains("hidden"));
+      }
+
+      bindTwoStateSwitch({
+        leftBtn: ".benBtn",
+        rightBtn: ".rdiBtn",
+        leftContent: "#benefitsWrapper",
+        rightContent: "#rdiWrapper"
       });
-    });
+
+      bindTwoStateSwitch({
+        leftBtn: ".briefBtn",
+        rightBtn: ".ingrBtn",
+        leftContent: "#briefWrapper",
+        rightContent: "#ingredientWrapper"
+      });
+
+      const navButtons = document.querySelectorAll(".productimage-button-prev, .productimage-button-next");
+      const slideWrappers = document.querySelectorAll(".slides");
+
+      if (!navButtons.length || !slideWrappers.length) return;
+
+      const syncNavButtons = () => {
+        const isMobile = window.innerWidth <= 768;
+        navButtons.forEach((button) => {
+          button.style.display = isMobile ? "block" : "none";
+        });
+      };
+
+      window.addEventListener("resize", syncNavButtons);
+      syncNavButtons();
+
+      slideWrappers.forEach((slide) => {
+        slide.addEventListener("mouseenter", () => {
+          if (window.innerWidth > 768) {
+            navButtons.forEach((button) => {
+              button.style.display = "block";
+            });
+          }
+        });
+
+        slide.addEventListener("mouseleave", () => {
+          if (window.innerWidth > 768) {
+            navButtons.forEach((button) => {
+              button.style.display = "none";
+            });
+          }
+        });
+      });
+    })();
   </script>
 
 

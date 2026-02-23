@@ -21,25 +21,33 @@ const updateAttribute = (selector, attr, value) => {
 };
 
 // Render block list with styled items
-function renderBlockList(wrapperId, items = []) {
+function renderBlockList(wrapperId, items = [], options = {}) {
   const wrapper = document.getElementById(wrapperId);
   if (!wrapper || !Array.isArray(items) || !items.length) {
     if (wrapper) wrapper.innerHTML = "";
     return;
   }
 
+  const { showMobilePercent = false, defaultPercent = "90%" } = options;
+
   wrapper.innerHTML = items
-    .map(
-      (text) => `
+    .map((item) => {
+      const text = typeof item === "string" ? item : item?.text ?? "";
+      const percent =
+        typeof item === "object" && item?.percent
+          ? item.percent
+          : defaultPercent;
+
+      return `
     <div class="flex items-start py-3">
       <div class="text-[12px] md:text-[14px] xl:text-[18px] relative flex items-center justify-between w-full">
-        <span class="absolute top-0 left-0 w-1 h-full bg-primaryColor lg:block hidden"></span>
-        <p class="lg:pl-8 font-semibold lg:font-normal">${text}</p>
-        <span class="lg:hidden">90%</span>
+        <span class="absolute top-0 left-0 w-1 h-full bg-primaryColor"></span>
+        <p class="lg:pl-8 pl-4 font-semibold lg:font-normal">${text}</p>
+        ${showMobilePercent ? `<span class="lg:hidden">${percent}</span>` : ""}
       </div>
     </div>
-  `
-    )
+  `;
+    })
     .join("");
 }
 
@@ -112,7 +120,7 @@ function buildSwiperSlides(product) {
 
   const slides = [];
   const imgClass =
-    "z-10 w-[300px] md:w-[370px] 2xl:w-[400px] 5xl-lg:w-[600px] m-auto";
+    "z-10 w-[200px] md:w-[370px] 2xl:w-[400px] 5xl-lg:w-[600px] m-auto";
 
   // Add main image
   if (product?.media?.mainImage) {
@@ -373,7 +381,9 @@ async function loadProduct() {
 
     // Description and benefits
     renderBlockList("briefWrapper", product?.description?.brief);
-    renderBlockList("ingredientWrapper", product?.description?.ingredients);
+    renderBlockList("ingredientWrapper", product?.description?.ingredients, {
+      showMobilePercent: true,
+    });
     renderBlockList("benefitsWrapper", product?.benefits?.list);
     renderBlockList("rdiWrapper", product?.benefits?.rdi);
 
