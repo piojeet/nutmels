@@ -162,22 +162,22 @@ function createProductCard(p) {
 
     return `
       <a class="product" href="../pages/product.html?name=${slug}&id=${p.id}" data-category="${productCategory}">
-        <div class="hover:bg-[#f5f5f5] duration-200 hover:shadow-md border border-transparent hover:border-solid hover:rounded-2xl p-3 relative group h-full hover:border-gray-300">
-          <div class="border p-[.5rem] md:p-2 rounded-2xl bg-white">
-            <div class="static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px]">
+        <div class="sm:hover:bg-[#f5f5f5] duration-200 sm:hover:shadow-md sm:border sm:border-transparent sm:hover:border-solid sm:hover:rounded-2xl sm:p-3 relative group h-full sm:hover:border-gray-300 bg-white border rounded-xl flex flex-col justify-between sm:bg-transparent">
+          <div class="sm:border p-[.5rem] md:p-2 rounded-2xl sm:bg-white">
+            <div class="sm:static w-fit mb-2 bg-gray-200 rounded-full py-1 px-3 text-[10px] md:text-[12px] absolute">
               <p>Save ₹${productPrice}</p>
             </div>
 
             <div class="w-full justify-center flex">
-              <img src="${productImage}" alt="${productName}" class="w-[90%] md:w-[100%] object-contain p-1.5 sm:max-h-[94px] max-h-[140px]" />
+              <img src="${productImage}" alt="${productName}" class="w-[90%] md:w-[100%] object-contain p-1.5 sm:max-h-[94px] max-h-[140px] h-[100px] sm:h-auto" />
             </div>
 
             <div class="w-full flex items-center justify-between mt-2">
-              <div class="flex scale-[.9] md:scale-[1] items-center static top-[7.8rem] md:top-44 left-[1.8rem] justify-center gap-2">
+              <div class="flex scale-[.9] md:scale-[1] items-end static top-[7.8rem] md:top-44 left-[1.8rem] justify-center gap-2">
                 <button class="like-btn" data-id="${p.id}">
                   ${liked ? ICONS.likeActive : ICONS.likeInactive}
                 </button>
-                <span class="likes-count leading-normal" data-id="${p.id}">${formatLikes(likes)}</span>
+                <span class="likes-count leading-none" data-id="${p.id}">${formatLikes(likes)}</span>
               </div>
 
               <button class="heart-btn ${isWishlisted ? "active" : ""}" data-id="${p.id}">
@@ -186,15 +186,18 @@ function createProductCard(p) {
             </div>
           </div>
 
-          <div class="text-gray-500 mt-2 items-center justify-center text-center text-sm">
+          <div>
+            <div class="text-gray-500 mt-2 items-center justify-center text-center text-sm px-3 sm:px-0 line-clamp-2">
             <h2>${productName}</h2>
           </div>
 
-          <div class="justify-center mt-3 group-hover:opacity-100 flex md:opacity-0">
+          <div class="justify-center mt-3 group-hover:opacity-100 flex md:opacity-0 px-3 sm:px-0 pb-3 sm:pb-0">
             <button class="border border-gray-400 text-xs rounded-md py-1 px-4 hover:bg-[#faa61a] hover:text-white hover:border-[#faa61a] duration-300">
               Select Option
             </button>
           </div>
+          </div>
+          
         </div>
       </a>
     `;
