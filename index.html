@@ -1154,8 +1154,13 @@
       initSectionScroll();
     }
 
+    let wasDesktop = isDesktop();
     window.addEventListener("resize", () => {
-      location.reload(); // device switch pe clean reload
+      const nowDesktop = isDesktop();
+      // Mobile browser chrome hide/show also triggers resize; reload only when breakpoint changes.
+      if (nowDesktop === wasDesktop) return;
+      wasDesktop = nowDesktop;
+      location.reload();
     });
 
     function initSectionScroll() {

@@ -356,21 +356,27 @@ function setupQuantityControls() {
   const increaseBtns = document.querySelectorAll(".increase");
   const quantityInputs = document.querySelectorAll(".quantity");
 
-  const updateQuantity = (delta) => {
-    const animationClass =
-      delta > 0 ? "quantity-animate-up" : "quantity-animate-down";
+  const normalizeQuantity = (value) => Math.max(1, parseInt(value, 10) || 1);
+
+  const applyQuantity = (value, animationClass = "") => {
+    const safeValue = normalizeQuantity(value);
     quantityInputs.forEach((input) => {
-      let value = parseInt(input.value) || 1;
-      value = Math.max(1, value + delta);
-      input.value = value;
+      input.value = safeValue;
       const isMobileVerticalControl = !!input.closest(".incdec.flex-col");
-      if (isMobileVerticalControl) {
+      if (isMobileVerticalControl && animationClass) {
         input.classList.remove("quantity-animate-up", "quantity-animate-down");
         void input.offsetWidth;
         input.classList.add(animationClass);
       }
-      updatePrice(value);
     });
+    updatePrice(safeValue);
+  };
+
+  const updateQuantity = (delta) => {
+    const currentValue = normalizeQuantity(quantityInputs[0]?.value);
+    const animationClass =
+      delta > 0 ? "quantity-animate-up" : "quantity-animate-down";
+    applyQuantity(currentValue + delta, animationClass);
   };
 
   increaseBtns.forEach((btn) =>
@@ -379,6 +385,23 @@ function setupQuantityControls() {
   decreaseBtns.forEach((btn) =>
     btn.addEventListener("click", () => updateQuantity(-1))
   );
+
+  quantityInputs.forEach((input) => {
+    input.readOnly = false;
+    input.removeAttribute("readonly");
+    input.setAttribute("inputmode", "numeric");
+    input.setAttribute("pattern", "[0-9]*");
+
+    input.addEventListener("input", () => {
+      const digitsOnly = String(input.value).replace(/\D/g, "");
+      if (!digitsOnly) return;
+      applyQuantity(digitsOnly);
+    });
+
+    input.addEventListener("blur", () => {
+      applyQuantity(input.value);
+    });
+  });
 }
 
 // Main product loader
