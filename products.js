@@ -137,7 +137,7 @@ function buildSwiperSlides(product) {
 
   const slides = [];
   const imgClass =
-    "z-10 w-[200px] md:w-[370px] 2xl:w-[400px] 5xl-lg:w-[600px] m-auto";
+    "z-10 w-full aspect-square md:w-[370px] 2xl:w-[400px] 5xl-lg:w-[600px] m-auto";
 
   // Add main image
   if (product?.media?.mainImage) {

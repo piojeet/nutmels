@@ -343,7 +343,7 @@
   }
 
   .swiper-pagination {
-    position: inherit !important;
+    /* position: inherit !important; */
     padding-bottom: 1rem !important;
   }
 
@@ -473,6 +473,16 @@ input:focus {
   .productimage-button {
     display: block !important;
     /* Force display on mobile screens */
+  }
+
+
+
+}
+
+@media (min-width: 768px) {
+  .swiper-pagination {
+    position: inherit !important;
+    padding-bottom: 1rem !important;
   }
 }
 
