@@ -1566,6 +1566,10 @@ html {
   max-height: calc(100dvh - 663px);
 }
 
+.max-h-\[calc\(100dvh-584px\)\]{
+  max-height: calc(100dvh - 584px);
+}
+
 .min-h-2{
   min-height: 0.5rem;
 }
