@@ -9,8 +9,8 @@
     },
     "likes": 4800,
     "media": {
-      "mainImage": "https://nutmeals.com/images/product/product_img_ff623d.JPG",
-      "gallery": ["https://nutmeals.com/images/product/product_img_ff623d.JPG"]
+      "mainImage": "../assets/products/1.png",
+      "gallery": ["../assets/products/1.png"]
     },
     "buy": {
       "currency": "₹",

@@ -14,9 +14,26 @@ const updateElements = (selector, value) => {
   });
 };
 
+const resolveMediaPath = (path) => {
+  if (!path) return "";
+  if (
+    /^(https?:)?\/\//i.test(path) ||
+    path.startsWith("/") ||
+    path.startsWith("data:") ||
+    path.startsWith("blob:")
+  ) {
+    return path;
+  }
+  if (path.startsWith("./")) {
+    return `/${path.slice(2)}`;
+  }
+  return path;
+};
+
 const updateAttribute = (selector, attr, value) => {
   document.querySelectorAll(selector).forEach((el) => {
-    el[attr] = value ?? "";
+    const resolvedValue = attr === "src" ? resolveMediaPath(value) : value;
+    el[attr] = resolvedValue ?? "";
   });
 };
 
@@ -124,9 +141,10 @@ function buildSwiperSlides(product) {
 
   // Add main image
   if (product?.media?.mainImage) {
+    const mainImage = resolveMediaPath(product.media.mainImage);
     slides.push(`
       <div class="swiper-slide">
-        <img src="${product.media.mainImage}" 
+        <img src="${mainImage}" 
              alt="${product.basic.name}" 
              class="${imgClass}" />
       </div>
@@ -136,9 +154,10 @@ function buildSwiperSlides(product) {
   // Add gallery images
   if (Array.isArray(product?.media?.gallery)) {
     product.media.gallery.forEach((img) => {
+      const galleryImage = resolveMediaPath(img);
       slides.push(`
         <div class="swiper-slide">
-          <img src="${img}" 
+          <img src="${galleryImage}" 
                alt="${product.basic.name}" 
                class="${imgClass}" />
         </div>
