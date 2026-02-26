@@ -56,7 +56,7 @@ function renderBlockList(wrapperId, items = [], options = {}) {
           : defaultPercent;
 
       return `
-    <div class="flex items-start py-3">
+    <div class="flex items-start md:py-3 py-1">
       <div class="text-[12px] md:text-[14px] xl:text-[18px] relative flex items-center justify-between w-full">
         <span class="absolute top-0 left-0 w-1 h-full bg-primaryColor"></span>
         <p class="lg:pl-8 pl-4 font-semibold lg:font-normal">${text}</p>

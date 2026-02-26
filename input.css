@@ -680,3 +680,11 @@ display: block;
   border-bottom: 2px solid #faa61a;
 }
 
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+background: #f8a531;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}

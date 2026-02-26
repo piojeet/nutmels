@@ -510,7 +510,7 @@
         </svg>
       </button>
       <input id="quantity"
-      class="text-center rounded-lg md:mx-3 quantity w-full text-xs font-semibold"
+      class="text-center rounded-lg md:mx-3 quantity w-full text-xs font-semibold bg-transparent"
       type="text" value="1" readonly>
       <button class="decrease" id="decrease">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -532,7 +532,7 @@
     </a> -->
     <div class="swipe-container select-none" id="swipe">
       <div class="progress-fill" id="progress"></div>
-      <div class="swipe-text !text-sm md:text-base !right-4 left-auto translate-x-0 md:!left-1/2 md:-translate-x-1/2 md:right-auto !top-1/2 !-translate-y-1/2" id="label">Swipe to Buy</div>
+      <div class="swipe-text !text-sm md:text-base !right-4 left-1/2 -translate-x-1/2 !-translate-y-1/2" id="label">Swipe to Buy</div>
       <div class="swipe-button" id="handle">
         <svg viewBox="0 0 24 24">
           <path d="M8 5v14l11-7z" />
@@ -691,7 +691,7 @@
         </div>
 
         <div
-          class="lg:border services-section block lg:h-full lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 md:py-2 xs:px-8 xs:py-4 md:min-h-[494px] max-h-[calc(100dvh-600px)] overflow-auto md:max-h-max">
+          class="lg:border services-section block lg:h-full lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 md:py-2 xs:px-8 xs:py-4 md:min-h-[494px] max-h-[calc(100dvh-600px)] overflow-auto md:max-h-max custom-scrollbar">
 
           <div class="h-full">
             <div class="flex lg:px-1 xl:px-[1rem] py-[.6rem] flex-col justify-between h-full">
@@ -714,10 +714,10 @@
                 </div>
               </div>
 
-              <div class="tab-buttons flex lg:gap-2 lg:mb-3 lg:hidden text-sm md:text-base">
-                <button class="tab-btn active-tab" data-tab="detail-1">Consumption</button>
-                <button class="tab-btn" data-tab="detail-2">Variants</button>
-                <button class="tab-btn" data-tab="detail-3">Package</button>
+              <div class="tab-buttons flex lg:gap-2 lg:mb-3 lg:hidden text-sm md:text-base justify-between border-b">
+                <button class="tab-btn !font-normal active-tab" data-tab="detail-1">Consumption</button>
+                <button class="tab-btn !font-normal" data-tab="detail-2">Variants</button>
+                <button class="tab-btn !font-normal" data-tab="detail-3">Package</button>
               </div>
 
 
@@ -795,7 +795,7 @@
         </div>
 
         <div id="descriptionSection"
-          class="lg:border hidden services-section lg:h-full lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 lg:min-h-[494px] max-h-[calc(100dvh-600px)] overflow-auto md:max-h-max">
+          class="lg:border hidden services-section lg:h-full lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 lg:min-h-[494px] max-h-[calc(100dvh-600px)] overflow-auto md:max-h-max custom-scrollbar">
 
           <div
             class="md:min-h-14 min-h-2 border border-primaryColor bg-primaryColor lg:p-2 px-2 md:flex justify-between items-center rounded-md mb-4 hidden">
@@ -853,7 +853,7 @@
 
 
         <div id="benefitsSection"
-          class="lg:border hidden services-section lg:h-full lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 lg:min-h-[494px] max-h-[calc(100dvh-600px)] overflow-auto md:max-h-max">
+          class="lg:border hidden services-section lg:h-full lg:bg-[#f5f5f5] border-gray-300 rounded-lg px-4 py-2 xs:px-8 xs:py-4 lg:min-h-[494px] max-h-[calc(100dvh-600px)] overflow-auto md:max-h-max custom-scrollbar">
 
           <div class="">
 
@@ -913,7 +913,7 @@
 
 
 
-        <div id="nutriSection" class="hidden max-h-[calc(100dvh-600px)] overflow-auto md:max-h-max">
+        <div id="nutriSection" class="hidden max-h-[calc(100dvh-600px)] overflow-auto md:max-h-max custom-scrollbar">
 
           <div
             class="nutrition w-full flex justify-center items-center accordion-panel overflow-hidden md:overflow-visible">
@@ -922,7 +922,7 @@
 
               <div class="w-full bg-white h-full rounded-lg p-4 pt-2">
                 <div
-                  class="w-fit m-auto text-[16px] md:text-[18px]  md:px-4 text-lg xl:text-lg uppercase font-semibold mb-4 lg:mb-0">
+                  class="w-fit m-auto text-[16px] md:text-[18px]  md:px-4 text-lg xl:text-lg uppercase font-semibold mb-4 lg:mb-0 md:block hidden">
                   Nutritional
                   Facts</div>
                 <div class="mt-2">
