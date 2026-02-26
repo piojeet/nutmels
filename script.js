@@ -13,6 +13,9 @@ document.addEventListener("click", function (e) {
       // Confirm delete
       deleteBtn.onclick = () => {
         card.remove();
+        if (typeof window.updateCartPricing === "function") {
+          window.updateCartPricing();
+        }
         modal.style.display = "none";
       };
 
@@ -582,25 +585,98 @@ function contactopenTab(evt, tabName) {
 }
 
 //  ~~~~~~~~~~~~~~~ Cart ~~~~~~~~~~~~~~~
-// document.addEventListener("DOMContentLoaded", function () {
-//   document.querySelectorAll(".decrease").forEach((button) => {
-//     button.addEventListener("click", function () {
-//       let counter = this.nextElementSibling;
-//       let value = parseInt(counter.value);
-//       if (value > 1) {
-//         counter.value = value - 1;
-//       }
-//     });
-//   });
+document.addEventListener("DOMContentLoaded", function () {
+  const parseAmount = (text) => {
+    const cleaned = String(text || "").replace(/[^0-9.]/g, "");
+    return Number.parseFloat(cleaned) || 0;
+  };
 
-//   document.querySelectorAll(".increase").forEach((button) => {
-//     button.addEventListener("click", function () {
-//       let counter = this.previousElementSibling;
-//       let value = parseInt(counter.value);
-//       counter.value = value + 1;
-//     });
-//   });
-// });
+  const formatAmount = (value) => {
+    const safe = Math.max(0, Math.round(Number(value) || 0));
+    return safe.toLocaleString("en-IN");
+  };
+
+  const getRowPriceElement = (card) => {
+    if (!card) return null;
+    const directChildren = Array.from(card.children);
+    for (let i = directChildren.length - 1; i >= 0; i--) {
+      const el = directChildren[i];
+      if (el && el.tagName === "P") return el;
+    }
+    return null;
+  };
+
+  const getSubtotalElements = () => {
+    const result = new Set();
+
+    document.querySelectorAll(".total_product-rate").forEach((el) => result.add(el));
+
+    document.querySelectorAll("p").forEach((label) => {
+      if (label.textContent.trim().toLowerCase() !== "subtotal:") return;
+      const valueEl = label.nextElementSibling;
+      if (valueEl && valueEl.tagName === "P") {
+        result.add(valueEl);
+      }
+    });
+
+    return Array.from(result);
+  };
+
+  const updateCartPricing = () => {
+    let subtotal = 0;
+
+    document.querySelectorAll(".product-card").forEach((card) => {
+      const counter = card.querySelector(".counter");
+      const priceEl = getRowPriceElement(card);
+      if (!counter || !priceEl) return;
+
+      let qty = parseInt(counter.value, 10);
+      if (Number.isNaN(qty) || qty < 1) qty = 1;
+      counter.value = qty;
+
+      let unitPrice = Number.parseFloat(card.dataset.unitPrice || "");
+      if (!Number.isFinite(unitPrice) || unitPrice <= 0) {
+        const shownPrice = parseAmount(priceEl.textContent);
+        unitPrice = shownPrice > 0 ? shownPrice / qty : 0;
+        card.dataset.unitPrice = String(unitPrice);
+      }
+
+      const lineTotal = Math.round(unitPrice * qty);
+      priceEl.textContent = formatAmount(lineTotal);
+      subtotal += lineTotal;
+    });
+
+    getSubtotalElements().forEach((el) => {
+      el.textContent = formatAmount(subtotal);
+    });
+  };
+
+  window.updateCartPricing = updateCartPricing;
+
+  document.querySelectorAll(".decrease, .increase").forEach((button) => {
+    button.addEventListener("click", function () {
+      const controlWrap = this.parentElement;
+      if (!controlWrap) return;
+
+      const counter = controlWrap.querySelector(".counter");
+      if (!counter) return;
+
+      let value = parseInt(counter.value, 10);
+      if (Number.isNaN(value) || value < 1) value = 1;
+
+      if (this.classList.contains("decrease")) {
+        value = Math.max(1, value - 1);
+      } else {
+        value += 1;
+      }
+
+      counter.value = value;
+      updateCartPricing();
+    });
+  });
+
+  updateCartPricing();
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   const contactSection = document.getElementById("contact");

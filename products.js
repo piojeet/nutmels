@@ -299,6 +299,35 @@ style.textContent = `
   .active {
     color: #FAA61A !important;
   }
+  .quantity {
+    transition: color 160ms ease;
+  }
+  .quantity-animate-up {
+    animation: quantitySlideUp 180ms ease;
+  }
+  .quantity-animate-down {
+    animation: quantitySlideDown 180ms ease;
+  }
+  @keyframes quantitySlideUp {
+    0% {
+      transform: translateY(6px);
+      opacity: 0.35;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes quantitySlideDown {
+    0% {
+      transform: translateY(-6px);
+      opacity: 0.35;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 `;
 document.head.appendChild(style);
 
@@ -309,10 +338,18 @@ function setupQuantityControls() {
   const quantityInputs = document.querySelectorAll(".quantity");
 
   const updateQuantity = (delta) => {
+    const animationClass =
+      delta > 0 ? "quantity-animate-up" : "quantity-animate-down";
     quantityInputs.forEach((input) => {
       let value = parseInt(input.value) || 1;
       value = Math.max(1, value + delta);
       input.value = value;
+      const isMobileVerticalControl = !!input.closest(".incdec.flex-col");
+      if (isMobileVerticalControl) {
+        input.classList.remove("quantity-animate-up", "quantity-animate-down");
+        void input.offsetWidth;
+        input.classList.add(animationClass);
+      }
       updatePrice(value);
     });
   };
