@@ -1566,6 +1566,14 @@ html {
   max-height: calc(100dvh - 600px);
 }
 
+.max-h-none{
+  max-height: none;
+}
+
+.max-h-\[calc\(100dvh-565px\)\]{
+  max-height: calc(100dvh - 565px);
+}
+
 .min-h-2{
   min-height: 0.5rem;
 }
@@ -5238,6 +5246,10 @@ index */
 
   .lg\:h-full{
     height: 100%;
+  }
+
+  .lg\:max-h-\[calc\(100dvh-600px\)\]{
+    max-height: calc(100dvh - 600px);
   }
 
   .lg\:min-h-\[494px\]{
