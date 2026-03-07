@@ -1174,10 +1174,6 @@ html {
   margin-bottom: 16px;
 }
 
-.mb-\[19\.75rem\]{
-  margin-bottom: 19.75rem;
-}
-
 .ml-1{
   margin-left: 0.25rem;
 }
@@ -1554,20 +1550,16 @@ html {
   height: 100%;
 }
 
+.h-screen{
+  height: 100vh;
+}
+
 .max-h-0{
   max-height: 0px;
 }
 
 .max-h-\[140px\]{
   max-height: 140px;
-}
-
-.max-h-\[calc\(100dvh-600px\)\]{
-  max-height: calc(100dvh - 600px);
-}
-
-.max-h-none{
-  max-height: none;
 }
 
 .max-h-\[calc\(100dvh-565px\)\]{
@@ -2954,6 +2946,18 @@ html {
 
 .pt-\[4\.5rem\]{
   padding-top: 4.5rem;
+}
+
+.pb-\[100px\]{
+  padding-bottom: 100px;
+}
+
+.pb-\[90px\]{
+  padding-bottom: 90px;
+}
+
+.pb-\[95px\]{
+  padding-bottom: 95px;
 }
 
 .text-left{
@@ -5216,12 +5220,20 @@ index */
     margin-top: 4rem;
   }
 
+  .lg\:mb-24{
+    margin-bottom: 6rem;
+  }
+
   .lg\:block{
     display: block;
   }
 
   .lg\:flex{
     display: flex;
+  }
+
+  .lg\:grid{
+    display: grid;
   }
 
   .lg\:hidden{
@@ -5248,8 +5260,8 @@ index */
     height: 100%;
   }
 
-  .lg\:max-h-\[calc\(100dvh-600px\)\]{
-    max-height: calc(100dvh - 600px);
+  .lg\:h-auto{
+    height: auto;
   }
 
   .lg\:min-h-\[494px\]{
